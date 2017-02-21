@@ -1,0 +1,27 @@
+{
+  "name": "chrome-har",
+  "version": "0.0.1",
+  "description": "Create HAR files from Chrome Debugging Protocol data.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha"
+  },
+  "keywords": [
+    "chrome",
+    "har",
+    "webperf"
+  ],
+  "author": "Tobias Lidskog <tobias@lidskog.se>",
+  "license": "MIT",
+  "devDependencies": {
+    "bluebird": "^3.4.7",
+    "eslint": "^3.16.0",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "debug": "^2.6.1",
+    "moment": "^2.17.1",
+    "tough-cookie": "^2.3.2"
+  }
+}
