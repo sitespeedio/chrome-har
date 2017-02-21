@@ -267,7 +267,7 @@ module.exports = {
 
         case 'Network.requestServedFromCache': {
           if (pages.length < 1) {
-            //we havent loaded any pages yet.
+            //we haven't loaded any pages yet.
             continue
           }
 
@@ -277,7 +277,7 @@ module.exports = {
 
           let entry = entries.find((entry) => entry.__requestId === params.requestId);
           if (!entry) {
-            debug('Recieved requestServedFromCache for requestId ' + params.requestId + ' with no matching request.');
+            debug('Received requestServedFromCache for requestId ' + params.requestId + ' with no matching request.');
             continue;
           }
 
@@ -292,7 +292,7 @@ module.exports = {
 
         case 'Network.responseReceived': {
           if (pages.length < 1) {
-            //we havent loaded any pages yet.
+            //we haven't loaded any pages yet.
             continue
           }
           if (ignoredRequests.has(params.requestId)) {
@@ -301,7 +301,7 @@ module.exports = {
 
           let entry = entries.find((entry) => entry.__requestId === params.requestId);
           if (!entry) {
-            debug('Recieved network response for requestId ' + params.requestId + ' with no matching request.');
+            debug('Received network response for requestId ' + params.requestId + ' with no matching request.');
             continue;
           }
           entry.__responseReceivedTime = params.timestamp;
@@ -318,7 +318,7 @@ module.exports = {
 
         case 'Network.dataReceived': {
           if (pages.length < 1) {
-            //we havent loaded any pages yet.
+            //we haven't loaded any pages yet.
             continue
           }
           if (ignoredRequests.has(params.requestId)) {
@@ -327,7 +327,7 @@ module.exports = {
 
           let entry = entries.find((entry) => entry.__requestId === params.requestId);
           if (!entry) {
-            debug('Recieved network data for requestId ' + params.requestId + ' with no matching request.');
+            debug('Received network data for requestId ' + params.requestId + ' with no matching request.');
             continue;
           }
 
@@ -338,7 +338,7 @@ module.exports = {
 
         case 'Network.loadingFinished': {
           if (pages.length < 1) {
-            //we havent loaded any pages yet.
+            //we haven't loaded any pages yet.
             continue
           }
           if (ignoredRequests.has(params.requestId)) {
@@ -380,7 +380,7 @@ module.exports = {
 
         case 'Page.loadEventFired': {
           if (pages.length < 1) {
-            //we havent loaded any pages yet.
+            //we haven't loaded any pages yet.
             continue;
           }
 
@@ -394,7 +394,7 @@ module.exports = {
 
         case 'Page.domContentEventFired': {
           if (pages.length < 1) {
-            //we havent loaded any pages yet.
+            //we haven't loaded any pages yet.
             continue;
           }
 
@@ -474,7 +474,7 @@ module.exports = {
           let entry = entries.find((entry) => entry.__requestId === params.requestId);
 
           if (!entry) {
-            debug('Recieved resourceChangedPriority for requestId ' + params.requestId + ' with no matching request.');
+            debug('Received resourceChangedPriority for requestId ' + params.requestId + ' with no matching request.');
             continue;
           }
 
