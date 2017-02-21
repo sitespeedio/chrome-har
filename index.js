@@ -217,13 +217,10 @@ module.exports = {
           let req = {
             method: request.method,
             url: urlParser.format(url),
-            __timestamp: params.timestamp,
             queryString: toNameValuePairs(url.query),
             postData: parsePostData(getHeaderValue(request.headers, 'Content-Type'), request.postData),
             headersSize: -1,
             bodySize: -1, // FIXME calculate based on postData
-            _initialPriority: request.initialPriority,
-            _priority: request.initialPriority,
             cookies: parseRequestCookies(cookieHeader),
             headers: parseHeaders(request.headers)
           };
@@ -235,6 +232,8 @@ module.exports = {
             __wallTime: params.wallTime,
             __requestId: params.requestId,
             __frameId: params.frameId,
+            _initialPriority: request.initialPriority,
+            _priority: request.initialPriority,
             _initiator: params.initiator.url,
             _initiator_line: params.initiator.lineNumber,
             pageref: currentPageId,
@@ -479,7 +478,7 @@ module.exports = {
             continue;
           }
 
-          entry.request._priority = message.params.newPriority;
+          entry._priority = message.params.newPriority;
 
         }
           break;
