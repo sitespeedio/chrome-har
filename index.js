@@ -87,7 +87,6 @@ function populateEntryFromResponse(entry, response) {
   }
 
   entry.connection = response.connectionId.toString();
-  entry.__connectionReused = response.connectionReused;
 
   function parseOptionalTime(timing, start, end) {
     if (timing[start] >= 0) {
@@ -304,8 +303,6 @@ module.exports = {
             debug('Received network response for requestId ' + params.requestId + ' with no matching request.');
             continue;
           }
-          entry.__responseReceivedTime = params.timestamp;
-          entry.__totalRequestTime = (params.timestamp - entry.__requestWillBeSentTime) * 1000;
 
           try {
             populateEntryFromResponse(entry, params.response);
@@ -331,7 +328,6 @@ module.exports = {
             continue;
           }
 
-          entry.__dataReceivedTime = entry.__responseReceivedTime;
           entry.response.content.size += params.dataLength;
         }
           break;
@@ -357,7 +353,6 @@ module.exports = {
           entry.time = max(0, timings.blocked) + max(0, timings.dns) + max(0, timings.connect) +
             timings.send + timings.wait + timings.receive;
 
-          entry.__loadingFinishedTime = params.timestamp;
           // FIXME, encodedDataLength includes headers according to https://github.com/cyrus-and/chrome-har-capturer/issues/25
           entry.response.bodySize = params.encodedDataLength > 0 ? params.encodedDataLength : entry.response.bodySize;
           //if (entry.response.headersSize > -1) {
