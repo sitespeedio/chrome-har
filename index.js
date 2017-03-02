@@ -524,12 +524,16 @@ module.exports = {
 
 function toNameValuePairs(object) {
   return Object.keys(object)
-    .map(key => {
-      return {
-        name: key,
-        value: object[key]
-      };
-    });
+    .reduce((result, name) => {
+      const value = object[name];
+      if (Array.isArray(value)) {
+        return result.concat(value.map((v) => {
+          return {name, value: v};
+        }));
+      } else {
+        return result.concat([{name, value}]);
+      }
+    }, []);
 }
 
 function parseUrlEncoded(data) {
