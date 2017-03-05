@@ -304,6 +304,13 @@ module.exports = {
             continue;
           }
 
+          let frameId = rootFrameMappings.get(params.frameId) || params.frameId;
+          let page = pages.find((page) => page.__frameId === frameId);
+          if (!page) {
+            debug('Received network response for requestId ' + params.requestId + ' that can\'t be mapped to any page.');
+            continue;
+          }
+
           try {
             populateEntryFromResponse(entry, params.response);
           } catch (e) {
