@@ -17,8 +17,8 @@ const defaultOptions = {
 
 const isEmpty = (o) => !o;
 
-function formatMillis(time) {
-  return Number(Number(time).toFixed(0));
+function formatMillis(time, fractionalDigits = 3) {
+  return Number(Number(time).toFixed(fractionalDigits));
 }
 
 function populateEntryFromResponse(entry, response) {
