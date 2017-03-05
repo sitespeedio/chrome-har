@@ -21,7 +21,7 @@ function formatMillis(time, fractionalDigits = 3) {
   return Number(Number(time).toFixed(fractionalDigits));
 }
 
-function populateEntryFromResponse(entry, response) {
+function populateEntryFromResponse(entry, response, page) {
   const responseHeaders = response.headers;
   const cookieHeader = getHeaderValue(responseHeaders, 'Set-Cookie');
 
@@ -117,7 +117,7 @@ function populateEntryFromResponse(entry, response) {
       ssl
     };
 
-    entry.__requestSentTime = timing.requestTime;
+    entry._requestTime = timing.requestTime;
     entry.__receiveHeadersEnd = timing.receiveHeadersEnd;
     if (timing.pushStart > 0) {
       // use the same extended field as WebPageTest
@@ -129,14 +129,14 @@ function populateEntryFromResponse(entry, response) {
     // Some cached responses generate a Network.requestServedFromCache event,
     // but fromDiskCache is still set to false. For those requestSentDelta will be negative.
     if (!entry.__servedFromCache) {
-      // Calculate offset of any connection already in use and add
-      // it to the entries startedDateTime(ignore main page request)
-      // this seems only be applicable in http1
-      if (response.connectionReused && !entry.__mainRequest && isHttp1x(response.protocol)) {
-        let requestSentDelta = entry.__requestSentTime - entry.__requestWillBeSentTime;
-        let newStartDateTime = entry.__wallTime + requestSentDelta;
-        entry.__requestSentDelta = requestSentDelta;
-        entry.startedDateTime = moment.unix(newStartDateTime).toISOString();
+      // wallTime is not necessarily monotonic, timestamp is. So calculate startedDateTime from timestamp diffs.
+      // (see https://cs.chromium.org/chromium/src/third_party/WebKit/Source/platform/network/ResourceLoadTiming.h?q=requestTime+package:%5Echromium$&dr=CSs&l=84)
+      const entrySecs = page.__wallTime + (timing.requestTime - page.__timestamp);
+      entry.startedDateTime = moment.unix(entrySecs).toISOString();
+
+      const queuedMillis = (timing.requestTime - entry.__requestWillBeSentTime) * 1000;
+      if (queuedMillis > 0) {
+        entry.timings._queued = formatMillis(queuedMillis);
       }
     }
   } else {
@@ -226,7 +226,7 @@ module.exports = {
 
           let entry = {
             cache: {},
-            startedDateTime: moment.unix(params.wallTime).toISOString(), //epoch float64, eg 1440589909.59248
+            startedDateTime: '',
             __requestWillBeSentTime: params.timestamp,
             __wallTime: params.wallTime,
             __requestId: params.requestId,
@@ -244,7 +244,7 @@ module.exports = {
             let previousEntry = entries.find((entry) => entry.__requestId === params.requestId);
             if (previousEntry) {
               previousEntry.__requestId += 'r';
-              populateEntryFromResponse(previousEntry, params.redirectResponse);
+              populateEntryFromResponse(previousEntry, params.redirectResponse, page);
             } else {
               debug('Couldn\'t find original request for redirect response: ' + params.requestId);
             }
@@ -257,10 +257,15 @@ module.exports = {
             entry.__mainRequest = true;
             page.__wallTime = params.wallTime;
             page.__timestamp = params.timestamp;
-            page.startedDateTime = entry.startedDateTime;
+            page.startedDateTime = moment.unix(params.wallTime).toISOString(); //epoch float64, eg 1440589909.59248
             // URL is better than blank, and it's what devtools uses.
             page.title = request.url;
           }
+
+          // wallTime is not necessarily monotonic, timestamp is. So calculate startedDateTime from timestamp diffs.
+          // (see https://cs.chromium.org/chromium/src/third_party/WebKit/Source/platform/network/ResourceLoadTiming.h?q=requestTime+package:%5Echromium$&dr=CSs&l=84)
+          const entrySecs = page.__wallTime + (params.timestamp - page.__timestamp);
+          entry.startedDateTime = moment.unix(entrySecs).toISOString();
         }
           break;
 
@@ -312,7 +317,7 @@ module.exports = {
           }
 
           try {
-            populateEntryFromResponse(entry, params.response);
+            populateEntryFromResponse(entry, params.response, page);
           } catch (e) {
             debug('Error parsing response: %j', params);
             throw e;
@@ -356,7 +361,7 @@ module.exports = {
           }
 
           const timings = entry.timings;
-          timings.receive = formatMillis((params.timestamp - entry.__requestSentTime) * 1000 - entry.__receiveHeadersEnd);
+          timings.receive = formatMillis((params.timestamp - entry._requestTime) * 1000 - entry.__receiveHeadersEnd);
           entry.time = max(0, timings.blocked) + max(0, timings.dns) + max(0, timings.connect) +
             timings.send + timings.wait + timings.receive;
 
