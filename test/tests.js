@@ -7,12 +7,14 @@ import parser from "../";
 
 Promise.promisifyAll(fs);
 
+const PERFLOGSPATH = path.resolve(__dirname, 'perflogs');
+
 /**
  * Validate that, for each tcp connection, the previous request is fully completed before then next starts.
  */
 function validateConnectionOverlap(t, entries) {
   const entriesByConnection = entries
-    .filter((entry) => entry.response.httpVersion !== 'h2')
+    .filter((entry) => !['h2', 'spdy/3.1'].includes(entry.response.httpVersion))
     .reduce((entries, entry) => {
       const e = entries.get(entry.connection) || [];
       e.push(entry);
@@ -32,8 +34,13 @@ function validateConnectionOverlap(t, entries) {
   });
 }
 
-function testdata(filename) {
-  return path.resolve(__dirname, 'testdata', filename);
+function perflog(filename) {
+  return path.resolve(PERFLOGSPATH, filename);
+}
+
+function perflogs() {
+  return fs.readdirAsync(PERFLOGSPATH)
+    .filter((filename) => path.extname(filename) === '.json');
 }
 
 function parsePerflog(perflogPath) {
@@ -47,24 +54,19 @@ function sortedByRequestTime(entries) {
   return entries.sort((e1, e2) => e1._requestTime - e2._requestTime)
 }
 
-test('h1', t => {
-  const perflogPath = testdata('h1.json');
-  return parsePerflog(perflogPath)
-    .then(() => t.pass('Valid HAR'));
-});
-
-test('h2', t => {
-  const perflogPath = testdata('h2.json');
-  return parsePerflog(perflogPath)
-    .then(() => t.pass('Valid HAR'));
+test('Generates valid HARs', t => {
+  return perflogs().each((filename) => {
+      return parsePerflog(perflog(filename))
+        .tap(har => t.deepEqual(sortedByRequestTime(har.log.entries), har.log.entries))
+        .tap(har => validateConnectionOverlap(t, har.log.entries))
+        .then(() => t.pass('Valid HAR'));
+    });
 });
 
 test('zdnet', t => {
-  const perflogPath = testdata('www.zdnet.com.json');
+  const perflogPath = perflog('www.zdnet.com.json');
   return parsePerflog(perflogPath)
     .then(har => har.log)
     .tap(log => t.is(log.pages.length, 1))
-    .tap(log => t.is(log.entries.length, 343))
-    .tap(log => t.deepEqual(sortedByRequestTime(log.entries), log.entries))
-    .tap(log => validateConnectionOverlap(t, log.entries));
+    .tap(log => t.is(log.entries.length, 343));
 });
