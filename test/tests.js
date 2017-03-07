@@ -70,3 +70,9 @@ test('zdnet', t => {
     .tap(log => t.is(log.pages.length, 1))
     .tap(log => t.is(log.entries.length, 343));
 });
+
+test('Generates multiple pages', t => {
+  const perflogPath = perflog('www.wikipedia.org.json');
+  return parsePerflog(perflogPath)
+    .tap(har => t.is(har.log.pages.length, 2));
+});

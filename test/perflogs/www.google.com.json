@@ -1,0 +1,4571 @@
+[
+  {
+    "method": "Page.frameAttached",
+    "params": {
+      "frameId": "18440.2",
+      "parentFrameId": "18440.1"
+    }
+  },
+  {
+    "method": "Page.frameStartedLoading",
+    "params": {
+      "frameId": "18440.2"
+    }
+  },
+  {
+    "method": "Page.frameNavigated",
+    "params": {
+      "frame": {
+        "id": "18440.2",
+        "loaderId": "18440.1",
+        "mimeType": "text/html",
+        "name": "chromedriver dummy frame",
+        "parentId": "18440.1",
+        "securityOrigin": "://",
+        "url": "about:blank"
+      }
+    }
+  },
+  {
+    "method": "Page.frameStoppedLoading",
+    "params": {
+      "frameId": "18440.2"
+    }
+  },
+  {
+    "method": "Page.frameStartedLoading",
+    "params": {
+      "frameId": "18440.1"
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "http://www.google.com/",
+      "frameId": "18440.1",
+      "initiator": {
+        "type": "other"
+      },
+      "loaderId": "18440.2",
+      "request": {
+        "headers": {
+          "Upgrade-Insecure-Requests": "1",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "initialPriority": "VeryHigh",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "http://www.google.com/"
+      },
+      "requestId": "18440.2",
+      "timestamp": 491065.841077,
+      "type": "Document",
+      "wallTime": 1488819429.73059
+    }
+  },
+  {
+    "method": "Page.frameDetached",
+    "params": {
+      "frameId": "18440.2"
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "http://www.google.com/",
+      "frameId": "18440.1",
+      "initiator": {
+        "type": "other"
+      },
+      "loaderId": "18440.2",
+      "redirectResponse": {
+        "connectionId": 17,
+        "connectionReused": false,
+        "encodedDataLength": 213,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "Cache-Control": "private",
+          "Content-Length": "258",
+          "Content-Type": "text/html; charset=UTF-8",
+          "Date": "Mon, 06 Mar 2017 16:57:21 GMT",
+          "Location": "http://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw"
+        },
+        "headersText": "HTTP/1.1 302 Found\r\nCache-Control: private\r\nContent-Type: text/html; charset=UTF-8\r\nLocation: http://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw\r\nContent-Length: 258\r\nDate: Mon, 06 Mar 2017 16:57:21 GMT\r\n\r\n",
+        "mimeType": "text/html",
+        "protocol": "http/1.1",
+        "remoteIPAddress": "83.255.236.84",
+        "remotePort": 80,
+        "requestHeaders": {
+          "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+          "Accept-Encoding": "gzip, deflate, sdch",
+          "Accept-Language": "sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4",
+          "Connection": "keep-alive",
+          "Host": "www.google.com",
+          "Upgrade-Insecure-Requests": "1",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "requestHeadersText": "GET / HTTP/1.1\r\nHost: www.google.com\r\nConnection: keep-alive\r\nUpgrade-Insecure-Requests: 1\r\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\nAccept-Encoding: gzip, deflate, sdch\r\nAccept-Language: sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4\r\n\r\n",
+        "securityState": "neutral",
+        "status": 302,
+        "statusText": "Found",
+        "timing": {
+          "connectEnd": 11127.7090000222,
+          "connectStart": 5096.66400001152,
+          "dnsEnd": 5096.66400001152,
+          "dnsStart": 0,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 12391.4949999889,
+          "requestTime": 491065.842542,
+          "sendEnd": 11130.2370000049,
+          "sendStart": 11127.8719999827,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "http://www.google.com/"
+      },
+      "request": {
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "initialPriority": "VeryHigh",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "http://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw"
+      },
+      "requestId": "18440.2",
+      "timestamp": 491078.236339,
+      "type": "Document",
+      "wallTime": 1488819442.12536
+    }
+  },
+  {
+    "method": "Network.loadingFailed",
+    "params": {
+      "canceled": false,
+      "errorText": "net::ERR_NAME_NOT_RESOLVED",
+      "requestId": "18440.2",
+      "timestamp": 491114.304028,
+      "type": "Document"
+    }
+  },
+  {
+    "method": "Page.frameStartedLoading",
+    "params": {
+      "frameId": "18440.1"
+    }
+  },
+  {
+    "method": "Network.requestServedFromCache",
+    "params": {
+      "requestId": "18440.3"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 194553,
+      "encodedDataLength": 0,
+      "requestId": "18440.3",
+      "timestamp": 491114.308961
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 0,
+      "requestId": "18440.3",
+      "timestamp": 491114.308976
+    }
+  },
+  {
+    "method": "Page.frameNavigated",
+    "params": {
+      "frame": {
+        "id": "18440.1",
+        "loaderId": "18440.3",
+        "mimeType": "text/html",
+        "securityOrigin": "://",
+        "url": "data:text/html,chromewebdata"
+      }
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "data:text/html,chromewebdata",
+      "frameId": "18440.1",
+      "initiator": {
+        "lineNumber": 4203,
+        "type": "parser",
+        "url": "data:text/html,chromewebdata"
+      },
+      "loaderId": "18440.3",
+      "request": {
+        "headers": {},
+        "initialPriority": "VeryLow",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "data:image/png;base64,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"
+      },
+      "requestId": "18440.5",
+      "timestamp": 491114.322208,
+      "type": "Other",
+      "wallTime": 1488819478.2098
+    }
+  },
+  {
+    "method": "Network.requestServedFromCache",
+    "params": {
+      "requestId": "18440.5"
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.3",
+      "requestId": "18440.5",
+      "response": {
+        "connectionId": 0,
+        "connectionReused": false,
+        "encodedDataLength": -1,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {},
+        "mimeType": "image/png",
+        "protocol": "data",
+        "securityState": "unknown",
+        "status": 200,
+        "statusText": "OK",
+        "url": "data:image/png;base64,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"
+      },
+      "timestamp": 491114.322305,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 2645,
+      "encodedDataLength": 0,
+      "requestId": "18440.5",
+      "timestamp": 491114.322352
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 0,
+      "requestId": "18440.5",
+      "timestamp": 491114.322359
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "data:text/html,chromewebdata",
+      "frameId": "18440.1",
+      "initiator": {
+        "lineNumber": 4204,
+        "type": "parser",
+        "url": "data:text/html,chromewebdata"
+      },
+      "loaderId": "18440.3",
+      "request": {
+        "headers": {},
+        "initialPriority": "VeryLow",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "data:image/png;base64,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"
+      },
+      "requestId": "18440.7",
+      "timestamp": 491114.322583,
+      "type": "Other",
+      "wallTime": 1488819478.21017
+    }
+  },
+  {
+    "method": "Network.requestServedFromCache",
+    "params": {
+      "requestId": "18440.7"
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.3",
+      "requestId": "18440.7",
+      "response": {
+        "connectionId": 0,
+        "connectionReused": false,
+        "encodedDataLength": -1,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {},
+        "mimeType": "image/png",
+        "protocol": "data",
+        "securityState": "unknown",
+        "status": 200,
+        "statusText": "OK",
+        "url": "data:image/png;base64,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"
+      },
+      "timestamp": 491114.322685,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 3244,
+      "encodedDataLength": 0,
+      "requestId": "18440.7",
+      "timestamp": 491114.322741
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 0,
+      "requestId": "18440.7",
+      "timestamp": 491114.322747
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "data:text/html,chromewebdata",
+      "frameId": "18440.1",
+      "initiator": {
+        "lineNumber": 0,
+        "type": "parser",
+        "url": "data:text/html,chromewebdata"
+      },
+      "loaderId": "18440.3",
+      "request": {
+        "headers": {},
+        "initialPriority": "VeryLow",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQAQMAAADdiHD7AAAABlBMVEUAAABTU1OoaSf/AAAAAXRSTlMAQObYZgAAAFJJREFUeF7t0cENgDAMQ9FwYgxG6WjpaIzCCAxQxVggFuDiCvlLOeRdHR9yzjncHVoq3npu+wQUrUuJHylSTmBaespJyJQoObUeyxDQb3bEm5Au81c0pSCD8HYAAAAASUVORK5CYII="
+      },
+      "requestId": "18440.9",
+      "timestamp": 491114.338149,
+      "type": "Other",
+      "wallTime": 1488819478.22574
+    }
+  },
+  {
+    "method": "Network.requestServedFromCache",
+    "params": {
+      "requestId": "18440.9"
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.3",
+      "requestId": "18440.9",
+      "response": {
+        "connectionId": 0,
+        "connectionReused": false,
+        "encodedDataLength": -1,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {},
+        "mimeType": "image/png",
+        "protocol": "data",
+        "securityState": "unknown",
+        "status": 200,
+        "statusText": "OK",
+        "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQAQMAAADdiHD7AAAABlBMVEUAAABTU1OoaSf/AAAAAXRSTlMAQObYZgAAAFJJREFUeF7t0cENgDAMQ9FwYgxG6WjpaIzCCAxQxVggFuDiCvlLOeRdHR9yzjncHVoq3npu+wQUrUuJHylSTmBaespJyJQoObUeyxDQb3bEm5Au81c0pSCD8HYAAAAASUVORK5CYII="
+      },
+      "timestamp": 491114.338188,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 170,
+      "encodedDataLength": 0,
+      "requestId": "18440.9",
+      "timestamp": 491114.338211
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 0,
+      "requestId": "18440.9",
+      "timestamp": 491114.338217
+    }
+  },
+  {
+    "method": "Page.loadEventFired",
+    "params": {
+      "timestamp": 491114.340311
+    }
+  },
+  {
+    "method": "Page.frameStoppedLoading",
+    "params": {
+      "frameId": "18440.1"
+    }
+  },
+  {
+    "method": "Page.domContentEventFired",
+    "params": {
+      "timestamp": 491114.414814
+    }
+  },
+  {
+    "method": "Page.frameStartedLoading",
+    "params": {
+      "frameId": "18440.1"
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "http://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw",
+      "frameId": "18440.1",
+      "initiator": {
+        "type": "other"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {
+          "Upgrade-Insecure-Requests": "1",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "initialPriority": "VeryHigh",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "http://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw"
+      },
+      "requestId": "18440.11",
+      "timestamp": 491114.419247,
+      "type": "Document",
+      "wallTime": 1488819478.30684
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "http://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw",
+      "frameId": "18440.1",
+      "initiator": {
+        "type": "other"
+      },
+      "loaderId": "18440.4",
+      "redirectResponse": {
+        "connectionId": 40,
+        "connectionReused": false,
+        "encodedDataLength": 738,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "Cache-Control": "private",
+          "Content-Length": "274",
+          "Content-Type": "text/html; charset=UTF-8",
+          "Date": "Mon, 06 Mar 2017 16:58:54 GMT",
+          "Location": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+          "P3P": "CP=\"This is not a P3P policy! See https://www.google.com/support/accounts/answer/151657?hl=en for more info.\"",
+          "Server": "gws",
+          "Set-Cookie": "NID=98=YMK-jOCZJ0P5TCNNaxMQ7py-PjTz3cFrEcAxcZwAMQMcBZS4P_BMdO5vodITc8QEFJkAaS69UKJY6Orr37FagWWMHJmCt7PcA47xqimA9hnF3wD5xrlUguV7xahISVDm; expires=Tue, 05-Sep-2017 16:58:54 GMT; path=/; domain=.google.se; HttpOnly\nCONSENT=WP.25dcd5; expires=Fri, 01-Jan-2038 00:00:00 GMT; path=/; domain=.google.se",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-XSS-Protection": "1; mode=block"
+        },
+        "headersText": "HTTP/1.1 302 Found\r\nLocation: https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl\r\nCache-Control: private\r\nContent-Type: text/html; charset=UTF-8\r\nP3P: CP=\"This is not a P3P policy! See https://www.google.com/support/accounts/answer/151657?hl=en for more info.\"\r\nDate: Mon, 06 Mar 2017 16:58:54 GMT\r\nServer: gws\r\nContent-Length: 274\r\nX-XSS-Protection: 1; mode=block\r\nX-Frame-Options: SAMEORIGIN\r\nSet-Cookie: NID=98=YMK-jOCZJ0P5TCNNaxMQ7py-PjTz3cFrEcAxcZwAMQMcBZS4P_BMdO5vodITc8QEFJkAaS69UKJY6Orr37FagWWMHJmCt7PcA47xqimA9hnF3wD5xrlUguV7xahISVDm; expires=Tue, 05-Sep-2017 16:58:54 GMT; path=/; domain=.google.se; HttpOnly\r\nSet-Cookie: CONSENT=WP.25dcd5; expires=Fri, 01-Jan-2038 00:00:00 GMT; path=/; domain=.google.se\r\n\r\n",
+        "mimeType": "text/html",
+        "protocol": "http/1.1",
+        "remoteIPAddress": "83.255.237.59",
+        "remotePort": 80,
+        "requestHeaders": {
+          "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+          "Accept-Encoding": "gzip, deflate, sdch",
+          "Accept-Language": "sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4",
+          "Cache-Control": "max-age=0",
+          "Connection": "keep-alive",
+          "Host": "www.google.se",
+          "Upgrade-Insecure-Requests": "1",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "requestHeadersText": "GET /?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw HTTP/1.1\r\nHost: www.google.se\r\nConnection: keep-alive\r\nCache-Control: max-age=0\r\nUpgrade-Insecure-Requests: 1\r\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\nAccept-Encoding: gzip, deflate, sdch\r\nAccept-Language: sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4\r\n\r\n",
+        "securityState": "neutral",
+        "status": 302,
+        "statusText": "Found",
+        "timing": {
+          "connectEnd": 1559.1349999886,
+          "connectStart": 1385.86599996779,
+          "dnsEnd": 1385.86599996779,
+          "dnsStart": 0.331999966874719,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 57012.2279999778,
+          "requestTime": 491114.422107,
+          "sendEnd": 1559.35599998338,
+          "sendStart": 1559.25099999877,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "http://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw"
+      },
+      "request": {
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "initialPriority": "VeryHigh",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl"
+      },
+      "requestId": "18440.11",
+      "timestamp": 491171.436843,
+      "type": "Document",
+      "wallTime": 1488819535.32217
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.4",
+      "requestId": "18440.11",
+      "response": {
+        "connectionId": 73,
+        "connectionReused": false,
+        "encodedDataLength": 1807,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "alt-svc": "quic=\":443\"; ma=2592000; v=\"36,35,34\"",
+          "cache-control": "private, max-age=0",
+          "content-encoding": "gzip",
+          "content-type": "text/html; charset=UTF-8",
+          "date": "Mon, 06 Mar 2017 16:58:54 GMT",
+          "expires": "-1",
+          "p3p": "CP=\"This is not a P3P policy! See https://www.google.com/support/accounts/answer/151657?hl=en for more info.\"",
+          "server": "gws",
+          "set-cookie": "NID=98=ow3vSwwIG7jvoVqw39v38wLZ4f-xyJALqcLbUMwRWNs7_xG20g4D1Oy8jpA7geI_TvpDQcl_pawBpSAaQQ7frwFOY1Q6SArWqcea2YgC4fVEhccnXNfm1oXsn-dVBI2V; expires=Tue, 05-Sep-2017 16:58:54 GMT; path=/; domain=.google.se; HttpOnly",
+          "status": "200",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "text/html",
+        "protocol": "h2",
+        "remoteIPAddress": "83.255.236.31",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.google.se",
+          ":method": "GET",
+          ":path": "/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+          ":scheme": "https",
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, sdch, br",
+          "accept-language": "sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4",
+          "cache-control": "max-age=0",
+          "cookie": "NID=98=YMK-jOCZJ0P5TCNNaxMQ7py-PjTz3cFrEcAxcZwAMQMcBZS4P_BMdO5vodITc8QEFJkAaS69UKJY6Orr37FagWWMHJmCt7PcA47xqimA9hnF3wD5xrlUguV7xahISVDm; CONSENT=WP.25dcd5",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Google Internet Authority G2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "X25519",
+          "protocol": "TLS 1.2",
+          "sanList": [
+            "*.google.se",
+            "google.se"
+          ],
+          "signedCertificateTimestampList": [
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Google 'Rocketeer' log",
+              "logId": "EE4BBDB775CE60BAE142691FABE19E66A30F7E5FB072D88300C47B897AA8FDCB",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304402206E1D98D5353ED086037E071E1E72C9B6518A7E72AAA813A496B0C13E4CCE180E022052BF44DDDA5D838072391F312E079DB80B27FF430600279CCB38B14E270B5E79",
+              "status": "Verified",
+              "timestamp": 1487758321719
+            },
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Symantec log",
+              "logId": "DDEB1D2B7A0D4FA6208B81AD8168707E2E8E9D01D55C888D3D11C4CDB6ECBECC",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3046022100A9134F5ADD2DF5A23DB7A5A113650818B386922209A6C85DC010053885BCFE6A022100CCAA0252C7DEC54544E85DC4D0AF66DD6E4E7F6AFEAC9B2A9EE54E96A13C56B8",
+              "status": "Verified",
+              "timestamp": 1487758321330
+            }
+          ],
+          "subjectName": "*.google.se",
+          "validFrom": 1487753820,
+          "validTo": 1495011420
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": 101.403999957256,
+          "connectStart": 9.01599996723235,
+          "dnsEnd": 9.01599996723235,
+          "dnsStart": 0,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 344.133000005968,
+          "requestTime": 491171.43735,
+          "sendEnd": 104.480999987572,
+          "sendStart": 104.052999988198,
+          "sslEnd": 101.346999988891,
+          "sslStart": 19.2049999604933,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl"
+      },
+      "timestamp": 491171.783314,
+      "type": "Document"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 9207,
+      "encodedDataLength": 4143,
+      "requestId": "18440.11",
+      "timestamp": 491171.783611
+    }
+  },
+  {
+    "method": "Page.frameNavigated",
+    "params": {
+      "frame": {
+        "id": "18440.1",
+        "loaderId": "18440.4",
+        "mimeType": "text/html",
+        "securityOrigin": "https://www.google.se",
+        "url": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl"
+      }
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 3766,
+      "encodedDataLength": 1381,
+      "requestId": "18440.11",
+      "timestamp": 491171.786736
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 5745,
+      "encodedDataLength": 1381,
+      "requestId": "18440.11",
+      "timestamp": 491171.786787
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 6762,
+      "encodedDataLength": 0,
+      "requestId": "18440.11",
+      "timestamp": 491171.786861
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 10410,
+      "requestId": "18440.11",
+      "timestamp": 491171.792659
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 5042,
+      "encodedDataLength": 0,
+      "requestId": "18440.11",
+      "timestamp": 491171.792731
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 7837,
+      "encodedDataLength": 5524,
+      "requestId": "18440.11",
+      "timestamp": 491171.792762
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 2990,
+      "encodedDataLength": 0,
+      "requestId": "18440.11",
+      "timestamp": 491171.792795
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 20044,
+      "encodedDataLength": 8111,
+      "requestId": "18440.11",
+      "timestamp": 491171.80117
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 7342,
+      "encodedDataLength": 0,
+      "requestId": "18440.11",
+      "timestamp": 491171.801224
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 19178,
+      "requestId": "18440.11",
+      "timestamp": 491171.80141
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 18251,
+      "encodedDataLength": 0,
+      "requestId": "18440.11",
+      "timestamp": 491171.811042
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+      "frameId": "18440.1",
+      "initiator": {
+        "lineNumber": 49,
+        "type": "parser",
+        "url": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {
+          "Referer": "https://www.google.se/",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "initialPriority": "Low",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "https://www.google.se/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png"
+      },
+      "requestId": "18440.12",
+      "timestamp": 491171.811218,
+      "type": "Other",
+      "wallTime": 1488819535.69655
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+      "frameId": "18440.1",
+      "initiator": {
+        "lineNumber": 50,
+        "type": "parser",
+        "url": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {
+          "Referer": "https://www.google.se/",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "initialPriority": "Low",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "https://consent.google.com/status?continue=https://www.google.se&pc=s&timestamp=1488819534"
+      },
+      "requestId": "18440.13",
+      "timestamp": 491171.811351,
+      "type": "Other",
+      "wallTime": 1488819535.69668
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 23815,
+      "requestId": "18440.11",
+      "timestamp": 491171.812232
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 0,
+      "requestId": "18440.11",
+      "timestamp": 491171.81231
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 14264,
+      "encodedDataLength": 0,
+      "requestId": "18440.11",
+      "timestamp": 491171.812387
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 75750,
+      "requestId": "18440.11",
+      "timestamp": 491171.8071
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+      "frameId": "18440.1",
+      "initiator": {
+        "lineNumber": 393,
+        "type": "parser",
+        "url": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {
+          "Referer": "https://www.google.se/",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "initialPriority": "Low",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "https://www.google.se/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+      },
+      "requestId": "18440.16",
+      "timestamp": 491171.841341,
+      "type": "Other",
+      "wallTime": 1488819535.72667
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+      "frameId": "18440.1",
+      "initiator": {
+        "lineNumber": 393,
+        "type": "parser",
+        "url": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {
+          "Referer": "https://www.google.se/",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "initialPriority": "Low",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "https://ssl.gstatic.com/gb/images/i2_2ec824b0.png"
+      },
+      "requestId": "18440.17",
+      "timestamp": 491171.84497,
+      "type": "Other",
+      "wallTime": 1488819535.7303
+    }
+  },
+  {
+    "method": "Network.resourceChangedPriority",
+    "params": {
+      "newPriority": "High",
+      "requestId": "18440.17",
+      "timestamp": 491171.854472
+    }
+  },
+  {
+    "method": "Network.resourceChangedPriority",
+    "params": {
+      "newPriority": "High",
+      "requestId": "18440.16",
+      "timestamp": 491171.854489
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.4",
+      "requestId": "18440.12",
+      "response": {
+        "connectionId": 73,
+        "connectionReused": true,
+        "encodedDataLength": 124,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "alt-svc": "quic=\":443\"; ma=2592000; v=\"36,35,34\"",
+          "cache-control": "private, max-age=31536000",
+          "content-length": "5087",
+          "content-type": "image/png",
+          "date": "Mon, 06 Mar 2017 16:58:54 GMT",
+          "expires": "Mon, 06 Mar 2017 16:58:54 GMT",
+          "last-modified": "Thu, 08 Dec 2016 01:00:57 GMT",
+          "server": "sffe",
+          "status": "200",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "image/png",
+        "protocol": "h2",
+        "remoteIPAddress": "83.255.236.31",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.google.se",
+          ":method": "GET",
+          ":path": "/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png",
+          ":scheme": "https",
+          "accept": "image/webp,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, sdch, br",
+          "accept-language": "sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4",
+          "cache-control": "max-age=0",
+          "cookie": "CONSENT=WP.25dcd5; NID=98=ow3vSwwIG7jvoVqw39v38wLZ4f-xyJALqcLbUMwRWNs7_xG20g4D1Oy8jpA7geI_TvpDQcl_pawBpSAaQQ7frwFOY1Q6SArWqcea2YgC4fVEhccnXNfm1oXsn-dVBI2V",
+          "referer": "https://www.google.se/",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Google Internet Authority G2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "X25519",
+          "protocol": "TLS 1.2",
+          "sanList": [
+            "*.google.se",
+            "google.se"
+          ],
+          "signedCertificateTimestampList": [
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Google 'Rocketeer' log",
+              "logId": "EE4BBDB775CE60BAE142691FABE19E66A30F7E5FB072D88300C47B897AA8FDCB",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304402206E1D98D5353ED086037E071E1E72C9B6518A7E72AAA813A496B0C13E4CCE180E022052BF44DDDA5D838072391F312E079DB80B27FF430600279CCB38B14E270B5E79",
+              "status": "Verified",
+              "timestamp": 1487758321719
+            },
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Symantec log",
+              "logId": "DDEB1D2B7A0D4FA6208B81AD8168707E2E8E9D01D55C888D3D11C4CDB6ECBECC",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3046022100A9134F5ADD2DF5A23DB7A5A113650818B386922209A6C85DC010053885BCFE6A022100CCAA0252C7DEC54544E85DC4D0AF66DD6E4E7F6AFEAC9B2A9EE54E96A13C56B8",
+              "status": "Verified",
+              "timestamp": 1487758321330
+            }
+          ],
+          "subjectName": "*.google.se",
+          "validFrom": 1487753820,
+          "validTo": 1495011420
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": -1,
+          "connectStart": -1,
+          "dnsEnd": -1,
+          "dnsStart": -1,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 22.5179999833927,
+          "requestTime": 491171.811536,
+          "sendEnd": 1.248000015039,
+          "sendStart": 0.640999991446734,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.google.se/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png"
+      },
+      "timestamp": 491171.857286,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 5087,
+      "encodedDataLength": 5096,
+      "requestId": "18440.12",
+      "timestamp": 491171.857519
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 5220,
+      "requestId": "18440.12",
+      "timestamp": 491171.835554
+    }
+  },
+  {
+    "method": "Page.domContentEventFired",
+    "params": {
+      "timestamp": 491171.865554
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+      "frameId": "18440.1",
+      "initiator": {
+        "stack": {
+          "callFrames": [
+            {
+              "columnNumber": 5376,
+              "functionName": "",
+              "lineNumber": 50,
+              "scriptId": "76",
+              "url": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl"
+            }
+          ]
+        },
+        "type": "script"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {
+          "Referer": "https://www.google.se/",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "initialPriority": "Low",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+      },
+      "requestId": "18440.18",
+      "timestamp": 491171.865945,
+      "type": "Other",
+      "wallTime": 1488819535.75127
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.4",
+      "requestId": "18440.16",
+      "response": {
+        "connectionId": 73,
+        "connectionReused": true,
+        "encodedDataLength": 1452,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "alt-svc": "quic=\":443\"; ma=2592000; v=\"36,35,34\"",
+          "cache-control": "private, max-age=31536000",
+          "content-length": "13504",
+          "content-type": "image/png",
+          "date": "Mon, 06 Mar 2017 16:58:55 GMT",
+          "expires": "Mon, 06 Mar 2017 16:58:55 GMT",
+          "last-modified": "Thu, 08 Dec 2016 01:00:57 GMT",
+          "server": "sffe",
+          "status": "200",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "image/png",
+        "protocol": "h2",
+        "remoteIPAddress": "83.255.236.31",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.google.se",
+          ":method": "GET",
+          ":path": "/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+          ":scheme": "https",
+          "accept": "image/webp,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, sdch, br",
+          "accept-language": "sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4",
+          "cache-control": "max-age=0",
+          "cookie": "CONSENT=WP.25dcd5; NID=98=ow3vSwwIG7jvoVqw39v38wLZ4f-xyJALqcLbUMwRWNs7_xG20g4D1Oy8jpA7geI_TvpDQcl_pawBpSAaQQ7frwFOY1Q6SArWqcea2YgC4fVEhccnXNfm1oXsn-dVBI2V",
+          "referer": "https://www.google.se/",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Google Internet Authority G2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "X25519",
+          "protocol": "TLS 1.2",
+          "sanList": [
+            "*.google.se",
+            "google.se"
+          ],
+          "signedCertificateTimestampList": [
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Google 'Rocketeer' log",
+              "logId": "EE4BBDB775CE60BAE142691FABE19E66A30F7E5FB072D88300C47B897AA8FDCB",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304402206E1D98D5353ED086037E071E1E72C9B6518A7E72AAA813A496B0C13E4CCE180E022052BF44DDDA5D838072391F312E079DB80B27FF430600279CCB38B14E270B5E79",
+              "status": "Verified",
+              "timestamp": 1487758321719
+            },
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Symantec log",
+              "logId": "DDEB1D2B7A0D4FA6208B81AD8168707E2E8E9D01D55C888D3D11C4CDB6ECBECC",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3046022100A9134F5ADD2DF5A23DB7A5A113650818B386922209A6C85DC010053885BCFE6A022100CCAA0252C7DEC54544E85DC4D0AF66DD6E4E7F6AFEAC9B2A9EE54E96A13C56B8",
+              "status": "Verified",
+              "timestamp": 1487758321330
+            }
+          ],
+          "subjectName": "*.google.se",
+          "validFrom": 1487753820,
+          "validTo": 1495011420
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": -1,
+          "connectStart": -1,
+          "dnsEnd": -1,
+          "dnsStart": -1,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 29.9050000030547,
+          "requestTime": 491171.841574,
+          "sendEnd": 1.95700000040233,
+          "sendStart": 1.80299999192357,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.google.se/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+      },
+      "timestamp": 491171.890053,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 1372,
+      "encodedDataLength": 0,
+      "requestId": "18440.16",
+      "timestamp": 491171.890253
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 12132,
+      "encodedDataLength": 12132,
+      "requestId": "18440.16",
+      "timestamp": 491171.890309
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 13584,
+      "requestId": "18440.16",
+      "timestamp": 491171.87502
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.4",
+      "requestId": "18440.18",
+      "response": {
+        "connectionId": 73,
+        "connectionReused": true,
+        "encodedDataLength": 1539,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "age": "312249",
+          "alt-svc": "quic=\":443\"; ma=2592000; v=\"36,35,34\"",
+          "cache-control": "public, max-age=31536000",
+          "content-encoding": "gzip",
+          "content-length": "148950",
+          "content-type": "text/javascript; charset=UTF-8",
+          "date": "Fri, 03 Mar 2017 02:14:46 GMT",
+          "expires": "Sat, 03 Mar 2018 02:14:46 GMT",
+          "last-modified": "Fri, 03 Mar 2017 01:23:35 GMT",
+          "server": "sffe",
+          "status": "200",
+          "vary": "Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "text/javascript",
+        "protocol": "h2",
+        "remoteIPAddress": "83.255.236.31",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.google.se",
+          ":method": "GET",
+          ":path": "/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ",
+          ":scheme": "https",
+          "accept": "*/*",
+          "accept-encoding": "gzip, deflate, sdch, br",
+          "accept-language": "sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4",
+          "cache-control": "max-age=0",
+          "cookie": "CONSENT=WP.25dcd5; NID=98=ow3vSwwIG7jvoVqw39v38wLZ4f-xyJALqcLbUMwRWNs7_xG20g4D1Oy8jpA7geI_TvpDQcl_pawBpSAaQQ7frwFOY1Q6SArWqcea2YgC4fVEhccnXNfm1oXsn-dVBI2V",
+          "referer": "https://www.google.se/",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Google Internet Authority G2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "X25519",
+          "protocol": "TLS 1.2",
+          "sanList": [
+            "*.google.se",
+            "google.se"
+          ],
+          "signedCertificateTimestampList": [
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Google 'Rocketeer' log",
+              "logId": "EE4BBDB775CE60BAE142691FABE19E66A30F7E5FB072D88300C47B897AA8FDCB",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304402206E1D98D5353ED086037E071E1E72C9B6518A7E72AAA813A496B0C13E4CCE180E022052BF44DDDA5D838072391F312E079DB80B27FF430600279CCB38B14E270B5E79",
+              "status": "Verified",
+              "timestamp": 1487758321719
+            },
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Symantec log",
+              "logId": "DDEB1D2B7A0D4FA6208B81AD8168707E2E8E9D01D55C888D3D11C4CDB6ECBECC",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3046022100A9134F5ADD2DF5A23DB7A5A113650818B386922209A6C85DC010053885BCFE6A022100CCAA0252C7DEC54544E85DC4D0AF66DD6E4E7F6AFEAC9B2A9EE54E96A13C56B8",
+              "status": "Verified",
+              "timestamp": 1487758321330
+            }
+          ],
+          "subjectName": "*.google.se",
+          "validFrom": 1487753820,
+          "validTo": 1495011420
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": -1,
+          "connectStart": -1,
+          "dnsEnd": -1,
+          "dnsStart": -1,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 20.2410000492819,
+          "requestTime": 491171.866213,
+          "sendEnd": 0.567000010050833,
+          "sendStart": 0.444000004790723,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+      },
+      "timestamp": 491171.890754,
+      "type": "Script"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 3224,
+      "encodedDataLength": 2762,
+      "requestId": "18440.18",
+      "timestamp": 491171.890907
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 9070,
+      "encodedDataLength": 1381,
+      "requestId": "18440.18",
+      "timestamp": 491171.890967
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 4211,
+      "encodedDataLength": 2762,
+      "requestId": "18440.18",
+      "timestamp": 491171.891025
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 8517,
+      "encodedDataLength": 0,
+      "requestId": "18440.18",
+      "timestamp": 491171.891062
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 31405,
+      "requestId": "18440.18",
+      "timestamp": 491171.893755
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 0,
+      "requestId": "18440.18",
+      "timestamp": 491171.894131
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 24442,
+      "encodedDataLength": 4143,
+      "requestId": "18440.18",
+      "timestamp": 491171.894202
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 9593,
+      "encodedDataLength": 2762,
+      "requestId": "18440.18",
+      "timestamp": 491171.894329
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 7178,
+      "encodedDataLength": 0,
+      "requestId": "18440.18",
+      "timestamp": 491171.894537
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 35548,
+      "requestId": "18440.18",
+      "timestamp": 491171.900211
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 0,
+      "requestId": "18440.18",
+      "timestamp": 491171.900334
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 24913,
+      "encodedDataLength": 4143,
+      "requestId": "18440.18",
+      "timestamp": 491171.901224
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 19226,
+      "encodedDataLength": 1381,
+      "requestId": "18440.18",
+      "timestamp": 491171.901302
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 3841,
+      "encodedDataLength": 1381,
+      "requestId": "18440.18",
+      "timestamp": 491171.901358
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 3942,
+      "encodedDataLength": 2762,
+      "requestId": "18440.18",
+      "timestamp": 491171.901582
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 9725,
+      "encodedDataLength": 0,
+      "requestId": "18440.18",
+      "timestamp": 491171.901625
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.4",
+      "requestId": "18440.13",
+      "response": {
+        "connectionId": 87,
+        "connectionReused": false,
+        "encodedDataLength": 666,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "alt-svc": "quic=\":443\"; ma=2592000; v=\"36,35,34\"",
+          "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+          "content-length": "0",
+          "content-security-policy": "script-src 'nonce-WbR1Z9xxBXlsRb5UlMRAGIkHUVU' 'self' 'unsafe-eval' https://apis.google.com https://ssl.gstatic.com https://www.google.com https://www.gstatic.com;report-uri /_/ConsentHttp/cspreport",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Mon, 06 Mar 2017 16:58:55 GMT",
+          "expires": "Mon, 01 Jan 1990 00:00:00 GMT",
+          "p3p": "CP=\"This is not a P3P policy! See https://support.google.com/accounts/answer/151657?hl=en for more info.\"",
+          "pragma": "no-cache",
+          "server": "ESF",
+          "set-cookie": "NID=98=tyK61GVMEM2-NIlBWf49Txgp2wUtD-5E04k2mq2S5aR_siVvALCzwnrPKvc6AA7dwTDgoXnWolL8QAcsjRatQ6OxlCEupVvFBSUxMIQGGpof6n0dYSP2bewxxUSnTj8U;Domain=.google.com;Path=/;Expires=Tue, 05-Sep-2017 16:58:55 GMT;HttpOnly",
+          "status": "204",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "text/html",
+        "protocol": "h2",
+        "remoteIPAddress": "216.58.211.142",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "consent.google.com",
+          ":method": "GET",
+          ":path": "/status?continue=https://www.google.se&pc=s&timestamp=1488819534",
+          ":scheme": "https",
+          "accept": "image/webp,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, sdch, br",
+          "accept-language": "sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4",
+          "cache-control": "max-age=0",
+          "referer": "https://www.google.se/",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Google Internet Authority G2",
+          "keyExchange": "ECDHE_ECDSA",
+          "keyExchangeGroup": "X25519",
+          "protocol": "TLS 1.2",
+          "sanList": [
+            "*.google.com",
+            "*.android.com",
+            "*.appengine.google.com",
+            "*.cloud.google.com",
+            "*.gcp.gvt2.com",
+            "*.google-analytics.com",
+            "*.google.ca",
+            "*.google.cl",
+            "*.google.co.in",
+            "*.google.co.jp",
+            "*.google.co.uk",
+            "*.google.com.ar",
+            "*.google.com.au",
+            "*.google.com.br",
+            "*.google.com.co",
+            "*.google.com.mx",
+            "*.google.com.tr",
+            "*.google.com.vn",
+            "*.google.de",
+            "*.google.es",
+            "*.google.fr",
+            "*.google.hu",
+            "*.google.it",
+            "*.google.nl",
+            "*.google.pl",
+            "*.google.pt",
+            "*.googleadapis.com",
+            "*.googleapis.cn",
+            "*.googlecommerce.com",
+            "*.googlevideo.com",
+            "*.gstatic.cn",
+            "*.gstatic.com",
+            "*.gvt1.com",
+            "*.gvt2.com",
+            "*.metric.gstatic.com",
+            "*.urchin.com",
+            "*.url.google.com",
+            "*.youtube-nocookie.com",
+            "*.youtube.com",
+            "*.youtubeeducation.com",
+            "*.ytimg.com",
+            "android.clients.google.com",
+            "android.com",
+            "developer.android.google.cn",
+            "g.co",
+            "goo.gl",
+            "google-analytics.com",
+            "google.com",
+            "googlecommerce.com",
+            "urchin.com",
+            "www.goo.gl",
+            "youtu.be",
+            "youtube.com",
+            "youtubeeducation.com"
+          ],
+          "signedCertificateTimestampList": [
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Google 'Rocketeer' log",
+              "logId": "EE4BBDB775CE60BAE142691FABE19E66A30F7E5FB072D88300C47B897AA8FDCB",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304502204F3DB9F8084CC0445F26A769470AB68F693246A54EF080B46EE41E9AF198E952022100B85383E131F256B6CDE56C22A0B7D5B7585B83E141CB62770D14399F9CD9FE85",
+              "status": "Verified",
+              "timestamp": 1487764058929
+            },
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Venafi log",
+              "logId": "AC3B9AED7FA9674757159E6D7D575672F9D98100941E9BDEFFECA1313B75782D",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "RSA",
+              "signatureData": "7DC0CC3FB013D3E2EF297A1CCB0101F2A974FA1A3691CEC75801F8723F1A4098AE0F07D6D1BE24E021DB0BD9CB1B9D7F002963169536057C114557AFE7696AF17BAD9AC30CEDE061FD1DAF3309A5D06B89671D25AFC0615ECA94ADE0722B2F2C808F27508A47C8CC5DF1810681718A550FF509E7ACDECF06E78599208F5734C5623B3D09B9D3EE93C0D0A4344DCA6A72D7ED351784EB1686A62DE0536175AB8AC9DED685CE1A384D521FAB2D26B4EE17DD1F8468365EA345D629029A8BE6D042892B9B79C6A2B43EAFBC76F326FB30CB0AFFCE242CDF61B4BABA195690DDA3ECDBDD4E95CA3FFAFE4F1EB8C0AEDBBAFFC9C6C31F702A2D91034498D24927F677",
+              "status": "Verified",
+              "timestamp": 1487764058460
+            }
+          ],
+          "subjectName": "*.google.com",
+          "validFrom": 1487755238,
+          "validTo": 1495011480
+        },
+        "securityState": "secure",
+        "status": 204,
+        "statusText": "",
+        "timing": {
+          "connectEnd": 45.7070000120439,
+          "connectStart": 12.5140000018291,
+          "dnsEnd": 12.5140000018291,
+          "dnsStart": 0.496000051498413,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 91.1790000391193,
+          "requestTime": 491171.811847,
+          "sendEnd": 46.1590000195429,
+          "sendStart": 45.9310000296682,
+          "sslEnd": 45.6650000414811,
+          "sslStart": 24.5770000037737,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://consent.google.com/status?continue=https://www.google.se&pc=s&timestamp=1488819534"
+      },
+      "timestamp": 491171.904245,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 666,
+      "requestId": "18440.13",
+      "timestamp": 491171.904205
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 20357,
+      "requestId": "18440.18",
+      "timestamp": 491171.906911
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 30969,
+      "encodedDataLength": 0,
+      "requestId": "18440.18",
+      "timestamp": 491171.907082
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 36872,
+      "requestId": "18440.18",
+      "timestamp": 491171.922817
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 0,
+      "requestId": "18440.18",
+      "timestamp": 491171.923041
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 29731,
+      "encodedDataLength": 0,
+      "requestId": "18440.18",
+      "timestamp": 491171.923262
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.4",
+      "requestId": "18440.17",
+      "response": {
+        "connectionId": 100,
+        "connectionReused": false,
+        "encodedDataLength": 4391,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "age": "355717",
+          "alt-svc": "quic=\":443\"; ma=2592000; v=\"35,34\"",
+          "cache-control": "public, max-age=31536000",
+          "content-length": "24211",
+          "content-type": "image/png",
+          "date": "Thu, 02 Mar 2017 14:10:18 GMT",
+          "expires": "Fri, 02 Mar 2018 14:10:18 GMT",
+          "last-modified": "Mon, 12 Dec 2016 14:45:00 GMT",
+          "server": "sffe",
+          "status": "200",
+          "vary": "Origin",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "image/png",
+        "protocol": "h2",
+        "remoteIPAddress": "172.217.18.131",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "ssl.gstatic.com",
+          ":method": "GET",
+          ":path": "/gb/images/i2_2ec824b0.png",
+          ":scheme": "https",
+          "accept": "image/webp,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, sdch, br",
+          "accept-language": "sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4",
+          "cache-control": "max-age=0",
+          "referer": "https://www.google.se/",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Google Internet Authority G2",
+          "keyExchange": "ECDHE_ECDSA",
+          "keyExchangeGroup": "X25519",
+          "protocol": "TLS 1.2",
+          "sanList": [
+            "*.google.com",
+            "*.android.com",
+            "*.appengine.google.com",
+            "*.cloud.google.com",
+            "*.gcp.gvt2.com",
+            "*.google-analytics.com",
+            "*.google.ca",
+            "*.google.cl",
+            "*.google.co.in",
+            "*.google.co.jp",
+            "*.google.co.uk",
+            "*.google.com.ar",
+            "*.google.com.au",
+            "*.google.com.br",
+            "*.google.com.co",
+            "*.google.com.mx",
+            "*.google.com.tr",
+            "*.google.com.vn",
+            "*.google.de",
+            "*.google.es",
+            "*.google.fr",
+            "*.google.hu",
+            "*.google.it",
+            "*.google.nl",
+            "*.google.pl",
+            "*.google.pt",
+            "*.googleadapis.com",
+            "*.googleapis.cn",
+            "*.googlecommerce.com",
+            "*.googlevideo.com",
+            "*.gstatic.cn",
+            "*.gstatic.com",
+            "*.gvt1.com",
+            "*.gvt2.com",
+            "*.metric.gstatic.com",
+            "*.urchin.com",
+            "*.url.google.com",
+            "*.youtube-nocookie.com",
+            "*.youtube.com",
+            "*.youtubeeducation.com",
+            "*.ytimg.com",
+            "android.clients.google.com",
+            "android.com",
+            "developer.android.google.cn",
+            "g.co",
+            "goo.gl",
+            "google-analytics.com",
+            "google.com",
+            "googlecommerce.com",
+            "urchin.com",
+            "www.goo.gl",
+            "youtu.be",
+            "youtube.com",
+            "youtubeeducation.com"
+          ],
+          "signedCertificateTimestampList": [
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Google 'Rocketeer' log",
+              "logId": "EE4BBDB775CE60BAE142691FABE19E66A30F7E5FB072D88300C47B897AA8FDCB",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304502204F3DB9F8084CC0445F26A769470AB68F693246A54EF080B46EE41E9AF198E952022100B85383E131F256B6CDE56C22A0B7D5B7585B83E141CB62770D14399F9CD9FE85",
+              "status": "Verified",
+              "timestamp": 1487764058929
+            },
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Venafi log",
+              "logId": "AC3B9AED7FA9674757159E6D7D575672F9D98100941E9BDEFFECA1313B75782D",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "RSA",
+              "signatureData": "7DC0CC3FB013D3E2EF297A1CCB0101F2A974FA1A3691CEC75801F8723F1A4098AE0F07D6D1BE24E021DB0BD9CB1B9D7F002963169536057C114557AFE7696AF17BAD9AC30CEDE061FD1DAF3309A5D06B89671D25AFC0615ECA94ADE0722B2F2C808F27508A47C8CC5DF1810681718A550FF509E7ACDECF06E78599208F5734C5623B3D09B9D3EE93C0D0A4344DCA6A72D7ED351784EB1686A62DE0536175AB8AC9DED685CE1A384D521FAB2D26B4EE17DD1F8468365EA345D629029A8BE6D042892B9B79C6A2B43EAFBC76F326FB30CB0AFFCE242CDF61B4BABA195690DDA3ECDBDD4E95CA3FFAFE4F1EB8C0AEDBBAFFC9C6C31F702A2D91034498D24927F677",
+              "status": "Verified",
+              "timestamp": 1487764058460
+            }
+          ],
+          "subjectName": "*.google.com",
+          "validFrom": 1487755238,
+          "validTo": 1495011480
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": 44.9539999826811,
+          "connectStart": 15.1740000001155,
+          "dnsEnd": 15.1740000001155,
+          "dnsStart": 0.364999985322356,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 78.0779999913648,
+          "requestTime": 491171.845202,
+          "sendEnd": 45.7809999934398,
+          "sendStart": 45.4230000032112,
+          "sslEnd": 44.943000015337,
+          "sslStart": 23.44700001413,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://ssl.gstatic.com/gb/images/i2_2ec824b0.png"
+      },
+      "timestamp": 491171.923812,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 10617,
+      "encodedDataLength": 0,
+      "requestId": "18440.18",
+      "timestamp": 491171.923997
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 149198,
+      "requestId": "18440.18",
+      "timestamp": 491171.923711
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 4158,
+      "encodedDataLength": 4167,
+      "requestId": "18440.17",
+      "timestamp": 491171.92435
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 4167,
+      "encodedDataLength": 1389,
+      "requestId": "18440.17",
+      "timestamp": 491171.924444
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 1389,
+      "encodedDataLength": 2778,
+      "requestId": "18440.17",
+      "timestamp": 491171.924509
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 2778,
+      "encodedDataLength": 0,
+      "requestId": "18440.17",
+      "timestamp": 491171.924594
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 8325,
+      "encodedDataLength": 8334,
+      "requestId": "18440.17",
+      "timestamp": 491171.927631
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+      "frameId": "18440.1",
+      "initiator": {
+        "stack": {
+          "callFrames": [
+            {
+              "columnNumber": 166,
+              "functionName": "s_6F.Ab",
+              "lineNumber": 615,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 139,
+              "functionName": "s_LF.Ab",
+              "lineNumber": 544,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 111,
+              "functionName": "s_vAb",
+              "lineNumber": 605,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 28,
+              "functionName": "s_.ud",
+              "lineNumber": 602,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 365,
+              "functionName": "s_azb",
+              "lineNumber": 533,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 279,
+              "functionName": "s_.install",
+              "lineNumber": 640,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 258,
+              "functionName": "s_.Kd",
+              "lineNumber": 814,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 412,
+              "functionName": "s_.yp",
+              "lineNumber": 810,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 103,
+              "functionName": "init",
+              "lineNumber": 279,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 105,
+              "functionName": "s_Uda",
+              "lineNumber": 191,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 488,
+              "functionName": "",
+              "lineNumber": 190,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 352,
+              "functionName": "s_i",
+              "lineNumber": 46,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 466,
+              "functionName": "s_Wda",
+              "lineNumber": 190,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 356,
+              "functionName": "s_Xda",
+              "lineNumber": 190,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 66,
+              "functionName": "",
+              "lineNumber": 82,
+              "scriptId": "76",
+              "url": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl"
+            },
+            {
+              "columnNumber": 94,
+              "functionName": "s_wka",
+              "lineNumber": 976,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 198,
+              "functionName": "s_yka",
+              "lineNumber": 1349,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 0,
+              "functionName": "",
+              "lineNumber": 1350,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            }
+          ]
+        },
+        "type": "script"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {},
+        "initialPriority": "VeryLow",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "data:image/gif;base64,R0lGODlhEwALAKECAAAAABISEv///////yH5BAEKAAIALAAAAAATAAsAAAIdDI6pZ+suQJyy0ocV3bbm33EcCArmiUYk1qxAUAAAOw=="
+      },
+      "requestId": "18440.19",
+      "timestamp": 491172.018188,
+      "type": "Other",
+      "wallTime": 1488819535.90352
+    }
+  },
+  {
+    "method": "Network.requestServedFromCache",
+    "params": {
+      "requestId": "18440.19"
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.4",
+      "requestId": "18440.19",
+      "response": {
+        "connectionId": 0,
+        "connectionReused": false,
+        "encodedDataLength": -1,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {},
+        "mimeType": "image/gif",
+        "protocol": "data",
+        "securityState": "unknown",
+        "status": 200,
+        "statusText": "OK",
+        "url": "data:image/gif;base64,R0lGODlhEwALAKECAAAAABISEv///////yH5BAEKAAIALAAAAAATAAsAAAIdDI6pZ+suQJyy0ocV3bbm33EcCArmiUYk1qxAUAAAOw=="
+      },
+      "timestamp": 491172.018404,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 76,
+      "encodedDataLength": 0,
+      "requestId": "18440.19",
+      "timestamp": 491172.018429
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 0,
+      "requestId": "18440.19",
+      "timestamp": 491172.018436
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+      "frameId": "18440.1",
+      "initiator": {
+        "stack": {
+          "callFrames": [
+            {
+              "columnNumber": 166,
+              "functionName": "s_6F.Ab",
+              "lineNumber": 615,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 139,
+              "functionName": "s_LF.Ab",
+              "lineNumber": 544,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 111,
+              "functionName": "s_vAb",
+              "lineNumber": 605,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 28,
+              "functionName": "s_.ud",
+              "lineNumber": 602,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 365,
+              "functionName": "s_azb",
+              "lineNumber": 533,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 279,
+              "functionName": "s_.install",
+              "lineNumber": 640,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 258,
+              "functionName": "s_.Kd",
+              "lineNumber": 814,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 412,
+              "functionName": "s_.yp",
+              "lineNumber": 810,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 103,
+              "functionName": "init",
+              "lineNumber": 279,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 105,
+              "functionName": "s_Uda",
+              "lineNumber": 191,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 488,
+              "functionName": "",
+              "lineNumber": 190,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 352,
+              "functionName": "s_i",
+              "lineNumber": 46,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 466,
+              "functionName": "s_Wda",
+              "lineNumber": 190,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 356,
+              "functionName": "s_Xda",
+              "lineNumber": 190,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 66,
+              "functionName": "",
+              "lineNumber": 82,
+              "scriptId": "76",
+              "url": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl"
+            },
+            {
+              "columnNumber": 94,
+              "functionName": "s_wka",
+              "lineNumber": 976,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 198,
+              "functionName": "s_yka",
+              "lineNumber": 1349,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 0,
+              "functionName": "",
+              "lineNumber": 1350,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            }
+          ]
+        },
+        "type": "script"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {},
+        "initialPriority": "VeryLow",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACrElEQVR42u2Xz2sTQRSAX8VSb1K8iNqKooJH2Ux6Ksn+iPQqxZMIehJB0do/IMhmQWsvHr2KSEGk0tSLIoWIYNUKij20F2/N7iaUZnYT0kYzzhMKs0HDJiTdLcwHDwKZSd63781LBiQSSW9JZdkhzfKm1Rz9mjZp/W9YdEU3vXv4HsQZ40FtNG36q5rls//Ej4tmbSS2T15Mvp3ExOPmEMQNbBtMMEyoljcFcQN7PqyAlqNfIG7gYQ0tYNIaxA1MrJPY3wImbUqBKAXSFv0tBSIVMOkvKRDtGKWN/T6FdqRAxFNoWwpEPIXqUqBT6ALU/UVgu8GW4GD3f6f9TRDYNJTDrk7YbtiqUumHwIYoUJuHERDAS0r4CvgFECgbY+cFAR7KT+g1POmCKFDNw6WggHc3fBtVb4CAoyauBgXIG+g1Xh5mRAGah6cggBd11fK/h7lOprIs0H6uRl6KAo5O7kOv4QmPiwJ4Jqqv4FiwCtXjvD2+tRmfK6kZ/ygI2HritK0rDVGgrClJ6DWMwYC/AGuCBMYcIC2V0CzvjmbRz3j3xUjn6CfeYreUJ2wQkGD75INPX1mFfsEFrrcIYCvdhC4paWQakxajpJMr0C9YFg54i7AsClRmh9/xnr0NHcInzZStk2aLwAcGMAD9pPIazvFKVDD5rdnhJeHLX5RTyRPQHpz5o66emMc9wdlPtvA8wF7Aq2BUHh1525qEo5JtR1WeOXpickO9cJIpyuD6xJmhYiZ5ytWSl3mlnuOaf+2zDaLDXmJrSgZ/MYVEugo+gSh+FkSBa4yd5Ul87DZ5XpFl/AyIEjzYjkau8WqshU2cr13HPbgX4gJOD97n465GZlyVvC9mSKloKI2iTnbwNT+gBX54H+IaXAtxJzE3ycSAFqSAFJACUkAikXD+AHj5/wx2o5osAAAAAElFTkSuQmCC"
+      },
+      "requestId": "18440.21",
+      "timestamp": 491172.018796,
+      "type": "Other",
+      "wallTime": 1488819535.90412
+    }
+  },
+  {
+    "method": "Network.requestServedFromCache",
+    "params": {
+      "requestId": "18440.21"
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.4",
+      "requestId": "18440.21",
+      "response": {
+        "connectionId": 0,
+        "connectionReused": false,
+        "encodedDataLength": -1,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {},
+        "mimeType": "image/png",
+        "protocol": "data",
+        "securityState": "unknown",
+        "status": 200,
+        "statusText": "OK",
+        "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACrElEQVR42u2Xz2sTQRSAX8VSb1K8iNqKooJH2Ux6Ksn+iPQqxZMIehJB0do/IMhmQWsvHr2KSEGk0tSLIoWIYNUKij20F2/N7iaUZnYT0kYzzhMKs0HDJiTdLcwHDwKZSd63781LBiQSSW9JZdkhzfKm1Rz9mjZp/W9YdEU3vXv4HsQZ40FtNG36q5rls//Ej4tmbSS2T15Mvp3ExOPmEMQNbBtMMEyoljcFcQN7PqyAlqNfIG7gYQ0tYNIaxA1MrJPY3wImbUqBKAXSFv0tBSIVMOkvKRDtGKWN/T6FdqRAxFNoWwpEPIXqUqBT6ALU/UVgu8GW4GD3f6f9TRDYNJTDrk7YbtiqUumHwIYoUJuHERDAS0r4CvgFECgbY+cFAR7KT+g1POmCKFDNw6WggHc3fBtVb4CAoyauBgXIG+g1Xh5mRAGah6cggBd11fK/h7lOprIs0H6uRl6KAo5O7kOv4QmPiwJ4Jqqv4FiwCtXjvD2+tRmfK6kZ/ygI2HritK0rDVGgrClJ6DWMwYC/AGuCBMYcIC2V0CzvjmbRz3j3xUjn6CfeYreUJ2wQkGD75INPX1mFfsEFrrcIYCvdhC4paWQakxajpJMr0C9YFg54i7AsClRmh9/xnr0NHcInzZStk2aLwAcGMAD9pPIazvFKVDD5rdnhJeHLX5RTyRPQHpz5o66emMc9wdlPtvA8wF7Aq2BUHh1525qEo5JtR1WeOXpickO9cJIpyuD6xJmhYiZ5ytWSl3mlnuOaf+2zDaLDXmJrSgZ/MYVEugo+gSh+FkSBa4yd5Ul87DZ5XpFl/AyIEjzYjkau8WqshU2cr13HPbgX4gJOD97n465GZlyVvC9mSKloKI2iTnbwNT+gBX54H+IaXAtxJzE3ycSAFqSAFJACUkAikXD+AHj5/wx2o5osAAAAAElFTkSuQmCC"
+      },
+      "timestamp": 491172.018971,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 741,
+      "encodedDataLength": 0,
+      "requestId": "18440.21",
+      "timestamp": 491172.018997
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 0,
+      "requestId": "18440.21",
+      "timestamp": 491172.019004
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+      "frameId": "18440.1",
+      "initiator": {
+        "stack": {
+          "callFrames": [
+            {
+              "columnNumber": 403,
+              "functionName": "s_g8d",
+              "lineNumber": 767,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 559,
+              "functionName": "s__7.ma",
+              "lineNumber": 767,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 334,
+              "functionName": "s__7.Mh",
+              "lineNumber": 767,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 403,
+              "functionName": "s_azb",
+              "lineNumber": 533,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 279,
+              "functionName": "s_.install",
+              "lineNumber": 640,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 258,
+              "functionName": "s_.Kd",
+              "lineNumber": 814,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 412,
+              "functionName": "s_.yp",
+              "lineNumber": 810,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 103,
+              "functionName": "init",
+              "lineNumber": 279,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 105,
+              "functionName": "s_Uda",
+              "lineNumber": 191,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 488,
+              "functionName": "",
+              "lineNumber": 190,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 352,
+              "functionName": "s_i",
+              "lineNumber": 46,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 466,
+              "functionName": "s_Wda",
+              "lineNumber": 190,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 356,
+              "functionName": "s_Xda",
+              "lineNumber": 190,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 66,
+              "functionName": "",
+              "lineNumber": 82,
+              "scriptId": "76",
+              "url": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl"
+            },
+            {
+              "columnNumber": 94,
+              "functionName": "s_wka",
+              "lineNumber": 976,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 198,
+              "functionName": "s_yka",
+              "lineNumber": 1349,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 0,
+              "functionName": "",
+              "lineNumber": 1350,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            }
+          ]
+        },
+        "type": "script"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {},
+        "initialPriority": "VeryLow",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw%3D%3D"
+      },
+      "requestId": "18440.23",
+      "timestamp": 491172.024723,
+      "type": "Other",
+      "wallTime": 1488819535.91005
+    }
+  },
+  {
+    "method": "Network.requestServedFromCache",
+    "params": {
+      "requestId": "18440.23"
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.4",
+      "requestId": "18440.23",
+      "response": {
+        "connectionId": 0,
+        "connectionReused": false,
+        "encodedDataLength": -1,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {},
+        "mimeType": "image/gif",
+        "protocol": "data",
+        "securityState": "unknown",
+        "status": 200,
+        "statusText": "OK",
+        "url": "data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw%3D%3D"
+      },
+      "timestamp": 491172.024909,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 43,
+      "encodedDataLength": 0,
+      "requestId": "18440.23",
+      "timestamp": 491172.024945
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 0,
+      "requestId": "18440.23",
+      "timestamp": 491172.024952
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+      "frameId": "18440.1",
+      "initiator": {
+        "stack": {
+          "callFrames": [
+            {
+              "columnNumber": 104,
+              "functionName": "s_mf",
+              "lineNumber": 184,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 237,
+              "functionName": "s_gea.Ga",
+              "lineNumber": 207,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 392,
+              "functionName": "s_If.Db",
+              "lineNumber": 199,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 200,
+              "functionName": "s_dea",
+              "lineNumber": 204,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 160,
+              "functionName": "s_B",
+              "lineNumber": 201,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 0,
+              "functionName": "",
+              "lineNumber": 1376,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            }
+          ]
+        },
+        "type": "script"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {
+          "Referer": "https://www.google.se/",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "initialPriority": "Low",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sy49,sy53,em7,em5,em6,sy55,em0,sy342,aa,abd,sy89,sy90,sy88,sy86,sy87,sy91,sy92,sy93,em9,async,sy373,sy368,sy29,sy365,sy375,sy369,sy372,sy30,sy123,sy376,sy379,sy378,sy31,sy366,dvl,erh,sy95,foot,fpe,ipv6,sy174,lu,m,sf,sy44,sy140,sy196,sy259,sy248,sy308,sy241,sy41,sy307,sy202,sy262,sy312,sy303,sy302,sy310,sy309,spch,vm,sy601,sy597,sy606,sy593,sy598,sy611,sy612,sy605,sy607,sy615,sy604,sy610,sy51,sy595,em20,em21,em22,em23,em24,em25,em26,em27,em28,em29,udlg,sy50,sy125,sy43,sy122,sy185,sy45,sy46,sy188,em8,sy48,sy52,sy127,sy184,sy186,sy187,cbin,sy440,dgm,cbhb/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=0/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+      },
+      "requestId": "18440.25",
+      "timestamp": 491172.037979,
+      "type": "Other",
+      "wallTime": 1488819535.92331
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+      "frameId": "18440.1",
+      "initiator": {
+        "stack": {
+          "callFrames": []
+        },
+        "type": "script"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {
+          "Referer": "https://www.google.se/",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "initialPriority": "Low",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "https://www.gstatic.com/inputtools/images/tia.png"
+      },
+      "requestId": "18440.26",
+      "timestamp": 491172.039219,
+      "type": "Other",
+      "wallTime": 1488819535.92455
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 3394,
+      "encodedDataLength": 3394,
+      "requestId": "18440.17",
+      "timestamp": 491172.039864
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 24453,
+      "requestId": "18440.17",
+      "timestamp": 491171.937395
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.4",
+      "requestId": "18440.25",
+      "response": {
+        "connectionId": 73,
+        "connectionReused": true,
+        "encodedDataLength": 1461,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "age": "310806",
+          "alt-svc": "quic=\":443\"; ma=2592000; v=\"36,35,34\"",
+          "cache-control": "public, max-age=31536000",
+          "content-encoding": "gzip",
+          "content-length": "44879",
+          "content-type": "text/javascript; charset=UTF-8",
+          "date": "Fri, 03 Mar 2017 02:38:49 GMT",
+          "expires": "Sat, 03 Mar 2018 02:38:49 GMT",
+          "last-modified": "Fri, 03 Mar 2017 01:23:35 GMT",
+          "server": "sffe",
+          "status": "200",
+          "vary": "Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "text/javascript",
+        "protocol": "h2",
+        "remoteIPAddress": "83.255.236.31",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.google.se",
+          ":method": "GET",
+          ":path": "/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sy49,sy53,em7,em5,em6,sy55,em0,sy342,aa,abd,sy89,sy90,sy88,sy86,sy87,sy91,sy92,sy93,em9,async,sy373,sy368,sy29,sy365,sy375,sy369,sy372,sy30,sy123,sy376,sy379,sy378,sy31,sy366,dvl,erh,sy95,foot,fpe,ipv6,sy174,lu,m,sf,sy44,sy140,sy196,sy259,sy248,sy308,sy241,sy41,sy307,sy202,sy262,sy312,sy303,sy302,sy310,sy309,spch,vm,sy601,sy597,sy606,sy593,sy598,sy611,sy612,sy605,sy607,sy615,sy604,sy610,sy51,sy595,em20,em21,em22,em23,em24,em25,em26,em27,em28,em29,udlg,sy50,sy125,sy43,sy122,sy185,sy45,sy46,sy188,em8,sy48,sy52,sy127,sy184,sy186,sy187,cbin,sy440,dgm,cbhb/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=0/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ",
+          ":scheme": "https",
+          "accept": "*/*",
+          "accept-encoding": "gzip, deflate, sdch, br",
+          "accept-language": "sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4",
+          "cache-control": "max-age=0",
+          "cookie": "CONSENT=WP.25dcd5; NID=98=ow3vSwwIG7jvoVqw39v38wLZ4f-xyJALqcLbUMwRWNs7_xG20g4D1Oy8jpA7geI_TvpDQcl_pawBpSAaQQ7frwFOY1Q6SArWqcea2YgC4fVEhccnXNfm1oXsn-dVBI2V",
+          "referer": "https://www.google.se/",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Google Internet Authority G2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "X25519",
+          "protocol": "TLS 1.2",
+          "sanList": [
+            "*.google.se",
+            "google.se"
+          ],
+          "signedCertificateTimestampList": [
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Google 'Rocketeer' log",
+              "logId": "EE4BBDB775CE60BAE142691FABE19E66A30F7E5FB072D88300C47B897AA8FDCB",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304402206E1D98D5353ED086037E071E1E72C9B6518A7E72AAA813A496B0C13E4CCE180E022052BF44DDDA5D838072391F312E079DB80B27FF430600279CCB38B14E270B5E79",
+              "status": "Verified",
+              "timestamp": 1487758321719
+            },
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Symantec log",
+              "logId": "DDEB1D2B7A0D4FA6208B81AD8168707E2E8E9D01D55C888D3D11C4CDB6ECBECC",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3046022100A9134F5ADD2DF5A23DB7A5A113650818B386922209A6C85DC010053885BCFE6A022100CCAA0252C7DEC54544E85DC4D0AF66DD6E4E7F6AFEAC9B2A9EE54E96A13C56B8",
+              "status": "Verified",
+              "timestamp": 1487758321330
+            }
+          ],
+          "subjectName": "*.google.se",
+          "validFrom": 1487753820,
+          "validTo": 1495011420
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": -1,
+          "connectStart": -1,
+          "dnsEnd": -1,
+          "dnsStart": -1,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 13.2860000012442,
+          "requestTime": 491172.038279,
+          "sendEnd": 0.545000017154962,
+          "sendStart": 0.404000049456954,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sy49,sy53,em7,em5,em6,sy55,em0,sy342,aa,abd,sy89,sy90,sy88,sy86,sy87,sy91,sy92,sy93,em9,async,sy373,sy368,sy29,sy365,sy375,sy369,sy372,sy30,sy123,sy376,sy379,sy378,sy31,sy366,dvl,erh,sy95,foot,fpe,ipv6,sy174,lu,m,sf,sy44,sy140,sy196,sy259,sy248,sy308,sy241,sy41,sy307,sy202,sy262,sy312,sy303,sy302,sy310,sy309,spch,vm,sy601,sy597,sy606,sy593,sy598,sy611,sy612,sy605,sy607,sy615,sy604,sy610,sy51,sy595,em20,em21,em22,em23,em24,em25,em26,em27,em28,em29,udlg,sy50,sy125,sy43,sy122,sy185,sy45,sy46,sy188,em8,sy48,sy52,sy127,sy184,sy186,sy187,cbin,sy440,dgm,cbhb/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=0/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+      },
+      "timestamp": 491172.052219,
+      "type": "Script"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 3172,
+      "encodedDataLength": 0,
+      "requestId": "18440.25",
+      "timestamp": 491172.05238
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 35548,
+      "requestId": "18440.25",
+      "timestamp": 491172.058206
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 0,
+      "requestId": "18440.25",
+      "timestamp": 491172.058458
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 2762,
+      "requestId": "18440.25",
+      "timestamp": 491172.05863
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 808,
+      "encodedDataLength": 1381,
+      "requestId": "18440.25",
+      "timestamp": 491172.058781
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 21136,
+      "encodedDataLength": 0,
+      "requestId": "18440.25",
+      "timestamp": 491172.059106
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 11791,
+      "encodedDataLength": 3834,
+      "requestId": "18440.25",
+      "timestamp": 491172.059409
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 44986,
+      "requestId": "18440.25",
+      "timestamp": 491172.059395
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+      "frameId": "18440.1",
+      "initiator": {
+        "stack": {
+          "callFrames": [
+            {
+              "columnNumber": 191,
+              "functionName": "Tm",
+              "lineNumber": 348,
+              "scriptId": "77",
+              "url": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl"
+            },
+            {
+              "columnNumber": 311,
+              "functionName": "_.Um",
+              "lineNumber": 346,
+              "scriptId": "77",
+              "url": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl"
+            },
+            {
+              "columnNumber": 113,
+              "functionName": "_.Sm.C",
+              "lineNumber": 350,
+              "scriptId": "77",
+              "url": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl"
+            }
+          ]
+        },
+        "type": "script"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {
+          "Referer": "https://www.google.se/",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "initialPriority": "Low",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "https://www.gstatic.com/og/_/js/k=og.og2.en_US.kopyj0bVr2Y.O/rt=j/m=def/exm=in,fot/d=1/ed=1/rs=AA2YrTvMWPpK67d18-DppIo7fgx9wMm76w"
+      },
+      "requestId": "18440.27",
+      "timestamp": 491172.066195,
+      "type": "Other",
+      "wallTime": 1488819535.95152
+    }
+  },
+  {
+    "method": "Network.resourceChangedPriority",
+    "params": {
+      "newPriority": "High",
+      "requestId": "18440.26",
+      "timestamp": 491172.083219
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.4",
+      "requestId": "18440.26",
+      "response": {
+        "connectionId": 100,
+        "connectionReused": true,
+        "encodedDataLength": 100,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "age": "355726",
+          "alt-svc": "quic=\":443\"; ma=2592000; v=\"35,34\"",
+          "cache-control": "public, max-age=31536000",
+          "content-length": "151",
+          "content-type": "image/png",
+          "date": "Thu, 02 Mar 2017 14:10:09 GMT",
+          "expires": "Fri, 02 Mar 2018 14:10:09 GMT",
+          "last-modified": "Thu, 21 Apr 2016 03:17:22 GMT",
+          "server": "sffe",
+          "status": "200",
+          "vary": "Origin",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "image/png",
+        "protocol": "h2",
+        "remoteIPAddress": "172.217.18.131",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.gstatic.com",
+          ":method": "GET",
+          ":path": "/inputtools/images/tia.png",
+          ":scheme": "https",
+          "accept": "image/webp,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, sdch, br",
+          "accept-language": "sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4",
+          "cache-control": "max-age=0",
+          "referer": "https://www.google.se/",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Google Internet Authority G2",
+          "keyExchange": "ECDHE_ECDSA",
+          "keyExchangeGroup": "X25519",
+          "protocol": "TLS 1.2",
+          "sanList": [
+            "*.google.com",
+            "*.android.com",
+            "*.appengine.google.com",
+            "*.cloud.google.com",
+            "*.gcp.gvt2.com",
+            "*.google-analytics.com",
+            "*.google.ca",
+            "*.google.cl",
+            "*.google.co.in",
+            "*.google.co.jp",
+            "*.google.co.uk",
+            "*.google.com.ar",
+            "*.google.com.au",
+            "*.google.com.br",
+            "*.google.com.co",
+            "*.google.com.mx",
+            "*.google.com.tr",
+            "*.google.com.vn",
+            "*.google.de",
+            "*.google.es",
+            "*.google.fr",
+            "*.google.hu",
+            "*.google.it",
+            "*.google.nl",
+            "*.google.pl",
+            "*.google.pt",
+            "*.googleadapis.com",
+            "*.googleapis.cn",
+            "*.googlecommerce.com",
+            "*.googlevideo.com",
+            "*.gstatic.cn",
+            "*.gstatic.com",
+            "*.gvt1.com",
+            "*.gvt2.com",
+            "*.metric.gstatic.com",
+            "*.urchin.com",
+            "*.url.google.com",
+            "*.youtube-nocookie.com",
+            "*.youtube.com",
+            "*.youtubeeducation.com",
+            "*.ytimg.com",
+            "android.clients.google.com",
+            "android.com",
+            "developer.android.google.cn",
+            "g.co",
+            "goo.gl",
+            "google-analytics.com",
+            "google.com",
+            "googlecommerce.com",
+            "urchin.com",
+            "www.goo.gl",
+            "youtu.be",
+            "youtube.com",
+            "youtubeeducation.com"
+          ],
+          "signedCertificateTimestampList": [
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Google 'Rocketeer' log",
+              "logId": "EE4BBDB775CE60BAE142691FABE19E66A30F7E5FB072D88300C47B897AA8FDCB",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304502204F3DB9F8084CC0445F26A769470AB68F693246A54EF080B46EE41E9AF198E952022100B85383E131F256B6CDE56C22A0B7D5B7585B83E141CB62770D14399F9CD9FE85",
+              "status": "Verified",
+              "timestamp": 1487764058929
+            },
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Venafi log",
+              "logId": "AC3B9AED7FA9674757159E6D7D575672F9D98100941E9BDEFFECA1313B75782D",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "RSA",
+              "signatureData": "7DC0CC3FB013D3E2EF297A1CCB0101F2A974FA1A3691CEC75801F8723F1A4098AE0F07D6D1BE24E021DB0BD9CB1B9D7F002963169536057C114557AFE7696AF17BAD9AC30CEDE061FD1DAF3309A5D06B89671D25AFC0615ECA94ADE0722B2F2C808F27508A47C8CC5DF1810681718A550FF509E7ACDECF06E78599208F5734C5623B3D09B9D3EE93C0D0A4344DCA6A72D7ED351784EB1686A62DE0536175AB8AC9DED685CE1A384D521FAB2D26B4EE17DD1F8468365EA345D629029A8BE6D042892B9B79C6A2B43EAFBC76F326FB30CB0AFFCE242CDF61B4BABA195690DDA3ECDBDD4E95CA3FFAFE4F1EB8C0AEDBBAFFC9C6C31F702A2D91034498D24927F677",
+              "status": "Verified",
+              "timestamp": 1487764058460
+            }
+          ],
+          "subjectName": "*.google.com",
+          "validFrom": 1487755238,
+          "validTo": 1495011480
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": -1,
+          "connectStart": -1,
+          "dnsEnd": -1,
+          "dnsStart": -1,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 30.1719999988563,
+          "requestTime": 491172.039449,
+          "sendEnd": 17.5720000406727,
+          "sendStart": 17.4360000528395,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.gstatic.com/inputtools/images/tia.png"
+      },
+      "timestamp": 491172.089793,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 151,
+      "encodedDataLength": 160,
+      "requestId": "18440.26",
+      "timestamp": 491172.089976
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 260,
+      "requestId": "18440.26",
+      "timestamp": 491172.07032
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.4",
+      "requestId": "18440.27",
+      "response": {
+        "connectionId": 100,
+        "connectionReused": true,
+        "encodedDataLength": 2874,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "age": "355717",
+          "alt-svc": "quic=\":443\"; ma=2592000; v=\"35,34\"",
+          "cache-control": "public, max-age=31536000",
+          "content-encoding": "gzip",
+          "content-length": "48324",
+          "content-type": "text/javascript; charset=UTF-8",
+          "date": "Thu, 02 Mar 2017 14:10:18 GMT",
+          "expires": "Fri, 02 Mar 2018 14:10:18 GMT",
+          "last-modified": "Tue, 28 Feb 2017 03:40:02 GMT",
+          "server": "sffe",
+          "status": "200",
+          "vary": "Accept-Encoding, Origin",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "text/javascript",
+        "protocol": "h2",
+        "remoteIPAddress": "172.217.18.131",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.gstatic.com",
+          ":method": "GET",
+          ":path": "/og/_/js/k=og.og2.en_US.kopyj0bVr2Y.O/rt=j/m=def/exm=in,fot/d=1/ed=1/rs=AA2YrTvMWPpK67d18-DppIo7fgx9wMm76w",
+          ":scheme": "https",
+          "accept": "*/*",
+          "accept-encoding": "gzip, deflate, sdch, br",
+          "accept-language": "sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4",
+          "cache-control": "max-age=0",
+          "referer": "https://www.google.se/",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Google Internet Authority G2",
+          "keyExchange": "ECDHE_ECDSA",
+          "keyExchangeGroup": "X25519",
+          "protocol": "TLS 1.2",
+          "sanList": [
+            "*.google.com",
+            "*.android.com",
+            "*.appengine.google.com",
+            "*.cloud.google.com",
+            "*.gcp.gvt2.com",
+            "*.google-analytics.com",
+            "*.google.ca",
+            "*.google.cl",
+            "*.google.co.in",
+            "*.google.co.jp",
+            "*.google.co.uk",
+            "*.google.com.ar",
+            "*.google.com.au",
+            "*.google.com.br",
+            "*.google.com.co",
+            "*.google.com.mx",
+            "*.google.com.tr",
+            "*.google.com.vn",
+            "*.google.de",
+            "*.google.es",
+            "*.google.fr",
+            "*.google.hu",
+            "*.google.it",
+            "*.google.nl",
+            "*.google.pl",
+            "*.google.pt",
+            "*.googleadapis.com",
+            "*.googleapis.cn",
+            "*.googlecommerce.com",
+            "*.googlevideo.com",
+            "*.gstatic.cn",
+            "*.gstatic.com",
+            "*.gvt1.com",
+            "*.gvt2.com",
+            "*.metric.gstatic.com",
+            "*.urchin.com",
+            "*.url.google.com",
+            "*.youtube-nocookie.com",
+            "*.youtube.com",
+            "*.youtubeeducation.com",
+            "*.ytimg.com",
+            "android.clients.google.com",
+            "android.com",
+            "developer.android.google.cn",
+            "g.co",
+            "goo.gl",
+            "google-analytics.com",
+            "google.com",
+            "googlecommerce.com",
+            "urchin.com",
+            "www.goo.gl",
+            "youtu.be",
+            "youtube.com",
+            "youtubeeducation.com"
+          ],
+          "signedCertificateTimestampList": [
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Google 'Rocketeer' log",
+              "logId": "EE4BBDB775CE60BAE142691FABE19E66A30F7E5FB072D88300C47B897AA8FDCB",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304502204F3DB9F8084CC0445F26A769470AB68F693246A54EF080B46EE41E9AF198E952022100B85383E131F256B6CDE56C22A0B7D5B7585B83E141CB62770D14399F9CD9FE85",
+              "status": "Verified",
+              "timestamp": 1487764058929
+            },
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Venafi log",
+              "logId": "AC3B9AED7FA9674757159E6D7D575672F9D98100941E9BDEFFECA1313B75782D",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "RSA",
+              "signatureData": "7DC0CC3FB013D3E2EF297A1CCB0101F2A974FA1A3691CEC75801F8723F1A4098AE0F07D6D1BE24E021DB0BD9CB1B9D7F002963169536057C114557AFE7696AF17BAD9AC30CEDE061FD1DAF3309A5D06B89671D25AFC0615ECA94ADE0722B2F2C808F27508A47C8CC5DF1810681718A550FF509E7ACDECF06E78599208F5734C5623B3D09B9D3EE93C0D0A4344DCA6A72D7ED351784EB1686A62DE0536175AB8AC9DED685CE1A384D521FAB2D26B4EE17DD1F8468365EA345D629029A8BE6D042892B9B79C6A2B43EAFBC76F326FB30CB0AFFCE242CDF61B4BABA195690DDA3ECDBDD4E95CA3FFAFE4F1EB8C0AEDBBAFFC9C6C31F702A2D91034498D24927F677",
+              "status": "Verified",
+              "timestamp": 1487764058460
+            }
+          ],
+          "subjectName": "*.google.com",
+          "validFrom": 1487755238,
+          "validTo": 1495011480
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": -1,
+          "connectStart": -1,
+          "dnsEnd": -1,
+          "dnsStart": -1,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 15.8500000252388,
+          "requestTime": 491172.066497,
+          "sendEnd": 0.457999994978309,
+          "sendStart": 0.317000027280301,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.gstatic.com/og/_/js/k=og.og2.en_US.kopyj0bVr2Y.O/rt=j/m=def/exm=in,fot/d=1/ed=1/rs=AA2YrTvMWPpK67d18-DppIo7fgx9wMm76w"
+      },
+      "timestamp": 491172.091821,
+      "type": "Script"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 6897,
+      "encodedDataLength": 1389,
+      "requestId": "18440.27",
+      "timestamp": 491172.092008
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 4413,
+      "encodedDataLength": 1389,
+      "requestId": "18440.27",
+      "timestamp": 491172.09204
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 3635,
+      "encodedDataLength": 0,
+      "requestId": "18440.27",
+      "timestamp": 491172.092085
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+      "frameId": "18440.1",
+      "initiator": {
+        "stack": {
+          "callFrames": []
+        },
+        "type": "script"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {
+          "Referer": "https://www.google.se/",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "initialPriority": "Low",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "https://www.google.se/gen_204?atyp=i&ct=&cad=&vet=10ahUKEwj794H8rMLSAhWEJZoKHaPlCzcQsmQIDw..s&ei=TpW9WPuYLITL6ASjy6-4Aw&zx=1488819535987"
+      },
+      "requestId": "18440.28",
+      "timestamp": 491172.102015,
+      "type": "Other",
+      "wallTime": 1488819535.98734
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 34175,
+      "requestId": "18440.27",
+      "timestamp": 491172.102328
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 0,
+      "requestId": "18440.27",
+      "timestamp": 491172.102446
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 0,
+      "requestId": "18440.27",
+      "timestamp": 491172.102523
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 370,
+      "encodedDataLength": 0,
+      "requestId": "18440.27",
+      "timestamp": 491172.10259
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 3666,
+      "encodedDataLength": 0,
+      "requestId": "18440.27",
+      "timestamp": 491172.102853
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 7298,
+      "encodedDataLength": 5556,
+      "requestId": "18440.27",
+      "timestamp": 491172.103128
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 8645,
+      "encodedDataLength": 0,
+      "requestId": "18440.27",
+      "timestamp": 491172.103187
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+      "frameId": "18440.1",
+      "initiator": {
+        "lineNumber": 0,
+        "type": "parser",
+        "url": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {},
+        "initialPriority": "VeryLow",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAD6ElEQVRo3u1aW0gUURjOSPQ5DAt66CHooYeo1LLMKwT5EhlFUL11Rc0iSazQvGElIQZFEQWVFj4UJEK52pqZuoZpJmYGhWuZput1d5Vcd//+f9iH3M45s7M7M7tBBz6W2Tn/d75vmDm3/ywBgCWe8Kckl9jCEVsRFYhx9y9dh/vDy9IpafXXAAoLQaxCHEKYECCAyV2P6ocEzAA2HobYjChDWGVE82B1xxNPmOYGsJFIxH5Ek4+C5dDk5o9UxQAShSI2IIoQkxqJ5mHS3S61H6rYAAbV6SxYDnVKDUCw4b+B/wb+FQNJxVZILJyEhEsWSMgflX7pmv4PagPxeSMQndEOG48YuKD7VC+oDNDTjUpvFQr3BNWnuIAbiM8bZgo8VGyCh4YBaHj3E6qNg3D8WgezHsUHzABL/KajBqhE4axS93YYYk40+GxCVQNJhVPMJ1r2+BOISlW9mRlHfLoaiM4w/SVi87F6mLTOCw0sOF2QdLqR8XGb9DNAXSPrKe7LbwVvyqnrXcx44tXFwJasTqaAwyXtXhk4d6ubGU+8ahpwMYlwMOJ1jXEZRnAsuGQN7LnYwuVI5g92DqUGBpkfb9G0sH9/1jIkFN/RPyGMJ36OAbNSA+3sQUssIP6UEfoHZ5jiR8bnIDXntTCe+HmrNaUG7jENFFhkR9nt6S/hds0X+DY6C78cTkn4owYzpJx5JRtL/BwDt5UayGIbmFA0ZVAK4ucYOKnUQBz7G5jS1ADxcwzEKjUQobQX2pFphLM338P9FwPQ/GEM+szTMGSZlb6Jtl4LVOFrdOFODyQLXiVBL7RcqQHarHIwR+HMxVPm3effQG3rD5jH992b4nS5oLFrFA4WLx7NiZfXhZIeX7ZVbslN4ooefPRauGdBH9LHThNAmUnddV/3hWJ5o2LUyWbIrOgENUppZZ/EJxiFY/zZ2GIvYgrGpemxGqXn65TEx2nLiVjm89YiBpfzTJQ+HVfFwI3nwpXZFb/2RpFgDY88BfGkbcYv8RSfIp5Gr/Z7cxdJmkWzxKs1VrDPLSgSTvUpTmYN0KDK7jQSrZdbbKSV26C6ZQassw6hcLpP9faWe7UOXqfa9jqSGbxZt+68bIPsSjvcNdqg9p0d6rvt0i9dZ1fZpfteLuJrVM0PIOFKnXfiVmiR4MjVSfxZrTI0SxGfNRbfS+1oliNzp5m0Ek9zngjNk3zYSKJGBrbpmaXMVFn8Cd3zxNjoRZXE5wYs0Y2N52jR4+idqT/go/i0oDhq4DaxTkEueQyxNmjOSngc8ngkI/6BN8cKAmLgDyN09mHEQ/h3yroH5WkVwaidiuhH7OKNrmoY+A2x8aXRSpGOsgAAAABJRU5ErkJggg=="
+      },
+      "requestId": "18440.29",
+      "timestamp": 491172.103961,
+      "type": "Other",
+      "wallTime": 1488819535.98929
+    }
+  },
+  {
+    "method": "Network.requestServedFromCache",
+    "params": {
+      "requestId": "18440.29"
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.4",
+      "requestId": "18440.29",
+      "response": {
+        "connectionId": 0,
+        "connectionReused": false,
+        "encodedDataLength": -1,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {},
+        "mimeType": "image/png",
+        "protocol": "data",
+        "securityState": "unknown",
+        "status": 200,
+        "statusText": "OK",
+        "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAD6ElEQVRo3u1aW0gUURjOSPQ5DAt66CHooYeo1LLMKwT5EhlFUL11Rc0iSazQvGElIQZFEQWVFj4UJEK52pqZuoZpJmYGhWuZput1d5Vcd//+f9iH3M45s7M7M7tBBz6W2Tn/d75vmDm3/ywBgCWe8Kckl9jCEVsRFYhx9y9dh/vDy9IpafXXAAoLQaxCHEKYECCAyV2P6ocEzAA2HobYjChDWGVE82B1xxNPmOYGsJFIxH5Ek4+C5dDk5o9UxQAShSI2IIoQkxqJ5mHS3S61H6rYAAbV6SxYDnVKDUCw4b+B/wb+FQNJxVZILJyEhEsWSMgflX7pmv4PagPxeSMQndEOG48YuKD7VC+oDNDTjUpvFQr3BNWnuIAbiM8bZgo8VGyCh4YBaHj3E6qNg3D8WgezHsUHzABL/KajBqhE4axS93YYYk40+GxCVQNJhVPMJ1r2+BOISlW9mRlHfLoaiM4w/SVi87F6mLTOCw0sOF2QdLqR8XGb9DNAXSPrKe7LbwVvyqnrXcx44tXFwJasTqaAwyXtXhk4d6ubGU+8ahpwMYlwMOJ1jXEZRnAsuGQN7LnYwuVI5g92DqUGBpkfb9G0sH9/1jIkFN/RPyGMJ36OAbNSA+3sQUssIP6UEfoHZ5jiR8bnIDXntTCe+HmrNaUG7jENFFhkR9nt6S/hds0X+DY6C78cTkn4owYzpJx5JRtL/BwDt5UayGIbmFA0ZVAK4ucYOKnUQBz7G5jS1ADxcwzEKjUQobQX2pFphLM338P9FwPQ/GEM+szTMGSZlb6Jtl4LVOFrdOFODyQLXiVBL7RcqQHarHIwR+HMxVPm3effQG3rD5jH992b4nS5oLFrFA4WLx7NiZfXhZIeX7ZVbslN4ooefPRauGdBH9LHThNAmUnddV/3hWJ5o2LUyWbIrOgENUppZZ/EJxiFY/zZ2GIvYgrGpemxGqXn65TEx2nLiVjm89YiBpfzTJQ+HVfFwI3nwpXZFb/2RpFgDY88BfGkbcYv8RSfIp5Gr/Z7cxdJmkWzxKs1VrDPLSgSTvUpTmYN0KDK7jQSrZdbbKSV26C6ZQassw6hcLpP9faWe7UOXqfa9jqSGbxZt+68bIPsSjvcNdqg9p0d6rvt0i9dZ1fZpfteLuJrVM0PIOFKnXfiVmiR4MjVSfxZrTI0SxGfNRbfS+1oliNzp5m0Ek9zngjNk3zYSKJGBrbpmaXMVFn8Cd3zxNjoRZXE5wYs0Y2N52jR4+idqT/go/i0oDhq4DaxTkEueQyxNmjOSngc8ngkI/6BN8cKAmLgDyN09mHEQ/h3yroH5WkVwaidiuhH7OKNrmoY+A2x8aXRSpGOsgAAAABJRU5ErkJggg=="
+      },
+      "timestamp": 491172.104015,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 1057,
+      "encodedDataLength": 0,
+      "requestId": "18440.29",
+      "timestamp": 491172.104043
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 0,
+      "requestId": "18440.29",
+      "timestamp": 491172.104049
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 8469,
+      "encodedDataLength": 3064,
+      "requestId": "18440.27",
+      "timestamp": 491172.107841
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 48447,
+      "requestId": "18440.27",
+      "timestamp": 491172.097
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+      "frameId": "18440.1",
+      "initiator": {
+        "stack": {
+          "callFrames": [
+            {
+              "columnNumber": 416,
+              "functionName": "Fr",
+              "lineNumber": 118,
+              "scriptId": "95",
+              "url": "https://www.gstatic.com/og/_/js/k=og.og2.en_US.kopyj0bVr2Y.O/rt=j/m=def/exm=in,fot/d=1/ed=1/rs=AA2YrTvMWPpK67d18-DppIo7fgx9wMm76w"
+            },
+            {
+              "columnNumber": 255,
+              "functionName": "Lr",
+              "lineNumber": 122,
+              "scriptId": "95",
+              "url": "https://www.gstatic.com/og/_/js/k=og.og2.en_US.kopyj0bVr2Y.O/rt=j/m=def/exm=in,fot/d=1/ed=1/rs=AA2YrTvMWPpK67d18-DppIo7fgx9wMm76w"
+            },
+            {
+              "columnNumber": 232,
+              "functionName": "Mr",
+              "lineNumber": 120,
+              "scriptId": "95",
+              "url": "https://www.gstatic.com/og/_/js/k=og.og2.en_US.kopyj0bVr2Y.O/rt=j/m=def/exm=in,fot/d=1/ed=1/rs=AA2YrTvMWPpK67d18-DppIo7fgx9wMm76w"
+            },
+            {
+              "columnNumber": 255,
+              "functionName": "",
+              "lineNumber": 123,
+              "scriptId": "95",
+              "url": "https://www.gstatic.com/og/_/js/k=og.og2.en_US.kopyj0bVr2Y.O/rt=j/m=def/exm=in,fot/d=1/ed=1/rs=AA2YrTvMWPpK67d18-DppIo7fgx9wMm76w"
+            },
+            {
+              "columnNumber": 173,
+              "functionName": "Ir",
+              "lineNumber": 123,
+              "scriptId": "95",
+              "url": "https://www.gstatic.com/og/_/js/k=og.og2.en_US.kopyj0bVr2Y.O/rt=j/m=def/exm=in,fot/d=1/ed=1/rs=AA2YrTvMWPpK67d18-DppIo7fgx9wMm76w"
+            },
+            {
+              "columnNumber": 234,
+              "functionName": "$q.load",
+              "lineNumber": 123,
+              "scriptId": "95",
+              "url": "https://www.gstatic.com/og/_/js/k=og.og2.en_US.kopyj0bVr2Y.O/rt=j/m=def/exm=in,fot/d=1/ed=1/rs=AA2YrTvMWPpK67d18-DppIo7fgx9wMm76w"
+            },
+            {
+              "columnNumber": 398,
+              "functionName": "Nq.init",
+              "lineNumber": 107,
+              "scriptId": "95",
+              "url": "https://www.gstatic.com/og/_/js/k=og.og2.en_US.kopyj0bVr2Y.O/rt=j/m=def/exm=in,fot/d=1/ed=1/rs=AA2YrTvMWPpK67d18-DppIo7fgx9wMm76w"
+            },
+            {
+              "columnNumber": 42,
+              "functionName": "",
+              "lineNumber": 126,
+              "scriptId": "95",
+              "url": "https://www.gstatic.com/og/_/js/k=og.og2.en_US.kopyj0bVr2Y.O/rt=j/m=def/exm=in,fot/d=1/ed=1/rs=AA2YrTvMWPpK67d18-DppIo7fgx9wMm76w"
+            },
+            {
+              "columnNumber": 2,
+              "functionName": "",
+              "lineNumber": 396,
+              "scriptId": "95",
+              "url": "https://www.gstatic.com/og/_/js/k=og.og2.en_US.kopyj0bVr2Y.O/rt=j/m=def/exm=in,fot/d=1/ed=1/rs=AA2YrTvMWPpK67d18-DppIo7fgx9wMm76w"
+            }
+          ]
+        },
+        "type": "script"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {
+          "Referer": "https://www.google.se/",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "initialPriority": "Low",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "https://apis.google.com/_/scs/abc-static/_/js/k=gapi.gapi.en.-QXB_U8R8Eg.O/m=gapi_iframes,googleapis_client,plusone/rt=j/sv=1/d=1/ed=1/rs=AHpOoo8PUrmM-10GgMhjxf52iM2kLRUicg/cb=gapi.loaded_0"
+      },
+      "requestId": "18440.31",
+      "timestamp": 491172.123052,
+      "type": "Other",
+      "wallTime": 1488819536.00838
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.4",
+      "requestId": "18440.28",
+      "response": {
+        "connectionId": 73,
+        "connectionReused": true,
+        "encodedDataLength": 19,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "alt-svc": "quic=\":443\"; ma=2592000; v=\"36,35,34\"",
+          "content-length": "0",
+          "content-type": "text/html; charset=UTF-8",
+          "date": "Mon, 06 Mar 2017 16:58:55 GMT",
+          "server": "gws",
+          "status": "204",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "text/html",
+        "protocol": "h2",
+        "remoteIPAddress": "83.255.236.31",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.google.se",
+          ":method": "GET",
+          ":path": "/gen_204?atyp=i&ct=&cad=&vet=10ahUKEwj794H8rMLSAhWEJZoKHaPlCzcQsmQIDw..s&ei=TpW9WPuYLITL6ASjy6-4Aw&zx=1488819535987",
+          ":scheme": "https",
+          "accept": "image/webp,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, sdch, br",
+          "accept-language": "sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4",
+          "cache-control": "max-age=0",
+          "cookie": "CONSENT=WP.25dcd5; NID=98=ow3vSwwIG7jvoVqw39v38wLZ4f-xyJALqcLbUMwRWNs7_xG20g4D1Oy8jpA7geI_TvpDQcl_pawBpSAaQQ7frwFOY1Q6SArWqcea2YgC4fVEhccnXNfm1oXsn-dVBI2V",
+          "referer": "https://www.google.se/",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Google Internet Authority G2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "X25519",
+          "protocol": "TLS 1.2",
+          "sanList": [
+            "*.google.se",
+            "google.se"
+          ],
+          "signedCertificateTimestampList": [
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Google 'Rocketeer' log",
+              "logId": "EE4BBDB775CE60BAE142691FABE19E66A30F7E5FB072D88300C47B897AA8FDCB",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304402206E1D98D5353ED086037E071E1E72C9B6518A7E72AAA813A496B0C13E4CCE180E022052BF44DDDA5D838072391F312E079DB80B27FF430600279CCB38B14E270B5E79",
+              "status": "Verified",
+              "timestamp": 1487758321719
+            },
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Symantec log",
+              "logId": "DDEB1D2B7A0D4FA6208B81AD8168707E2E8E9D01D55C888D3D11C4CDB6ECBECC",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3046022100A9134F5ADD2DF5A23DB7A5A113650818B386922209A6C85DC010053885BCFE6A022100CCAA0252C7DEC54544E85DC4D0AF66DD6E4E7F6AFEAC9B2A9EE54E96A13C56B8",
+              "status": "Verified",
+              "timestamp": 1487758321330
+            }
+          ],
+          "subjectName": "*.google.se",
+          "validFrom": 1487753820,
+          "validTo": 1495011420
+        },
+        "securityState": "secure",
+        "status": 204,
+        "statusText": "",
+        "timing": {
+          "connectEnd": -1,
+          "connectStart": -1,
+          "dnsEnd": -1,
+          "dnsStart": -1,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 30.8959999820218,
+          "requestTime": 491172.102259,
+          "sendEnd": 0.895000004675239,
+          "sendStart": 0.60600001597777,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.google.se/gen_204?atyp=i&ct=&cad=&vet=10ahUKEwj794H8rMLSAhWEJZoKHaPlCzcQsmQIDw..s&ei=TpW9WPuYLITL6ASjy6-4Aw&zx=1488819535987"
+      },
+      "timestamp": 491172.138822,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 19,
+      "requestId": "18440.28",
+      "timestamp": 491172.133515
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.4",
+      "requestId": "18440.31",
+      "response": {
+        "connectionId": 132,
+        "connectionReused": false,
+        "encodedDataLength": 8587,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "age": "422747",
+          "alt-svc": "quic=\":443\"; ma=2592000; v=\"36,35,34\"",
+          "cache-control": "public, max-age=31536000",
+          "content-encoding": "gzip",
+          "content-length": "43190",
+          "content-type": "text/javascript; charset=UTF-8",
+          "date": "Wed, 01 Mar 2017 19:33:08 GMT",
+          "expires": "Thu, 01 Mar 2018 19:33:08 GMT",
+          "last-modified": "Thu, 23 Feb 2017 15:22:36 GMT",
+          "server": "sffe",
+          "status": "200",
+          "vary": "Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "text/javascript",
+        "protocol": "h2",
+        "remoteIPAddress": "216.58.201.174",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "apis.google.com",
+          ":method": "GET",
+          ":path": "/_/scs/abc-static/_/js/k=gapi.gapi.en.-QXB_U8R8Eg.O/m=gapi_iframes,googleapis_client,plusone/rt=j/sv=1/d=1/ed=1/rs=AHpOoo8PUrmM-10GgMhjxf52iM2kLRUicg/cb=gapi.loaded_0",
+          ":scheme": "https",
+          "accept": "*/*",
+          "accept-encoding": "gzip, deflate, sdch, br",
+          "accept-language": "sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4",
+          "cache-control": "max-age=0",
+          "cookie": "NID=98=tyK61GVMEM2-NIlBWf49Txgp2wUtD-5E04k2mq2S5aR_siVvALCzwnrPKvc6AA7dwTDgoXnWolL8QAcsjRatQ6OxlCEupVvFBSUxMIQGGpof6n0dYSP2bewxxUSnTj8U",
+          "referer": "https://www.google.se/",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Google Internet Authority G2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "X25519",
+          "protocol": "TLS 1.2",
+          "sanList": [
+            "*.apis.google.com",
+            "apis.google.com"
+          ],
+          "signedCertificateTimestampList": [
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Google 'Rocketeer' log",
+              "logId": "EE4BBDB775CE60BAE142691FABE19E66A30F7E5FB072D88300C47B897AA8FDCB",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304402206A71D2DB1AE1E1E23F366A875631FCACF77365FA5D602C28CEFC24AA8F2B6ACD02202CA9B0E8DA5966183B8A89A9F5E2502C0A633B8E0C9365437F94D4E9C6397852",
+              "status": "Verified",
+              "timestamp": 1487763262001
+            },
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Symantec log",
+              "logId": "DDEB1D2B7A0D4FA6208B81AD8168707E2E8E9D01D55C888D3D11C4CDB6ECBECC",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304502200F2FC8B569D3EF8A38086AD1B7C199CA79BF99F885449573028751085B35E9C7022100825D359441C4EF996C0FC2820F6224A425D00CB0DA3D9656A19FE83CC68638DC",
+              "status": "Verified",
+              "timestamp": 1487763261617
+            }
+          ],
+          "subjectName": "*.apis.google.com",
+          "validFrom": 1487755026,
+          "validTo": 1495011480
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": 45.7230000174604,
+          "connectStart": 11.1640000250191,
+          "dnsEnd": 11.1640000250191,
+          "dnsStart": 0.364999985322356,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 326.97900000494,
+          "requestTime": 491172.123357,
+          "sendEnd": 46.0329999914393,
+          "sendStart": 45.9309999714606,
+          "sslEnd": 45.7129999995232,
+          "sslStart": 25.4100000020117,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://apis.google.com/_/scs/abc-static/_/js/k=gapi.gapi.en.-QXB_U8R8Eg.O/m=gapi_iframes,googleapis_client,plusone/rt=j/sv=1/d=1/ed=1/rs=AHpOoo8PUrmM-10GgMhjxf52iM2kLRUicg/cb=gapi.loaded_0"
+      },
+      "timestamp": 491172.451055,
+      "type": "Script"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 20878,
+      "encodedDataLength": 2778,
+      "requestId": "18440.31",
+      "timestamp": 491172.451256
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 8606,
+      "encodedDataLength": 1389,
+      "requestId": "18440.31",
+      "timestamp": 491172.451339
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 3970,
+      "encodedDataLength": 0,
+      "requestId": "18440.31",
+      "timestamp": 491172.451377
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 19820,
+      "encodedDataLength": 6945,
+      "requestId": "18440.31",
+      "timestamp": 491172.453597
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 4892,
+      "encodedDataLength": 1389,
+      "requestId": "18440.31",
+      "timestamp": 491172.468454
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 29577,
+      "encodedDataLength": 9723,
+      "requestId": "18440.31",
+      "timestamp": 491172.480284
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 11951,
+      "requestId": "18440.31",
+      "timestamp": 491172.484066
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 1342,
+      "encodedDataLength": 0,
+      "requestId": "18440.31",
+      "timestamp": 491172.484148
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 1874,
+      "encodedDataLength": 708,
+      "requestId": "18440.31",
+      "timestamp": 491172.486211
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 43470,
+      "requestId": "18440.31",
+      "timestamp": 491172.486212
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+      "frameId": "18440.1",
+      "initiator": {
+        "stack": {
+          "callFrames": []
+        },
+        "type": "script"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {
+          "Referer": "https://www.google.se/",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "initialPriority": "Low",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "https://www.google.se/images/nav_logo242.png"
+      },
+      "requestId": "18440.32",
+      "timestamp": 491172.513652,
+      "type": "Other",
+      "wallTime": 1488819536.39893
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+      "frameId": "18440.1",
+      "initiator": {
+        "stack": {
+          "callFrames": [
+            {
+              "columnNumber": 25,
+              "functionName": "s_oka",
+              "lineNumber": 1362,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 290,
+              "functionName": "s_2j",
+              "lineNumber": 1367,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 464,
+              "functionName": "s_pka",
+              "lineNumber": 1366,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 417,
+              "functionName": "",
+              "lineNumber": 1368,
+              "scriptId": "81",
+              "url": "https://www.google.se/xjs/_/js/k=xjs.s.sv.XmLiGzkb20w.O/m=sx,c,sb,cdos,cr,elog,hsm,jsa,r,qsm,j,p,d,csi/am=gCMo7fGCFiD-7xAYxE3CgtQBEwYa/rt=j/d=1/t=zcms/rs=ACT90oFmBtmmsyU6Bb2vq4ygUujMdUMazQ"
+            },
+            {
+              "columnNumber": 1266,
+              "functionName": "google.c.u",
+              "lineNumber": 2,
+              "scriptId": "67",
+              "url": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl"
+            },
+            {
+              "columnNumber": 670,
+              "functionName": "",
+              "lineNumber": 406,
+              "scriptId": "79",
+              "url": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl"
+            },
+            {
+              "columnNumber": 1355,
+              "functionName": "d",
+              "lineNumber": 2,
+              "scriptId": "67",
+              "url": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl"
+            }
+          ]
+        },
+        "type": "script"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {
+          "Cache-Control": "max-age=0",
+          "Content-Type": "text/plain;charset=UTF-8",
+          "Origin": "https://www.google.se",
+          "Referer": "https://www.google.se/",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "initialPriority": "VeryLow",
+        "method": "POST",
+        "mixedContentType": "none",
+        "postData": "",
+        "url": "https://www.google.se/gen_204?s=webhp&atyp=csi&ei=TpW9WPuYLITL6ASjy6-4Aw&imc=2&imn=2&imp=1&adh=&xjs=init.45.21.sb.30.spch.5.p.4.foot.3.async.1&p=s&npn=1&ima=0&rt=xjsls.32,prt.69,iml.115,dcl.69,xjses.158,jraids.191,jraide.198,xjsee.246,xjs.246,ol.724,aft.69,wsrt.57371,cst.93,dnst.9,rqst.266,rspt.25,sslt.82,rqstt.57122,unt.57018,cstt.57027,dit.57440"
+      },
+      "requestId": "18440.33",
+      "timestamp": 491172.517078,
+      "type": "Other",
+      "wallTime": 1488819536.40235
+    }
+  },
+  {
+    "method": "Page.loadEventFired",
+    "params": {
+      "timestamp": 491172.517268
+    }
+  },
+  {
+    "method": "Page.frameStoppedLoading",
+    "params": {
+      "frameId": "18440.1"
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+      "frameId": "18440.1",
+      "initiator": {
+        "type": "other"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {
+          "Referer": "https://www.google.se/",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "initialPriority": "High",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "https://www.google.se/images/branding/product/ico/googleg_lodp.ico"
+      },
+      "requestId": "18440.34",
+      "timestamp": 491172.52198,
+      "type": "Other",
+      "wallTime": 1488819536.40725
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.4",
+      "requestId": "18440.32",
+      "response": {
+        "connectionId": 73,
+        "connectionReused": true,
+        "encodedDataLength": 12477,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "alt-svc": "quic=\":443\"; ma=2592000; v=\"36,35,34\"",
+          "cache-control": "private, max-age=31536000",
+          "content-length": "16786",
+          "content-type": "image/png",
+          "date": "Mon, 06 Mar 2017 16:58:55 GMT",
+          "expires": "Mon, 06 Mar 2017 16:58:55 GMT",
+          "last-modified": "Wed, 14 Dec 2016 20:30:00 GMT",
+          "server": "sffe",
+          "status": "200",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "image/png",
+        "protocol": "h2",
+        "remoteIPAddress": "83.255.236.31",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.google.se",
+          ":method": "GET",
+          ":path": "/images/nav_logo242.png",
+          ":scheme": "https",
+          "accept": "image/webp,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, sdch, br",
+          "accept-language": "sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4",
+          "cache-control": "max-age=0",
+          "cookie": "CONSENT=WP.25dcd5; NID=98=ow3vSwwIG7jvoVqw39v38wLZ4f-xyJALqcLbUMwRWNs7_xG20g4D1Oy8jpA7geI_TvpDQcl_pawBpSAaQQ7frwFOY1Q6SArWqcea2YgC4fVEhccnXNfm1oXsn-dVBI2V",
+          "referer": "https://www.google.se/",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Google Internet Authority G2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "X25519",
+          "protocol": "TLS 1.2",
+          "sanList": [
+            "*.google.se",
+            "google.se"
+          ],
+          "signedCertificateTimestampList": [
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Google 'Rocketeer' log",
+              "logId": "EE4BBDB775CE60BAE142691FABE19E66A30F7E5FB072D88300C47B897AA8FDCB",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304402206E1D98D5353ED086037E071E1E72C9B6518A7E72AAA813A496B0C13E4CCE180E022052BF44DDDA5D838072391F312E079DB80B27FF430600279CCB38B14E270B5E79",
+              "status": "Verified",
+              "timestamp": 1487758321719
+            },
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Symantec log",
+              "logId": "DDEB1D2B7A0D4FA6208B81AD8168707E2E8E9D01D55C888D3D11C4CDB6ECBECC",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3046022100A9134F5ADD2DF5A23DB7A5A113650818B386922209A6C85DC010053885BCFE6A022100CCAA0252C7DEC54544E85DC4D0AF66DD6E4E7F6AFEAC9B2A9EE54E96A13C56B8",
+              "status": "Verified",
+              "timestamp": 1487758321330
+            }
+          ],
+          "subjectName": "*.google.se",
+          "validFrom": 1487753820,
+          "validTo": 1495011420
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": -1,
+          "connectStart": -1,
+          "dnsEnd": -1,
+          "dnsStart": -1,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 161.86499997275,
+          "requestTime": 491172.513989,
+          "sendEnd": 0.552000012248755,
+          "sendStart": 0.440999981947243,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.google.se/images/nav_logo242.png"
+      },
+      "timestamp": 491172.676389,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 12420,
+      "encodedDataLength": 1381,
+      "requestId": "18440.32",
+      "timestamp": 491172.676615
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 1381,
+      "encodedDataLength": 0,
+      "requestId": "18440.32",
+      "timestamp": 491172.676721
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 2985,
+      "encodedDataLength": 2994,
+      "requestId": "18440.32",
+      "timestamp": 491172.676761
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 16852,
+      "requestId": "18440.32",
+      "timestamp": 491172.676587
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "",
+      "requestId": "18440.33",
+      "response": {
+        "connectionId": 73,
+        "connectionReused": true,
+        "encodedDataLength": 17,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "alt-svc": "quic=\":443\"; ma=2592000; v=\"36,35,34\"",
+          "content-length": "0",
+          "content-type": "text/html; charset=UTF-8",
+          "date": "Mon, 06 Mar 2017 16:58:55 GMT",
+          "server": "gws",
+          "status": "204",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "text/html",
+        "protocol": "h2",
+        "remoteIPAddress": "83.255.236.31",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.google.se",
+          ":method": "POST",
+          ":path": "/gen_204?s=webhp&atyp=csi&ei=TpW9WPuYLITL6ASjy6-4Aw&imc=2&imn=2&imp=1&adh=&xjs=init.45.21.sb.30.spch.5.p.4.foot.3.async.1&p=s&npn=1&ima=0&rt=xjsls.32,prt.69,iml.115,dcl.69,xjses.158,jraids.191,jraide.198,xjsee.246,xjs.246,ol.724,aft.69,wsrt.57371,cst.93,dnst.9,rqst.266,rspt.25,sslt.82,rqstt.57122,unt.57018,cstt.57027,dit.57440",
+          ":scheme": "https",
+          "accept": "*/*",
+          "accept-encoding": "gzip, deflate, br",
+          "accept-language": "sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4",
+          "cache-control": "max-age=0",
+          "content-length": "0",
+          "content-type": "text/plain;charset=UTF-8",
+          "cookie": "CONSENT=WP.25dcd5; NID=98=ow3vSwwIG7jvoVqw39v38wLZ4f-xyJALqcLbUMwRWNs7_xG20g4D1Oy8jpA7geI_TvpDQcl_pawBpSAaQQ7frwFOY1Q6SArWqcea2YgC4fVEhccnXNfm1oXsn-dVBI2V",
+          "origin": "https://www.google.se",
+          "referer": "https://www.google.se/",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Google Internet Authority G2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "X25519",
+          "protocol": "TLS 1.2",
+          "sanList": [
+            "*.google.se",
+            "google.se"
+          ],
+          "signedCertificateTimestampList": [
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Google 'Rocketeer' log",
+              "logId": "EE4BBDB775CE60BAE142691FABE19E66A30F7E5FB072D88300C47B897AA8FDCB",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304402206E1D98D5353ED086037E071E1E72C9B6518A7E72AAA813A496B0C13E4CCE180E022052BF44DDDA5D838072391F312E079DB80B27FF430600279CCB38B14E270B5E79",
+              "status": "Verified",
+              "timestamp": 1487758321719
+            },
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Symantec log",
+              "logId": "DDEB1D2B7A0D4FA6208B81AD8168707E2E8E9D01D55C888D3D11C4CDB6ECBECC",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3046022100A9134F5ADD2DF5A23DB7A5A113650818B386922209A6C85DC010053885BCFE6A022100CCAA0252C7DEC54544E85DC4D0AF66DD6E4E7F6AFEAC9B2A9EE54E96A13C56B8",
+              "status": "Verified",
+              "timestamp": 1487758321330
+            }
+          ],
+          "subjectName": "*.google.se",
+          "validFrom": 1487753820,
+          "validTo": 1495011420
+        },
+        "securityState": "secure",
+        "status": 204,
+        "statusText": "",
+        "timing": {
+          "connectEnd": -1,
+          "connectStart": -1,
+          "dnsEnd": -1,
+          "dnsStart": -1,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 159.425000019837,
+          "requestTime": 491172.517419,
+          "sendEnd": 0.429000006988645,
+          "sendStart": 0.211000035051256,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.google.se/gen_204?s=webhp&atyp=csi&ei=TpW9WPuYLITL6ASjy6-4Aw&imc=2&imn=2&imp=1&adh=&xjs=init.45.21.sb.30.spch.5.p.4.foot.3.async.1&p=s&npn=1&ima=0&rt=xjsls.32,prt.69,iml.115,dcl.69,xjses.158,jraids.191,jraide.198,xjsee.246,xjs.246,ol.724,aft.69,wsrt.57371,cst.93,dnst.9,rqst.266,rspt.25,sslt.82,rqstt.57122,unt.57018,cstt.57027,dit.57440"
+      },
+      "timestamp": 491172.677542,
+      "type": "Other"
+    }
+  },
+  {
+    "method": "Network.loadingFailed",
+    "params": {
+      "canceled": true,
+      "errorText": "",
+      "requestId": "18440.33",
+      "timestamp": 491172.677708,
+      "type": "Other"
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.4",
+      "requestId": "18440.34",
+      "response": {
+        "connectionId": 73,
+        "connectionReused": true,
+        "encodedDataLength": 1539,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "alt-svc": "quic=\":443\"; ma=2592000; v=\"36,35,34\"",
+          "cache-control": "private, max-age=31536000",
+          "content-encoding": "gzip",
+          "content-length": "1494",
+          "content-type": "image/x-icon",
+          "date": "Mon, 06 Mar 2017 16:58:55 GMT",
+          "expires": "Mon, 06 Mar 2017 16:58:55 GMT",
+          "last-modified": "Thu, 08 Dec 2016 01:00:57 GMT",
+          "server": "sffe",
+          "status": "200",
+          "vary": "Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "image/x-icon",
+        "protocol": "h2",
+        "remoteIPAddress": "83.255.236.31",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.google.se",
+          ":method": "GET",
+          ":path": "/images/branding/product/ico/googleg_lodp.ico",
+          ":scheme": "https",
+          "accept": "image/webp,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, sdch, br",
+          "accept-language": "sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4",
+          "cookie": "CONSENT=WP.25dcd5; NID=98=ow3vSwwIG7jvoVqw39v38wLZ4f-xyJALqcLbUMwRWNs7_xG20g4D1Oy8jpA7geI_TvpDQcl_pawBpSAaQQ7frwFOY1Q6SArWqcea2YgC4fVEhccnXNfm1oXsn-dVBI2V",
+          "referer": "https://www.google.se/",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Google Internet Authority G2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "X25519",
+          "protocol": "TLS 1.2",
+          "sanList": [
+            "*.google.se",
+            "google.se"
+          ],
+          "signedCertificateTimestampList": [
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Google 'Rocketeer' log",
+              "logId": "EE4BBDB775CE60BAE142691FABE19E66A30F7E5FB072D88300C47B897AA8FDCB",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304402206E1D98D5353ED086037E071E1E72C9B6518A7E72AAA813A496B0C13E4CCE180E022052BF44DDDA5D838072391F312E079DB80B27FF430600279CCB38B14E270B5E79",
+              "status": "Verified",
+              "timestamp": 1487758321719
+            },
+            {
+              "hashAlgorithm": "SHA-256",
+              "logDescription": "Symantec log",
+              "logId": "DDEB1D2B7A0D4FA6208B81AD8168707E2E8E9D01D55C888D3D11C4CDB6ECBECC",
+              "origin": "TLS extension",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3046022100A9134F5ADD2DF5A23DB7A5A113650818B386922209A6C85DC010053885BCFE6A022100CCAA0252C7DEC54544E85DC4D0AF66DD6E4E7F6AFEAC9B2A9EE54E96A13C56B8",
+              "status": "Verified",
+              "timestamp": 1487758321330
+            }
+          ],
+          "subjectName": "*.google.se",
+          "validFrom": 1487753820,
+          "validTo": 1495011420
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": -1,
+          "connectStart": -1,
+          "dnsEnd": -1,
+          "dnsStart": -1,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 155.93299997272,
+          "requestTime": 491172.5222,
+          "sendEnd": 0.459000002592802,
+          "sendStart": 0.337000004947186,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.google.se/images/branding/product/ico/googleg_lodp.ico"
+      },
+      "timestamp": 491172.678851,
+      "type": "Other"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 5430,
+      "encodedDataLength": 0,
+      "requestId": "18440.34",
+      "timestamp": 491172.679124
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 1539,
+      "requestId": "18440.34",
+      "timestamp": 491172.678587
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+      "frameId": "18440.1",
+      "initiator": {
+        "stack": {
+          "callFrames": [
+            {
+              "columnNumber": 17,
+              "functionName": "GetRects",
+              "lineNumber": 458,
+              "scriptId": "111",
+              "url": ""
+            },
+            {
+              "columnNumber": 6,
+              "functionName": "RUMSpeedIndex",
+              "lineNumber": 608,
+              "scriptId": "111",
+              "url": ""
+            },
+            {
+              "columnNumber": 9,
+              "functionName": "",
+              "lineNumber": 629,
+              "scriptId": "111",
+              "url": ""
+            },
+            {
+              "columnNumber": 2,
+              "functionName": "",
+              "lineNumber": 630,
+              "scriptId": "111",
+              "url": ""
+            },
+            {
+              "columnNumber": 32,
+              "functionName": "callFunction",
+              "lineNumber": 345,
+              "scriptId": "111",
+              "url": ""
+            },
+            {
+              "columnNumber": 22,
+              "functionName": "",
+              "lineNumber": 355,
+              "scriptId": "111",
+              "url": ""
+            },
+            {
+              "columnNumber": 2,
+              "functionName": "",
+              "lineNumber": 356,
+              "scriptId": "111",
+              "url": ""
+            }
+          ]
+        },
+        "type": "script"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {},
+        "initialPriority": "VeryLow",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "data:image/gif;base64,R0lGODlhEAAQAKIHAPzu7PfT0Oh5cfGtqONbUuBLQeBKP////yH5BAEAAAcALAAAAAAQABAAAANKeLrcfkAI8NowZtQFCCbUJmCYsAWFAQBGEVSjyhqmc2HBnDUdGQQkEOOGA5I0CkCKxMQUQjEnAMU0GUkuZTPgaRaWTEK0Sa5tGgkAOw"
+      },
+      "requestId": "18440.35",
+      "timestamp": 491174.593977,
+      "type": "Other",
+      "wallTime": 1488819538.47919
+    }
+  },
+  {
+    "method": "Network.requestServedFromCache",
+    "params": {
+      "requestId": "18440.35"
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.4",
+      "requestId": "18440.35",
+      "response": {
+        "connectionId": 0,
+        "connectionReused": false,
+        "encodedDataLength": -1,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {},
+        "mimeType": "image/gif",
+        "protocol": "data",
+        "securityState": "unknown",
+        "status": 200,
+        "statusText": "OK",
+        "url": "data:image/gif;base64,R0lGODlhEAAQAKIHAPzu7PfT0Oh5cfGtqONbUuBLQeBKP////yH5BAEAAAcALAAAAAAQABAAAANKeLrcfkAI8NowZtQFCCbUJmCYsAWFAQBGEVSjyhqmc2HBnDUdGQQkEOOGA5I0CkCKxMQUQjEnAMU0GUkuZTPgaRaWTEK0Sa5tGgkAOw"
+      },
+      "timestamp": 491174.594092,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 133,
+      "encodedDataLength": 0,
+      "requestId": "18440.35",
+      "timestamp": 491174.594121
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 0,
+      "requestId": "18440.35",
+      "timestamp": 491174.59413
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.google.se/?gfe_rd=cr&ei=8ZS9WLfABubk8AfdtpKYCw&gws_rd=ssl",
+      "frameId": "18440.1",
+      "initiator": {
+        "stack": {
+          "callFrames": [
+            {
+              "columnNumber": 17,
+              "functionName": "GetRects",
+              "lineNumber": 458,
+              "scriptId": "111",
+              "url": ""
+            },
+            {
+              "columnNumber": 6,
+              "functionName": "RUMSpeedIndex",
+              "lineNumber": 608,
+              "scriptId": "111",
+              "url": ""
+            },
+            {
+              "columnNumber": 9,
+              "functionName": "",
+              "lineNumber": 629,
+              "scriptId": "111",
+              "url": ""
+            },
+            {
+              "columnNumber": 2,
+              "functionName": "",
+              "lineNumber": 630,
+              "scriptId": "111",
+              "url": ""
+            },
+            {
+              "columnNumber": 32,
+              "functionName": "callFunction",
+              "lineNumber": 345,
+              "scriptId": "111",
+              "url": ""
+            },
+            {
+              "columnNumber": 22,
+              "functionName": "",
+              "lineNumber": 355,
+              "scriptId": "111",
+              "url": ""
+            },
+            {
+              "columnNumber": 2,
+              "functionName": "",
+              "lineNumber": 356,
+              "scriptId": "111",
+              "url": ""
+            }
+          ]
+        },
+        "type": "script"
+      },
+      "loaderId": "18440.4",
+      "request": {
+        "headers": {},
+        "initialPriority": "VeryLow",
+        "method": "GET",
+        "mixedContentType": "none",
+        "url": "data:image/png;base64,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"
+      },
+      "requestId": "18440.37",
+      "timestamp": 491174.595035,
+      "type": "Other",
+      "wallTime": 1488819538.48025
+    }
+  },
+  {
+    "method": "Network.requestServedFromCache",
+    "params": {
+      "requestId": "18440.37"
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "18440.1",
+      "loaderId": "18440.4",
+      "requestId": "18440.37",
+      "response": {
+        "connectionId": 0,
+        "connectionReused": false,
+        "encodedDataLength": -1,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {},
+        "mimeType": "image/png",
+        "protocol": "data",
+        "securityState": "unknown",
+        "status": 200,
+        "statusText": "OK",
+        "url": "data:image/png;base64,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"
+      },
+      "timestamp": 491174.595182,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 2357,
+      "encodedDataLength": 0,
+      "requestId": "18440.37",
+      "timestamp": 491174.595237
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "encodedDataLength": 0,
+      "requestId": "18440.37",
+      "timestamp": 491174.595245
+    }
+  }
+]
