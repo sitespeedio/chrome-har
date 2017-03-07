@@ -254,7 +254,6 @@ module.exports = {
 
           // this is the first request for this page, so set timestamp of page.
           if (!page.__timestamp) {
-            entry.__mainRequest = true;
             page.__wallTime = params.wallTime;
             page.__timestamp = params.timestamp;
             page.startedDateTime = moment.unix(params.wallTime).toISOString(); //epoch float64, eg 1440589909.59248
