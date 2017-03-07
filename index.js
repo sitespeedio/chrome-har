@@ -40,7 +40,7 @@ function populateEntryFromResponse(entry, response, page) {
     headers: parseHeaders(responseHeaders)
   };
 
-  let locationHeaderValue = getHeaderValue(responseHeaders, 'Location');
+  const locationHeaderValue = getHeaderValue(responseHeaders, 'Location');
   if (locationHeaderValue) {
     entry.response.redirectURL = locationHeaderValue;
   }
@@ -95,7 +95,7 @@ function populateEntryFromResponse(entry, response, page) {
     return -1;
   }
 
-  let timing = response.timing;
+  const timing = response.timing;
   if (timing) {
     const blocked = formatMillis(firstNonNegative([timing.dnsStart, timing.connectStart, timing.sendStart]));
 
@@ -165,13 +165,13 @@ module.exports = {
       entries = [],
       currentPageId;
 
-    for (let message of messages) {
+    for (const message of messages) {
       const params = message.params;
 
       switch (message.method) {
         case 'Page.frameStartedLoading': {
           const frameId = params.frameId;
-          let previousFrameId = entries.find((entry) => entry.__frameId === frameId);
+          const previousFrameId = entries.find((entry) => entry.__frameId === frameId);
 
           if (rootFrameMappings.has(frameId) || previousFrameId) {
             // This is a sub frame, there's already a page for the root frame
@@ -179,7 +179,7 @@ module.exports = {
           }
 
           currentPageId = 'page_' + (pages.length + 1);
-          let page = {
+          const page = {
             id: currentPageId,
             startedDateTime: '',
             title: '',
@@ -201,8 +201,8 @@ module.exports = {
             ignoredRequests.add(params.requestId);
             continue;
           }
-          let frameId = rootFrameMappings.get(params.frameId) || params.frameId;
-          let page = pages.find((page) => page.__frameId === frameId);
+          const frameId = rootFrameMappings.get(params.frameId) || params.frameId;
+          const page = pages.find((page) => page.__frameId === frameId);
           if (!page) {
             debug('Request will be sent with requestId ' + params.requestId + ' that can\'t be mapped to any page.');
             ignoredRequests.add(params.requestId);
@@ -215,7 +215,7 @@ module.exports = {
           const url = urlParser.parse(request.url, true);
           url.hash = null;
 
-          let req = {
+          const req = {
             method: request.method,
             url: urlParser.format(url),
             queryString: toNameValuePairs(url.query),
@@ -226,7 +226,7 @@ module.exports = {
             headers: parseHeaders(request.headers)
           };
 
-          let entry = {
+          const entry = {
             cache: {},
             startedDateTime: '',
             __requestWillBeSentTime: params.timestamp,
@@ -243,7 +243,7 @@ module.exports = {
           };
 
           if (params.redirectResponse) {
-            let previousEntry = entries.find((entry) => entry.__requestId === params.requestId);
+            const previousEntry = entries.find((entry) => entry.__requestId === params.requestId);
             if (previousEntry) {
               previousEntry.__requestId += 'r';
               populateEntryFromResponse(previousEntry, params.redirectResponse, page);
@@ -280,7 +280,7 @@ module.exports = {
             continue;
           }
 
-          let entry = entries.find((entry) => entry.__requestId === params.requestId);
+          const entry = entries.find((entry) => entry.__requestId === params.requestId);
           if (!entry) {
             debug('Received requestServedFromCache for requestId ' + params.requestId + ' with no matching request.');
             continue;
@@ -304,14 +304,14 @@ module.exports = {
             continue;
           }
 
-          let entry = entries.find((entry) => entry.__requestId === params.requestId);
+          const entry = entries.find((entry) => entry.__requestId === params.requestId);
           if (!entry) {
             debug('Received network response for requestId ' + params.requestId + ' with no matching request.');
             continue;
           }
 
-          let frameId = rootFrameMappings.get(params.frameId) || params.frameId;
-          let page = pages.find((page) => page.__frameId === frameId);
+          const frameId = rootFrameMappings.get(params.frameId) || params.frameId;
+          const page = pages.find((page) => page.__frameId === frameId);
           if (!page) {
             debug('Received network response for requestId ' + params.requestId + ' that can\'t be mapped to any page.');
             continue;
@@ -335,7 +335,7 @@ module.exports = {
             continue;
           }
 
-          let entry = entries.find((entry) => entry.__requestId === params.requestId);
+          const entry = entries.find((entry) => entry.__requestId === params.requestId);
           if (!entry) {
             debug('Received network data for requestId ' + params.requestId + ' with no matching request.');
             continue;
@@ -355,7 +355,7 @@ module.exports = {
             continue;
           }
 
-          let entry = entries.find((entry) => entry.__requestId === params.requestId);
+          const entry = entries.find((entry) => entry.__requestId === params.requestId);
           if (!entry) {
             debug('Network loading finished for requestId ' + params.requestId + ' with no matching request.');
             continue;
@@ -392,7 +392,7 @@ module.exports = {
             continue;
           }
 
-          let page = pages[pages.length - 1];
+          const page = pages[pages.length - 1];
 
           if (params.timestamp && page.__timestamp) {
             page.pageTimings.onLoad = formatMillis((params.timestamp - page.__timestamp) * 1000);
@@ -406,7 +406,7 @@ module.exports = {
             continue;
           }
 
-          let page = pages[pages.length - 1];
+          const page = pages[pages.length - 1];
 
           if (params.timestamp && page.__timestamp) {
             page.pageTimings.onContentLoad = formatMillis((params.timestamp - page.__timestamp) * 1000);
@@ -453,7 +453,7 @@ module.exports = {
             continue;
           }
 
-          let entry = entries.find((entry) => entry.__requestId === params.requestId);
+          const entry = entries.find((entry) => entry.__requestId === params.requestId);
           if (!entry) {
             debug('Network loading failed for requestId ' + params.requestId + ' with no matching request.');
             continue;
@@ -480,7 +480,7 @@ module.exports = {
           // ignore
           break;
         case 'Network.resourceChangedPriority': {
-          let entry = entries.find((entry) => entry.__requestId === params.requestId);
+          const entry = entries.find((entry) => entry.__requestId === params.requestId);
 
           if (!entry) {
             debug('Received resourceChangedPriority for requestId ' + params.requestId + ' with no matching request.');
@@ -504,7 +504,7 @@ module.exports = {
 
     const deleteInternalProperties = (o) => {
       // __ properties are only for internal use, _ properties are custom properties for the HAR
-      for (let prop in o) {
+      for (const prop in o) {
         if (prop.startsWith('__')) {
           delete o[prop];
         }
