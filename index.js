@@ -193,6 +193,7 @@ module.exports = {
         case 'Network.requestWillBeSent': {
           if (pages.length < 1) {
             //we haven't loaded any pages yet.
+            ignoredRequests.add(params.requestId);
             continue
           }
           const request = params.request;
@@ -204,6 +205,7 @@ module.exports = {
           let page = pages.find((page) => page.__frameId === frameId);
           if (!page) {
             debug('Request will be sent with requestId ' + params.requestId + ' that can\'t be mapped to any page.');
+            ignoredRequests.add(params.requestId);
             continue;
           }
 
