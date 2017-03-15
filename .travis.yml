@@ -1,8 +1,11 @@
 language: node_js
 node_js:
-  - '6'
-  - '7'
+- '6'
+- '7'
 cache:
   directories:
-    - node_modules
+  - node_modules
 script: npm run lint && npm run test
+notifications:
+  slack:
+    secure: qiRAPYncfOESLGfP9KBqZxGI/Bz0/9DNfooXt31BksfCCuojnzY1QV8KDZ8ZskHKZXruPjTn0R2HaQUGwNDFzJFrki1utvKDt0E9SLTB23ub9s1uUadOlKmRP10znzflj0OcAkgjGUrDWLBZuD/C3XQwnUbGt5NMmiBWBmo0w1V4Ox0INXuO4n1iuLuHud9hciR8KE1cRpZcylXK6izhwJEhW8d+JQv5XJVUjnD6I6gaLgLwSztWfpMKAtjMG/h2nBGdvRtVDCQYjWp3hbFnVFYQSZK4vtZzSixMScKVhoLwvNm+ktyzHpv7hrxsjBiLiScx4QDG7yYlXixOmAtYayqshMStLo1WNPtZ5f+IGadHI/raDg7NK5IxcV12k1MMnblSOHTjk2B5kCHZBYNXTD69ZUgCgnMTKUOwEUDKa2ulef05VnjNWw904ELJT+05ZQfJ1Zzeb6tcpcwGVDwnkpGoMJtGlmhJJckd/PvfNGsjb1I3OH2jv3jkmd4gQK6nwWCshFiobsKDOlDfacvEKHbTuG5kAngJYxKW74WJdNpgx67QDPbLVX6pEtgS1n/AN72DVmyraddBTFhbqqaaxkdIcJSo4UACTSuBG71aokUf1aIdoi35OXifBBxLDaiNPrmQ7hnwpmn0SPJVmjnqkLltMhPyLrUe4ua2DUtdG3c=
