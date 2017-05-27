@@ -27,8 +27,8 @@
     "har-validator": "^5.0.3"
   },
   "dependencies": {
-    "debug": "^2.6.1",
-    "moment": "^2.17.1",
+    "debug": "2.6.8",
+    "moment": "2.18.1",
     "tough-cookie": "^2.3.2"
   }
 }
