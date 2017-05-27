@@ -566,6 +566,7 @@ function parsePostData(contentType, postData) {
       params: parseUrlEncoded(postData)
     };
   } else if (/^application\/json/.test(contentType)) {
+    postData = postData.replace(/'/g, "\"")
     return {
       mimeType: contentType,
       params: toNameValuePairs(JSON.parse(postData))
