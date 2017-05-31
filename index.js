@@ -42,7 +42,8 @@ function populateEntryFromResponse(entry, response, page) {
     headersSize: -1,
     bodySize: -1,
     cookies: parseResponseCookies(cookieHeader),
-    headers: parseHeaders(responseHeaders)
+    headers: parseHeaders(responseHeaders),
+    _transferSize: response.encodedDataLength
   };
 
   const locationHeaderValue = getHeaderValue(responseHeaders, 'Location');
@@ -80,6 +81,9 @@ function populateEntryFromResponse(entry, response, page) {
       } else {
         entry.response.headersSize = calculateResponseHeaderSize(response);
       }
+
+      entry.response.bodySize =
+        response.encodedDataLength - entry.response.headersSize;
 
       if (response.requestHeadersText) {
         entry.request.headersSize = response.requestHeadersText.length;
@@ -438,26 +442,23 @@ module.exports = {
               timings.wait +
               timings.receive;
 
-            // FIXME, encodedDataLength includes headers according to https://github.com/cyrus-and/chrome-har-capturer/issues/25
-            entry.response.bodySize = params.encodedDataLength > 0
-              ? params.encodedDataLength
-              : entry.response.bodySize;
-            //if (entry.response.headersSize > -1) {
-            //  entry.response.bodySize -= entry.response.headersSize;
-            //}
-
             // encodedDataLength will be -1 sometimes
-            if (params.encodedDataLength > 0) {
-              // encodedDataLength seems to be larger than body size sometimes. Perhaps it's because full packets are
-              // listed even though the actual data might be very small.
-              // I've seen dataLength: 416, encodedDataLength: 1016,
+            if (params.encodedDataLength >= 0) {
+              const response = entry.response;
+
+              response._transferSize = params.encodedDataLength;
+              response.bodySize = params.encodedDataLength;
+
+              if (isHttp1x(response.httpVersion) && response.headersSize > -1) {
+                response.bodySize -= response.headersSize;
+              }
 
               const compression = Math.max(
                 0,
-                entry.response.bodySize - params.encodedDataLength
+                response.content.size - response.bodySize
               );
               if (compression > 0) {
-                entry.response.content.compression = compression;
+                response.content.compression = compression;
               }
             }
           }
