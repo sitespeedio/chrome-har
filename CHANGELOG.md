@@ -1,5 +1,9 @@
 # CHANGELOG
 
+version 0.2.1 2017-05-31
+-------------------------
+* Remove unused files from npm distribution.
+
 version 0.2.0 2017-05-31
 -------------------------
 * Add "serverIPAddress" field to entries.
