@@ -1,6 +1,6 @@
 # CHANGELOG
 
-UNRELEASED
+version 0.2.0 2017-05-31
 -------------------------
 * Add "serverIPAddress" field to entries.
 * Set bodySize for requests correctly.
