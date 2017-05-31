@@ -231,16 +231,18 @@ module.exports = {
             const url = urlParser.parse(request.url, true);
             url.hash = null;
 
+            const postData = parsePostData(
+              getHeaderValue(request.headers, 'Content-Type'),
+              request.postData
+            );
+
             const req = {
               method: request.method,
               url: urlParser.format(url),
               queryString: toNameValuePairs(url.query),
-              postData: parsePostData(
-                getHeaderValue(request.headers, 'Content-Type'),
-                request.postData
-              ),
+              postData,
               headersSize: -1,
-              bodySize: -1, // FIXME calculate based on postData
+              bodySize: isEmpty(request.postData) ? 0 : request.postData.length,
               cookies: parseRequestCookies(cookieHeader),
               headers: parseHeaders(request.headers)
             };
