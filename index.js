@@ -87,6 +87,7 @@ function populateEntryFromResponse(entry, response, page) {
   }
 
   entry.connection = response.connectionId.toString();
+  entry.serverIPAddress = response.remoteIPAddress;
 
   function parseOptionalTime(timing, start, end) {
     if (timing[start] >= 0) {
