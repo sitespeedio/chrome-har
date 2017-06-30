@@ -1,5 +1,9 @@
 # CHANGELOG
 
+version 0.2.2 2017-06-30
+-------------------------
+* Be extra careful when parsing JSON see [#4](https://github.com/sitespeedio/chrome-har/issues/4)
+
 version 0.2.1 2017-05-31
 -------------------------
 * Remove unused files from npm distribution.
