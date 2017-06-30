@@ -669,31 +669,29 @@ function parsePostData(contentType, postData) {
     return undefined;
   }
 
-  if (/^application\/x-www-form-urlencoded/.test(contentType)) {
-    return {
-      mimeType: contentType,
-      params: parseUrlEncoded(postData)
-    };
-  } else if (/^application\/json/.test(contentType)) {
-    // sometimes you say it's JSON but it's not
-    try {
+  try {
+    if (/^application\/x-www-form-urlencoded/.test(contentType)) {
+      return {
+        mimeType: contentType,
+        params: parseUrlEncoded(postData)
+      };
+    }
+    if (/^application\/json/.test(contentType)) {
       return {
         mimeType: contentType,
         params: toNameValuePairs(JSON.parse(postData))
       };
-    } catch (e) {
-      return {
-        mimeType: contentType,
-        text: postData
-      };
     }
-  } else {
     // FIXME parse multipart/form-data as well.
-    return {
-      mimeType: contentType,
-      text: postData
-    };
+  } catch (e) {
+    debug(`Unable to parse post data '${postData}' of type ${contentType}`);
+    // Fall back to include postData as text.
   }
+
+  return {
+    mimeType: contentType,
+    text: postData
+  };
 }
 
 function isSupportedProtocol(url) {
