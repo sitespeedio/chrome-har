@@ -172,9 +172,12 @@ module.exports = {
   harFromMessages(messages, options) {
     options = Object.assign({}, defaultOptions, options);
 
-    const ignoredRequests = new Set(), rootFrameMappings = new Map();
+    const ignoredRequests = new Set(),
+      rootFrameMappings = new Map();
 
-    let pages = [], entries = [], currentPageId;
+    let pages = [],
+      entries = [],
+      currentPageId;
 
     for (const message of messages) {
       const params = message.params;
@@ -500,7 +503,8 @@ module.exports = {
 
         case 'Page.frameAttached':
           {
-            const frameId = params.frameId, parentId = params.parentFrameId;
+            const frameId = params.frameId,
+              parentId = params.parentFrameId;
 
             rootFrameMappings.set(frameId, parentId);
 
@@ -553,7 +557,8 @@ module.exports = {
             // This could be due to incorrect domain name etc. Sad, but unfortunately not something that a HAR file can
             // represent.
             debug(
-              `Failed to load url '${entry.request.url}' (canceled: ${params.canceled})`
+              `Failed to load url '${entry.request
+                .url}' (canceled: ${params.canceled})`
             );
             entries = entries.filter(
               entry => entry.__requestId !== params.requestId
@@ -664,23 +669,29 @@ function parsePostData(contentType, postData) {
     return undefined;
   }
 
-  if (/^application\/x-www-form-urlencoded/.test(contentType)) {
-    return {
-      mimeType: contentType,
-      params: parseUrlEncoded(postData)
-    };
-  } else if (/^application\/json/.test(contentType)) {
-    return {
-      mimeType: contentType,
-      params: toNameValuePairs(JSON.parse(postData))
-    };
-  } else {
+  try {
+    if (/^application\/x-www-form-urlencoded/.test(contentType)) {
+      return {
+        mimeType: contentType,
+        params: parseUrlEncoded(postData)
+      };
+    }
+    if (/^application\/json/.test(contentType)) {
+      return {
+        mimeType: contentType,
+        params: toNameValuePairs(JSON.parse(postData))
+      };
+    }
     // FIXME parse multipart/form-data as well.
-    return {
-      mimeType: contentType,
-      text: postData
-    };
+  } catch (e) {
+    debug(`Unable to parse post data '${postData}' of type ${contentType}`);
+    // Fall back to include postData as text.
   }
+
+  return {
+    mimeType: contentType,
+    text: postData
+  };
 }
 
 function isSupportedProtocol(url) {
