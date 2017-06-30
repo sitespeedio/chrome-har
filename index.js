@@ -670,10 +670,18 @@ function parsePostData(contentType, postData) {
       params: parseUrlEncoded(postData)
     };
   } else if (/^application\/json/.test(contentType)) {
-    return {
-      mimeType: contentType,
-      params: toNameValuePairs(JSON.parse(postData))
-    };
+    // sometimes you say it's JSON but it's not
+    try {
+      return {
+        mimeType: contentType,
+        params: toNameValuePairs(JSON.parse(postData))
+      };
+    } catch (e) {
+      return {
+        mimeType: contentType,
+        text: postData
+      };
+    }
   } else {
     // FIXME parse multipart/form-data as well.
     return {
