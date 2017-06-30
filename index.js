@@ -269,12 +269,36 @@ module.exports = {
               __frameId: params.frameId,
               _initialPriority: request.initialPriority,
               _priority: request.initialPriority,
-              _initiator: params.initiator.url,
-              _initiator_line: params.initiator.lineNumber,
               pageref: currentPageId,
               request: req,
               time: 0
             };
+
+            switch (params.initiator.type) {
+              case 'script':
+                if (
+                  params.initiator.stack
+                  && params.initiator.stack.callFrames
+                  && params.initiator.stack.callFrames.length > 0
+                ) {
+                  const firstCallFrame = params.initiator.stack.callFrames[params.initiator.stack.callFrames.length - 1];
+                  entry._initiator = firstCallFrame.url;
+                  entry._initiator_line = firstCallFrame.lineNumber;
+                  entry._initiator_type = params.initiator.type;
+                }
+                break;
+
+              case 'parser':
+                entry._initiator = params.initiator.url;
+                entry._initiator_line = params.initiator.lineNumber;
+                entry._initiator_type = params.initiator.type;
+                break;
+
+              default:
+                // Nothing we can do (no data is provided)
+                entry._initiator_type = params.initiator.type;
+                break;
+            }            
 
             if (params.redirectResponse) {
               const previousEntry = entries.find(
