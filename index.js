@@ -17,7 +17,8 @@ const {
 const max = Math.max;
 
 const defaultOptions = {
-  includeResourcesFromDiskCache: false
+  includeResourcesFromDiskCache: false,
+  splitPagesWithinFrame: false
 };
 
 const isEmpty = o => !o;
@@ -190,8 +191,13 @@ module.exports = {
               entry => entry.__frameId === frameId
             );
 
-            if (rootFrameMappings.has(frameId) || previousFrameId) {
+            if (rootFrameMappings.has(frameId)) {
               // This is a sub frame, there's already a page for the root frame
+              continue;
+            }
+
+            if (options.splitPagesWithinFrame === false && previousFrameId) {
+              // We already have a page for the frame and the option says not to create a separate one
               continue;
             }
 
@@ -221,7 +227,7 @@ module.exports = {
             }
             const frameId =
               rootFrameMappings.get(params.frameId) || params.frameId;
-            const page = pages.find(page => page.__frameId === frameId);
+            const page = pages.filter(page => page.__frameId === frameId).pop();
             if (!page) {
               debug(
                 'Request will be sent with requestId ' +
@@ -263,12 +269,36 @@ module.exports = {
               __frameId: params.frameId,
               _initialPriority: request.initialPriority,
               _priority: request.initialPriority,
-              _initiator: params.initiator.url,
-              _initiator_line: params.initiator.lineNumber,
               pageref: currentPageId,
               request: req,
               time: 0
             };
+
+            switch (params.initiator.type) {
+              case 'script':
+                if (
+                  params.initiator.stack
+                  && params.initiator.stack.callFrames
+                  && params.initiator.stack.callFrames.length > 0
+                ) {
+                  const firstCallFrame = params.initiator.stack.callFrames[params.initiator.stack.callFrames.length - 1];
+                  entry._initiator = firstCallFrame.url;
+                  entry._initiator_line = firstCallFrame.lineNumber;
+                  entry._initiator_type = params.initiator.type;
+                }
+                break;
+
+              case 'parser':
+                entry._initiator = params.initiator.url;
+                entry._initiator_line = params.initiator.lineNumber;
+                entry._initiator_type = params.initiator.type;
+                break;
+
+              default:
+                // Nothing we can do (no data is provided)
+                entry._initiator_type = params.initiator.type;
+                break;
+            }            
 
             if (params.redirectResponse) {
               const previousEntry = entries.find(
@@ -364,7 +394,7 @@ module.exports = {
 
             const frameId =
               rootFrameMappings.get(params.frameId) || params.frameId;
-            const page = pages.find(page => page.__frameId === frameId);
+            const page = pages.filter(page => page.__frameId === frameId).pop();
             if (!page) {
               debug(
                 'Received network response for requestId ' +
