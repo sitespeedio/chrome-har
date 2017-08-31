@@ -1,5 +1,2 @@
-env:
-    mocha: true
-
 parserOptions:
     sourceType: "module"
