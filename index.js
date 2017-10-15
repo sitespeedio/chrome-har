@@ -225,9 +225,7 @@ module.exports = {
             const page = pages.find(page => page.__frameId === frameId);
             if (!page) {
               debug(
-                'Request will be sent with requestId ' +
-                  params.requestId +
-                  " that can't be mapped to any page."
+                `Request will be sent with requestId ${params.requestId} that can't be mapped to any page.`
               );
               ignoredRequests.add(params.requestId);
               continue;
@@ -284,8 +282,7 @@ module.exports = {
                 );
               } else {
                 debug(
-                  "Couldn't find original request for redirect response: " +
-                    params.requestId
+                  `Couldn't find original request for redirect response: ${params.requestId}`
                 );
               }
             }
@@ -325,9 +322,7 @@ module.exports = {
             );
             if (!entry) {
               debug(
-                'Received requestServedFromCache for requestId ' +
-                  params.requestId +
-                  ' with no matching request.'
+                `Received requestServedFromCache for requestId ${params.requestId} with no matching request.`
               );
               continue;
             }
@@ -356,9 +351,7 @@ module.exports = {
             );
             if (!entry) {
               debug(
-                'Received network response for requestId ' +
-                  params.requestId +
-                  ' with no matching request.'
+                `Received network response for requestId ${params.requestId} with no matching request.`
               );
               continue;
             }
@@ -368,9 +361,7 @@ module.exports = {
             const page = pages.find(page => page.__frameId === frameId);
             if (!page) {
               debug(
-                'Received network response for requestId ' +
-                  params.requestId +
-                  " that can't be mapped to any page."
+                `Received network response for requestId ${params.requestId} that can't be mapped to any page.`
               );
               continue;
             }
@@ -378,7 +369,13 @@ module.exports = {
             try {
               populateEntryFromResponse(entry, params.response, page);
             } catch (e) {
-              debug('Error parsing response: %j', params);
+              debug(
+                `Error parsing response: ${JSON.stringify(
+                  params,
+                  undefined,
+                  2
+                )}`
+              );
               throw e;
             }
           }
@@ -399,9 +396,7 @@ module.exports = {
             );
             if (!entry) {
               debug(
-                'Received network data for requestId ' +
-                  params.requestId +
-                  ' with no matching request.'
+                `Received network data for requestId ${params.requestId} with no matching request.`
               );
               continue;
             }
@@ -426,9 +421,7 @@ module.exports = {
             );
             if (!entry) {
               debug(
-                'Network loading finished for requestId ' +
-                  params.requestId +
-                  ' with no matching request.'
+                `Network loading finished for requestId ${params.requestId} with no matching request.`
               );
               continue;
             }
@@ -548,9 +541,7 @@ module.exports = {
             );
             if (!entry) {
               debug(
-                'Network loading failed for requestId ' +
-                  params.requestId +
-                  ' with no matching request.'
+                `Network loading failed for requestId ${params.requestId} with no matching request.`
               );
               continue;
             }
@@ -588,9 +579,7 @@ module.exports = {
 
             if (!entry) {
               debug(
-                'Received resourceChangedPriority for requestId ' +
-                  params.requestId +
-                  ' with no matching request.'
+                `Received resourceChangedPriority for requestId ${params.requestId} with no matching request.`
               );
               continue;
             }
@@ -600,7 +589,7 @@ module.exports = {
           break;
 
         default:
-          debug('Unhandled event: ' + message.method);
+          debug(`Unhandled event: ${message.method}`);
           break;
       }
     }
@@ -624,7 +613,7 @@ module.exports = {
     entries = entries
       .filter(entry => {
         if (!entry.response) {
-          debug('Dropping incomplete request: ' + entry.request.url);
+          debug(`Dropping incomplete request: ${entry.request.url}`);
         }
         return entry.response;
       })
@@ -686,7 +675,7 @@ function toNameValuePairs(object) {
 }
 
 function parseUrlEncoded(data) {
-  const params = urlParser.parse('?' + data, true).query;
+  const params = urlParser.parse(`?${data}`, true).query;
   return toNameValuePairs(params);
 }
 
