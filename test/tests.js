@@ -82,3 +82,8 @@ test('Generates multiple pages', t => {
   const perflogPath = perflog('www.wikipedia.org.json');
   return parsePerflog(perflogPath).tap(har => t.is(har.log.pages.length, 2));
 });
+
+test('Skips empty pages', t => {
+  const perflogPath = perflog('www.wikipedia.org-empty.json');
+  return parsePerflog(perflogPath).tap(har => t.is(har.log.pages.length, 1));
+});

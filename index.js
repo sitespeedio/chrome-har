@@ -3,6 +3,7 @@
 const { name, version, homepage } = require('./package');
 
 const urlParser = require('url');
+const uuid = require('uuid/v1');
 const moment = require('moment');
 const debug = require('debug')(name);
 
@@ -195,7 +196,7 @@ module.exports = {
               continue;
             }
 
-            currentPageId = 'page_' + (pages.length + 1);
+            currentPageId = uuid();
             const page = {
               id: currentPageId,
               startedDateTime: '',
@@ -630,6 +631,31 @@ module.exports = {
       .map(deleteInternalProperties);
 
     pages = pages.map(deleteInternalProperties);
+
+    pages = pages.reduce((result, page, index) => {
+      const hasEntry = entries.some(entry => entry.pageref === page.id);
+      if (hasEntry) {
+        result.push(page);
+      } else {
+        debug(`Skipping empty page: ${index + 1}`);
+      }
+      return result;
+    }, []);
+
+    const pagerefMapping = pages.reduce((result, page, index) => {
+      result[page.id] = `page_${index + 1}`;
+      return result;
+    }, {});
+
+    pages = pages.map(page => {
+      page.id = pagerefMapping[page.id];
+      return page;
+    });
+
+    entries = entries.map(entry => {
+      entry.pageref = pagerefMapping[entry.pageref];
+      return entry;
+    });
 
     // FIXME sanity check if there are any pages/entries created
 

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+UNRELEASED
+-------------------------
+* Prevent creating HAR files with empty pages (i.e. pages with no entries).
+
 version 0.2.2 2017-06-30
 -------------------------
 * Be extra careful when parsing JSON see [#4](https://github.com/sitespeedio/chrome-har/issues/4)
