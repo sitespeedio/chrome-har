@@ -24,16 +24,16 @@
   "license": "MIT",
   "devDependencies": {
     "ava": "^0.22.0",
-    "bluebird": "^3.5.0",
-    "eslint": "^4.5.0",
-    "eslint-config-prettier": "^2.3.0",
-    "eslint-plugin-prettier": "^2.2.0",
+    "bluebird": "^3.5.1",
+    "eslint": "^4.9.0",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-plugin-prettier": "^2.3.1",
     "har-validator": "^5.0.3",
-    "prettier": "^1.6.1"
+    "prettier": "^1.7.4"
   },
   "dependencies": {
-    "debug": "3.0.1",
-    "moment": "2.18.1",
-    "tough-cookie": "^2.3.2"
+    "debug": "3.1.0",
+    "moment": "2.19.1",
+    "tough-cookie": "2.3.3"
   }
 }
