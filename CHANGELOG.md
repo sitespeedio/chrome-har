@@ -1,6 +1,6 @@
 # CHANGELOG
 
-UNRELEASED
+version 0.2.3 2017-10-15
 -------------------------
 * Prevent creating HAR files with empty pages (i.e. pages with no entries).
 
