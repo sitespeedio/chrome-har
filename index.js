@@ -274,31 +274,48 @@ module.exports = {
               time: 0
             };
 
+            function parseStackTrace(stackTrace) {
+              if (stackTrace.callFrames.length > 0) {
+                const nonEmptyFrame = stackTrace.callFrames.find(frame => frame.url.length > 0);
+
+                if (nonEmptyFrame) {
+                  return {
+                    url: nonEmptyFrame.url,
+                    line: nonEmptyFrame.lineNumber,
+                  };
+                }
+              }
+
+              if (stackTrace.parent) {
+                return parseStackTrace(stackTrace.parent);
+              }
+
+              return null;
+            }
+
+            entry._initiator_type = params.initiator.type;
+
             switch (params.initiator.type) {
               case 'script':
-                if (
-                  params.initiator.stack
-                  && params.initiator.stack.callFrames
-                  && params.initiator.stack.callFrames.length > 0
-                ) {
-                  const firstCallFrame = params.initiator.stack.callFrames[params.initiator.stack.callFrames.length - 1];
-                  entry._initiator = firstCallFrame.url;
-                  entry._initiator_line = firstCallFrame.lineNumber;
-                  entry._initiator_type = params.initiator.type;
+                if (params.initiator.stack) {
+                  const initiator = parseStackTrace(params.initiator.stack);
+
+                  if (initiator) {
+                    entry._initiator = initiator.url;
+                    entry._initiator_line = initiator.line;
+                  }
                 }
                 break;
 
               case 'parser':
                 entry._initiator = params.initiator.url;
                 entry._initiator_line = params.initiator.lineNumber;
-                entry._initiator_type = params.initiator.type;
                 break;
 
               default:
                 // Nothing we can do (no data is provided)
-                entry._initiator_type = params.initiator.type;
                 break;
-            }            
+            }
 
             if (params.redirectResponse) {
               const previousEntry = entries.find(
