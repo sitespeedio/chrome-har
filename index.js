@@ -328,6 +328,10 @@ module.exports = {
                   params.redirectResponse,
                   page
                 );
+
+                entry._initiator_type = 'redirect';
+                entry._initiator = params.redirectResponse.url;
+                delete entry._initiator_line;
               } else {
                 debug(
                   "Couldn't find original request for redirect response: " +
