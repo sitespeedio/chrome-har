@@ -257,7 +257,7 @@ module.exports = {
               headersSize: -1,
               bodySize: isEmpty(request.postData) ? 0 : request.postData.length,
               cookies: parseRequestCookies(cookieHeader),
-              headers: parseHeaders(request.headers)
+              headers: parseHeaders(request.headers),
             };
 
             const entry = {
@@ -267,11 +267,14 @@ module.exports = {
               __wallTime: params.wallTime,
               __requestId: params.requestId,
               __frameId: params.frameId,
+              _type: params.type,
+              _requestId: params.requestId,
+              _frameId: params.frameId,
               _initialPriority: request.initialPriority,
               _priority: request.initialPriority,
               pageref: currentPageId,
               request: req,
-              time: 0
+              time: 0,
             };
 
             function parseStackTrace(stackTrace) {
