@@ -287,7 +287,7 @@ module.exports = {
                     const topCallFrame = params.initiator.stack.callFrames[0];
                     entry._initiator = topCallFrame.url;
                     entry._initiator_line = topCallFrame.lineNumber + 1; // Because lineNumber is 0 based
-                    entry._initiator_column = topCallFrame.columnNumber;
+                    entry._initiator_column = topCallFrame.columnNumber + 1; // Because columnNumber is 0 based
                     entry._initiator_function_name = topCallFrame.functionName;
                     entry._initiator_script_id = topCallFrame.scriptId;
                   }
