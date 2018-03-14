@@ -262,12 +262,35 @@ module.exports = {
               __frameId: params.frameId,
               _initialPriority: request.initialPriority,
               _priority: request.initialPriority,
-              _initiator: params.initiator.url,
-              _initiator_line: params.initiator.lineNumber,
               pageref: currentPageId,
               request: req,
-              time: 0
+              time: 0,
+              _initiator_detail: JSON.stringify(params.initiator),
+              _initiator_type: params.initiator.type
             };
+
+            // The object initiator change according to its type
+            switch (params.initiator.type) {
+              case 'parser':
+              {
+                entry._initiator = params.initiator.url;
+                entry._initiator_line = params.initiator.lineNumber + 1; // Because lineNumber is 0 based
+              }
+              break;
+
+              case 'script':
+              {
+                if(params.initiator.stack && params.initiator.stack.callFrames.length > 0) {
+                  const topCallFrame = params.initiator.stack.callFrames[0];
+                  entry._initiator = topCallFrame.url;
+                  entry._initiator_line = topCallFrame.lineNumber + 1; // Because lineNumber is 0 based
+                  entry._initiator_column = topCallFrame.columnNumber;
+                  entry._initiator_function_name = topCallFrame.functionName;
+                  entry._initiator_script_id = topCallFrame.scriptId;
+                }
+              }
+              break;
+            }
 
             if (params.redirectResponse) {
               const previousEntry = entries.find(
