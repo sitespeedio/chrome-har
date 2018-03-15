@@ -1,5 +1,9 @@
 # CHANGELOG
 
+version 0.3.0 2018-03-15
+-------------------------
+* Add more information about request initiator to HAR. Thanks to David Dadon! [#9](https://github.com/sitespeedio/chrome-har/pull/9)
+
 version 0.2.3 2017-10-15
 -------------------------
 * Prevent creating HAR files with empty pages (i.e. pages with no entries).
