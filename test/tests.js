@@ -78,6 +78,13 @@ test('zdnet', t => {
     .tap(log => t.is(log.entries.length, 343));
 });
 
+test('chrome66', t => {
+  const perflogPath = perflog('www.sitepeed.io.chrome66.json');
+  return parsePerflog(perflogPath)
+    .then(har => har.log)
+    .tap(log => t.is(log.entries.length, 9));
+});
+
 test('Generates multiple pages', t => {
   const perflogPath = perflog('www.wikipedia.org.json');
   return parsePerflog(perflogPath).tap(har => t.is(har.log.pages.length, 2));
