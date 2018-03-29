@@ -226,7 +226,9 @@ module.exports = {
             const page = pages.find(page => page.__frameId === frameId);
             if (!page) {
               debug(
-                `Request will be sent with requestId ${params.requestId} that can't be mapped to any page.`
+                `Request will be sent with requestId ${
+                  params.requestId
+                } that can't be mapped to any page.`
               );
               ignoredRequests.add(params.requestId);
               continue;
@@ -263,12 +265,38 @@ module.exports = {
               __frameId: params.frameId,
               _initialPriority: request.initialPriority,
               _priority: request.initialPriority,
-              _initiator: params.initiator.url,
-              _initiator_line: params.initiator.lineNumber,
               pageref: currentPageId,
               request: req,
-              time: 0
+              time: 0,
+              _initiator_detail: JSON.stringify(params.initiator),
+              _initiator_type: params.initiator.type
             };
+
+            // The object initiator change according to its type
+            switch (params.initiator.type) {
+              case 'parser':
+                {
+                  entry._initiator = params.initiator.url;
+                  entry._initiator_line = params.initiator.lineNumber + 1; // Because lineNumber is 0 based
+                }
+                break;
+
+              case 'script':
+                {
+                  if (
+                    params.initiator.stack &&
+                    params.initiator.stack.callFrames.length > 0
+                  ) {
+                    const topCallFrame = params.initiator.stack.callFrames[0];
+                    entry._initiator = topCallFrame.url;
+                    entry._initiator_line = topCallFrame.lineNumber + 1; // Because lineNumber is 0 based
+                    entry._initiator_column = topCallFrame.columnNumber + 1; // Because columnNumber is 0 based
+                    entry._initiator_function_name = topCallFrame.functionName;
+                    entry._initiator_script_id = topCallFrame.scriptId;
+                  }
+                }
+                break;
+            }
 
             if (params.redirectResponse) {
               const previousEntry = entries.find(
@@ -283,7 +311,9 @@ module.exports = {
                 );
               } else {
                 debug(
-                  `Couldn't find original request for redirect response: ${params.requestId}`
+                  `Couldn't find original request for redirect response: ${
+                    params.requestId
+                  }`
                 );
               }
             }
@@ -323,7 +353,9 @@ module.exports = {
             );
             if (!entry) {
               debug(
-                `Received requestServedFromCache for requestId ${params.requestId} with no matching request.`
+                `Received requestServedFromCache for requestId ${
+                  params.requestId
+                } with no matching request.`
               );
               continue;
             }
@@ -352,7 +384,9 @@ module.exports = {
             );
             if (!entry) {
               debug(
-                `Received network response for requestId ${params.requestId} with no matching request.`
+                `Received network response for requestId ${
+                  params.requestId
+                } with no matching request.`
               );
               continue;
             }
@@ -362,7 +396,9 @@ module.exports = {
             const page = pages.find(page => page.__frameId === frameId);
             if (!page) {
               debug(
-                `Received network response for requestId ${params.requestId} that can't be mapped to any page.`
+                `Received network response for requestId ${
+                  params.requestId
+                } that can't be mapped to any page.`
               );
               continue;
             }
@@ -397,7 +433,9 @@ module.exports = {
             );
             if (!entry) {
               debug(
-                `Received network data for requestId ${params.requestId} with no matching request.`
+                `Received network data for requestId ${
+                  params.requestId
+                } with no matching request.`
               );
               continue;
             }
@@ -422,7 +460,9 @@ module.exports = {
             );
             if (!entry) {
               debug(
-                `Network loading finished for requestId ${params.requestId} with no matching request.`
+                `Network loading finished for requestId ${
+                  params.requestId
+                } with no matching request.`
               );
               continue;
             }
@@ -541,7 +581,9 @@ module.exports = {
             );
             if (!entry) {
               debug(
-                `Network loading failed for requestId ${params.requestId} with no matching request.`
+                `Network loading failed for requestId ${
+                  params.requestId
+                } with no matching request.`
               );
               continue;
             }
@@ -549,8 +591,9 @@ module.exports = {
             // This could be due to incorrect domain name etc. Sad, but unfortunately not something that a HAR file can
             // represent.
             debug(
-              `Failed to load url '${entry.request
-                .url}' (canceled: ${params.canceled})`
+              `Failed to load url '${entry.request.url}' (canceled: ${
+                params.canceled
+              })`
             );
             entries = entries.filter(
               entry => entry.__requestId !== params.requestId
@@ -579,7 +622,9 @@ module.exports = {
 
             if (!entry) {
               debug(
-                `Received resourceChangedPriority for requestId ${params.requestId} with no matching request.`
+                `Received resourceChangedPriority for requestId ${
+                  params.requestId
+                } with no matching request.`
               );
               continue;
             }
