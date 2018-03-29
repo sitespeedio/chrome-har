@@ -1,5 +1,9 @@
 # CHANGELOG
 
+version 0.3.1 2018-03-29
+-------------------------
+* Also act on Page.frameScheduledNavigation (needed for Chrome 66 and coming Browsertime 3.0)
+
 version 0.3.0 2018-03-15
 -------------------------
 * Add more information about request initiator to HAR. Thanks to David Dadon! [#9](https://github.com/sitespeedio/chrome-har/pull/9)
