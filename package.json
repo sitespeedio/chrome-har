@@ -33,7 +33,6 @@
   },
   "dependencies": {
     "debug": "3.1.0",
-    "moment": "2.21.0",
     "tough-cookie": "2.3.4",
     "uuid": "3.2.1"
   }

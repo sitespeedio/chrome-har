@@ -4,7 +4,6 @@ const { name, version, homepage } = require('./package');
 
 const urlParser = require('url');
 const uuid = require('uuid/v1');
-const moment = require('moment');
 const debug = require('debug')(name);
 
 const { parseRequestCookies, parseResponseCookies } = require('./lib/cookies');
@@ -146,7 +145,7 @@ function populateEntryFromResponse(entry, response, page) {
       // (see https://cs.chromium.org/chromium/src/third_party/WebKit/Source/platform/network/ResourceLoadTiming.h?q=requestTime+package:%5Echromium$&dr=CSs&l=84)
       const entrySecs =
         page.__wallTime + (timing.requestTime - page.__timestamp);
-      entry.startedDateTime = moment.unix(entrySecs).toISOString();
+      entry.startedDateTime = new Date(entrySecs * 1000).toISOString();
 
       const queuedMillis =
         (timing.requestTime - entry.__requestWillBeSentTime) * 1000;
@@ -226,9 +225,7 @@ module.exports = {
             const page = pages.find(page => page.__frameId === frameId);
             if (!page) {
               debug(
-                `Request will be sent with requestId ${
-                  params.requestId
-                } that can't be mapped to any page.`
+                `Request will be sent with requestId ${params.requestId} that can't be mapped to any page.`
               );
               ignoredRequests.add(params.requestId);
               continue;
@@ -311,9 +308,7 @@ module.exports = {
                 );
               } else {
                 debug(
-                  `Couldn't find original request for redirect response: ${
-                    params.requestId
-                  }`
+                  `Couldn't find original request for redirect response: ${params.requestId}`
                 );
               }
             }
@@ -324,7 +319,10 @@ module.exports = {
             if (!page.__timestamp) {
               page.__wallTime = params.wallTime;
               page.__timestamp = params.timestamp;
-              page.startedDateTime = moment.unix(params.wallTime).toISOString(); //epoch float64, eg 1440589909.59248
+              page.startedDateTime = new Date(
+                params.wallTime * 1000
+              ).toISOString();
+              //epoch float64, eg 1440589909.59248
               // URL is better than blank, and it's what devtools uses.
               page.title = request.url;
             }
@@ -333,7 +331,7 @@ module.exports = {
             // (see https://cs.chromium.org/chromium/src/third_party/WebKit/Source/platform/network/ResourceLoadTiming.h?q=requestTime+package:%5Echromium$&dr=CSs&l=84)
             const entrySecs =
               page.__wallTime + (params.timestamp - page.__timestamp);
-            entry.startedDateTime = moment.unix(entrySecs).toISOString();
+            entry.startedDateTime = new Date(entrySecs * 1000).toISOString();
           }
           break;
 
@@ -353,9 +351,7 @@ module.exports = {
             );
             if (!entry) {
               debug(
-                `Received requestServedFromCache for requestId ${
-                  params.requestId
-                } with no matching request.`
+                `Received requestServedFromCache for requestId ${params.requestId} with no matching request.`
               );
               continue;
             }
@@ -384,9 +380,7 @@ module.exports = {
             );
             if (!entry) {
               debug(
-                `Received network response for requestId ${
-                  params.requestId
-                } with no matching request.`
+                `Received network response for requestId ${params.requestId} with no matching request.`
               );
               continue;
             }
@@ -396,9 +390,7 @@ module.exports = {
             const page = pages.find(page => page.__frameId === frameId);
             if (!page) {
               debug(
-                `Received network response for requestId ${
-                  params.requestId
-                } that can't be mapped to any page.`
+                `Received network response for requestId ${params.requestId} that can't be mapped to any page.`
               );
               continue;
             }
@@ -433,9 +425,7 @@ module.exports = {
             );
             if (!entry) {
               debug(
-                `Received network data for requestId ${
-                  params.requestId
-                } with no matching request.`
+                `Received network data for requestId ${params.requestId} with no matching request.`
               );
               continue;
             }
@@ -460,9 +450,7 @@ module.exports = {
             );
             if (!entry) {
               debug(
-                `Network loading finished for requestId ${
-                  params.requestId
-                } with no matching request.`
+                `Network loading finished for requestId ${params.requestId} with no matching request.`
               );
               continue;
             }
@@ -581,9 +569,7 @@ module.exports = {
             );
             if (!entry) {
               debug(
-                `Network loading failed for requestId ${
-                  params.requestId
-                } with no matching request.`
+                `Network loading failed for requestId ${params.requestId} with no matching request.`
               );
               continue;
             }
@@ -591,9 +577,8 @@ module.exports = {
             // This could be due to incorrect domain name etc. Sad, but unfortunately not something that a HAR file can
             // represent.
             debug(
-              `Failed to load url '${entry.request.url}' (canceled: ${
-                params.canceled
-              })`
+              `Failed to load url '${entry.request
+                .url}' (canceled: ${params.canceled})`
             );
             entries = entries.filter(
               entry => entry.__requestId !== params.requestId
@@ -622,9 +607,7 @@ module.exports = {
 
             if (!entry) {
               debug(
-                `Received resourceChangedPriority for requestId ${
-                  params.requestId
-                } with no matching request.`
+                `Received resourceChangedPriority for requestId ${params.requestId} with no matching request.`
               );
               continue;
             }
