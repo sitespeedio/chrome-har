@@ -185,6 +185,7 @@ module.exports = {
 
       switch (message.method) {
         case 'Page.frameStartedLoading':
+        case 'Page.frameScheduledNavigation':
           {
             const frameId = params.frameId;
             const previousFrameId = entries.find(
