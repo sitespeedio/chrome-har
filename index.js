@@ -511,7 +511,6 @@ module.exports = {
           }
           break;
 
-        case 'Page.frameScheduledNavigation':
         case 'Page.frameNavigated':
         case 'Page.frameStoppedLoading':
         case 'Page.frameClearedScheduledNavigation':
