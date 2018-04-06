@@ -78,8 +78,15 @@ test('zdnet', t => {
     .tap(log => t.is(log.entries.length, 343));
 });
 
-test('chrome66', t => {
+test('chrome66-bt-3.0', t => {
   const perflogPath = perflog('www.sitepeed.io.chrome66.json');
+  return parsePerflog(perflogPath)
+    .then(har => har.log)
+    .tap(log => t.is(log.entries.length, 9));
+});
+
+test('chrome66-bt2.x', t => {
+  const perflogPath = perflog('www.sitespeed.io-chrome66-bt2.x.json');
   return parsePerflog(perflogPath)
     .then(har => har.log)
     .tap(log => t.is(log.entries.length, 9));
