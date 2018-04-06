@@ -559,6 +559,10 @@ module.exports = {
           // ignore
           break;
 
+        case 'Page.lifecycleEvent':
+          // ignore for now, put in pageTimings later
+          break;
+
         case 'Page.javascriptDialogOpening':
         case 'Page.javascriptDialogClosed':
         case 'Page.screencastFrame':
