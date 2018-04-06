@@ -197,6 +197,8 @@ module.exports = {
               continue;
             }
 
+            rootFrameMappings.set(frameId, undefined);
+
             currentPageId = uuid();
             const page = {
               id: currentPageId,
