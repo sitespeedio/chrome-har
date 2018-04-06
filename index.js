@@ -188,16 +188,12 @@ module.exports = {
         case 'Page.frameScheduledNavigation':
           {
             const frameId = params.frameId;
-            const previousFrameId = entries.find(
-              entry => entry.__frameId === frameId
-            );
 
-            if (rootFrameMappings.has(frameId) || previousFrameId) {
-              // This is a sub frame, there's already a page for the root frame
+            const rootFrame = rootFrameMappings.get(frameId) || frameId;
+
+            if (pages.some(page => page.__frameId === rootFrame)) {
               continue;
             }
-
-            rootFrameMappings.set(frameId, undefined);
 
             currentPageId = uuid();
             const page = {
@@ -205,7 +201,7 @@ module.exports = {
               startedDateTime: '',
               title: '',
               pageTimings: {},
-              __frameId: frameId
+              __frameId: rootFrame
             };
             pages.push(page);
           }

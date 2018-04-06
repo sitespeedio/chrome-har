@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## UNRELEASED
+* Fixes for situations that could result in incorrect HARs (missing startedDateTime or missing first entry).
+
 version 0.3.1 2018-03-29
 -------------------------
 * Also act on Page.frameScheduledNavigation (needed for Chrome 66 and coming Browsertime 3.0)

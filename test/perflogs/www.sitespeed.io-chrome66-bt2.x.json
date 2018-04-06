@@ -1,0 +1,1291 @@
+[
+  {
+    "method": "Page.frameAttached",
+    "params": {
+      "frameId": "CAF45D2C7A2C68E0C80715FF5ACB2D48",
+      "parentFrameId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+      "stack": {
+        "callFrames": [
+          {
+            "columnNumber": 125,
+            "functionName": "",
+            "lineNumber": 0,
+            "scriptId": "21",
+            "url": ""
+          }
+        ]
+      }
+    }
+  },
+  {
+    "method": "Page.frameStartedLoading",
+    "params": { "frameId": "CAF45D2C7A2C68E0C80715FF5ACB2D48" }
+  },
+  {
+    "method": "Page.frameNavigated",
+    "params": {
+      "frame": {
+        "id": "CAF45D2C7A2C68E0C80715FF5ACB2D48",
+        "loaderId": "DB08779A4A69CC6EB86EB541F517E6A9",
+        "mimeType": "text/html",
+        "name": "chromedriver dummy frame",
+        "parentId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+        "securityOrigin": "://",
+        "url": "about:blank"
+      }
+    }
+  },
+  {
+    "method": "Page.frameStoppedLoading",
+    "params": { "frameId": "CAF45D2C7A2C68E0C80715FF5ACB2D48" }
+  },
+  {
+    "method": "Page.frameDetached",
+    "params": { "frameId": "CAF45D2C7A2C68E0C80715FF5ACB2D48" }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.sitespeed.io/",
+      "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+      "hasUserGesture": false,
+      "initiator": { "type": "other" },
+      "loaderId": "B33E7DA09F979E697148C62EE934DD59",
+      "request": {
+        "headers": {
+          "Upgrade-Insecure-Requests": "1",
+          "User-Agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3389.0 Safari/537.36",
+          "X-DevTools-Emulate-Network-Conditions-Client-Id":
+            "76441E0BB5B4CE0201A6FC5B1EEEED89"
+        },
+        "initialPriority": "VeryHigh",
+        "method": "GET",
+        "mixedContentType": "none",
+        "referrerPolicy": "no-referrer-when-downgrade",
+        "url": "https://www.sitespeed.io/"
+      },
+      "requestId": "B33E7DA09F979E697148C62EE934DD59",
+      "timestamp": 8847.218626,
+      "type": "Document",
+      "wallTime": 1522995658.532778
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+      "loaderId": "B33E7DA09F979E697148C62EE934DD59",
+      "requestId": "B33E7DA09F979E697148C62EE934DD59",
+      "response": {
+        "connectionId": 92,
+        "connectionReused": false,
+        "encodedDataLength": 272,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "age": "43765",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "content-encoding": "gzip",
+          "content-length": "8263",
+          "content-type": "text/html; charset=UTF-8",
+          "date": "Thu, 05 Apr 2018 18:11:33 GMT",
+          "etag": "\"9bebddd608b42ad22174dad76c4d0540-ssl-df\"",
+          "referrer-policy": "no-referrer",
+          "server": "Netlify",
+          "status": "200",
+          "strict-transport-security": "max-age=31536000",
+          "vary": "Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "text/html",
+        "protocol": "h2",
+        "remoteIPAddress": "54.93.128.64",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.sitespeed.io",
+          ":method": "GET",
+          ":path": "/",
+          ":scheme": "https",
+          "accept":
+            "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br",
+          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+          "upgrade-insecure-requests": "1",
+          "user-agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3389.0 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Let's Encrypt Authority X3",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "protocol": "TLS 1.2",
+          "sanList": ["sitespeed.io", "www.sitespeed.io"],
+          "signedCertificateTimestampList": [],
+          "subjectName": "www.sitespeed.io",
+          "validFrom": 1518719904,
+          "validTo": 1526495904
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": 105.262,
+          "connectStart": 26.789,
+          "dnsEnd": 26.789,
+          "dnsStart": 0.33,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 142.049,
+          "requestTime": 8847.218932,
+          "sendEnd": 105.693,
+          "sendStart": 105.586,
+          "sslEnd": 105.252,
+          "sslStart": 62.863,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.sitespeed.io/"
+      },
+      "timestamp": 8847.362088,
+      "type": "Document"
+    }
+  },
+  {
+    "method": "Page.frameStartedLoading",
+    "params": { "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89" }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 31203,
+      "encodedDataLength": 8263,
+      "requestId": "B33E7DA09F979E697148C62EE934DD59",
+      "timestamp": 8847.39015
+    }
+  },
+  {
+    "method": "Page.frameNavigated",
+    "params": {
+      "frame": {
+        "id": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+        "loaderId": "B33E7DA09F979E697148C62EE934DD59",
+        "mimeType": "text/html",
+        "securityOrigin": "https://www.sitespeed.io",
+        "url": "https://www.sitespeed.io/"
+      }
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "blockedCrossSiteDocument": false,
+      "encodedDataLength": 8535,
+      "requestId": "B33E7DA09F979E697148C62EE934DD59",
+      "timestamp": 8847.389596
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.sitespeed.io/",
+      "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+      "hasUserGesture": false,
+      "initiator": {
+        "lineNumber": 0,
+        "type": "parser",
+        "url": "https://www.sitespeed.io/"
+      },
+      "loaderId": "B33E7DA09F979E697148C62EE934DD59",
+      "request": {
+        "headers": {
+          "User-Agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3389.0 Safari/537.36"
+        },
+        "initialPriority": "Low",
+        "method": "GET",
+        "mixedContentType": "none",
+        "referrerPolicy": "no-referrer",
+        "url": "https://www.sitespeed.io/img/sitespeed-logo-2c.png"
+      },
+      "requestId": "3433.2",
+      "timestamp": 8847.41381,
+      "type": "Image",
+      "wallTime": 1522995658.72796
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.sitespeed.io/",
+      "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+      "hasUserGesture": false,
+      "initiator": {
+        "lineNumber": 0,
+        "type": "parser",
+        "url": "https://www.sitespeed.io/"
+      },
+      "loaderId": "B33E7DA09F979E697148C62EE934DD59",
+      "request": {
+        "headers": {
+          "User-Agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3389.0 Safari/537.36"
+        },
+        "initialPriority": "Low",
+        "method": "GET",
+        "mixedContentType": "none",
+        "referrerPolicy": "no-referrer",
+        "url": "https://www.sitespeed.io/img/team.png"
+      },
+      "requestId": "3433.3",
+      "timestamp": 8847.413983,
+      "type": "Image",
+      "wallTime": 1522995658.72813
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.sitespeed.io/",
+      "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+      "hasUserGesture": false,
+      "initiator": {
+        "lineNumber": 3,
+        "type": "parser",
+        "url": "https://www.sitespeed.io/"
+      },
+      "loaderId": "B33E7DA09F979E697148C62EE934DD59",
+      "request": {
+        "headers": {
+          "User-Agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3389.0 Safari/537.36"
+        },
+        "initialPriority": "Low",
+        "method": "GET",
+        "mixedContentType": "none",
+        "referrerPolicy": "no-referrer",
+        "url": "https://www.sitespeed.io/img/pippi.png"
+      },
+      "requestId": "3433.4",
+      "timestamp": 8847.414109,
+      "type": "Image",
+      "wallTime": 1522995658.72826
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.sitespeed.io/",
+      "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+      "hasUserGesture": false,
+      "initiator": {
+        "lineNumber": 3,
+        "type": "parser",
+        "url": "https://www.sitespeed.io/"
+      },
+      "loaderId": "B33E7DA09F979E697148C62EE934DD59",
+      "request": {
+        "headers": {
+          "User-Agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3389.0 Safari/537.36"
+        },
+        "initialPriority": "Low",
+        "method": "GET",
+        "mixedContentType": "none",
+        "referrerPolicy": "no-referrer",
+        "url": "https://www.sitespeed.io/img/public.png"
+      },
+      "requestId": "3433.5",
+      "timestamp": 8847.414226,
+      "type": "Image",
+      "wallTime": 1522995658.72837
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.sitespeed.io/",
+      "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+      "hasUserGesture": false,
+      "initiator": {
+        "lineNumber": 3,
+        "type": "parser",
+        "url": "https://www.sitespeed.io/"
+      },
+      "loaderId": "B33E7DA09F979E697148C62EE934DD59",
+      "request": {
+        "headers": {
+          "User-Agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3389.0 Safari/537.36"
+        },
+        "initialPriority": "Low",
+        "method": "GET",
+        "mixedContentType": "none",
+        "referrerPolicy": "no-referrer",
+        "url": "https://www.sitespeed.io/img/browsertime-ff-chrome.png"
+      },
+      "requestId": "3433.6",
+      "timestamp": 8847.41436,
+      "type": "Image",
+      "wallTime": 1522995658.72851
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.sitespeed.io/",
+      "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+      "hasUserGesture": false,
+      "initiator": {
+        "lineNumber": 3,
+        "type": "parser",
+        "url": "https://www.sitespeed.io/"
+      },
+      "loaderId": "B33E7DA09F979E697148C62EE934DD59",
+      "request": {
+        "headers": {
+          "User-Agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3389.0 Safari/537.36"
+        },
+        "initialPriority": "Low",
+        "method": "GET",
+        "mixedContentType": "none",
+        "referrerPolicy": "no-referrer",
+        "url": "https://www.sitespeed.io/img/black-logo-120.png"
+      },
+      "requestId": "3433.7",
+      "timestamp": 8847.414553,
+      "type": "Image",
+      "wallTime": 1522995658.7287
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.sitespeed.io/",
+      "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+      "hasUserGesture": false,
+      "initiator": {
+        "lineNumber": 3,
+        "type": "parser",
+        "url": "https://www.sitespeed.io/"
+      },
+      "loaderId": "B33E7DA09F979E697148C62EE934DD59",
+      "request": {
+        "headers": {
+          "User-Agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3389.0 Safari/537.36"
+        },
+        "initialPriority": "Low",
+        "method": "GET",
+        "mixedContentType": "none",
+        "referrerPolicy": "no-referrer",
+        "url": "https://www.sitespeed.io/img/digital-ocean.png"
+      },
+      "requestId": "3433.8",
+      "timestamp": 8847.414692,
+      "type": "Image",
+      "wallTime": 1522995658.72884
+    }
+  },
+  {
+    "method": "Page.domContentEventFired",
+    "params": { "timestamp": 8847.43828 }
+  },
+  {
+    "method": "Network.resourceChangedPriority",
+    "params": {
+      "newPriority": "High",
+      "requestId": "3433.3",
+      "timestamp": 8847.530374
+    }
+  },
+  {
+    "method": "Network.resourceChangedPriority",
+    "params": {
+      "newPriority": "High",
+      "requestId": "3433.2",
+      "timestamp": 8847.530404
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+      "loaderId": "B33E7DA09F979E697148C62EE934DD59",
+      "requestId": "3433.2",
+      "response": {
+        "connectionId": 92,
+        "connectionReused": true,
+        "encodedDataLength": 3718,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "accept-ranges": "bytes",
+          "age": "43766",
+          "cache-control": "public,max-age=360000",
+          "content-length": "3619",
+          "content-type": "image/png",
+          "date": "Thu, 05 Apr 2018 18:11:33 GMT",
+          "etag": "\"d9be7340279640dfe84259237b0ad503-ssl\"",
+          "referrer-policy": "no-referrer",
+          "server": "Netlify",
+          "status": "200",
+          "strict-transport-security": "max-age=31536000",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "image/png",
+        "protocol": "h2",
+        "remoteIPAddress": "54.93.128.64",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.sitespeed.io",
+          ":method": "GET",
+          ":path": "/img/sitespeed-logo-2c.png",
+          ":scheme": "https",
+          "accept": "image/webp,image/apng,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br",
+          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+          "user-agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3389.0 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Let's Encrypt Authority X3",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "protocol": "TLS 1.2",
+          "sanList": ["sitespeed.io", "www.sitespeed.io"],
+          "signedCertificateTimestampList": [],
+          "subjectName": "www.sitespeed.io",
+          "validFrom": 1518719904,
+          "validTo": 1526495904
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": -1,
+          "connectStart": -1,
+          "dnsEnd": -1,
+          "dnsStart": -1,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 35.849,
+          "requestTime": 8847.414163,
+          "sendEnd": 2.638,
+          "sendStart": 1.843,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.sitespeed.io/img/sitespeed-logo-2c.png"
+      },
+      "timestamp": 8847.531796,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 3619,
+      "encodedDataLength": 0,
+      "requestId": "3433.2",
+      "timestamp": 8847.531892
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "blockedCrossSiteDocument": false,
+      "encodedDataLength": 3718,
+      "requestId": "3433.2",
+      "timestamp": 8847.531631
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+      "loaderId": "B33E7DA09F979E697148C62EE934DD59",
+      "requestId": "3433.4",
+      "response": {
+        "connectionId": 92,
+        "connectionReused": true,
+        "encodedDataLength": 67,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "accept-ranges": "bytes",
+          "age": "43765",
+          "cache-control": "public,max-age=360000",
+          "content-length": "10892",
+          "content-type": "image/png",
+          "date": "Thu, 05 Apr 2018 18:11:33 GMT",
+          "etag": "\"340989509c488698bbcf6c8a9fe91bc4-ssl\"",
+          "referrer-policy": "no-referrer",
+          "server": "Netlify",
+          "status": "200",
+          "strict-transport-security": "max-age=31536000",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "image/png",
+        "protocol": "h2",
+        "remoteIPAddress": "54.93.128.64",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.sitespeed.io",
+          ":method": "GET",
+          ":path": "/img/pippi.png",
+          ":scheme": "https",
+          "accept": "image/webp,image/apng,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br",
+          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+          "user-agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3389.0 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Let's Encrypt Authority X3",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "protocol": "TLS 1.2",
+          "sanList": ["sitespeed.io", "www.sitespeed.io"],
+          "signedCertificateTimestampList": [],
+          "subjectName": "www.sitespeed.io",
+          "validFrom": 1518719904,
+          "validTo": 1526495904
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": -1,
+          "connectStart": -1,
+          "dnsEnd": -1,
+          "dnsStart": -1,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 39.274,
+          "requestTime": 8847.414713,
+          "sendEnd": 2.382,
+          "sendStart": 1.905,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.sitespeed.io/img/pippi.png"
+      },
+      "timestamp": 8847.532565,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 10892,
+      "encodedDataLength": 10892,
+      "requestId": "3433.4",
+      "timestamp": 8847.532631
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "blockedCrossSiteDocument": false,
+      "encodedDataLength": 10959,
+      "requestId": "3433.4",
+      "timestamp": 8847.53246
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+      "loaderId": "B33E7DA09F979E697148C62EE934DD59",
+      "requestId": "3433.5",
+      "response": {
+        "connectionId": 92,
+        "connectionReused": true,
+        "encodedDataLength": 89,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "accept-ranges": "bytes",
+          "age": "43765",
+          "cache-control": "public,max-age=360000",
+          "content-length": "12994",
+          "content-type": "image/png",
+          "date": "Thu, 05 Apr 2018 18:11:34 GMT",
+          "etag": "\"7ebce8d7d57d724a9011eed10515844f-ssl\"",
+          "referrer-policy": "no-referrer",
+          "server": "Netlify",
+          "status": "200",
+          "strict-transport-security": "max-age=31536000",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "image/png",
+        "protocol": "h2",
+        "remoteIPAddress": "54.93.128.64",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.sitespeed.io",
+          ":method": "GET",
+          ":path": "/img/public.png",
+          ":scheme": "https",
+          "accept": "image/webp,image/apng,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br",
+          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+          "user-agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3389.0 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Let's Encrypt Authority X3",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "protocol": "TLS 1.2",
+          "sanList": ["sitespeed.io", "www.sitespeed.io"],
+          "signedCertificateTimestampList": [],
+          "subjectName": "www.sitespeed.io",
+          "validFrom": 1518719904,
+          "validTo": 1526495904
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": -1,
+          "connectStart": -1,
+          "dnsEnd": -1,
+          "dnsStart": -1,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 40.575,
+          "requestTime": 8847.414867,
+          "sendEnd": 2.231,
+          "sendStart": 1.844,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.sitespeed.io/img/public.png"
+      },
+      "timestamp": 8847.533217,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 12994,
+      "encodedDataLength": 12994,
+      "requestId": "3433.5",
+      "timestamp": 8847.533268
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "blockedCrossSiteDocument": false,
+      "encodedDataLength": 13083,
+      "requestId": "3433.5",
+      "timestamp": 8847.533115
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+      "loaderId": "B33E7DA09F979E697148C62EE934DD59",
+      "requestId": "3433.6",
+      "response": {
+        "connectionId": 92,
+        "connectionReused": true,
+        "encodedDataLength": 67,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "accept-ranges": "bytes",
+          "age": "43765",
+          "cache-control": "public,max-age=360000",
+          "content-length": "33990",
+          "content-type": "image/png",
+          "date": "Thu, 05 Apr 2018 18:11:34 GMT",
+          "etag": "\"9e069350b0094488f38cdf6d89b4de31-ssl\"",
+          "referrer-policy": "no-referrer",
+          "server": "Netlify",
+          "status": "200",
+          "strict-transport-security": "max-age=31536000",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "image/png",
+        "protocol": "h2",
+        "remoteIPAddress": "54.93.128.64",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.sitespeed.io",
+          ":method": "GET",
+          ":path": "/img/browsertime-ff-chrome.png",
+          ":scheme": "https",
+          "accept": "image/webp,image/apng,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br",
+          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+          "user-agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3389.0 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Let's Encrypt Authority X3",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "protocol": "TLS 1.2",
+          "sanList": ["sitespeed.io", "www.sitespeed.io"],
+          "signedCertificateTimestampList": [],
+          "subjectName": "www.sitespeed.io",
+          "validFrom": 1518719904,
+          "validTo": 1526495904
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": -1,
+          "connectStart": -1,
+          "dnsEnd": -1,
+          "dnsStart": -1,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 69.667,
+          "requestTime": 8847.415368,
+          "sendEnd": 1.851,
+          "sendStart": 1.664,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.sitespeed.io/img/browsertime-ff-chrome.png"
+      },
+      "timestamp": 8847.533797,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 33990,
+      "encodedDataLength": 16393,
+      "requestId": "3433.6",
+      "timestamp": 8847.533852
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 0,
+      "encodedDataLength": 17615,
+      "requestId": "3433.6",
+      "timestamp": 8847.534
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "blockedCrossSiteDocument": false,
+      "encodedDataLength": 34075,
+      "requestId": "3433.6",
+      "timestamp": 8847.533682
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+      "loaderId": "B33E7DA09F979E697148C62EE934DD59",
+      "requestId": "3433.7",
+      "response": {
+        "connectionId": 92,
+        "connectionReused": true,
+        "encodedDataLength": 1743,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "accept-ranges": "bytes",
+          "age": "43765",
+          "cache-control": "public,max-age=360000",
+          "content-length": "1678",
+          "content-type": "image/png",
+          "date": "Thu, 05 Apr 2018 18:11:34 GMT",
+          "etag": "\"bfcdb41250f72962485cf31449760fcf-ssl\"",
+          "referrer-policy": "no-referrer",
+          "server": "Netlify",
+          "status": "200",
+          "strict-transport-security": "max-age=31536000",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "image/png",
+        "protocol": "h2",
+        "remoteIPAddress": "54.93.128.64",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.sitespeed.io",
+          ":method": "GET",
+          ":path": "/img/black-logo-120.png",
+          ":scheme": "https",
+          "accept": "image/webp,image/apng,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br",
+          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+          "user-agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3389.0 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Let's Encrypt Authority X3",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "protocol": "TLS 1.2",
+          "sanList": ["sitespeed.io", "www.sitespeed.io"],
+          "signedCertificateTimestampList": [],
+          "subjectName": "www.sitespeed.io",
+          "validFrom": 1518719904,
+          "validTo": 1526495904
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": -1,
+          "connectStart": -1,
+          "dnsEnd": -1,
+          "dnsStart": -1,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 83.012,
+          "requestTime": 8847.415537,
+          "sendEnd": 1.684,
+          "sendStart": 1.541,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.sitespeed.io/img/black-logo-120.png"
+      },
+      "timestamp": 8847.534408,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 1678,
+      "encodedDataLength": 0,
+      "requestId": "3433.7",
+      "timestamp": 8847.53445
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "blockedCrossSiteDocument": false,
+      "encodedDataLength": 1743,
+      "requestId": "3433.7",
+      "timestamp": 8847.5343
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+      "loaderId": "B33E7DA09F979E697148C62EE934DD59",
+      "requestId": "3433.8",
+      "response": {
+        "connectionId": 92,
+        "connectionReused": true,
+        "encodedDataLength": 3276,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "accept-ranges": "bytes",
+          "age": "43766",
+          "cache-control": "public,max-age=360000",
+          "content-length": "3211",
+          "content-type": "image/png",
+          "date": "Thu, 05 Apr 2018 18:11:33 GMT",
+          "etag": "\"bf1f7c7a53f887bbd5f2096a7e104d2c-ssl\"",
+          "referrer-policy": "no-referrer",
+          "server": "Netlify",
+          "status": "200",
+          "strict-transport-security": "max-age=31536000",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "image/png",
+        "protocol": "h2",
+        "remoteIPAddress": "54.93.128.64",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.sitespeed.io",
+          ":method": "GET",
+          ":path": "/img/digital-ocean.png",
+          ":scheme": "https",
+          "accept": "image/webp,image/apng,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br",
+          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+          "user-agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3389.0 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Let's Encrypt Authority X3",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "protocol": "TLS 1.2",
+          "sanList": ["sitespeed.io", "www.sitespeed.io"],
+          "signedCertificateTimestampList": [],
+          "subjectName": "www.sitespeed.io",
+          "validFrom": 1518719904,
+          "validTo": 1526495904
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": -1,
+          "connectStart": -1,
+          "dnsEnd": -1,
+          "dnsStart": -1,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 83.247,
+          "requestTime": 8847.41569,
+          "sendEnd": 1.534,
+          "sendStart": 1.43,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.sitespeed.io/img/digital-ocean.png"
+      },
+      "timestamp": 8847.534994,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 3211,
+      "encodedDataLength": 0,
+      "requestId": "3433.8",
+      "timestamp": 8847.535048
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "blockedCrossSiteDocument": false,
+      "encodedDataLength": 3276,
+      "requestId": "3433.8",
+      "timestamp": 8847.534866
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+      "loaderId": "B33E7DA09F979E697148C62EE934DD59",
+      "requestId": "3433.3",
+      "response": {
+        "connectionId": 92,
+        "connectionReused": true,
+        "encodedDataLength": 16488,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "accept-ranges": "bytes",
+          "age": "32737",
+          "cache-control": "public,max-age=360000",
+          "content-length": "100897",
+          "content-type": "image/png",
+          "date": "Thu, 05 Apr 2018 21:15:21 GMT",
+          "etag": "\"7989b4471e7aa98c7e7d15c4ce8069d2-ssl\"",
+          "referrer-policy": "no-referrer",
+          "server": "Netlify",
+          "status": "200",
+          "strict-transport-security": "max-age=31536000",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "image/png",
+        "protocol": "h2",
+        "remoteIPAddress": "54.93.128.64",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.sitespeed.io",
+          ":method": "GET",
+          ":path": "/img/team.png",
+          ":scheme": "https",
+          "accept": "image/webp,image/apng,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br",
+          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+          "user-agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3389.0 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Let's Encrypt Authority X3",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "protocol": "TLS 1.2",
+          "sanList": ["sitespeed.io", "www.sitespeed.io"],
+          "signedCertificateTimestampList": [],
+          "subjectName": "www.sitespeed.io",
+          "validFrom": 1518719904,
+          "validTo": 1526495904
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": -1,
+          "connectStart": -1,
+          "dnsEnd": -1,
+          "dnsStart": -1,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 84.667,
+          "requestTime": 8847.41455,
+          "sendEnd": 2.543,
+          "sendStart": 1.845,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.sitespeed.io/img/team.png"
+      },
+      "timestamp": 8847.53554,
+      "type": "Image"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 0,
+      "requestId": "3433.3",
+      "timestamp": 8847.535592
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 32768,
+      "encodedDataLength": 49179,
+      "requestId": "3433.3",
+      "timestamp": 8847.538065
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 16384,
+      "encodedDataLength": 16393,
+      "requestId": "3433.3",
+      "timestamp": 8847.548448
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 18977,
+      "encodedDataLength": 18986,
+      "requestId": "3433.3",
+      "timestamp": 8847.557437
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "blockedCrossSiteDocument": false,
+      "encodedDataLength": 101046,
+      "requestId": "3433.3",
+      "timestamp": 8847.557368
+    }
+  },
+  { "method": "Page.loadEventFired", "params": { "timestamp": 8847.558226 } },
+  {
+    "method": "Page.frameStoppedLoading",
+    "params": { "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89" }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "documentURL": "https://www.sitespeed.io/",
+      "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+      "hasUserGesture": false,
+      "initiator": { "type": "other" },
+      "loaderId": "B33E7DA09F979E697148C62EE934DD59",
+      "request": {
+        "headers": {
+          "User-Agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3389.0 Safari/537.36"
+        },
+        "initialPriority": "High",
+        "method": "GET",
+        "mixedContentType": "none",
+        "referrerPolicy": "no-referrer",
+        "url": "https://www.sitespeed.io/img/ico/sitespeed.io.ico"
+      },
+      "requestId": "3433.17",
+      "timestamp": 8847.64368,
+      "type": "Other",
+      "wallTime": 1522995658.95782
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "frameId": "76441E0BB5B4CE0201A6FC5B1EEEED89",
+      "loaderId": "B33E7DA09F979E697148C62EE934DD59",
+      "requestId": "3433.17",
+      "response": {
+        "connectionId": 92,
+        "connectionReused": true,
+        "encodedDataLength": 6629,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "headers": {
+          "accept-ranges": "bytes",
+          "age": "41504",
+          "cache-control": "public,max-age=360000",
+          "content-length": "6518",
+          "content-type": "image/vnd.microsoft.icon",
+          "date": "Thu, 05 Apr 2018 18:49:15 GMT",
+          "etag": "\"f27a1ec2eb40c1444f753955a6059992-ssl\"",
+          "referrer-policy": "no-referrer",
+          "server": "Netlify",
+          "status": "200",
+          "strict-transport-security": "max-age=31536000",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "mimeType": "image/vnd.microsoft.icon",
+        "protocol": "h2",
+        "remoteIPAddress": "54.93.128.64",
+        "remotePort": 443,
+        "requestHeaders": {
+          ":authority": "www.sitespeed.io",
+          ":method": "GET",
+          ":path": "/img/ico/sitespeed.io.ico",
+          ":scheme": "https",
+          "accept": "image/webp,image/apng,image/*,*/*;q=0.8",
+          "accept-encoding": "gzip, deflate, br",
+          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+          "user-agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3389.0 Safari/537.36"
+        },
+        "securityDetails": {
+          "certificateId": 0,
+          "cipher": "AES_128_GCM",
+          "issuer": "Let's Encrypt Authority X3",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "protocol": "TLS 1.2",
+          "sanList": ["sitespeed.io", "www.sitespeed.io"],
+          "signedCertificateTimestampList": [],
+          "subjectName": "www.sitespeed.io",
+          "validFrom": 1518719904,
+          "validTo": 1526495904
+        },
+        "securityState": "secure",
+        "status": 200,
+        "statusText": "",
+        "timing": {
+          "connectEnd": -1,
+          "connectStart": -1,
+          "dnsEnd": -1,
+          "dnsStart": -1,
+          "proxyEnd": -1,
+          "proxyStart": -1,
+          "pushEnd": 0,
+          "pushStart": 0,
+          "receiveHeadersEnd": 36.529,
+          "requestTime": 8847.644056,
+          "sendEnd": 0.872,
+          "sendStart": 0.64,
+          "sslEnd": -1,
+          "sslStart": -1,
+          "workerReady": -1,
+          "workerStart": -1
+        },
+        "url": "https://www.sitespeed.io/img/ico/sitespeed.io.ico"
+      },
+      "timestamp": 8847.681306,
+      "type": "Other"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "dataLength": 6518,
+      "encodedDataLength": 0,
+      "requestId": "3433.17",
+      "timestamp": 8847.681632
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "blockedCrossSiteDocument": false,
+      "encodedDataLength": 6629,
+      "requestId": "3433.17",
+      "timestamp": 8847.681231
+    }
+  }
+]
