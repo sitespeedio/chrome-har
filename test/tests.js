@@ -66,7 +66,10 @@ test('Generates valid HARs', t => {
         t.deepEqual(sortedByRequestTime(har.log.entries), har.log.entries)
       )
       .tap(har => validateConnectionOverlap(t, har.log.entries))
-      .then(() => t.pass('Valid HAR'));
+      .catch(e => {
+        t.log(`Failed to generate valid HAR from ${filename}`);
+        throw e;
+      });
   });
 });
 

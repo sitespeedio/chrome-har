@@ -197,6 +197,8 @@ module.exports = {
               continue;
             }
 
+            rootFrameMappings.set(frameId, undefined);
+
             currentPageId = uuid();
             const page = {
               id: currentPageId,
@@ -557,6 +559,10 @@ module.exports = {
         case 'Page.frameDetached':
         case 'Page.frameResized':
           // ignore
+          break;
+
+        case 'Page.lifecycleEvent':
+          // ignore for now, put in pageTimings later
           break;
 
         case 'Page.javascriptDialogOpening':
