@@ -27,6 +27,14 @@ function formatMillis(time, fractionalDigits = 3) {
   return Number(Number(time).toFixed(fractionalDigits));
 }
 
+function formatIP(ipAddress) {
+  if (typeof ipAddress !== 'string') {
+    return undefined;
+  }
+  // IPv6 addresses are listed as [2a00:1450:400f:80a::2003]
+  return ipAddress.replace(/^\[|]$/g, '');
+}
+
 function populateEntryFromResponse(entry, response, page) {
   const responseHeaders = response.headers;
   const cookieHeader = getHeaderValue(responseHeaders, 'Set-Cookie');
@@ -96,7 +104,7 @@ function populateEntryFromResponse(entry, response, page) {
   }
 
   entry.connection = response.connectionId.toString();
-  entry.serverIPAddress = response.remoteIPAddress;
+  entry.serverIPAddress = formatIP(response.remoteIPAddress);
 
   function parseOptionalTime(timing, start, end) {
     if (timing[start] >= 0) {

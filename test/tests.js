@@ -88,6 +88,13 @@ test('chrome66', t => {
     .tap(log => t.is(log.entries.length, 9));
 });
 
+test('Parses IPv6 address', t => {
+  const perflogPath = perflog('www.google.ru.json');
+  return parsePerflog(perflogPath).then(har =>
+    t.is(har.log.entries[0].serverIPAddress, '2a00:1450:400f:80a::2003')
+  );
+});
+
 test('Generates multiple pages', t => {
   const perflogPath = perflog('www.wikipedia.org.json');
   return parsePerflog(perflogPath).tap(har => t.is(har.log.pages.length, 2));
