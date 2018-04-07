@@ -6,6 +6,7 @@
 version 0.3.1 2018-03-29
 -------------------------
 * Also act on Page.frameScheduledNavigation (needed for Chrome 66 and coming Browsertime 3.0)
+* Format IPv6 addresses so HARs validate with [har-validator](https://github.com/ahmadnassri/har-validator)
 
 version 0.3.0 2018-03-15
 -------------------------
