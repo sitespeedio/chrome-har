@@ -651,7 +651,7 @@ module.exports = {
 
     if (!options.includeResourcesFromDiskCache) {
       entries = entries.filter(
-        entry => entry.cache.beforeRequest === undefined
+        entry => ( entry.cache.beforeRequest === undefined  ||  entry._was_pushed == 1 )
       );
     }
 
