@@ -76,7 +76,7 @@ function populateEntryFromResponse(entry, response, page) {
         hitCount: 0
       };
 
-    } else {console.log("Pushed!!");}
+    }
   } else {
     if (response.requestHeaders) {
       entry.request.headers = parseHeaders(response.requestHeaders);
