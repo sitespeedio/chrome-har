@@ -69,13 +69,14 @@ function populateEntryFromResponse(entry, response, page) {
     }
 
     // h2 push might cause resource to be received before parser sees and requests it.
-    if (!(response.pushStart > 0)) {
+    if (!(response.timing.pushStart > 0)) {
       entry.cache.beforeRequest = {
         lastAccess: '',
         eTag: '',
         hitCount: 0
       };
-    }
+
+    } else {console.log("Pushed!!");}
   } else {
     if (response.requestHeaders) {
       entry.request.headers = parseHeaders(response.requestHeaders);
