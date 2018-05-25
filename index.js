@@ -75,7 +75,6 @@ function populateEntryFromResponse(entry, response, page) {
         eTag: '',
         hitCount: 0
       };
-
     }
   } else {
     if (response.requestHeaders) {
