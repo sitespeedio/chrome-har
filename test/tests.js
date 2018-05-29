@@ -15,6 +15,7 @@ const PERFLOGSPATH = path.resolve(__dirname, 'perflogs');
 function validateConnectionOverlap(t, entries) {
   const entriesByConnection = entries
     .filter(entry => !['h2', 'spdy/3.1'].includes(entry.response.httpVersion))
+    .filter(entry => !(entry.cache || {}).beforeRequest)
     .reduce((entries, entry) => {
       const e = entries.get(entry.connection) || [];
       e.push(entry);
