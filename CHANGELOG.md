@@ -1,5 +1,9 @@
 # CHANGELOG
 
+UNRELEASED
+-------------------------
+* Include responses that were pushed with HTTP2. Thanks to Martino Trevisan! [#21](https://github.com/sitespeedio/chrome-har/pull/21)
+
 version 0.3.2 2018-04-07
 -------------------------
 * Fixes for situations that could result in incorrect HARs (missing startedDateTime or missing first entry).
