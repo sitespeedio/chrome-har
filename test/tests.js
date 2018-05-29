@@ -104,3 +104,18 @@ test('Skips empty pages', t => {
   const perflogPath = perflog('www.wikipedia.org-empty.json');
   return parsePerflog(perflogPath).tap(har => t.is(har.log.pages.length, 1));
 });
+
+test('Includes pushed assets', t => {
+  const perflogPath = perflog('akamai-h2push.json');
+  return parsePerflog(perflogPath)
+    .tap(har => t.is(har.log.pages.length, 1))
+    .tap(har => {
+      const images = har.log.entries.filter(e =>
+        e.request.url.startsWith('https://http2.akamai.com/demo/tile-')
+      );
+      t.is(images.length, 361); // 19*19 = 361 image tiles
+
+      const pushedImages = images.filter(i => i._was_pushed === 1);
+      t.is(pushedImages.length, 3);
+    });
+});
