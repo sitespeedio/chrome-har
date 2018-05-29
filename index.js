@@ -148,7 +148,7 @@ function populateEntryFromResponse(entry, response, page) {
       max(0, blocked) + max(0, dns) + max(0, connect) + send + wait + receive;
 
     // Some cached responses generate a Network.requestServedFromCache event,
-    // but fromDiskCache is still set to false. For those requestSentDelta will be negative.
+    // but fromDiskCache is still set to false.
     if (!entry.__servedFromCache) {
       // wallTime is not necessarily monotonic, timestamp is. So calculate startedDateTime from timestamp diffs.
       // (see https://cs.chromium.org/chromium/src/third_party/WebKit/Source/platform/network/ResourceLoadTiming.h?q=requestTime+package:%5Echromium$&dr=CSs&l=84)
@@ -161,6 +161,11 @@ function populateEntryFromResponse(entry, response, page) {
       if (queuedMillis > 0) {
         entry.timings._queued = formatMillis(queuedMillis);
       }
+    }
+
+    if (entry.cache && entry.cache.beforeRequest) {
+      // lastAccess needs to be a valid date
+      entry.cache.beforeRequest.lastAccess = entry.startedDateTime;
     }
   } else {
     entry.timings = {
@@ -491,6 +496,9 @@ module.exports = {
               timings.send +
               timings.wait +
               timings.receive;
+
+            // For cached entries, Network.loadingFinished can have an earlier
+            // timestamp than Network.dataReceived
 
             // encodedDataLength will be -1 sometimes
             if (params.encodedDataLength >= 0) {

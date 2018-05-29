@@ -78,7 +78,7 @@ test('Generates valid HARs', t => {
   return testAllHARs(t);
 });
 
-test.failing('Generates valid HARs including cached entries', t => {
+test('Generates valid HARs including cached entries', t => {
   return testAllHARs(t, { includeResourcesFromDiskCache: true });
 });
 
