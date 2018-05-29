@@ -1,6 +1,6 @@
 # CHANGELOG
 
-UNRELEASED
+version 0.4.0 2018-05-29
 -------------------------
 * Including cached entries in the HAR now generates a HAR that validates against the HAR schema.
 * Include responses that were pushed with HTTP2. Thanks to Martino Trevisan! [#21](https://github.com/sitespeedio/chrome-har/pull/21)
