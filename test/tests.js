@@ -47,11 +47,11 @@ function perflogs() {
     .filter(filename => path.extname(filename) === '.json');
 }
 
-function parsePerflog(perflogPath) {
+function parsePerflog(perflogPath, options) {
   return fs
     .readFileAsync(perflogPath)
     .then(JSON.parse)
-    .then(messages => parser.harFromMessages(messages))
+    .then(messages => parser.harFromMessages(messages, options))
     .tap(har => validator.har(har));
 }
 
@@ -59,9 +59,9 @@ function sortedByRequestTime(entries) {
   return entries.sort((e1, e2) => e1._requestTime - e2._requestTime);
 }
 
-test('Generates valid HARs', t => {
+function testAllHARs(t, options) {
   return perflogs().each(filename => {
-    return parsePerflog(perflog(filename))
+    return parsePerflog(perflog(filename), options)
       .tap(har =>
         t.deepEqual(sortedByRequestTime(har.log.entries), har.log.entries)
       )
@@ -71,6 +71,14 @@ test('Generates valid HARs', t => {
         throw e;
       });
   });
+}
+
+test('Generates valid HARs', t => {
+  return testAllHARs(t);
+});
+
+test.failing('Generates valid HARs including cached entries', t => {
+  return testAllHARs(t, { includeResourcesFromDiskCache: true });
 });
 
 test('zdnet', t => {
