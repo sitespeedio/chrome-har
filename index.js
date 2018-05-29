@@ -191,7 +191,13 @@ module.exports = {
     for (const message of messages) {
       const params = message.params;
 
-      switch (message.method) {
+      const method = message.method;
+
+      if (!/^(Page|Network)\..+/.test(method)) {
+        continue;
+      }
+
+      switch (method) {
         case 'Page.frameStartedLoading':
         case 'Page.frameScheduledNavigation':
           {
@@ -644,7 +650,7 @@ module.exports = {
           break;
 
         default:
-          debug(`Unhandled event: ${message.method}`);
+          debug(`Unhandled event: ${method}`);
           break;
       }
     }
