@@ -1,5 +1,9 @@
 # CHANGELOG
 
+version 0.4.1 2018-06-01
+-------------------------
+* Added extra guard for checking if a response is pushed to fix [sitespeed.io #2068](https://github.com/sitespeedio/sitespeed.io/issues/2068).
+
 version 0.4.0 2018-05-29
 -------------------------
 * Including cached entries in the HAR now generates a HAR that validates against the HAR schema.
