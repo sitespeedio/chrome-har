@@ -132,7 +132,6 @@ test('Includes pushed assets', t => {
 test('Includes _request_id', t => {
   const countIds = entries =>
     entries.reduce((count, entry) => {
-      console.log(entry['_request_id'])
       return entry.hasOwnProperty('_request_id') ? ++count : count;
     }, 0);
   const perflogPath = perflog('www.wikipedia.org.json');
