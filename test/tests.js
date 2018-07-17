@@ -135,8 +135,7 @@ test('Includes _request_id', t => {
       return entry.hasOwnProperty('_request_id') ? ++count : count;
     }, 0);
   const perflogPath = perflog('www.wikipedia.org.json');
-  return parsePerflog(perflogPath, { includeRequestIdInHar: true })
-    .tap(har => t.is(countIds(har.log.entries), har.log.entries.length))
-    .then(() => parsePerflog(perflogPath))
-    .tap(har => t.is(countIds(har.log.entries), 0));
+  return parsePerflog(perflogPath).tap(har =>
+    t.is(countIds(har.log.entries), har.log.entries.length)
+  );
 });

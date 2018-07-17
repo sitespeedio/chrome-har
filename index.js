@@ -18,8 +18,7 @@ const {
 const max = Math.max;
 
 const defaultOptions = {
-  includeResourcesFromDiskCache: false,
-  includeRequestIdInHar: false
+  includeResourcesFromDiskCache: false
 };
 
 const isEmpty = o => !o;
@@ -279,8 +278,8 @@ module.exports = {
               startedDateTime: '',
               __requestWillBeSentTime: params.timestamp,
               __wallTime: params.wallTime,
-              __requestId: params.requestId,
               __frameId: params.frameId,
+              _request_id: params.requestId,
               _initialPriority: request.initialPriority,
               _priority: request.initialPriority,
               pageref: currentPageId,
@@ -318,10 +317,10 @@ module.exports = {
 
             if (params.redirectResponse) {
               const previousEntry = entries.find(
-                entry => entry.__requestId === params.requestId
+                entry => entry._request_id === params.requestId
               );
               if (previousEntry) {
-                previousEntry.__requestId += 'r';
+                previousEntry._request_id += 'r';
                 populateEntryFromResponse(
                   previousEntry,
                   params.redirectResponse,
@@ -367,7 +366,7 @@ module.exports = {
             }
 
             const entry = entries.find(
-              entry => entry.__requestId === params.requestId
+              entry => entry._request_id === params.requestId
             );
             if (!entry) {
               debug(
@@ -398,7 +397,7 @@ module.exports = {
             }
 
             const entry = entries.find(
-              entry => entry.__requestId === params.requestId
+              entry => entry._request_id === params.requestId
             );
             if (!entry) {
               debug(
@@ -447,7 +446,7 @@ module.exports = {
             }
 
             const entry = entries.find(
-              entry => entry.__requestId === params.requestId
+              entry => entry._request_id === params.requestId
             );
             if (!entry) {
               debug(
@@ -474,7 +473,7 @@ module.exports = {
             }
 
             const entry = entries.find(
-              entry => entry.__requestId === params.requestId
+              entry => entry._request_id === params.requestId
             );
             if (!entry) {
               debug(
@@ -602,7 +601,7 @@ module.exports = {
             }
 
             const entry = entries.find(
-              entry => entry.__requestId === params.requestId
+              entry => entry._request_id === params.requestId
             );
             if (!entry) {
               debug(
@@ -621,7 +620,7 @@ module.exports = {
               })`
             );
             entries = entries.filter(
-              entry => entry.__requestId !== params.requestId
+              entry => entry._request_id !== params.requestId
             );
           }
           break;
@@ -642,7 +641,7 @@ module.exports = {
         case 'Network.resourceChangedPriority':
           {
             const entry = entries.find(
-              entry => entry.__requestId === params.requestId
+              entry => entry._request_id === params.requestId
             );
 
             if (!entry) {
@@ -674,9 +673,6 @@ module.exports = {
       // __ properties are only for internal use, _ properties are custom properties for the HAR
       for (const prop in o) {
         if (prop.startsWith('__')) {
-          if (prop === '__requestId' && options.includeRequestIdInHar) {
-            o['_request_id'] = o[prop];
-          }
           delete o[prop];
         }
       }
