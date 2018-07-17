@@ -128,3 +128,16 @@ test('Includes pushed assets', t => {
       t.is(pushedImages.length, 3);
     });
 });
+
+test('Includes _request_id', t => {
+  const countIds = entries =>
+    entries.reduce((count, entry) => {
+      console.log(entry['_request_id'])
+      return entry.hasOwnProperty('_request_id') ? ++count : count;
+    }, 0);
+  const perflogPath = perflog('www.wikipedia.org.json');
+  return parsePerflog(perflogPath, { includeRequestIdInHar: true })
+    .tap(har => t.is(countIds(har.log.entries), har.log.entries.length))
+    .then(() => parsePerflog(perflogPath))
+    .tap(har => t.is(countIds(har.log.entries), 0));
+});
