@@ -18,7 +18,8 @@ const {
 const max = Math.max;
 
 const defaultOptions = {
-  includeResourcesFromDiskCache: false
+  includeResourcesFromDiskCache: false,
+  includeRequestIdInHar: false
 };
 
 const isEmpty = o => !o;
@@ -673,6 +674,9 @@ module.exports = {
       // __ properties are only for internal use, _ properties are custom properties for the HAR
       for (const prop in o) {
         if (prop.startsWith('__')) {
+          if (prop === '__requestId' && options.includeRequestIdInHar) {
+            o['_request_id'] = o[prop];
+          }
           delete o[prop];
         }
       }
