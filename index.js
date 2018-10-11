@@ -205,6 +205,7 @@ module.exports = {
       switch (method) {
         case 'Page.frameStartedLoading':
         case 'Page.frameScheduledNavigation':
+        case 'Page.navigatedWithinDocument':
           {
             const frameId = params.frameId;
 
