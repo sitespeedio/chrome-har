@@ -1,5 +1,9 @@
 # CHANGELOG
 
+version 0.5.0 2018-10-12
+-------------------------
+* Catch Chrome navigating within page [#28](https://github.com/sitespeedio/chrome-har/pull/28).
+
 version 0.4.1 2018-06-01
 -------------------------
 * Added extra guard for checking if a response is pushed to fix [sitespeed.io #2068](https://github.com/sitespeedio/sitespeed.io/issues/2068).
