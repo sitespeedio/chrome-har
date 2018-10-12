@@ -104,6 +104,13 @@ test('Parses IPv6 address', t => {
   );
 });
 
+test('navigatedWithinDocument', t => {
+  const perflogPath = perflog('navigatedWithinDocument.json');
+  return parsePerflog(perflogPath)
+    .then(har => har.log)
+    .tap(log => t.is(log.entries.length, 1));
+});
+
 test('Generates multiple pages', t => {
   const perflogPath = perflog('www.wikipedia.org.json');
   return parsePerflog(perflogPath).tap(har => t.is(har.log.pages.length, 2));

@@ -205,6 +205,7 @@ module.exports = {
       switch (method) {
         case 'Page.frameStartedLoading':
         case 'Page.frameScheduledNavigation':
+        case 'Page.navigatedWithinDocument':
           {
             const frameId = params.frameId;
 
@@ -213,12 +214,13 @@ module.exports = {
             if (pages.some(page => page.__frameId === rootFrame)) {
               continue;
             }
-
             currentPageId = uuid();
+            const title =
+              method === 'Page.navigatedWithinDocument' ? params.url : '';
             const page = {
               id: currentPageId,
               startedDateTime: '',
-              title: '',
+              title: title,
               pageTimings: {},
               __frameId: rootFrame
             };
@@ -343,7 +345,7 @@ module.exports = {
               page.__timestamp = params.timestamp;
               page.startedDateTime = moment.unix(params.wallTime).toISOString(); //epoch float64, eg 1440589909.59248
               // URL is better than blank, and it's what devtools uses.
-              page.title = request.url;
+              page.title = page.title === '' ? request.url : page.title;
             }
 
             // wallTime is not necessarily monotonic, timestamp is. So calculate startedDateTime from timestamp diffs.
