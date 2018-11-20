@@ -4,7 +4,7 @@ const { name, version, homepage } = require('./package');
 
 const urlParser = require('url');
 const uuid = require('uuid/v1');
-const moment = require('moment');
+const dayjs = require('dayjs');
 const debug = require('debug')(name);
 const ignoredEvents = require('./lib/ignoredEvents');
 const { parseRequestCookies } = require('./lib/cookies');
@@ -186,7 +186,7 @@ module.exports = {
             if (!page.__timestamp) {
               page.__wallTime = params.wallTime;
               page.__timestamp = params.timestamp;
-              page.startedDateTime = moment.unix(params.wallTime).toISOString(); //epoch float64, eg 1440589909.59248
+              page.startedDateTime = dayjs.unix(params.wallTime).toISOString(); //epoch float64, eg 1440589909.59248
               // URL is better than blank, and it's what devtools uses.
               page.title = page.title === '' ? request.url : page.title;
             }
@@ -195,7 +195,7 @@ module.exports = {
             // (see https://cs.chromium.org/chromium/src/third_party/WebKit/Source/platform/network/ResourceLoadTiming.h?q=requestTime+package:%5Echromium$&dr=CSs&l=84)
             const entrySecs =
               page.__wallTime + (params.timestamp - page.__timestamp);
-            entry.startedDateTime = moment.unix(entrySecs).toISOString();
+            entry.startedDateTime = dayjs.unix(entrySecs).toISOString();
           }
           break;
 
