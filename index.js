@@ -55,7 +55,10 @@ module.exports = {
             const rootFrame = rootFrameMappings.get(frameId) || frameId;
 
             if (pages.some(page => page.__frameId === rootFrame)) {
-              continue;
+              // Navigated from Browsertime
+              if (params.reason !== 'scriptInitiated') {
+                continue;
+              }
             }
             currentPageId = uuid();
             const title =
@@ -83,9 +86,7 @@ module.exports = {
               ignoredRequests.add(params.requestId);
               continue;
             }
-            const frameId =
-              rootFrameMappings.get(params.frameId) || params.frameId;
-            const page = pages.find(page => page.__frameId === frameId);
+            const page = pages[pages.length - 1];
             if (!page) {
               debug(
                 `Request will be sent with requestId ${
