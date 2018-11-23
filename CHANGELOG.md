@@ -1,4 +1,10 @@
 # CHANGELOG
+version 0.6.0 2018-11-23
+-------------------------
+* Use dayjs instead of moment [#33](https://github.com/sitespeedio/chrome-har/pull/33).
+* Support for having a HAR with multiple pages from Browsertime [#30](https://github.com/sitespeedio/chrome-har/pull/30).
+* Internal: Split the code to different files to make it easier to read the code [#32](https://github.com/sitespeedio/chrome-har/pull/32).
+
 
 version 0.5.0 2018-10-12
 -------------------------
