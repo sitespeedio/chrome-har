@@ -25,6 +25,16 @@ const isEmpty = o => !o;
 
 const max = Math.max;
 
+function addFromFirstRequest(page, params) {
+  if (!page.__timestamp) {
+    page.__wallTime = params.wallTime;
+    page.__timestamp = params.timestamp;
+    page.startedDateTime = dayjs.unix(params.wallTime).toISOString(); //epoch float64, eg 1440589909.59248
+    // URL is better than blank, and it's what devtools uses.
+    page.title = page.title === '' ? params.request.url : page.title;
+  }
+}
+
 module.exports = {
   harFromMessages(messages, options) {
     options = Object.assign({}, defaultOptions, options);
@@ -34,6 +44,8 @@ module.exports = {
 
     let pages = [],
       entries = [],
+      entriesWithoutPage = [],
+      paramsWithoutPage = [],
       currentPageId;
 
     for (const message of messages) {
@@ -53,7 +65,6 @@ module.exports = {
             const frameId = params.frameId;
 
             const rootFrame = rootFrameMappings.get(frameId) || frameId;
-
             if (pages.some(page => page.__frameId === rootFrame)) {
               // Navigated from Browsertime
               if (params.reason !== 'scriptInitiated') {
@@ -71,32 +82,26 @@ module.exports = {
               __frameId: rootFrame
             };
             pages.push(page);
+            // do we have any unmmapped requests, add them
+            if (entriesWithoutPage.length > 0) {
+              // update page
+              for (let entry of entriesWithoutPage) {
+                entry.pageref = page.id;
+              }
+              entries = entries.concat(entriesWithoutPage);
+              addFromFirstRequest(page, paramsWithoutPage[0]);
+            }
           }
           break;
 
         case 'Network.requestWillBeSent':
           {
-            if (pages.length < 1) {
-              //we haven't loaded any pages yet.
-              ignoredRequests.add(params.requestId);
-              continue;
-            }
             const request = params.request;
             if (!isSupportedProtocol(request.url)) {
               ignoredRequests.add(params.requestId);
               continue;
             }
             const page = pages[pages.length - 1];
-            if (!page) {
-              debug(
-                `Request will be sent with requestId ${
-                  params.requestId
-                } that can't be mapped to any page.`
-              );
-              ignoredRequests.add(params.requestId);
-              continue;
-            }
-
             const cookieHeader = getHeaderValue(request.headers, 'Cookie');
 
             // Remove fragment, that's what Chrome does.
@@ -181,17 +186,22 @@ module.exports = {
               }
             }
 
+            if (!page) {
+              debug(
+                `Request will be sent with requestId ${
+                  params.requestId
+                } that can't be mapped to any page at the moment.`
+              );
+              // ignoredRequests.add(params.requestId);
+              entriesWithoutPage.push(entry);
+              paramsWithoutPage.push(params);
+              continue;
+            }
+
             entries.push(entry);
 
             // this is the first request for this page, so set timestamp of page.
-            if (!page.__timestamp) {
-              page.__wallTime = params.wallTime;
-              page.__timestamp = params.timestamp;
-              page.startedDateTime = dayjs.unix(params.wallTime).toISOString(); //epoch float64, eg 1440589909.59248
-              // URL is better than blank, and it's what devtools uses.
-              page.title = page.title === '' ? request.url : page.title;
-            }
-
+            addFromFirstRequest(page, params);
             // wallTime is not necessarily monotonic, timestamp is. So calculate startedDateTime from timestamp diffs.
             // (see https://cs.chromium.org/chromium/src/third_party/WebKit/Source/platform/network/ResourceLoadTiming.h?q=requestTime+package:%5Echromium$&dr=CSs&l=84)
             const entrySecs =
@@ -499,9 +509,7 @@ module.exports = {
         return entry.response;
       })
       .map(deleteInternalProperties);
-
     pages = pages.map(deleteInternalProperties);
-
     pages = pages.reduce((result, page, index) => {
       const hasEntry = entries.some(entry => entry.pageref === page.id);
       if (hasEntry) {
@@ -511,7 +519,6 @@ module.exports = {
       }
       return result;
     }, []);
-
     const pagerefMapping = pages.reduce((result, page, index) => {
       result[page.id] = `page_${index + 1}`;
       return result;
@@ -521,7 +528,6 @@ module.exports = {
       page.id = pagerefMapping[page.id];
       return page;
     });
-
     entries = entries.map(entry => {
       entry.pageref = pagerefMapping[entry.pageref];
       return entry;

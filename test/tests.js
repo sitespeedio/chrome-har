@@ -126,6 +126,11 @@ test('Skips empty pages', t => {
   return parsePerflog(perflogPath).tap(har => t.is(har.log.pages.length, 1));
 });
 
+test('Click on link in Chrome should create new page', t => {
+  const perflogPath = perflog('linkClickChrome.json');
+  return parsePerflog(perflogPath).tap(har => t.is(har.log.pages.length, 1));
+});
+
 test('Includes pushed assets', t => {
   const perflogPath = perflog('akamai-h2push.json');
   return parsePerflog(perflogPath)
