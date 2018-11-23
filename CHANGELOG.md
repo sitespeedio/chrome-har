@@ -1,4 +1,9 @@
 # CHANGELOG
+
+version 0.7.0 2018-11-23
+-------------------------
+* Catch requestWillBeSent that happens before navigation [#34](https://github.com/sitespeedio/chrome-har/pull/34). This fixes when you click on a link in Chrome that generates a new navigation.
+
 version 0.6.0 2018-11-23
 -------------------------
 * Use dayjs instead of moment [#33](https://github.com/sitespeedio/chrome-har/pull/33).
