@@ -69,6 +69,12 @@ module.exports = {
               // Navigated from Browsertime
               if (params.reason !== 'scriptInitiated') {
                 continue;
+              } else if (
+                // This is something we've seen on Aftonbladets splash screens
+                params.reason === 'scriptInitiated' &&
+                params.url === 'about:blank'
+              ) {
+                continue;
               }
             }
             currentPageId = uuid();
