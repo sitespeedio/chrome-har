@@ -60,8 +60,9 @@ function sortedByRequestTime(entries) {
   return entries.sort((e1, e2) => e1._requestTime - e2._requestTime);
 }
 
-function testAllHARs(t, options) {
+function testAllHARs(t, options = {}) {
   return perflogs().each(filename => {
+    options.lighthouse = filename.match(/lighthouse/i);
     return parsePerflog(perflog(filename), options)
       .tap(har =>
         t.deepEqual(sortedByRequestTime(har.log.entries), har.log.entries)
