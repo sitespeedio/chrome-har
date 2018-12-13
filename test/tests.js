@@ -131,11 +131,6 @@ test('Click on link in Chrome should create new page', t => {
   return parsePerflog(perflogPath).tap(har => t.is(har.log.pages.length, 1));
 });
 
-test('Splash screen should generate one page (not multiple)', t => {
-  const perflogPath = perflog('afton-splash.json');
-  return parsePerflog(perflogPath).tap(har => t.is(har.log.pages.length, 1));
-});
-
 test('Includes pushed assets', t => {
   const perflogPath = perflog('akamai-h2push.json');
   return parsePerflog(perflogPath)
