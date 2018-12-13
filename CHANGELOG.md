@@ -1,5 +1,9 @@
 # CHANGELOG
 
+version 0.7.1 2018-12-13
+-------------------------
+* Pickup requests/responses that happens before navigation and block some sctript navigations [#36](https://github.com/sitespeedio/chrome-har/pull/36).
+
 version 0.7.0 2018-11-23
 -------------------------
 * Catch requestWillBeSent that happens before navigation [#34](https://github.com/sitespeedio/chrome-har/pull/34). This fixes when you click on a link in Chrome that generates a new navigation.
