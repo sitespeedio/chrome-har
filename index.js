@@ -45,6 +45,7 @@ module.exports = {
     let pages = [],
       entries = [],
       entriesWithoutPage = [],
+      responsesWithoutPage = [],
       paramsWithoutPage = [],
       currentPageId;
 
@@ -96,6 +97,18 @@ module.exports = {
               }
               entries = entries.concat(entriesWithoutPage);
               addFromFirstRequest(page, paramsWithoutPage[0]);
+            }
+            if (responsesWithoutPage.length > 0) {
+              for (let params of responsesWithoutPage) {
+                let entry = entries.find(
+                  entry => entry.__requestId === params.requestId
+                );
+                if (entry) {
+                  populateEntryFromResponse(entry, params.response, page);
+                } else {
+                  debug(`Couln't find matching request for response`);
+                }
+              }
             }
           }
           break;
@@ -252,15 +265,23 @@ module.exports = {
           {
             if (pages.length < 1) {
               //we haven't loaded any pages yet.
+              responsesWithoutPage.push(params);
               continue;
             }
+
             if (ignoredRequests.has(params.requestId)) {
               continue;
             }
 
-            const entry = entries.find(
+            let entry = entries.find(
               entry => entry.__requestId === params.requestId
             );
+
+            if (!entry) {
+              entry = entriesWithoutPage.find(
+                entry => entry.__requestId === params.requestId
+              );
+            }
             if (!entry) {
               debug(
                 `Received network response for requestId ${
@@ -318,7 +339,6 @@ module.exports = {
               );
               continue;
             }
-
             entry.response.content.size += params.dataLength;
           }
           break;
