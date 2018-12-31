@@ -90,6 +90,13 @@ test('zdnet', t => {
     .tap(log => t.is(log.entries.length, 343));
 });
 
+test('ryan', t => {
+  const perflogPath = perflog('ryan.json');
+  return parsePerflog(perflogPath)
+    .then(har => har.log)
+    .tap(log => t.is(log.pages.length, 1));
+});
+
 test('chrome66', t => {
   const perflogPath = perflog('www.sitepeed.io.chrome66.json');
   return parsePerflog(perflogPath)
@@ -113,11 +120,6 @@ test('navigatedWithinDocument', t => {
 
 test('Generates multiple pages', t => {
   const perflogPath = perflog('www.wikipedia.org.json');
-  return parsePerflog(perflogPath).tap(har => t.is(har.log.pages.length, 2));
-});
-
-test('Generates multiple pages for two navigations', t => {
-  const perflogPath = perflog('multiPageNavigation.json');
   return parsePerflog(perflogPath).tap(har => t.is(har.log.pages.length, 2));
 });
 

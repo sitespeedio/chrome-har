@@ -76,6 +76,10 @@ module.exports = {
                 params.url === 'about:blank'
               ) {
                 continue;
+              } else if (pages.length > 0) {
+                // At the moment we only pickup the first scriptInitiated navigatoion as a page = 1 page pe JSON
+                // since it makes things simpler
+                continue;
               }
             }
             currentPageId = uuid();
