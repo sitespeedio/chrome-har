@@ -1,5 +1,9 @@
 # CHANGELOG
 
+version 0.8.0 2019-01-01
+-------------------------
+* Skip support for multi page navigation by script (this makes things much easier in Browsertime) [#38](https://github.com/sitespeedio/chrome-har/pull/38).
+
 version 0.7.1 2018-12-13
 -------------------------
 * Pickup requests/responses that happens before navigation and block some sctript navigations [#36](https://github.com/sitespeedio/chrome-har/pull/36).
