@@ -1,5 +1,9 @@
 # CHANGELOG
 
+version 0.8.1 2019-01-03
+-------------------------
+* Tech: Simplify logic for skipping pages.
+
 version 0.8.0 2019-01-01
 -------------------------
 * Skip support for multi page navigation by script (this makes things much easier in Browsertime) [#38](https://github.com/sitespeedio/chrome-har/pull/38).
