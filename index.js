@@ -64,23 +64,9 @@ module.exports = {
         case 'Page.navigatedWithinDocument':
           {
             const frameId = params.frameId;
-
             const rootFrame = rootFrameMappings.get(frameId) || frameId;
             if (pages.some(page => page.__frameId === rootFrame)) {
-              // Navigated from Browsertime
-              if (params.reason !== 'scriptInitiated') {
-                continue;
-              } else if (
-                // This is something we've seen on Aftonbladets splash screens
-                params.reason === 'scriptInitiated' &&
-                params.url === 'about:blank'
-              ) {
-                continue;
-              } else if (pages.length > 0) {
-                // At the moment we only pickup the first scriptInitiated navigatoion as a page = 1 page pe JSON
-                // since it makes things simpler
-                continue;
-              }
+              continue;
             }
             currentPageId = uuid();
             const title =
