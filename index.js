@@ -113,9 +113,12 @@ module.exports = {
             const page = pages[pages.length - 1];
             const cookieHeader = getHeaderValue(request.headers, 'Cookie');
 
-            // Remove fragment, that's what Chrome does.
+            //Before we used to remove the hash framgment because of Chrome do that but:
+            // 1. Firefox do not
+            // 2. If we remove it, the HAR will not have the same URL as we tested
+            // and that makes PageXray generate the wromng URL and we end up with two pages
+            // in sitespeed.io if we run in SPA mode
             const url = urlParser.parse(request.url, true);
-            url.hash = null;
 
             const postData = parsePostData(
               getHeaderValue(request.headers, 'Content-Type'),
