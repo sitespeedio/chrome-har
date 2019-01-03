@@ -1,5 +1,9 @@
 # CHANGELOG
 
+version 0.9.0 2019-01-03
+-------------------------
+* Keep hash (#) in URLs. We used to remove them to follow the same path as Chrome but Firefox do not and it breaks later in our tool chain to change the URL [#39](https://github.com/sitespeedio/chrome-har/pull/39).
+
 version 0.8.1 2019-01-03
 -------------------------
 * Tech: Simplify logic for skipping pages.
