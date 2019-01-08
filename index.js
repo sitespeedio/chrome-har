@@ -20,7 +20,7 @@ const populateEntryFromResponse = require('./lib/entryFromResponse');
 
 const defaultOptions = {
   includeResourcesFromDiskCache: false,
-  includeTextFromResponseBody: false,
+  includeTextFromResponseBody: false
 };
 const isEmpty = o => !o;
 
@@ -95,7 +95,12 @@ module.exports = {
                   entry => entry.__requestId === params.requestId
                 );
                 if (entry) {
-                  populateEntryFromResponse(entry, params.response, page, options);
+                  populateEntryFromResponse(
+                    entry,
+                    params.response,
+                    page,
+                    options
+                  );
                 } else {
                   debug(`Couln't find matching request for response`);
                 }
@@ -192,7 +197,7 @@ module.exports = {
                   previousEntry,
                   params.redirectResponse,
                   page,
-                  options,
+                  options
                 );
               } else {
                 debug(

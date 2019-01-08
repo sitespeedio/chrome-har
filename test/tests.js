@@ -152,6 +152,7 @@ test('Includes response bodies', t => {
   const perflogPath = perflog('www.sitepeed.io.chrome66.json');
   return parsePerflog(perflogPath, { includeTextFromResponseBody: true })
     .then(har => har.log)
-    .tap(log => t.is(log.entries.filter(
-        e => e.response.content.text != null).length, 1));
+    .tap(log =>
+      t.is(log.entries.filter(e => e.response.content.text != null).length, 1)
+    );
 });
