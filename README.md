@@ -17,33 +17,27 @@ For example:
 ```
 const harEvents: Array<any> = [];
 
-const HAR_OBSERVE_EVENTS = [
-  'Page.loadEventFired',
-  'Page.domContentEventFired',
-  'Page.frameStartedLoading',
-  'Page.frameAttached',
-  'Network.requestWillBeSent',
-  'Network.requestServedFromCache',
-  'Network.dataReceived',
-  'Network.responseReceived',
-  'Network.resourceChangedPriority',
-  'Network.loadingFinished',
-  'Network.loadingFailed',
-];
+client.on('Network.requestIntercepted', async (params: any) => {
+  // Get the response body
+  const response = await client.send(
+    'Network.getResponseBodyForInterception',
+    { interceptionId: params.interceptionId },
+  );
 
-HAR_OBSERVE_EVENTS.forEach((method: string) => {
-  client.on(method, async (params: any) => {
-    if (method === 'Network.requestIntercepted') {
-      const response = await client.send(
-        'Network.getResponseBodyForInterception',
-        { interceptionId: params.interceptionId },
-      );
-      // Set the body on the response object
-      params.response.body = response.body;
-      params.request.continue();
-    }
-    harEvents.push({ method, params });
-  });
+  // Set the body on the response object
+  if (params.response != null) {
+    params.response.body = response.body;
+  } else {
+    params.response = response;
+  }
+
+  // Continue the request
+  await client.send(
+    'Network.continueInterceptedRequest',
+    { interceptionId: params.interceptionId },
+  );
+
+  harEvents.push({ method, params });
 });
 
 const har = harFromMessages(harEvents, {includeTextFromResponseBody: true});
