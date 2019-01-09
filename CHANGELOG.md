@@ -1,5 +1,9 @@
 # CHANGELOG
 
+version 0.10.0 2019-01-09
+-------------------------
+* Support for response bodies, thank you [Michael Cypher](https://github.com/mikeecb) for the PR [#41](https://github.com/sitespeedio/chrome-har/pull/41).
+
 version 0.9.1 2019-01-03
 -------------------------
 * And also use the URL fragment so we can keep that [#40](https://github.com/sitespeedio/chrome-har/pull/40).
