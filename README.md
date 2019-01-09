@@ -8,3 +8,37 @@ Code originally extracted from [Browsertime](https://github.com/sitespeedio/brow
 
 [travis-image]: https://img.shields.io/travis/sitespeedio/chrome-har.svg?style=flat-square
 [travis-url]: https://travis-ci.org/sitespeedio/chrome-har
+
+## Support for Response Bodies
+
+Chrome-har optionally supports response bodies in HARs if they are set on the [response object](https://chromedevtools.github.io/devtools-protocol/tot/Network#type-Response) by the caller and if the `includeTextFromResponseBody` otpion is set to `true`.
+
+For example:
+```
+const harEvents: Array<any> = [];
+
+client.on('Network.requestIntercepted', async (params: any) => {
+  // Get the response body
+  const response = await client.send(
+    'Network.getResponseBodyForInterception',
+    { interceptionId: params.interceptionId },
+  );
+
+  // Set the body on the response object
+  if (params.response != null) {
+    params.response.body = response.body;
+  } else {
+    params.response = response;
+  }
+
+  // Continue the request
+  await client.send(
+    'Network.continueInterceptedRequest',
+    { interceptionId: params.interceptionId },
+  );
+
+  harEvents.push({ method, params });
+});
+
+const har = harFromMessages(harEvents, {includeTextFromResponseBody: true});
+```

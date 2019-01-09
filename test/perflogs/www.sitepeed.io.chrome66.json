@@ -65,6 +65,7 @@
       "response": {
         "connectionId": 37,
         "connectionReused": false,
+        "body": "<!DOCTYPE HTML><HTML><BODY>Hello world</BODY></HTML>",
         "encodedDataLength": 262,
         "fromDiskCache": false,
         "fromServiceWorker": false,
