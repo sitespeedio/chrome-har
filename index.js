@@ -92,7 +92,7 @@ module.exports = {
             if (responsesWithoutPage.length > 0) {
               for (let params of responsesWithoutPage) {
                 let entry = entries.find(
-                  entry => entry.__requestId === params.requestId
+                  entry => entry._requestId === params.requestId
                 );
                 if (entry) {
                   populateEntryFromResponse(
@@ -150,7 +150,7 @@ module.exports = {
               startedDateTime: '',
               __requestWillBeSentTime: params.timestamp,
               __wallTime: params.wallTime,
-              __requestId: params.requestId,
+              _requestId: params.requestId,
               __frameId: params.frameId,
               _initialPriority: request.initialPriority,
               _priority: request.initialPriority,
@@ -189,10 +189,10 @@ module.exports = {
 
             if (params.redirectResponse) {
               const previousEntry = entries.find(
-                entry => entry.__requestId === params.requestId
+                entry => entry._requestId === params.requestId
               );
               if (previousEntry) {
-                previousEntry.__requestId += 'r';
+                previousEntry._requestId += 'r';
                 populateEntryFromResponse(
                   previousEntry,
                   params.redirectResponse,
@@ -244,7 +244,7 @@ module.exports = {
             }
 
             const entry = entries.find(
-              entry => entry.__requestId === params.requestId
+              entry => entry._requestId === params.requestId
             );
             if (!entry) {
               debug(
@@ -277,12 +277,12 @@ module.exports = {
             }
 
             let entry = entries.find(
-              entry => entry.__requestId === params.requestId
+              entry => entry._requestId === params.requestId
             );
 
             if (!entry) {
               entry = entriesWithoutPage.find(
-                entry => entry.__requestId === params.requestId
+                entry => entry._requestId === params.requestId
               );
             }
             if (!entry) {
@@ -332,7 +332,7 @@ module.exports = {
             }
 
             const entry = entries.find(
-              entry => entry.__requestId === params.requestId
+              entry => entry._requestId === params.requestId
             );
             if (!entry) {
               debug(
@@ -358,7 +358,7 @@ module.exports = {
             }
 
             const entry = entries.find(
-              entry => entry.__requestId === params.requestId
+              entry => entry._requestId === params.requestId
             );
             if (!entry) {
               debug(
@@ -464,7 +464,7 @@ module.exports = {
             }
 
             const entry = entries.find(
-              entry => entry.__requestId === params.requestId
+              entry => entry._requestId === params.requestId
             );
             if (!entry) {
               debug(
@@ -483,7 +483,7 @@ module.exports = {
               })`
             );
             entries = entries.filter(
-              entry => entry.__requestId !== params.requestId
+              entry => entry._requestId !== params.requestId
             );
           }
           break;
@@ -491,7 +491,7 @@ module.exports = {
         case 'Network.resourceChangedPriority':
           {
             const entry = entries.find(
-              entry => entry.__requestId === params.requestId
+              entry => entry._requestId === params.requestId
             );
 
             if (!entry) {
