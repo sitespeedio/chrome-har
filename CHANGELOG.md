@@ -1,5 +1,9 @@
 # CHANGELOG
 
+version 0.11.0 2019-07-23
+-------------------------
+* Include Chrome request id as _requestId to make it simpler in Browsertime to add response bodies  [#50](https://github.com/sitespeedio/chrome-har/pull/50).
+
 version 0.10.0 2019-01-09
 -------------------------
 * Support for response bodies, thank you [Michael Cypher](https://github.com/mikeecb) for the PR [#41](https://github.com/sitespeedio/chrome-har/pull/41).
