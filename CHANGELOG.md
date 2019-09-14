@@ -1,5 +1,9 @@
 # CHANGELOG
 
+version 0.11.1 2019-09-14
+-------------------------
+* Catch if a request misses the response/timings [#53](https://github.com/sitespeedio/chrome-har/pull/53).
+
 version 0.11.0 2019-07-23
 -------------------------
 * Include Chrome request id as _requestId to make it simpler in Browsertime to add response bodies  [#50](https://github.com/sitespeedio/chrome-har/pull/50).
