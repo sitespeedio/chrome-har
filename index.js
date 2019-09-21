@@ -342,7 +342,12 @@ module.exports = {
               );
               continue;
             }
-            entry.response.content.size += params.dataLength;
+            // It seems that people sometimes have an entry without a response,
+            // I wonder how that works
+            // https://github.com/sitespeedio/sitespeed.io/issues/2645
+            if (entry.response) {
+              entry.response.content.size += params.dataLength;
+            }
           }
           break;
 
