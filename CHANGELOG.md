@@ -1,5 +1,9 @@
 # CHANGELOG
 
+version 0.11.2 2019-09-21
+-------------------------
+* Extra check that we really got a response in the trace [#54](https://github.com/sitespeedio/chrome-har/pull/54)
+
 version 0.11.1 2019-09-14
 -------------------------
 * Catch if a request misses the response/timings [#53](https://github.com/sitespeedio/chrome-har/pull/53).
