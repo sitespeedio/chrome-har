@@ -1,5 +1,9 @@
 # CHANGELOG
 
+version 0.11.3 2019-10-14
+-------------------------
+* Better parsing of the _initiator field fixing an error for some HARs, thank you  [Aleksandr Semyonov](https://github.com/juvirez) for the PR [#44](https://github.com/sitespeedio/chrome-har/pull/44).
+
 version 0.11.2 2019-09-21
 -------------------------
 * Extra check that we really got a response in the trace [#54](https://github.com/sitespeedio/chrome-har/pull/54)
