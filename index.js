@@ -157,7 +157,7 @@ module.exports = {
               pageref: currentPageId,
               request: req,
               time: 0,
-              _initiator_detail: JSON.stringify(params.initiator),
+              _initiator: params.initiator,
               _initiator_type: params.initiator.type
             };
 
@@ -165,7 +165,6 @@ module.exports = {
             switch (params.initiator.type) {
               case 'parser':
                 {
-                  entry._initiator = params.initiator.url;
                   entry._initiator_line = params.initiator.lineNumber + 1; // Because lineNumber is 0 based
                 }
                 break;
@@ -177,7 +176,6 @@ module.exports = {
                     params.initiator.stack.callFrames.length > 0
                   ) {
                     const topCallFrame = params.initiator.stack.callFrames[0];
-                    entry._initiator = topCallFrame.url;
                     entry._initiator_line = topCallFrame.lineNumber + 1; // Because lineNumber is 0 based
                     entry._initiator_column = topCallFrame.columnNumber + 1; // Because columnNumber is 0 based
                     entry._initiator_function_name = topCallFrame.functionName;
