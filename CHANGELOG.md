@@ -1,5 +1,9 @@
 # CHANGELOG
 
+version 0.11.4 UNRELEASED
+-------------------------
+* Reverted the _initiator field fix since that was an old upstream issue in Chrome [#44](https://github.com/sitespeedio/chrome-har/pull/44).
+
 version 0.11.3 2019-10-14
 -------------------------
 * Better parsing of the _initiator field fixing an error for some HARs, thank you  [Aleksandr Semyonov](https://github.com/juvirez) for the PR [#44](https://github.com/sitespeedio/chrome-har/pull/44).
