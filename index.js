@@ -188,15 +188,17 @@ module.exports = {
             }
 
             if (params.redirectResponse) {
-              const previousEntry = entries.find(
+              const previousEntry = entries.concat(entriesWithoutPage).find(
                 entry => entry._requestId === params.requestId
               );
+              const timings = page || {}
+              addFromFirstRequest(timings,params)
               if (previousEntry) {
                 previousEntry._requestId += 'r';
                 populateEntryFromResponse(
                   previousEntry,
                   params.redirectResponse,
-                  page,
+                  timings,
                   options
                 );
               } else {
