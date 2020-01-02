@@ -191,8 +191,8 @@ module.exports = {
               const previousEntry = entries.concat(entriesWithoutPage).find(
                 entry => entry._requestId === params.requestId
               );
-              const timings = page || {}
-              addFromFirstRequest(timings,params)
+              const timings = page || {};
+              addFromFirstRequest(timings,params);
               if (previousEntry) {
                 previousEntry._requestId += 'r';
                 populateEntryFromResponse(
