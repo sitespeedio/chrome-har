@@ -1,5 +1,9 @@
 # CHANGELOG
 
+version 0.11.7 2020-03-09
+-------------------------
+* And excliuded the shrinkwrap file again.
+
 version 0.11.6 2020-03-09
 -------------------------
 * Exclude the test folder from the release.
