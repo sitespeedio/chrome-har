@@ -1,6 +1,6 @@
 {
   "name": "chrome-har",
-  "version": "0.11.4",
+  "version": "0.11.5",
   "description": "Create HAR files from Chrome Debugging Protocol data.",
   "main": "index.js",
   "scripts": {
