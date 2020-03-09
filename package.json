@@ -15,6 +15,15 @@
     "har",
     "webperf"
   ],
+  "files": [
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE",
+    "lib",
+    "index.js",
+    "package.json",
+    "npm-shrinkwrap.json"
+  ],
   "author": "Tobias Lidskog <tobias@lidskog.se>",
   "homepage": "https://github.com/sitespeedio/chrome-har",
   "repository": {
