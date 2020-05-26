@@ -160,9 +160,9 @@ test('Includes response bodies', t => {
 test('Includes canceled response', t => {
   const perflogPath = perflog('canceled-video.json');
   return parsePerflog(perflogPath)
-    .tap(har => t.is(har.log.pages.length, 1))
-    .tap(har => {
-      const videoAsset = har.log.entries.find(
+    .then(har => har.log)
+    .tap(log => {
+      const videoAsset = log.entries.find(
         e => e.request.url === 'https://www.w3schools.com/tags/movie.mp4'
       );
       t.is(videoAsset.timings.receive, 316.563);
