@@ -1,8 +1,14 @@
 # CHANGELOG
 
+version 0.11.8 UNRELEASED
+-------------------------
+* Include iframe request when frame is not attached [#68](https://github.com/sitespeedio/chrome-har/pull/68) - thank you [Michael Dijkstra](https://github.com/mikedijkstra) for the PR!
+
+* Include response canceled by Chrome or user action [#67](https://github.com/sitespeedio/chrome-har/pull/67) - thank you [Michael Dijkstra](https://github.com/mikedijkstra) for the PR!
+
 version 0.11.7 2020-03-09
 -------------------------
-* And excliuded the shrinkwrap file again.
+* And excluded the shrinkwrap file again.
 
 version 0.11.6 2020-03-09
 -------------------------
