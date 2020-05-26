@@ -167,5 +167,17 @@ test('Includes canceled response', t => {
       );
       t.is(videoAsset.timings.receive, 316.563);
       t.is(videoAsset.time, 343.33099999999996);
+  });
+});
+
+test('Includes iframe request when frame is not attached', t => {
+  const perflogPath = perflog('iframe-not-attached.json');
+  return parsePerflog(perflogPath)
+    .then(har => har.log)
+    .tap(log => {
+      const imageAsset = log.entries.filter(
+        e => e.request.url === 'https://www.w3schools.com/html/img_girl.jpg'
+      );
+      t.is(imageAsset.length, 1);
     });
 });

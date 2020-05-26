@@ -294,7 +294,9 @@ module.exports = {
 
             const frameId =
               rootFrameMappings.get(params.frameId) || params.frameId;
-            const page = pages.find(page => page.__frameId === frameId);
+            const page =
+              pages.find(page => page.__frameId === frameId) ||
+              pages[pages.length - 1];
             if (!page) {
               debug(
                 `Received network response for requestId ${
