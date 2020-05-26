@@ -3,7 +3,7 @@
 const { name, version, homepage } = require('./package');
 
 const urlParser = require('url');
-const uuid = require('uuid/v1');
+const { v1 } = require('uuid');
 const dayjs = require('dayjs');
 const debug = require('debug')(name);
 const ignoredEvents = require('./lib/ignoredEvents');
@@ -67,7 +67,7 @@ module.exports = {
             if (pages.some(page => page.__frameId === rootFrame)) {
               continue;
             }
-            currentPageId = uuid();
+            currentPageId = v1();
             const title =
               method === 'Page.navigatedWithinDocument' ? params.url : '';
             const page = {

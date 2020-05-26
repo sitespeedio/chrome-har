@@ -1,6 +1,10 @@
 # CHANGELOG
 
-version 0.11.8 2020-05-26
+version 0.11.9 2020-05-26
+-------------------------
+* Updated dependencies: dayjs - 1.8.27, debug: 4.1.1, tough-cookie - 4.0.0, uuid - 8.0.0
+
+version 0.11.8 (never released)
 -------------------------
 * Include iframe request when frame is not attached [#68](https://github.com/sitespeedio/chrome-har/pull/68) - thank you [Michael Dijkstra](https://github.com/mikedijkstra) for the PR!
 
