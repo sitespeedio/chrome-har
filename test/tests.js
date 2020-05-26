@@ -167,7 +167,7 @@ test('Includes canceled response', t => {
       );
       t.is(videoAsset.timings.receive, 316.563);
       t.is(videoAsset.time, 343.33099999999996);
-  });
+    });
 });
 
 test('Includes iframe request when frame is not attached', t => {
