@@ -156,3 +156,16 @@ test('Includes response bodies', t => {
       t.is(log.entries.filter(e => e.response.content.text != null).length, 1)
     );
 });
+
+test('Includes canceled response', t => {
+  const perflogPath = perflog('canceled-video.json');
+  return parsePerflog(perflogPath)
+    .tap(har => t.is(har.log.pages.length, 1))
+    .tap(har => {
+      const videoAsset = har.log.entries.find(e =>
+        e.request.url === 'https://www.w3schools.com/tags/movie.mp4'
+      );
+      t.is(videoAsset.timings.receive, 316.563);
+      t.is(videoAsset.time, 343.33099999999996);
+    });
+});
