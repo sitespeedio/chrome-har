@@ -10,7 +10,6 @@ const ignoredEvents = require('./lib/ignoredEvents');
 const { parseRequestCookies } = require('./lib/cookies');
 const { getHeaderValue, parseHeaders } = require('./lib/headers');
 const {
-  isHttp1x,
   formatMillis,
   parsePostData,
   isSupportedProtocol,
@@ -24,8 +23,6 @@ const defaultOptions = {
   includeTextFromResponseBody: false
 };
 const isEmpty = o => !o;
-
-const max = Math.max;
 
 function addFromFirstRequest(page, params) {
   if (!page.__timestamp) {
@@ -375,7 +372,7 @@ module.exports = {
               continue;
             }
 
-            finalizeEntry(entry, params)
+            finalizeEntry(entry, params);
           }
           break;
 
@@ -447,15 +444,15 @@ module.exports = {
               continue;
             }
 
-            if (params.errorText === "net::ERR_ABORTED") {
-              finalizeEntry(entry, params)
+            if (params.errorText === 'net::ERR_ABORTED') {
+              finalizeEntry(entry, params);
               debug(
                 `Loading was canceled due to Chrome or a user action for requestId ${
                   params.requestId
                 }.`
               );
               continue;
-            };
+            }
 
             // This could be due to incorrect domain name etc. Sad, but unfortunately not something that a HAR file can
             // represent.

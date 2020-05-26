@@ -162,8 +162,8 @@ test('Includes canceled response', t => {
   return parsePerflog(perflogPath)
     .tap(har => t.is(har.log.pages.length, 1))
     .tap(har => {
-      const videoAsset = har.log.entries.find(e =>
-        e.request.url === 'https://www.w3schools.com/tags/movie.mp4'
+      const videoAsset = har.log.entries.find(
+        e => e.request.url === 'https://www.w3schools.com/tags/movie.mp4'
       );
       t.is(videoAsset.timings.receive, 316.563);
       t.is(videoAsset.time, 343.33099999999996);
