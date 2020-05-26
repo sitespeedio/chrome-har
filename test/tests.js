@@ -156,3 +156,15 @@ test('Includes response bodies', t => {
       t.is(log.entries.filter(e => e.response.content.text != null).length, 1)
     );
 });
+
+test('Includes iframe request when frame is not attached', t => {
+  const perflogPath = perflog('iframe-not-attached.json');
+  return parsePerflog(perflogPath)
+    .then(har => har.log)
+    .tap(log => {
+      const imageAsset = log.entries.filter(
+        e => e.request.url === 'https://www.w3schools.com/html/img_girl.jpg'
+      );
+      t.is(imageAsset.length, 1);
+    });
+});
