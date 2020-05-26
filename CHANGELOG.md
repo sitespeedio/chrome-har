@@ -1,6 +1,6 @@
 # CHANGELOG
 
-version 0.11.8 UNRELEASED
+version 0.11.8 2020-05-26
 -------------------------
 * Include iframe request when frame is not attached [#68](https://github.com/sitespeedio/chrome-har/pull/68) - thank you [Michael Dijkstra](https://github.com/mikedijkstra) for the PR!
 
