@@ -1,22 +1,22 @@
-'use strict';
+"use strict";
 
-const { name, version, homepage } = require('./package');
+const { name, version, homepage } = require("./package");
 
-const urlParser = require('url');
-const uuid = require('uuid/v1');
-const dayjs = require('dayjs');
-const debug = require('debug')(name);
-const ignoredEvents = require('./lib/ignoredEvents');
-const { parseRequestCookies } = require('./lib/cookies');
-const { getHeaderValue, parseHeaders } = require('./lib/headers');
+const urlParser = require("url");
+const uuid = require("uuid/v1");
+const dayjs = require("dayjs");
+const debug = require("debug")(name);
+const ignoredEvents = require("./lib/ignoredEvents");
+const { parseRequestCookies } = require("./lib/cookies");
+const { getHeaderValue, parseHeaders } = require("./lib/headers");
 const {
   isHttp1x,
   formatMillis,
   parsePostData,
   isSupportedProtocol,
   toNameValuePairs
-} = require('./lib/util');
-const populateEntryFromResponse = require('./lib/entryFromResponse');
+} = require("./lib/util");
+const populateEntryFromResponse = require("./lib/entryFromResponse");
 
 const defaultOptions = {
   includeResourcesFromDiskCache: false,
@@ -32,7 +32,7 @@ function addFromFirstRequest(page, params) {
     page.__timestamp = params.timestamp;
     page.startedDateTime = dayjs.unix(params.wallTime).toISOString(); //epoch float64, eg 1440589909.59248
     // URL is better than blank, and it's what devtools uses.
-    page.title = page.title === '' ? params.request.url : page.title;
+    page.title = page.title === "" ? params.request.url : page.title;
   }
 }
 
@@ -60,9 +60,9 @@ module.exports = {
       }
 
       switch (method) {
-        case 'Page.frameStartedLoading':
-        case 'Page.frameScheduledNavigation':
-        case 'Page.navigatedWithinDocument':
+        case "Page.frameStartedLoading":
+        case "Page.frameScheduledNavigation":
+        case "Page.navigatedWithinDocument":
           {
             const frameId = params.frameId;
             const rootFrame = rootFrameMappings.get(frameId) || frameId;
@@ -71,10 +71,10 @@ module.exports = {
             }
             currentPageId = uuid();
             const title =
-              method === 'Page.navigatedWithinDocument' ? params.url : '';
+              method === "Page.navigatedWithinDocument" ? params.url : "";
             const page = {
               id: currentPageId,
-              startedDateTime: '',
+              startedDateTime: "",
               title: title,
               pageTimings: {},
               __frameId: rootFrame
@@ -109,7 +109,7 @@ module.exports = {
           }
           break;
 
-        case 'Network.requestWillBeSent':
+        case "Network.requestWillBeSent":
           {
             const request = params.request;
             if (!isSupportedProtocol(request.url)) {
@@ -117,7 +117,7 @@ module.exports = {
               continue;
             }
             const page = pages[pages.length - 1];
-            const cookieHeader = getHeaderValue(request.headers, 'Cookie');
+            const cookieHeader = getHeaderValue(request.headers, "Cookie");
 
             //Before we used to remove the hash framgment because of Chrome do that but:
             // 1. Firefox do not
@@ -125,12 +125,12 @@ module.exports = {
             // and that makes PageXray generate the wromng URL and we end up with two pages
             // in sitespeed.io if we run in SPA mode
             const url = urlParser.parse(
-              request.url + (request.urlFragment ? request.urlFragment : ''),
+              request.url + (request.urlFragment ? request.urlFragment : ""),
               true
             );
 
             const postData = parsePostData(
-              getHeaderValue(request.headers, 'Content-Type'),
+              getHeaderValue(request.headers, "Content-Type"),
               request.postData
             );
 
@@ -147,7 +147,7 @@ module.exports = {
 
             const entry = {
               cache: {},
-              startedDateTime: '',
+              startedDateTime: "",
               __requestWillBeSentTime: params.timestamp,
               __wallTime: params.wallTime,
               _requestId: params.requestId,
@@ -163,14 +163,14 @@ module.exports = {
 
             // The object initiator change according to its type
             switch (params.initiator.type) {
-              case 'parser':
+              case "parser":
                 {
                   entry._initiator = params.initiator.url;
                   entry._initiator_line = params.initiator.lineNumber + 1; // Because lineNumber is 0 based
                 }
                 break;
 
-              case 'script':
+              case "script":
                 {
                   if (
                     params.initiator.stack &&
@@ -192,7 +192,7 @@ module.exports = {
                 entry => entry._requestId === params.requestId
               );
               if (previousEntry) {
-                previousEntry._requestId += 'r';
+                previousEntry._requestId += "r";
                 populateEntryFromResponse(
                   previousEntry,
                   params.redirectResponse,
@@ -232,7 +232,7 @@ module.exports = {
           }
           break;
 
-        case 'Network.requestServedFromCache':
+        case "Network.requestServedFromCache":
           {
             if (pages.length < 1) {
               //we haven't loaded any pages yet.
@@ -257,14 +257,14 @@ module.exports = {
 
             entry.__servedFromCache = true;
             entry.cache.beforeRequest = {
-              lastAccess: '',
-              eTag: '',
+              lastAccess: "",
+              eTag: "",
               hitCount: 0
             };
           }
           break;
 
-        case 'Network.responseReceived':
+        case "Network.responseReceived":
           {
             if (pages.length < 1) {
               //we haven't loaded any pages yet.
@@ -296,7 +296,9 @@ module.exports = {
 
             const frameId =
               rootFrameMappings.get(params.frameId) || params.frameId;
-            const page = pages.find(page => page.__frameId === frameId);
+            const page =
+              pages.find(page => page.__frameId === frameId) ||
+              pages[pages.length - 1];
             if (!page) {
               debug(
                 `Received network response for requestId ${
@@ -321,7 +323,7 @@ module.exports = {
           }
           break;
 
-        case 'Network.dataReceived':
+        case "Network.dataReceived":
           {
             if (pages.length < 1) {
               //we haven't loaded any pages yet.
@@ -351,7 +353,7 @@ module.exports = {
           }
           break;
 
-        case 'Network.loadingFinished':
+        case "Network.loadingFinished":
           {
             if (pages.length < 1) {
               //we haven't loaded any pages yet.
@@ -416,7 +418,7 @@ module.exports = {
           }
           break;
 
-        case 'Page.loadEventFired':
+        case "Page.loadEventFired":
           {
             if (pages.length < 1) {
               //we haven't loaded any pages yet.
@@ -433,7 +435,7 @@ module.exports = {
           }
           break;
 
-        case 'Page.domContentEventFired':
+        case "Page.domContentEventFired":
           {
             if (pages.length < 1) {
               //we haven't loaded any pages yet.
@@ -450,7 +452,7 @@ module.exports = {
           }
           break;
 
-        case 'Page.frameAttached':
+        case "Page.frameAttached":
           {
             const frameId = params.frameId,
               parentId = params.parentFrameId;
@@ -465,7 +467,7 @@ module.exports = {
           }
           break;
 
-        case 'Network.loadingFailed':
+        case "Network.loadingFailed":
           {
             if (ignoredRequests.has(params.requestId)) {
               ignoredRequests.delete(params.requestId);
@@ -497,7 +499,7 @@ module.exports = {
           }
           break;
 
-        case 'Network.resourceChangedPriority':
+        case "Network.resourceChangedPriority":
           {
             const entry = entries.find(
               entry => entry._requestId === params.requestId
@@ -532,7 +534,7 @@ module.exports = {
     const deleteInternalProperties = o => {
       // __ properties are only for internal use, _ properties are custom properties for the HAR
       for (const prop in o) {
-        if (prop.startsWith('__')) {
+        if (prop.startsWith("__")) {
           delete o[prop];
         }
       }
@@ -575,7 +577,7 @@ module.exports = {
 
     return {
       log: {
-        version: '1.2',
+        version: "1.2",
         creator: { name, version, comment: homepage },
         pages,
         entries
