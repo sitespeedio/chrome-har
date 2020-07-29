@@ -1,6 +1,6 @@
 # Chrome-har
 
-[![Build status][travis-image]][travis-url]
+![Unit tests](https://github.com/sitespeedio/chrome-har/workflows/Unit%20tests/badge.svg)
 
 Create [HAR](http://www.softwareishard.com/blog/har-12-spec/) files based on [Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/) data.
 
@@ -55,7 +55,3 @@ client.on('Network.requestIntercepted', async (params: any) => {
 
 const har = harFromMessages(harEvents, {includeTextFromResponseBody: true});
 ```
-
-[travis-image]: https://img.shields.io/travis/sitespeedio/chrome-har.svg?style=flat-square
-[travis-url]: https://travis-ci.org/sitespeedio/chrome-har
-
