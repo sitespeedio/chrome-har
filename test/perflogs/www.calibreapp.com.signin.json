@@ -1,0 +1,4227 @@
+[
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "loaderId": "5B231C2DBF4E07FAB75BC671532F8DE7",
+      "name": "commit",
+      "timestamp": 73984.842784
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "loaderId": "5B231C2DBF4E07FAB75BC671532F8DE7",
+      "name": "DOMContentLoaded",
+      "timestamp": 73984.843045
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "loaderId": "5B231C2DBF4E07FAB75BC671532F8DE7",
+      "name": "load",
+      "timestamp": 73984.843528
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "loaderId": "5B231C2DBF4E07FAB75BC671532F8DE7",
+      "name": "networkAlmostIdle",
+      "timestamp": 73984.844294
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "loaderId": "5B231C2DBF4E07FAB75BC671532F8DE7",
+      "name": "networkIdle",
+      "timestamp": 73984.844294
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "documentURL": "https://www.calibreapp.com/sign-in",
+      "request": {
+        "url": "https://www.calibreapp.com/sign-in",
+        "method": "GET",
+        "headers": {
+          "Upgrade-Insecure-Requests": "1",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+        },
+        "mixedContentType": "none",
+        "initialPriority": "VeryHigh",
+        "referrerPolicy": "no-referrer-when-downgrade"
+      },
+      "timestamp": 73984.919716,
+      "wallTime": 1595909652.40576,
+      "initiator": { "type": "other" },
+      "type": "Document",
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSentExtraInfo",
+    "params": {
+      "requestId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "associatedCookies": [],
+      "headers": {
+        ":method": "GET",
+        ":authority": "www.calibreapp.com",
+        ":scheme": "https",
+        ":path": "/sign-in",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+        "sec-fetch-site": "none",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-user": "?1",
+        "sec-fetch-dest": "document",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8"
+      }
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "loaderId": "5B231C2DBF4E07FAB75BC671532F8DE7",
+      "name": "networkAlmostIdle",
+      "timestamp": 73984.844294
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "loaderId": "5B231C2DBF4E07FAB75BC671532F8DE7",
+      "name": "networkIdle",
+      "timestamp": 73984.844294
+    }
+  },
+  {
+    "method": "Network.responseReceivedExtraInfo",
+    "params": {
+      "requestId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "blockedCookies": [],
+      "headers": {
+        "status": "200",
+        "content-type": "text/html; charset=utf-8",
+        "server": "Cowboy",
+        "date": "Tue, 28 Jul 2020 04:14:12 GMT",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "x-download-options": "noopen",
+        "x-permitted-cross-domain-policies": "none",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "vary": "Accept-Encoding",
+        "content-encoding": "br",
+        "etag": "W/\"a67e751d0404a9456426208e90f9c13e\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": "_calibre_app_session=UlhuZzdnMUxvRjdnMFMxajlFeEFlNDJRQjEwbVlHeEdML3Z1ZDRpMzY0ak1henc1clMwWVdJQXJ0RjVvRnhDR081MlFPTFU2Ulh4RUtPcGZhZ0t0Z3h0OFBmQ1dtM3dvTmJidHZnTTRQZEpIOGNmUVhMRHB4TFcra2VpU21uV3VMN1o2YjhlQmlYRnZ4VDBiUXNHdnBBPT0tLVFjYjdWQXo2SUdIZ0FBOERnblhRaXc9PQ%3D%3D--ebff94e1d82babaca5b55404e2e5da785cd12fb8; path=/; secure; HttpOnly",
+        "x-request-id": "f60351bd-7fa5-4d69-a0a8-f1c3e75516b6",
+        "x-runtime": "0.014130",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "via": "1.1 vegur, 1.1 c9b90fe1dcd0958f352b5816fbce3bbe.cloudfront.net (CloudFront)",
+        "x-cache": "Miss from cloudfront",
+        "x-amz-cf-pop": "SYD4-C2",
+        "x-amz-cf-id": "AM_nam5s20rwAELEIwoTLYPaDR2sB4CT-EILsh7bB39xtovEsVFzVg=="
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "timestamp": 73985.834166,
+      "type": "Document",
+      "response": {
+        "url": "https://www.calibreapp.com/sign-in",
+        "status": 200,
+        "statusText": "",
+        "headers": {
+          "status": "200",
+          "content-type": "text/html; charset=utf-8",
+          "server": "Cowboy",
+          "date": "Tue, 28 Jul 2020 04:14:12 GMT",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block",
+          "x-content-type-options": "nosniff",
+          "x-download-options": "noopen",
+          "x-permitted-cross-domain-policies": "none",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "vary": "Accept-Encoding",
+          "content-encoding": "br",
+          "etag": "W/\"a67e751d0404a9456426208e90f9c13e\"",
+          "cache-control": "max-age=0, private, must-revalidate",
+          "set-cookie": "_calibre_app_session=UlhuZzdnMUxvRjdnMFMxajlFeEFlNDJRQjEwbVlHeEdML3Z1ZDRpMzY0ak1henc1clMwWVdJQXJ0RjVvRnhDR081MlFPTFU2Ulh4RUtPcGZhZ0t0Z3h0OFBmQ1dtM3dvTmJidHZnTTRQZEpIOGNmUVhMRHB4TFcra2VpU21uV3VMN1o2YjhlQmlYRnZ4VDBiUXNHdnBBPT0tLVFjYjdWQXo2SUdIZ0FBOERnblhRaXc9PQ%3D%3D--ebff94e1d82babaca5b55404e2e5da785cd12fb8; path=/; secure; HttpOnly",
+          "x-request-id": "f60351bd-7fa5-4d69-a0a8-f1c3e75516b6",
+          "x-runtime": "0.014130",
+          "strict-transport-security": "max-age=31536000; includeSubDomains",
+          "via": "1.1 vegur, 1.1 c9b90fe1dcd0958f352b5816fbce3bbe.cloudfront.net (CloudFront)",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "SYD4-C2",
+          "x-amz-cf-id": "AM_nam5s20rwAELEIwoTLYPaDR2sB4CT-EILsh7bB39xtovEsVFzVg=="
+        },
+        "mimeType": "text/html",
+        "requestHeaders": {
+          ":method": "GET",
+          ":authority": "www.calibreapp.com",
+          ":scheme": "https",
+          ":path": "/sign-in",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+          "sec-fetch-site": "none",
+          "sec-fetch-mode": "navigate",
+          "sec-fetch-user": "?1",
+          "sec-fetch-dest": "document",
+          "accept-encoding": "gzip, deflate, br",
+          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8"
+        },
+        "connectionReused": false,
+        "connectionId": 38,
+        "remoteIPAddress": "13.226.85.108",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 865,
+        "timing": {
+          "requestTime": 73984.920313,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": 0.146,
+          "dnsEnd": 29.055,
+          "connectStart": 29.055,
+          "connectEnd": 66.84,
+          "sslStart": 45.048,
+          "sslEnd": 66.834,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 67.513,
+          "sendEnd": 67.621,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 911.34
+        },
+        "protocol": "h2",
+        "securityState": "secure",
+        "securityDetails": {
+          "protocol": "TLS 1.2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "cipher": "AES_128_GCM",
+          "certificateId": 0,
+          "subjectName": "calibreapp.com",
+          "sanList": ["calibreapp.com", "www.calibreapp.com"],
+          "issuer": "Amazon",
+          "validFrom": 1589673600,
+          "validTo": 1623931200,
+          "signedCertificateTimestampList": [
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "Google 'Argon2021' log",
+              "logId": "F65C942FD1773022145418083094568EE34D131933BFDF0C2F200BCC4EF164E3",
+              "timestamp": 1589682688690,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3044022033B128B4C6A86EEEB7FE1FB41907AE7F54F30B1BBD5F0B4B47269504682752390220195BDDB26B117410F6B71004982A38C76A4DD7953A89B4D92AEE1020A5EFADEB"
+            },
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "DigiCert Yeti2021 Log",
+              "logId": "5CDC4392FEE6AB4544B15E9AD456E61037FBD5FA47DCA17394B25EE6F6C70ECA",
+              "timestamp": 1589682688713,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3045022100B3CD451308B0FABCC1255F6F24FC9E01600DF6A2FD43FFBED4DC347B54621B29022056A4FC3E0CC26687B94BA44FDCA751240D5FD1CE29B8581202EC49C52A102538"
+            }
+          ],
+          "certificateTransparencyCompliance": "compliant"
+        }
+      },
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA"
+    }
+  },
+  {
+    "method": "Page.frameStartedLoading",
+    "params": { "frameId": "5356556406F4EF152D876F82DF1B8FFA" }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "name": "init",
+      "timestamp": 73985.838614
+    }
+  },
+  {
+    "method": "Page.frameNavigated",
+    "params": {
+      "frame": {
+        "id": "5356556406F4EF152D876F82DF1B8FFA",
+        "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+        "url": "https://www.calibreapp.com/sign-in",
+        "securityOrigin": "https://www.calibreapp.com",
+        "mimeType": "text/html"
+      }
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "timestamp": 73985.850105,
+      "dataLength": 13524,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.requestWillBeSentExtraInfo",
+    "params": {
+      "requestId": "9836.2",
+      "associatedCookies": [
+        {
+          "blockedReasons": [],
+          "cookie": {
+            "name": "_calibre_app_session",
+            "value": "UlhuZzdnMUxvRjdnMFMxajlFeEFlNDJRQjEwbVlHeEdML3Z1ZDRpMzY0ak1henc1clMwWVdJQXJ0RjVvRnhDR081MlFPTFU2Ulh4RUtPcGZhZ0t0Z3h0OFBmQ1dtM3dvTmJidHZnTTRQZEpIOGNmUVhMRHB4TFcra2VpU21uV3VMN1o2YjhlQmlYRnZ4VDBiUXNHdnBBPT0tLVFjYjdWQXo2SUdIZ0FBOERnblhRaXc9PQ%3D%3D--ebff94e1d82babaca5b55404e2e5da785cd12fb8",
+            "domain": "www.calibreapp.com",
+            "path": "/",
+            "expires": -1,
+            "size": 306,
+            "httpOnly": true,
+            "secure": true,
+            "session": true,
+            "priority": "Medium"
+          }
+        }
+      ],
+      "headers": {
+        ":method": "GET",
+        ":authority": "www.calibreapp.com",
+        ":scheme": "https",
+        ":path": "/fonts/Calibre-Regular.woff2",
+        "origin": "https://www.calibreapp.com",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+        "accept": "*/*",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-dest": "font",
+        "referer": "https://www.calibreapp.com/sign-in",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+        "cookie": "_calibre_app_session=UlhuZzdnMUxvRjdnMFMxajlFeEFlNDJRQjEwbVlHeEdML3Z1ZDRpMzY0ak1henc1clMwWVdJQXJ0RjVvRnhDR081MlFPTFU2Ulh4RUtPcGZhZ0t0Z3h0OFBmQ1dtM3dvTmJidHZnTTRQZEpIOGNmUVhMRHB4TFcra2VpU21uV3VMN1o2YjhlQmlYRnZ4VDBiUXNHdnBBPT0tLVFjYjdWQXo2SUdIZ0FBOERnblhRaXc9PQ%3D%3D--ebff94e1d82babaca5b55404e2e5da785cd12fb8"
+      }
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "9836.2",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "documentURL": "https://www.calibreapp.com/sign-in",
+      "request": {
+        "url": "https://www.calibreapp.com/fonts/Calibre-Regular.woff2",
+        "method": "GET",
+        "headers": {
+          "Origin": "https://www.calibreapp.com",
+          "Referer": "https://www.calibreapp.com/sign-in",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+        },
+        "mixedContentType": "none",
+        "initialPriority": "High",
+        "referrerPolicy": "strict-origin-when-cross-origin",
+        "isLinkPreload": true
+      },
+      "timestamp": 73985.850923,
+      "wallTime": 1595909653.336874,
+      "initiator": {
+        "type": "parser",
+        "url": "https://www.calibreapp.com/sign-in",
+        "lineNumber": 29
+      },
+      "type": "Font",
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "9836.3",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "documentURL": "https://www.calibreapp.com/sign-in",
+      "request": {
+        "url": "https://www.calibreapp.com/fonts/Calibre-Semibold.woff2",
+        "method": "GET",
+        "headers": {
+          "Origin": "https://www.calibreapp.com",
+          "Referer": "https://www.calibreapp.com/sign-in",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+        },
+        "mixedContentType": "none",
+        "initialPriority": "High",
+        "referrerPolicy": "strict-origin-when-cross-origin",
+        "isLinkPreload": true
+      },
+      "timestamp": 73985.851161,
+      "wallTime": 1595909653.337112,
+      "initiator": {
+        "type": "parser",
+        "url": "https://www.calibreapp.com/sign-in",
+        "lineNumber": 30
+      },
+      "type": "Font",
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "9836.4",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "documentURL": "https://www.calibreapp.com/sign-in",
+      "request": {
+        "url": "https://www.calibreapp.com/fonts/Calibre-Medium.woff2",
+        "method": "GET",
+        "headers": {
+          "Origin": "https://www.calibreapp.com",
+          "Referer": "https://www.calibreapp.com/sign-in",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+        },
+        "mixedContentType": "none",
+        "initialPriority": "High",
+        "referrerPolicy": "strict-origin-when-cross-origin",
+        "isLinkPreload": true
+      },
+      "timestamp": 73985.851327,
+      "wallTime": 1595909653.337278,
+      "initiator": {
+        "type": "parser",
+        "url": "https://www.calibreapp.com/sign-in",
+        "lineNumber": 31
+      },
+      "type": "Font",
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "timestamp": 73985.832661,
+      "encodedDataLength": 6550,
+      "shouldReportCorbBlocking": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSentExtraInfo",
+    "params": {
+      "requestId": "9836.3",
+      "associatedCookies": [
+        {
+          "blockedReasons": [],
+          "cookie": {
+            "name": "_calibre_app_session",
+            "value": "UlhuZzdnMUxvRjdnMFMxajlFeEFlNDJRQjEwbVlHeEdML3Z1ZDRpMzY0ak1henc1clMwWVdJQXJ0RjVvRnhDR081MlFPTFU2Ulh4RUtPcGZhZ0t0Z3h0OFBmQ1dtM3dvTmJidHZnTTRQZEpIOGNmUVhMRHB4TFcra2VpU21uV3VMN1o2YjhlQmlYRnZ4VDBiUXNHdnBBPT0tLVFjYjdWQXo2SUdIZ0FBOERnblhRaXc9PQ%3D%3D--ebff94e1d82babaca5b55404e2e5da785cd12fb8",
+            "domain": "www.calibreapp.com",
+            "path": "/",
+            "expires": -1,
+            "size": 306,
+            "httpOnly": true,
+            "secure": true,
+            "session": true,
+            "priority": "Medium"
+          }
+        }
+      ],
+      "headers": {
+        ":method": "GET",
+        ":authority": "www.calibreapp.com",
+        ":scheme": "https",
+        ":path": "/fonts/Calibre-Semibold.woff2",
+        "origin": "https://www.calibreapp.com",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+        "accept": "*/*",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-dest": "font",
+        "referer": "https://www.calibreapp.com/sign-in",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+        "cookie": "_calibre_app_session=UlhuZzdnMUxvRjdnMFMxajlFeEFlNDJRQjEwbVlHeEdML3Z1ZDRpMzY0ak1henc1clMwWVdJQXJ0RjVvRnhDR081MlFPTFU2Ulh4RUtPcGZhZ0t0Z3h0OFBmQ1dtM3dvTmJidHZnTTRQZEpIOGNmUVhMRHB4TFcra2VpU21uV3VMN1o2YjhlQmlYRnZ4VDBiUXNHdnBBPT0tLVFjYjdWQXo2SUdIZ0FBOERnblhRaXc9PQ%3D%3D--ebff94e1d82babaca5b55404e2e5da785cd12fb8"
+      }
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "9836.5",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "documentURL": "https://www.calibreapp.com/sign-in",
+      "request": {
+        "url": "https://www.calibreapp.com/assets/sign_up_in-8b32538e54b23b40f8fd45c28abdcee2e2d023bd7e01ddf2033d5f781afae9dc.css",
+        "method": "GET",
+        "headers": {
+          "Referer": "https://www.calibreapp.com/sign-in",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+        },
+        "mixedContentType": "none",
+        "initialPriority": "VeryHigh",
+        "referrerPolicy": "strict-origin-when-cross-origin"
+      },
+      "timestamp": 73985.852332,
+      "wallTime": 1595909653.338283,
+      "initiator": {
+        "type": "parser",
+        "url": "https://www.calibreapp.com/sign-in",
+        "lineNumber": 5
+      },
+      "type": "Stylesheet",
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "9836.6",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "documentURL": "https://www.calibreapp.com/sign-in",
+      "request": {
+        "url": "https://d2wy8f7a9ursnm.cloudfront.net/v7/bugsnag.min.js",
+        "method": "GET",
+        "headers": {
+          "Referer": "https://www.calibreapp.com/",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+        },
+        "mixedContentType": "none",
+        "initialPriority": "High",
+        "referrerPolicy": "strict-origin-when-cross-origin"
+      },
+      "timestamp": 73985.852514,
+      "wallTime": 1595909653.338465,
+      "initiator": {
+        "type": "parser",
+        "url": "https://www.calibreapp.com/sign-in",
+        "lineNumber": 19
+      },
+      "type": "Script",
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "9836.7",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "documentURL": "https://www.calibreapp.com/sign-in",
+      "request": {
+        "url": "https://www.calibreapp.com/webpack/sign_up_in-980d8a42e50000804fc6.js",
+        "method": "GET",
+        "headers": {
+          "Referer": "https://www.calibreapp.com/sign-in",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+        },
+        "mixedContentType": "none",
+        "initialPriority": "High",
+        "referrerPolicy": "strict-origin-when-cross-origin"
+      },
+      "timestamp": 73985.852746,
+      "wallTime": 1595909653.338698,
+      "initiator": {
+        "type": "parser",
+        "url": "https://www.calibreapp.com/sign-in",
+        "lineNumber": 32
+      },
+      "type": "Script",
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSentExtraInfo",
+    "params": {
+      "requestId": "9836.4",
+      "associatedCookies": [
+        {
+          "blockedReasons": [],
+          "cookie": {
+            "name": "_calibre_app_session",
+            "value": "UlhuZzdnMUxvRjdnMFMxajlFeEFlNDJRQjEwbVlHeEdML3Z1ZDRpMzY0ak1henc1clMwWVdJQXJ0RjVvRnhDR081MlFPTFU2Ulh4RUtPcGZhZ0t0Z3h0OFBmQ1dtM3dvTmJidHZnTTRQZEpIOGNmUVhMRHB4TFcra2VpU21uV3VMN1o2YjhlQmlYRnZ4VDBiUXNHdnBBPT0tLVFjYjdWQXo2SUdIZ0FBOERnblhRaXc9PQ%3D%3D--ebff94e1d82babaca5b55404e2e5da785cd12fb8",
+            "domain": "www.calibreapp.com",
+            "path": "/",
+            "expires": -1,
+            "size": 306,
+            "httpOnly": true,
+            "secure": true,
+            "session": true,
+            "priority": "Medium"
+          }
+        }
+      ],
+      "headers": {
+        ":method": "GET",
+        ":authority": "www.calibreapp.com",
+        ":scheme": "https",
+        ":path": "/fonts/Calibre-Medium.woff2",
+        "origin": "https://www.calibreapp.com",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+        "accept": "*/*",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-dest": "font",
+        "referer": "https://www.calibreapp.com/sign-in",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+        "cookie": "_calibre_app_session=UlhuZzdnMUxvRjdnMFMxajlFeEFlNDJRQjEwbVlHeEdML3Z1ZDRpMzY0ak1henc1clMwWVdJQXJ0RjVvRnhDR081MlFPTFU2Ulh4RUtPcGZhZ0t0Z3h0OFBmQ1dtM3dvTmJidHZnTTRQZEpIOGNmUVhMRHB4TFcra2VpU21uV3VMN1o2YjhlQmlYRnZ4VDBiUXNHdnBBPT0tLVFjYjdWQXo2SUdIZ0FBOERnblhRaXc9PQ%3D%3D--ebff94e1d82babaca5b55404e2e5da785cd12fb8"
+      }
+    }
+  },
+  {
+    "method": "Network.requestWillBeSentExtraInfo",
+    "params": {
+      "requestId": "9836.5",
+      "associatedCookies": [
+        {
+          "blockedReasons": [],
+          "cookie": {
+            "name": "_calibre_app_session",
+            "value": "UlhuZzdnMUxvRjdnMFMxajlFeEFlNDJRQjEwbVlHeEdML3Z1ZDRpMzY0ak1henc1clMwWVdJQXJ0RjVvRnhDR081MlFPTFU2Ulh4RUtPcGZhZ0t0Z3h0OFBmQ1dtM3dvTmJidHZnTTRQZEpIOGNmUVhMRHB4TFcra2VpU21uV3VMN1o2YjhlQmlYRnZ4VDBiUXNHdnBBPT0tLVFjYjdWQXo2SUdIZ0FBOERnblhRaXc9PQ%3D%3D--ebff94e1d82babaca5b55404e2e5da785cd12fb8",
+            "domain": "www.calibreapp.com",
+            "path": "/",
+            "expires": -1,
+            "size": 306,
+            "httpOnly": true,
+            "secure": true,
+            "session": true,
+            "priority": "Medium"
+          }
+        }
+      ],
+      "headers": {
+        ":method": "GET",
+        ":authority": "www.calibreapp.com",
+        ":scheme": "https",
+        ":path": "/assets/sign_up_in-8b32538e54b23b40f8fd45c28abdcee2e2d023bd7e01ddf2033d5f781afae9dc.css",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+        "accept": "text/css,*/*;q=0.1",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "style",
+        "referer": "https://www.calibreapp.com/sign-in",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+        "cookie": "_calibre_app_session=UlhuZzdnMUxvRjdnMFMxajlFeEFlNDJRQjEwbVlHeEdML3Z1ZDRpMzY0ak1henc1clMwWVdJQXJ0RjVvRnhDR081MlFPTFU2Ulh4RUtPcGZhZ0t0Z3h0OFBmQ1dtM3dvTmJidHZnTTRQZEpIOGNmUVhMRHB4TFcra2VpU21uV3VMN1o2YjhlQmlYRnZ4VDBiUXNHdnBBPT0tLVFjYjdWQXo2SUdIZ0FBOERnblhRaXc9PQ%3D%3D--ebff94e1d82babaca5b55404e2e5da785cd12fb8"
+      }
+    }
+  },
+  {
+    "method": "Network.requestWillBeSentExtraInfo",
+    "params": {
+      "requestId": "9836.7",
+      "associatedCookies": [
+        {
+          "blockedReasons": [],
+          "cookie": {
+            "name": "_calibre_app_session",
+            "value": "UlhuZzdnMUxvRjdnMFMxajlFeEFlNDJRQjEwbVlHeEdML3Z1ZDRpMzY0ak1henc1clMwWVdJQXJ0RjVvRnhDR081MlFPTFU2Ulh4RUtPcGZhZ0t0Z3h0OFBmQ1dtM3dvTmJidHZnTTRQZEpIOGNmUVhMRHB4TFcra2VpU21uV3VMN1o2YjhlQmlYRnZ4VDBiUXNHdnBBPT0tLVFjYjdWQXo2SUdIZ0FBOERnblhRaXc9PQ%3D%3D--ebff94e1d82babaca5b55404e2e5da785cd12fb8",
+            "domain": "www.calibreapp.com",
+            "path": "/",
+            "expires": -1,
+            "size": 306,
+            "httpOnly": true,
+            "secure": true,
+            "session": true,
+            "priority": "Medium"
+          }
+        }
+      ],
+      "headers": {
+        ":method": "GET",
+        ":authority": "www.calibreapp.com",
+        ":scheme": "https",
+        ":path": "/webpack/sign_up_in-980d8a42e50000804fc6.js",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+        "accept": "*/*",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "script",
+        "referer": "https://www.calibreapp.com/sign-in",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+        "cookie": "_calibre_app_session=UlhuZzdnMUxvRjdnMFMxajlFeEFlNDJRQjEwbVlHeEdML3Z1ZDRpMzY0ak1henc1clMwWVdJQXJ0RjVvRnhDR081MlFPTFU2Ulh4RUtPcGZhZ0t0Z3h0OFBmQ1dtM3dvTmJidHZnTTRQZEpIOGNmUVhMRHB4TFcra2VpU21uV3VMN1o2YjhlQmlYRnZ4VDBiUXNHdnBBPT0tLVFjYjdWQXo2SUdIZ0FBOERnblhRaXc9PQ%3D%3D--ebff94e1d82babaca5b55404e2e5da785cd12fb8"
+      }
+    }
+  },
+  {
+    "method": "Network.requestWillBeSentExtraInfo",
+    "params": {
+      "requestId": "9836.6",
+      "associatedCookies": [],
+      "headers": {
+        "Host": "d2wy8f7a9ursnm.cloudfront.net",
+        "Connection": "keep-alive",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+        "Accept": "*/*",
+        "Sec-Fetch-Site": "cross-site",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "script",
+        "Referer": "https://www.calibreapp.com/",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8"
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceivedExtraInfo",
+    "params": {
+      "requestId": "9836.6",
+      "blockedCookies": [],
+      "headers": {
+        "Content-Type": "application/javascript; charset=UTF-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Date": "Wed, 22 Jul 2020 10:15:17 GMT",
+        "Last-Modified": "Wed, 22 Jul 2020 10:15:00 GMT",
+        "Cache-Control": "public, max-age=315360000",
+        "Server": "AmazonS3",
+        "Content-Encoding": "gzip",
+        "Vary": "Accept-Encoding",
+        "X-Cache": "Hit from cloudfront",
+        "Via": "1.1 5cee5dc5c7fda671aef18544ce05239e.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Pop": "SYD4-C1",
+        "X-Amz-Cf-Id": "DWUpmc_0jyi4YVrd4F1T2iTKVnoN7tayeoJ9EjEDsNrucBafW_kkPQ==",
+        "Age": "496737"
+      },
+      "headersText": "HTTP/1.1 200 OK\r\nContent-Type: application/javascript; charset=UTF-8\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nDate: Wed, 22 Jul 2020 10:15:17 GMT\r\nLast-Modified: Wed, 22 Jul 2020 10:15:00 GMT\r\nCache-Control: public, max-age=315360000\r\nServer: AmazonS3\r\nContent-Encoding: gzip\r\nVary: Accept-Encoding\r\nX-Cache: Hit from cloudfront\r\nVia: 1.1 5cee5dc5c7fda671aef18544ce05239e.cloudfront.net (CloudFront)\r\nX-Amz-Cf-Pop: SYD4-C1\r\nX-Amz-Cf-Id: DWUpmc_0jyi4YVrd4F1T2iTKVnoN7tayeoJ9EjEDsNrucBafW_kkPQ==\r\nAge: 496737\r\n\r\n"
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "9836.6",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "timestamp": 73985.92721,
+      "type": "Script",
+      "response": {
+        "url": "https://d2wy8f7a9ursnm.cloudfront.net/v7/bugsnag.min.js",
+        "status": 200,
+        "statusText": "OK",
+        "headers": {
+          "Date": "Wed, 22 Jul 2020 10:15:17 GMT",
+          "Content-Encoding": "gzip",
+          "Connection": "keep-alive",
+          "Last-Modified": "Wed, 22 Jul 2020 10:15:00 GMT",
+          "Server": "AmazonS3",
+          "Age": "496737",
+          "Vary": "Accept-Encoding",
+          "X-Cache": "Hit from cloudfront",
+          "Content-Type": "application/javascript; charset=UTF-8",
+          "Via": "1.1 5cee5dc5c7fda671aef18544ce05239e.cloudfront.net (CloudFront)",
+          "Cache-Control": "public, max-age=315360000",
+          "Transfer-Encoding": "chunked",
+          "X-Amz-Cf-Pop": "SYD4-C1",
+          "X-Amz-Cf-Id": "DWUpmc_0jyi4YVrd4F1T2iTKVnoN7tayeoJ9EjEDsNrucBafW_kkPQ=="
+        },
+        "mimeType": "application/javascript",
+        "connectionReused": false,
+        "connectionId": 73,
+        "remoteIPAddress": "99.86.211.168",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 522,
+        "timing": {
+          "requestTime": 73985.853245,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": 0.455,
+          "dnsEnd": 22.182,
+          "connectStart": 22.182,
+          "connectEnd": 57.548,
+          "sslStart": 33.828,
+          "sslEnd": 57.542,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 57.615,
+          "sendEnd": 57.686,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 73.042
+        },
+        "protocol": "http/1.1",
+        "securityState": "secure",
+        "securityDetails": {
+          "protocol": "TLS 1.2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "cipher": "AES_128_GCM",
+          "certificateId": 0,
+          "subjectName": "*.cloudfront.net",
+          "sanList": ["cloudfront.net", "*.cloudfront.net"],
+          "issuer": "DigiCert Global CA G2",
+          "validFrom": 1590451200,
+          "validTo": 1619006400,
+          "signedCertificateTimestampList": [
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "Google 'Argon2021' log",
+              "logId": "F65C942FD1773022145418083094568EE34D131933BFDF0C2F200BCC4EF164E3",
+              "timestamp": 1590535362469,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3045022100C62DA945D281FDDA9FF3F8A418B44D2F7C2360B56AB951889C381B36F8A9F21D022000E2FCDEBC910829468608895B62D4453E91DD3976B7A6E4AED4D23850E9C7D0"
+            },
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "DigiCert Yeti2021 Log",
+              "logId": "5CDC4392FEE6AB4544B15E9AD456E61037FBD5FA47DCA17394B25EE6F6C70ECA",
+              "timestamp": 1590535362464,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "30450220356C911FB32279F2659553CF3A36D7ACDEA1F4B1A92EDD460D96FF1BDA934EE8022100EEED9337BA12DB44677E09A45FD6666C7B02B8631FB6BF915395B6F9D6FD452D"
+            }
+          ],
+          "certificateTransparencyCompliance": "compliant"
+        }
+      },
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.6",
+      "timestamp": 73985.927356,
+      "dataLength": 39565,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.6",
+      "timestamp": 73985.928996,
+      "dataLength": 0,
+      "encodedDataLength": 12305
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "9836.6",
+      "timestamp": 73985.927095,
+      "encodedDataLength": 12827,
+      "shouldReportCorbBlocking": false
+    }
+  },
+  {
+    "method": "Network.responseReceivedExtraInfo",
+    "params": {
+      "requestId": "9836.7",
+      "blockedCookies": [],
+      "headers": {
+        "status": "200",
+        "content-type": "application/javascript",
+        "content-length": "2143",
+        "server": "Cowboy",
+        "date": "Tue, 28 Jul 2020 04:14:13 GMT",
+        "last-modified": "Tue, 28 Jul 2020 00:09:01 GMT",
+        "cache-control": "public, s-maxage=31536000, maxage=15552000",
+        "expires": "Wed, 28 Jul 2021 00:10:59 +0000",
+        "access-control-allow-origin": "*",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "via": "1.1 vegur, 1.1 c9b90fe1dcd0958f352b5816fbce3bbe.cloudfront.net (CloudFront)",
+        "x-cache": "Miss from cloudfront",
+        "x-amz-cf-pop": "SYD4-C2",
+        "x-amz-cf-id": "wEORa-HAJlS8FLnqz70LD-eGYDO23IL8YITtCUTf_UCSzXZoj9Tixg=="
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "9836.7",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "timestamp": 73986.688967,
+      "type": "Script",
+      "response": {
+        "url": "https://www.calibreapp.com/webpack/sign_up_in-980d8a42e50000804fc6.js",
+        "status": 200,
+        "statusText": "",
+        "headers": {
+          "date": "Tue, 28 Jul 2020 04:14:13 GMT",
+          "content-encoding": "gzip",
+          "vary": "Accept-Encoding",
+          "x-amz-cf-pop": "SYD4-C2",
+          "x-cache": "Miss from cloudfront",
+          "status": "200",
+          "content-length": "2143",
+          "access-control-allow-origin": "*",
+          "last-modified": "Tue, 28 Jul 2020 00:09:01 GMT",
+          "server": "Cowboy",
+          "strict-transport-security": "max-age=31536000; includeSubDomains",
+          "content-type": "application/javascript",
+          "via": "1.1 vegur, 1.1 c9b90fe1dcd0958f352b5816fbce3bbe.cloudfront.net (CloudFront)",
+          "cache-control": "public, s-maxage=31536000, maxage=15552000",
+          "x-amz-cf-id": "wEORa-HAJlS8FLnqz70LD-eGYDO23IL8YITtCUTf_UCSzXZoj9Tixg==",
+          "expires": "Wed, 28 Jul 2021 00:10:59 +0000"
+        },
+        "mimeType": "application/javascript",
+        "connectionReused": true,
+        "connectionId": 38,
+        "remoteIPAddress": "13.226.85.108",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 446,
+        "timing": {
+          "requestTime": 73985.853548,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": -1,
+          "dnsEnd": -1,
+          "connectStart": -1,
+          "connectEnd": -1,
+          "sslStart": -1,
+          "sslEnd": -1,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 0.789,
+          "sendEnd": 0.985,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 833.811
+        },
+        "protocol": "h2",
+        "securityState": "secure",
+        "securityDetails": {
+          "protocol": "TLS 1.2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "cipher": "AES_128_GCM",
+          "certificateId": 0,
+          "subjectName": "calibreapp.com",
+          "sanList": ["calibreapp.com", "www.calibreapp.com"],
+          "issuer": "Amazon",
+          "validFrom": 1589673600,
+          "validTo": 1623931200,
+          "signedCertificateTimestampList": [
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "Google 'Argon2021' log",
+              "logId": "F65C942FD1773022145418083094568EE34D131933BFDF0C2F200BCC4EF164E3",
+              "timestamp": 1589682688690,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3044022033B128B4C6A86EEEB7FE1FB41907AE7F54F30B1BBD5F0B4B47269504682752390220195BDDB26B117410F6B71004982A38C76A4DD7953A89B4D92AEE1020A5EFADEB"
+            },
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "DigiCert Yeti2021 Log",
+              "logId": "5CDC4392FEE6AB4544B15E9AD456E61037FBD5FA47DCA17394B25EE6F6C70ECA",
+              "timestamp": 1589682688713,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3045022100B3CD451308B0FABCC1255F6F24FC9E01600DF6A2FD43FFBED4DC347B54621B29022056A4FC3E0CC26687B94BA44FDCA751240D5FD1CE29B8581202EC49C52A102538"
+            }
+          ],
+          "certificateTransparencyCompliance": "compliant"
+        }
+      },
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.7",
+      "timestamp": 73986.689127,
+      "dataLength": 5407,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.7",
+      "timestamp": 73986.689519,
+      "dataLength": 0,
+      "encodedDataLength": 2161
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "9836.7",
+      "timestamp": 73986.687826,
+      "encodedDataLength": 2607,
+      "shouldReportCorbBlocking": false
+    }
+  },
+  {
+    "method": "Network.responseReceivedExtraInfo",
+    "params": {
+      "requestId": "9836.4",
+      "blockedCookies": [],
+      "headers": {
+        "status": "200",
+        "content-type": "application/font-woff2",
+        "content-length": "37457",
+        "server": "Cowboy",
+        "date": "Tue, 28 Jul 2020 04:14:13 GMT",
+        "last-modified": "Mon, 27 Jul 2020 23:40:48 GMT",
+        "cache-control": "public, s-maxage=31536000, maxage=15552000, no-transform",
+        "expires": "Wed, 28 Jul 2021 00:10:59 +0000",
+        "access-control-allow-origin": "*",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "via": "1.1 vegur, 1.1 c9b90fe1dcd0958f352b5816fbce3bbe.cloudfront.net (CloudFront)",
+        "x-cache": "Miss from cloudfront",
+        "x-amz-cf-pop": "SYD4-C2",
+        "x-amz-cf-id": "nEtEwk8VhDxFedrj60sOQHftzVjBm1RkGR5g0i4c45EaxfhD91WDrw=="
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "9836.4",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "timestamp": 73986.872757,
+      "type": "Font",
+      "response": {
+        "url": "https://www.calibreapp.com/fonts/Calibre-Medium.woff2",
+        "status": 200,
+        "statusText": "",
+        "headers": {
+          "date": "Tue, 28 Jul 2020 04:14:13 GMT",
+          "via": "1.1 vegur, 1.1 c9b90fe1dcd0958f352b5816fbce3bbe.cloudfront.net (CloudFront)",
+          "last-modified": "Mon, 27 Jul 2020 23:40:48 GMT",
+          "server": "Cowboy",
+          "x-amz-cf-pop": "SYD4-C2",
+          "status": "200",
+          "strict-transport-security": "max-age=31536000; includeSubDomains",
+          "x-cache": "Miss from cloudfront",
+          "content-type": "application/font-woff2",
+          "access-control-allow-origin": "*",
+          "cache-control": "public, s-maxage=31536000, maxage=15552000, no-transform",
+          "content-length": "37457",
+          "x-amz-cf-id": "nEtEwk8VhDxFedrj60sOQHftzVjBm1RkGR5g0i4c45EaxfhD91WDrw==",
+          "expires": "Wed, 28 Jul 2021 00:10:59 +0000"
+        },
+        "mimeType": "application/font-woff2",
+        "connectionReused": true,
+        "connectionId": 38,
+        "remoteIPAddress": "13.226.85.108",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 421,
+        "timing": {
+          "requestTime": 73985.85221,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": -1,
+          "dnsEnd": -1,
+          "connectStart": -1,
+          "connectEnd": -1,
+          "sslStart": -1,
+          "sslEnd": -1,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 0.337,
+          "sendEnd": 1.126,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 1019.946
+        },
+        "protocol": "h2",
+        "securityState": "secure",
+        "securityDetails": {
+          "protocol": "TLS 1.2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "cipher": "AES_128_GCM",
+          "certificateId": 0,
+          "subjectName": "calibreapp.com",
+          "sanList": ["calibreapp.com", "www.calibreapp.com"],
+          "issuer": "Amazon",
+          "validFrom": 1589673600,
+          "validTo": 1623931200,
+          "signedCertificateTimestampList": [
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "Google 'Argon2021' log",
+              "logId": "F65C942FD1773022145418083094568EE34D131933BFDF0C2F200BCC4EF164E3",
+              "timestamp": 1589682688690,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3044022033B128B4C6A86EEEB7FE1FB41907AE7F54F30B1BBD5F0B4B47269504682752390220195BDDB26B117410F6B71004982A38C76A4DD7953A89B4D92AEE1020A5EFADEB"
+            },
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "DigiCert Yeti2021 Log",
+              "logId": "5CDC4392FEE6AB4544B15E9AD456E61037FBD5FA47DCA17394B25EE6F6C70ECA",
+              "timestamp": 1589682688713,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3045022100B3CD451308B0FABCC1255F6F24FC9E01600DF6A2FD43FFBED4DC347B54621B29022056A4FC3E0CC26687B94BA44FDCA751240D5FD1CE29B8581202EC49C52A102538"
+            }
+          ],
+          "certificateTransparencyCompliance": "compliant"
+        }
+      },
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.4",
+      "timestamp": 73986.874696,
+      "dataLength": 13882,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.4",
+      "timestamp": 73986.878186,
+      "dataLength": 16366,
+      "encodedDataLength": 13900
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.4",
+      "timestamp": 73986.881653,
+      "dataLength": 7209,
+      "encodedDataLength": 16384
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.4",
+      "timestamp": 73986.882006,
+      "dataLength": 0,
+      "encodedDataLength": 7227
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "9836.4",
+      "timestamp": 73986.881603,
+      "encodedDataLength": 37932,
+      "shouldReportCorbBlocking": false
+    }
+  },
+  {
+    "method": "Network.responseReceivedExtraInfo",
+    "params": {
+      "requestId": "9836.3",
+      "blockedCookies": [],
+      "headers": {
+        "status": "200",
+        "content-type": "application/font-woff2",
+        "content-length": "40517",
+        "server": "Cowboy",
+        "date": "Tue, 28 Jul 2020 04:14:13 GMT",
+        "last-modified": "Mon, 27 Jul 2020 23:40:48 GMT",
+        "cache-control": "public, s-maxage=31536000, maxage=15552000, no-transform",
+        "expires": "Wed, 28 Jul 2021 00:10:59 +0000",
+        "access-control-allow-origin": "*",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "via": "1.1 vegur, 1.1 c9b90fe1dcd0958f352b5816fbce3bbe.cloudfront.net (CloudFront)",
+        "x-cache": "Miss from cloudfront",
+        "x-amz-cf-pop": "SYD4-C2",
+        "x-amz-cf-id": "aYPi1I9sNcA5Dps5XWtAm_GOZIKzjYWJKXUnsu0ev018QnlN5FFlzA=="
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "9836.3",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "timestamp": 73986.889221,
+      "type": "Font",
+      "response": {
+        "url": "https://www.calibreapp.com/fonts/Calibre-Semibold.woff2",
+        "status": 200,
+        "statusText": "",
+        "headers": {
+          "date": "Tue, 28 Jul 2020 04:14:13 GMT",
+          "via": "1.1 vegur, 1.1 c9b90fe1dcd0958f352b5816fbce3bbe.cloudfront.net (CloudFront)",
+          "last-modified": "Mon, 27 Jul 2020 23:40:48 GMT",
+          "server": "Cowboy",
+          "x-amz-cf-pop": "SYD4-C2",
+          "status": "200",
+          "strict-transport-security": "max-age=31536000; includeSubDomains",
+          "x-cache": "Miss from cloudfront",
+          "content-type": "application/font-woff2",
+          "access-control-allow-origin": "*",
+          "cache-control": "public, s-maxage=31536000, maxage=15552000, no-transform",
+          "content-length": "40517",
+          "x-amz-cf-id": "aYPi1I9sNcA5Dps5XWtAm_GOZIKzjYWJKXUnsu0ev018QnlN5FFlzA==",
+          "expires": "Wed, 28 Jul 2021 00:10:59 +0000"
+        },
+        "mimeType": "application/font-woff2",
+        "connectionReused": true,
+        "connectionId": 38,
+        "remoteIPAddress": "13.226.85.108",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 422,
+        "timing": {
+          "requestTime": 73985.851783,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": -1,
+          "dnsEnd": -1,
+          "connectStart": -1,
+          "connectEnd": -1,
+          "sslStart": -1,
+          "sslEnd": -1,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 0.668,
+          "sendEnd": 1.532,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 1036.501
+        },
+        "protocol": "h2",
+        "securityState": "secure",
+        "securityDetails": {
+          "protocol": "TLS 1.2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "cipher": "AES_128_GCM",
+          "certificateId": 0,
+          "subjectName": "calibreapp.com",
+          "sanList": ["calibreapp.com", "www.calibreapp.com"],
+          "issuer": "Amazon",
+          "validFrom": 1589673600,
+          "validTo": 1623931200,
+          "signedCertificateTimestampList": [
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "Google 'Argon2021' log",
+              "logId": "F65C942FD1773022145418083094568EE34D131933BFDF0C2F200BCC4EF164E3",
+              "timestamp": 1589682688690,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3044022033B128B4C6A86EEEB7FE1FB41907AE7F54F30B1BBD5F0B4B47269504682752390220195BDDB26B117410F6B71004982A38C76A4DD7953A89B4D92AEE1020A5EFADEB"
+            },
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "DigiCert Yeti2021 Log",
+              "logId": "5CDC4392FEE6AB4544B15E9AD456E61037FBD5FA47DCA17394B25EE6F6C70ECA",
+              "timestamp": 1589682688713,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3045022100B3CD451308B0FABCC1255F6F24FC9E01600DF6A2FD43FFBED4DC347B54621B29022056A4FC3E0CC26687B94BA44FDCA751240D5FD1CE29B8581202EC49C52A102538"
+            }
+          ],
+          "certificateTransparencyCompliance": "compliant"
+        }
+      },
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.3",
+      "timestamp": 73986.890786,
+      "dataLength": 15954,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.3",
+      "timestamp": 73986.895115,
+      "dataLength": 24563,
+      "encodedDataLength": 15981
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.3",
+      "timestamp": 73986.895358,
+      "dataLength": 0,
+      "encodedDataLength": 24599
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "9836.3",
+      "timestamp": 73986.895084,
+      "encodedDataLength": 41002,
+      "shouldReportCorbBlocking": false
+    }
+  },
+  {
+    "method": "Network.responseReceivedExtraInfo",
+    "params": {
+      "requestId": "9836.2",
+      "blockedCookies": [],
+      "headers": {
+        "status": "200",
+        "content-type": "application/font-woff2",
+        "content-length": "38213",
+        "server": "Cowboy",
+        "date": "Tue, 28 Jul 2020 04:14:13 GMT",
+        "last-modified": "Mon, 27 Jul 2020 23:40:48 GMT",
+        "cache-control": "public, s-maxage=31536000, maxage=15552000, no-transform",
+        "expires": "Wed, 28 Jul 2021 00:10:59 +0000",
+        "access-control-allow-origin": "*",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "via": "1.1 vegur, 1.1 c9b90fe1dcd0958f352b5816fbce3bbe.cloudfront.net (CloudFront)",
+        "x-cache": "Miss from cloudfront",
+        "x-amz-cf-pop": "SYD4-C2",
+        "x-amz-cf-id": "7pz_MSU5oCIToVuRHxTE6Uqa7G8lRFitYMfT7bv5tLI28HE4rWm60Q=="
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "9836.2",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "timestamp": 73986.900441,
+      "type": "Font",
+      "response": {
+        "url": "https://www.calibreapp.com/fonts/Calibre-Regular.woff2",
+        "status": 200,
+        "statusText": "",
+        "headers": {
+          "date": "Tue, 28 Jul 2020 04:14:13 GMT",
+          "via": "1.1 vegur, 1.1 c9b90fe1dcd0958f352b5816fbce3bbe.cloudfront.net (CloudFront)",
+          "last-modified": "Mon, 27 Jul 2020 23:40:48 GMT",
+          "server": "Cowboy",
+          "x-amz-cf-pop": "SYD4-C2",
+          "status": "200",
+          "strict-transport-security": "max-age=31536000; includeSubDomains",
+          "x-cache": "Miss from cloudfront",
+          "content-type": "application/font-woff2",
+          "access-control-allow-origin": "*",
+          "cache-control": "public, s-maxage=31536000, maxage=15552000, no-transform",
+          "content-length": "38213",
+          "x-amz-cf-id": "7pz_MSU5oCIToVuRHxTE6Uqa7G8lRFitYMfT7bv5tLI28HE4rWm60Q==",
+          "expires": "Wed, 28 Jul 2021 00:10:59 +0000"
+        },
+        "mimeType": "application/font-woff2",
+        "connectionReused": true,
+        "connectionId": 38,
+        "remoteIPAddress": "13.226.85.108",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 422,
+        "timing": {
+          "requestTime": 73985.851265,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": -1,
+          "dnsEnd": -1,
+          "connectStart": -1,
+          "connectEnd": -1,
+          "sslStart": -1,
+          "sslEnd": -1,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 0.23,
+          "sendEnd": 1.112,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 1048.25
+        },
+        "protocol": "h2",
+        "securityState": "secure",
+        "securityDetails": {
+          "protocol": "TLS 1.2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "cipher": "AES_128_GCM",
+          "certificateId": 0,
+          "subjectName": "calibreapp.com",
+          "sanList": ["calibreapp.com", "www.calibreapp.com"],
+          "issuer": "Amazon",
+          "validFrom": 1589673600,
+          "validTo": 1623931200,
+          "signedCertificateTimestampList": [
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "Google 'Argon2021' log",
+              "logId": "F65C942FD1773022145418083094568EE34D131933BFDF0C2F200BCC4EF164E3",
+              "timestamp": 1589682688690,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3044022033B128B4C6A86EEEB7FE1FB41907AE7F54F30B1BBD5F0B4B47269504682752390220195BDDB26B117410F6B71004982A38C76A4DD7953A89B4D92AEE1020A5EFADEB"
+            },
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "DigiCert Yeti2021 Log",
+              "logId": "5CDC4392FEE6AB4544B15E9AD456E61037FBD5FA47DCA17394B25EE6F6C70ECA",
+              "timestamp": 1589682688713,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3045022100B3CD451308B0FABCC1255F6F24FC9E01600DF6A2FD43FFBED4DC347B54621B29022056A4FC3E0CC26687B94BA44FDCA751240D5FD1CE29B8581202EC49C52A102538"
+            }
+          ],
+          "certificateTransparencyCompliance": "compliant"
+        }
+      },
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.2",
+      "timestamp": 73986.903143,
+      "dataLength": 32310,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.2",
+      "timestamp": 73986.908113,
+      "dataLength": 5903,
+      "encodedDataLength": 32346
+    }
+  },
+  {
+    "method": "Network.responseReceivedExtraInfo",
+    "params": {
+      "requestId": "9836.5",
+      "blockedCookies": [],
+      "headers": {
+        "status": "200",
+        "content-type": "text/css",
+        "content-length": "1734",
+        "server": "Cowboy",
+        "date": "Tue, 28 Jul 2020 04:14:14 GMT",
+        "last-modified": "Thu, 18 Jun 2020 04:52:29 GMT",
+        "cache-control": "public, max-age=86400",
+        "content-encoding": "gzip",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "via": "1.1 vegur, 1.1 c9b90fe1dcd0958f352b5816fbce3bbe.cloudfront.net (CloudFront)",
+        "vary": "Accept-Encoding",
+        "x-cache": "Miss from cloudfront",
+        "x-amz-cf-pop": "SYD4-C2",
+        "x-amz-cf-id": "65B6zocFB9o0byQIYWsWkWqrggv8nJIFUFU7X3R4Hd83Q4-9yKJSQQ=="
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "9836.5",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "timestamp": 73986.909561,
+      "type": "Stylesheet",
+      "response": {
+        "url": "https://www.calibreapp.com/assets/sign_up_in-8b32538e54b23b40f8fd45c28abdcee2e2d023bd7e01ddf2033d5f781afae9dc.css",
+        "status": 200,
+        "statusText": "",
+        "headers": {
+          "date": "Tue, 28 Jul 2020 04:14:14 GMT",
+          "content-encoding": "gzip",
+          "last-modified": "Thu, 18 Jun 2020 04:52:29 GMT",
+          "server": "Cowboy",
+          "x-amz-cf-pop": "SYD4-C2",
+          "vary": "Accept-Encoding",
+          "x-cache": "Miss from cloudfront",
+          "content-type": "text/css",
+          "status": "200",
+          "cache-control": "public, max-age=86400",
+          "strict-transport-security": "max-age=31536000; includeSubDomains",
+          "content-length": "1734",
+          "via": "1.1 vegur, 1.1 c9b90fe1dcd0958f352b5816fbce3bbe.cloudfront.net (CloudFront)",
+          "x-amz-cf-id": "65B6zocFB9o0byQIYWsWkWqrggv8nJIFUFU7X3R4Hd83Q4-9yKJSQQ=="
+        },
+        "mimeType": "text/css",
+        "connectionReused": true,
+        "connectionId": 38,
+        "remoteIPAddress": "13.226.85.108",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 368,
+        "timing": {
+          "requestTime": 73985.852907,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": -1,
+          "dnsEnd": -1,
+          "connectStart": -1,
+          "connectEnd": -1,
+          "sslStart": -1,
+          "sslEnd": -1,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 1.067,
+          "sendEnd": 1.511,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 1055.393
+        },
+        "protocol": "h2",
+        "securityState": "secure",
+        "securityDetails": {
+          "protocol": "TLS 1.2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "cipher": "AES_128_GCM",
+          "certificateId": 0,
+          "subjectName": "calibreapp.com",
+          "sanList": ["calibreapp.com", "www.calibreapp.com"],
+          "issuer": "Amazon",
+          "validFrom": 1589673600,
+          "validTo": 1623931200,
+          "signedCertificateTimestampList": [
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "Google 'Argon2021' log",
+              "logId": "F65C942FD1773022145418083094568EE34D131933BFDF0C2F200BCC4EF164E3",
+              "timestamp": 1589682688690,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3044022033B128B4C6A86EEEB7FE1FB41907AE7F54F30B1BBD5F0B4B47269504682752390220195BDDB26B117410F6B71004982A38C76A4DD7953A89B4D92AEE1020A5EFADEB"
+            },
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "DigiCert Yeti2021 Log",
+              "logId": "5CDC4392FEE6AB4544B15E9AD456E61037FBD5FA47DCA17394B25EE6F6C70ECA",
+              "timestamp": 1589682688713,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3045022100B3CD451308B0FABCC1255F6F24FC9E01600DF6A2FD43FFBED4DC347B54621B29022056A4FC3E0CC26687B94BA44FDCA751240D5FD1CE29B8581202EC49C52A102538"
+            }
+          ],
+          "certificateTransparencyCompliance": "compliant"
+        }
+      },
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.5",
+      "timestamp": 73986.909722,
+      "dataLength": 5802,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.5",
+      "timestamp": 73986.910243,
+      "dataLength": 0,
+      "encodedDataLength": 1752
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "9836.5",
+      "timestamp": 73986.908654,
+      "encodedDataLength": 2120,
+      "shouldReportCorbBlocking": false
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.2",
+      "timestamp": 73986.910572,
+      "dataLength": 0,
+      "encodedDataLength": 5921
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "9836.2",
+      "timestamp": 73986.908007,
+      "encodedDataLength": 38689,
+      "shouldReportCorbBlocking": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "D85D2C04144CFCE566B7A1675D47E268",
+      "loaderId": "",
+      "documentURL": "https://sessions.bugsnag.com/",
+      "request": {
+        "url": "https://sessions.bugsnag.com/",
+        "method": "OPTIONS",
+        "headers": {
+          "Accept": "*/*",
+          "Access-Control-Request-Method": "POST",
+          "Access-Control-Request-Headers": "bugsnag-api-key,bugsnag-payload-version,bugsnag-sent-at,content-type",
+          "Origin": "https://www.calibreapp.com",
+          "Sec-Fetch-Mode": "cors"
+        },
+        "initialPriority": "High",
+        "referrerPolicy": "strict-origin-when-cross-origin"
+      },
+      "timestamp": 73986.918704,
+      "wallTime": 1595909654.404653,
+      "initiator": { "type": "other", "url": "https://sessions.bugsnag.com/" },
+      "type": "Other",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "9836.10",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "documentURL": "https://www.calibreapp.com/sign-in",
+      "request": {
+        "url": "https://sessions.bugsnag.com/",
+        "method": "POST",
+        "headers": {
+          "Bugsnag-Payload-Version": "1",
+          "Referer": "https://www.calibreapp.com/",
+          "Bugsnag-Sent-At": "2020-07-28T04:14:14.403Z",
+          "Bugsnag-Api-Key": "c6fb2ec09c86c86fc2cf8eab520cc389",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+          "Content-Type": "application/json"
+        },
+        "postData": "{\"notifier\":{\"name\":\"Bugsnag JavaScript\",\"version\":\"7.2.1\",\"url\":\"https://github.com/bugsnag/bugsnag-js\"},\"device\":{\"locale\":\"en-GB\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36\",\"orientation\":\"landscape-primary\"},\"app\":{\"releaseStage\":\"production\"},\"sessions\":[{\"id\":\"ckd5feide00003h5spki0tcqu\",\"startedAt\":\"2020-07-28T04:14:14.403Z\",\"user\":{}}]}",
+        "hasPostData": true,
+        "mixedContentType": "none",
+        "initialPriority": "High",
+        "referrerPolicy": "strict-origin-when-cross-origin"
+      },
+      "timestamp": 73986.91839,
+      "wallTime": 1595909654.404295,
+      "initiator": {
+        "type": "script",
+        "stack": {
+          "callFrames": [
+            {
+              "functionName": "sendSession",
+              "scriptId": "13",
+              "url": "https://d2wy8f7a9ursnm.cloudfront.net/v7/bugsnag.min.js",
+              "lineNumber": 0,
+              "columnNumber": 25970
+            },
+            {
+              "functionName": "startSession",
+              "scriptId": "13",
+              "url": "https://d2wy8f7a9ursnm.cloudfront.net/v7/bugsnag.min.js",
+              "lineNumber": 0,
+              "columnNumber": 26376
+            },
+            {
+              "functionName": "e.startSession",
+              "scriptId": "13",
+              "url": "https://d2wy8f7a9ursnm.cloudfront.net/v7/bugsnag.min.js",
+              "lineNumber": 0,
+              "columnNumber": 18685
+            },
+            {
+              "functionName": "createClient",
+              "scriptId": "13",
+              "url": "https://d2wy8f7a9ursnm.cloudfront.net/v7/bugsnag.min.js",
+              "lineNumber": 0,
+              "columnNumber": 38973
+            },
+            {
+              "functionName": "start",
+              "scriptId": "13",
+              "url": "https://d2wy8f7a9ursnm.cloudfront.net/v7/bugsnag.min.js",
+              "lineNumber": 0,
+              "columnNumber": 39121
+            },
+            {
+              "functionName": "",
+              "scriptId": "14",
+              "url": "https://www.calibreapp.com/sign-in",
+              "lineNumber": 21,
+              "columnNumber": 10
+            }
+          ]
+        }
+      },
+      "type": "XHR",
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSentExtraInfo",
+    "params": {
+      "requestId": "D85D2C04144CFCE566B7A1675D47E268",
+      "associatedCookies": [],
+      "headers": {
+        ":method": "OPTIONS",
+        ":authority": "sessions.bugsnag.com",
+        ":scheme": "https",
+        ":path": "/",
+        "accept": "*/*",
+        "access-control-request-method": "POST",
+        "access-control-request-headers": "bugsnag-api-key,bugsnag-payload-version,bugsnag-sent-at,content-type",
+        "origin": "https://www.calibreapp.com",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "cross-site",
+        "sec-fetch-dest": "empty",
+        "referer": "https://www.calibreapp.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8"
+      }
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "9836.18",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "documentURL": "https://www.calibreapp.com/sign-in",
+      "request": {
+        "url": "data:image/svg+xml; utf8, <svg width=\"14\" height=\"11\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1 5.58333L5.00926 10L12.5833 1\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+        "method": "GET",
+        "headers": {
+          "Referer": "",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+        },
+        "mixedContentType": "none",
+        "initialPriority": "Low",
+        "referrerPolicy": "no-referrer-when-downgrade"
+      },
+      "timestamp": 73987.014641,
+      "wallTime": 1595909654.500541,
+      "initiator": {
+        "type": "parser",
+        "url": "https://www.calibreapp.com/assets/sign_up_in-8b32538e54b23b40f8fd45c28abdcee2e2d023bd7e01ddf2033d5f781afae9dc.css"
+      },
+      "type": "Image",
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Network.requestServedFromCache",
+    "params": { "requestId": "9836.18" }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "9836.18",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "timestamp": 73987.014664,
+      "type": "Image",
+      "response": {
+        "url": "data:image/svg+xml; utf8, <svg width=\"14\" height=\"11\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1 5.58333L5.00926 10L12.5833 1\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+        "status": 200,
+        "statusText": "OK",
+        "headers": { "Content-Type": "image/svg+xml" },
+        "mimeType": "image/svg+xml",
+        "connectionReused": false,
+        "connectionId": 0,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 0,
+        "protocol": "data",
+        "securityState": "unknown"
+      },
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.18",
+      "timestamp": 73987.014671,
+      "dataLength": 204,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "9836.18",
+      "timestamp": 73987.014676,
+      "encodedDataLength": 0,
+      "shouldReportCorbBlocking": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "9836.19",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "documentURL": "https://www.calibreapp.com/sign-in",
+      "request": {
+        "url": "data:image/svg+xml; utf8, <svg width=\"14\" height=\"11\" fill=\"none\"%0A    xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1 5.58333L5.00926 10L12.5833 1\" stroke=\"%233bb079\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+        "method": "GET",
+        "headers": {
+          "Referer": "",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+        },
+        "mixedContentType": "none",
+        "initialPriority": "Low",
+        "referrerPolicy": "no-referrer-when-downgrade"
+      },
+      "timestamp": 73987.015635,
+      "wallTime": 1595909654.501535,
+      "initiator": {
+        "type": "parser",
+        "url": "https://www.calibreapp.com/assets/sign_up_in-8b32538e54b23b40f8fd45c28abdcee2e2d023bd7e01ddf2033d5f781afae9dc.css"
+      },
+      "type": "Image",
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Network.requestServedFromCache",
+    "params": { "requestId": "9836.19" }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "9836.19",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "timestamp": 73987.015656,
+      "type": "Image",
+      "response": {
+        "url": "data:image/svg+xml; utf8, <svg width=\"14\" height=\"11\" fill=\"none\"%0A    xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1 5.58333L5.00926 10L12.5833 1\" stroke=\"%233bb079\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+        "status": 200,
+        "statusText": "OK",
+        "headers": { "Content-Type": "image/svg+xml" },
+        "mimeType": "image/svg+xml",
+        "connectionReused": false,
+        "connectionId": 0,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 0,
+        "protocol": "data",
+        "securityState": "unknown"
+      },
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.19",
+      "timestamp": 73987.015661,
+      "dataLength": 210,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "9836.19",
+      "timestamp": 73987.015665,
+      "encodedDataLength": 0,
+      "shouldReportCorbBlocking": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "9836.20",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "documentURL": "https://www.calibreapp.com/sign-in",
+      "request": {
+        "url": "https://widget.intercom.io/widget/pxfscr83",
+        "method": "GET",
+        "headers": {
+          "Referer": "https://www.calibreapp.com/",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+        },
+        "mixedContentType": "none",
+        "initialPriority": "Low",
+        "referrerPolicy": "strict-origin-when-cross-origin"
+      },
+      "timestamp": 73987.037667,
+      "wallTime": 1595909654.523566,
+      "initiator": {
+        "type": "script",
+        "stack": {
+          "callFrames": [
+            {
+              "functionName": "l",
+              "scriptId": "16",
+              "url": "https://www.calibreapp.com/sign-in",
+              "lineNumber": 121,
+              "columnNumber": 510
+            },
+            {
+              "functionName": "n.__trace__",
+              "scriptId": "13",
+              "url": "https://d2wy8f7a9ursnm.cloudfront.net/v7/bugsnag.min.js",
+              "lineNumber": 0,
+              "columnNumber": 30156
+            }
+          ],
+          "parent": {
+            "description": "load",
+            "callFrames": [
+              {
+                "functionName": "",
+                "scriptId": "13",
+                "url": "https://d2wy8f7a9ursnm.cloudfront.net/v7/bugsnag.min.js",
+                "lineNumber": 0,
+                "columnNumber": 30284
+              },
+              {
+                "functionName": "",
+                "scriptId": "16",
+                "url": "https://www.calibreapp.com/sign-in",
+                "lineNumber": 121,
+                "columnNumber": 581
+              },
+              {
+                "functionName": "",
+                "scriptId": "16",
+                "url": "https://www.calibreapp.com/sign-in",
+                "lineNumber": 121,
+                "columnNumber": 619
+              }
+            ]
+          }
+        }
+      },
+      "type": "Script",
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "hasUserGesture": false
+    }
+  },
+  { "method": "Page.loadEventFired", "params": { "timestamp": 73987.037849 } },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "name": "load",
+      "timestamp": 73987.037849
+    }
+  },
+  {
+    "method": "Page.frameStoppedLoading",
+    "params": { "frameId": "5356556406F4EF152D876F82DF1B8FFA" }
+  },
+  {
+    "method": "Page.domContentEventFired",
+    "params": { "timestamp": 73987.038264 }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "name": "DOMContentLoaded",
+      "timestamp": 73987.038264
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "9836.21",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "documentURL": "https://www.calibreapp.com/sign-in",
+      "request": {
+        "url": "https://www.calibreapp.com/favicon.ico",
+        "method": "GET",
+        "headers": {
+          "Referer": "https://www.calibreapp.com/sign-in",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+        },
+        "mixedContentType": "none",
+        "initialPriority": "High",
+        "referrerPolicy": "strict-origin-when-cross-origin"
+      },
+      "timestamp": 73987.041417,
+      "wallTime": 1595909654.527316,
+      "initiator": { "type": "other" },
+      "type": "Other",
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSentExtraInfo",
+    "params": {
+      "requestId": "9836.21",
+      "associatedCookies": [
+        {
+          "blockedReasons": [],
+          "cookie": {
+            "name": "_calibre_app_session",
+            "value": "UlhuZzdnMUxvRjdnMFMxajlFeEFlNDJRQjEwbVlHeEdML3Z1ZDRpMzY0ak1henc1clMwWVdJQXJ0RjVvRnhDR081MlFPTFU2Ulh4RUtPcGZhZ0t0Z3h0OFBmQ1dtM3dvTmJidHZnTTRQZEpIOGNmUVhMRHB4TFcra2VpU21uV3VMN1o2YjhlQmlYRnZ4VDBiUXNHdnBBPT0tLVFjYjdWQXo2SUdIZ0FBOERnblhRaXc9PQ%3D%3D--ebff94e1d82babaca5b55404e2e5da785cd12fb8",
+            "domain": "www.calibreapp.com",
+            "path": "/",
+            "expires": -1,
+            "size": 306,
+            "httpOnly": true,
+            "secure": true,
+            "session": true,
+            "priority": "Medium"
+          }
+        }
+      ],
+      "headers": {
+        ":method": "GET",
+        ":authority": "www.calibreapp.com",
+        ":scheme": "https",
+        ":path": "/favicon.ico",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+        "accept": "image/webp,image/apng,image/*,*/*;q=0.8",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "image",
+        "referer": "https://www.calibreapp.com/sign-in",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+        "cookie": "_calibre_app_session=UlhuZzdnMUxvRjdnMFMxajlFeEFlNDJRQjEwbVlHeEdML3Z1ZDRpMzY0ak1henc1clMwWVdJQXJ0RjVvRnhDR081MlFPTFU2Ulh4RUtPcGZhZ0t0Z3h0OFBmQ1dtM3dvTmJidHZnTTRQZEpIOGNmUVhMRHB4TFcra2VpU21uV3VMN1o2YjhlQmlYRnZ4VDBiUXNHdnBBPT0tLVFjYjdWQXo2SUdIZ0FBOERnblhRaXc9PQ%3D%3D--ebff94e1d82babaca5b55404e2e5da785cd12fb8"
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceivedExtraInfo",
+    "params": {
+      "requestId": "9836.21",
+      "blockedCookies": [],
+      "headers": {
+        "status": "200",
+        "content-type": "image/vnd.microsoft.icon",
+        "content-length": "1700",
+        "server": "Cowboy",
+        "date": "Sat, 25 Jul 2020 22:24:41 GMT",
+        "last-modified": "Fri, 24 Jul 2020 04:13:37 GMT",
+        "cache-control": "public, s-maxage=31536000, maxage=15552000, no-transform",
+        "expires": "Sun, 25 Jul 2021 06:27:13 +0000",
+        "access-control-allow-origin": "*",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "via": "1.1 vegur, 1.1 c9b90fe1dcd0958f352b5816fbce3bbe.cloudfront.net (CloudFront)",
+        "x-cache": "Hit from cloudfront",
+        "x-amz-cf-pop": "SYD4-C2",
+        "x-amz-cf-id": "wnrST5_OtHxwAHhmM9PTQp92gKqYd-SVVKYMKc_ieOgsTdr8rp4l3A==",
+        "age": "193772"
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "9836.21",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "timestamp": 73987.051816,
+      "type": "Other",
+      "response": {
+        "url": "https://www.calibreapp.com/favicon.ico",
+        "status": 200,
+        "statusText": "",
+        "headers": {
+          "date": "Sat, 25 Jul 2020 22:24:41 GMT",
+          "via": "1.1 vegur, 1.1 c9b90fe1dcd0958f352b5816fbce3bbe.cloudfront.net (CloudFront)",
+          "last-modified": "Fri, 24 Jul 2020 04:13:37 GMT",
+          "server": "Cowboy",
+          "age": "193772",
+          "status": "200",
+          "strict-transport-security": "max-age=31536000; includeSubDomains",
+          "x-cache": "Hit from cloudfront",
+          "content-type": "image/vnd.microsoft.icon",
+          "access-control-allow-origin": "*",
+          "cache-control": "public, s-maxage=31536000, maxage=15552000, no-transform",
+          "x-amz-cf-pop": "SYD4-C2",
+          "content-length": "1700",
+          "x-amz-cf-id": "wnrST5_OtHxwAHhmM9PTQp92gKqYd-SVVKYMKc_ieOgsTdr8rp4l3A==",
+          "expires": "Sun, 25 Jul 2021 06:27:13 +0000"
+        },
+        "mimeType": "image/vnd.microsoft.icon",
+        "connectionReused": true,
+        "connectionId": 38,
+        "remoteIPAddress": "13.226.85.108",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 432,
+        "timing": {
+          "requestTime": 73987.04168,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": -1,
+          "dnsEnd": -1,
+          "connectStart": -1,
+          "connectEnd": -1,
+          "sslStart": -1,
+          "sslEnd": -1,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 0.188,
+          "sendEnd": 0.296,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 9.379
+        },
+        "protocol": "h2",
+        "securityState": "secure",
+        "securityDetails": {
+          "protocol": "TLS 1.2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "cipher": "AES_128_GCM",
+          "certificateId": 0,
+          "subjectName": "calibreapp.com",
+          "sanList": ["calibreapp.com", "www.calibreapp.com"],
+          "issuer": "Amazon",
+          "validFrom": 1589673600,
+          "validTo": 1623931200,
+          "signedCertificateTimestampList": [
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "Google 'Argon2021' log",
+              "logId": "F65C942FD1773022145418083094568EE34D131933BFDF0C2F200BCC4EF164E3",
+              "timestamp": 1589682688690,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3044022033B128B4C6A86EEEB7FE1FB41907AE7F54F30B1BBD5F0B4B47269504682752390220195BDDB26B117410F6B71004982A38C76A4DD7953A89B4D92AEE1020A5EFADEB"
+            },
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "DigiCert Yeti2021 Log",
+              "logId": "5CDC4392FEE6AB4544B15E9AD456E61037FBD5FA47DCA17394B25EE6F6C70ECA",
+              "timestamp": 1589682688713,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3045022100B3CD451308B0FABCC1255F6F24FC9E01600DF6A2FD43FFBED4DC347B54621B29022056A4FC3E0CC26687B94BA44FDCA751240D5FD1CE29B8581202EC49C52A102538"
+            }
+          ],
+          "certificateTransparencyCompliance": "compliant"
+        }
+      },
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.21",
+      "timestamp": 73987.051911,
+      "dataLength": 1700,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.21",
+      "timestamp": 73987.053382,
+      "dataLength": 0,
+      "encodedDataLength": 1709
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "9836.21",
+      "timestamp": 73987.051292,
+      "encodedDataLength": 2141,
+      "shouldReportCorbBlocking": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSentExtraInfo",
+    "params": {
+      "requestId": "9836.20",
+      "associatedCookies": [],
+      "headers": {
+        ":method": "GET",
+        ":authority": "widget.intercom.io",
+        ":scheme": "https",
+        ":path": "/widget/pxfscr83",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+        "accept": "*/*",
+        "sec-fetch-site": "cross-site",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "script",
+        "referer": "https://www.calibreapp.com/",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8"
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceivedExtraInfo",
+    "params": {
+      "requestId": "9836.20",
+      "blockedCookies": [],
+      "headers": {
+        "status": "302",
+        "content-length": "0",
+        "location": "https://js.intercomcdn.com/shim.latest.js",
+        "date": "Thu, 25 Jun 2020 00:02:01 GMT",
+        "server": "AmazonS3",
+        "x-cache": "Hit from cloudfront",
+        "via": "1.1 360bc380530e42ff8d4114ee99dd6212.cloudfront.net (CloudFront)",
+        "x-amz-cf-pop": "SYD4-C1",
+        "x-amz-cf-id": "d3lKRxGwT7FK5tstcXGRYkBZEST5eV3vlZusgY1pPBaFo8puZx-rRQ==",
+        "age": "2866333"
+      }
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "9836.20",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "documentURL": "https://www.calibreapp.com/sign-in",
+      "request": {
+        "url": "https://js.intercomcdn.com/shim.latest.js",
+        "method": "GET",
+        "headers": {
+          "Referer": "https://www.calibreapp.com/",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+        },
+        "mixedContentType": "none",
+        "initialPriority": "Low",
+        "referrerPolicy": "strict-origin-when-cross-origin"
+      },
+      "timestamp": 73987.125516,
+      "wallTime": 1595909654.611412,
+      "initiator": { "type": "other" },
+      "redirectResponse": {
+        "url": "https://widget.intercom.io/widget/pxfscr83",
+        "status": 302,
+        "statusText": "",
+        "headers": {
+          "date": "Thu, 25 Jun 2020 00:02:01 GMT",
+          "via": "1.1 360bc380530e42ff8d4114ee99dd6212.cloudfront.net (CloudFront)",
+          "server": "AmazonS3",
+          "age": "2866333",
+          "status": "302",
+          "x-cache": "Hit from cloudfront",
+          "location": "https://js.intercomcdn.com/shim.latest.js",
+          "x-amz-cf-pop": "SYD4-C1",
+          "content-length": "0",
+          "x-amz-cf-id": "d3lKRxGwT7FK5tstcXGRYkBZEST5eV3vlZusgY1pPBaFo8puZx-rRQ=="
+        },
+        "mimeType": "",
+        "connectionReused": false,
+        "connectionId": 105,
+        "remoteIPAddress": "99.86.212.45",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 251,
+        "timing": {
+          "requestTime": 73987.037957,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": 0.134,
+          "dnsEnd": 32.248,
+          "connectStart": 32.248,
+          "connectEnd": 72.432,
+          "sslStart": 45.072,
+          "sslEnd": 72.427,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 72.556,
+          "sendEnd": 72.652,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 86.916
+        },
+        "protocol": "h2",
+        "securityState": "secure",
+        "securityDetails": {
+          "protocol": "TLS 1.2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "cipher": "AES_128_GCM",
+          "certificateId": 0,
+          "subjectName": "*.intercom.com",
+          "sanList": [
+            "*.intercom.com",
+            "intercom.io",
+            "intercom.com",
+            "*.intercom.io"
+          ],
+          "issuer": "Amazon",
+          "validFrom": 1589328000,
+          "validTo": 1623585600,
+          "signedCertificateTimestampList": [
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "Google 'Argon2021' log",
+              "logId": "F65C942FD1773022145418083094568EE34D131933BFDF0C2F200BCC4EF164E3",
+              "timestamp": 1589336958723,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3046022100A8C88BFEAB35BEA916C11D94394084A4460897C15966AF750396D38CFBC3A9DC0221009D07DE694AD9510723E09ACD6120CA89CFBE6BFF0AEF2CE4C6026B11CBDADACB"
+            },
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "DigiCert Yeti2021 Log",
+              "logId": "5CDC4392FEE6AB4544B15E9AD456E61037FBD5FA47DCA17394B25EE6F6C70ECA",
+              "timestamp": 1589336958753,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304402207BDDD83FBC10CFEF5790A75E2640DC1EF0464779DEF61F28D8832ABE8C559C40022068ACE99088175BE65D2EF63BC08A69909334468B923152893C38425E2910168D"
+            }
+          ],
+          "certificateTransparencyCompliance": "compliant"
+        }
+      },
+      "type": "Script",
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "name": "firstPaint",
+      "timestamp": 73987.144202
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "name": "firstContentfulPaint",
+      "timestamp": 73987.144202
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "name": "firstImagePaint",
+      "timestamp": 73987.144202
+    }
+  },
+  {
+    "method": "Network.responseReceivedExtraInfo",
+    "params": {
+      "requestId": "D85D2C04144CFCE566B7A1675D47E268",
+      "blockedCookies": [],
+      "headers": {
+        "status": "200",
+        "access-control-allow-headers": "Origin, Content-Type, Accept, Authorization, User-Agent, Referer, X-Forwarded-For, Bugsnag-Api-Key, Bugsnag-Payload-Version, Bugsnag-Sent-At",
+        "access-control-allow-methods": "POST",
+        "access-control-allow-origin": "*",
+        "date": "Tue, 28 Jul 2020 04:14:14 GMT",
+        "content-length": "0",
+        "via": "1.1 google",
+        "alt-svc": "clear"
+      }
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "name": "firstMeaningfulPaintCandidate",
+      "timestamp": 73987.144202
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "D85D2C04144CFCE566B7A1675D47E268",
+      "loaderId": "",
+      "timestamp": 73987.147751,
+      "type": "Other",
+      "response": {
+        "url": "https://sessions.bugsnag.com/",
+        "status": 200,
+        "statusText": "",
+        "headers": {
+          "status": "200",
+          "access-control-allow-headers": "Origin, Content-Type, Accept, Authorization, User-Agent, Referer, X-Forwarded-For, Bugsnag-Api-Key, Bugsnag-Payload-Version, Bugsnag-Sent-At",
+          "access-control-allow-methods": "POST",
+          "access-control-allow-origin": "*",
+          "date": "Tue, 28 Jul 2020 04:14:14 GMT",
+          "content-length": "0",
+          "via": "1.1 google",
+          "alt-svc": "clear"
+        },
+        "mimeType": "",
+        "connectionReused": false,
+        "connectionId": 82,
+        "remoteIPAddress": "35.190.88.7",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 219,
+        "timing": {
+          "requestTime": 73986.918741,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": 0.068,
+          "dnsEnd": 18.709,
+          "connectStart": 18.709,
+          "connectEnd": 53.426,
+          "sslStart": 31.68,
+          "sslEnd": 53.421,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 53.521,
+          "sendEnd": 53.62,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 226.53
+        },
+        "protocol": "h2",
+        "securityState": "secure"
+      }
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "D85D2C04144CFCE566B7A1675D47E268",
+      "timestamp": 73987.145639,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.requestWillBeSentExtraInfo",
+    "params": {
+      "requestId": "9836.10",
+      "associatedCookies": [],
+      "headers": {
+        ":method": "POST",
+        ":authority": "sessions.bugsnag.com",
+        ":scheme": "https",
+        ":path": "/",
+        "content-length": "437",
+        "bugsnag-payload-version": "1",
+        "bugsnag-sent-at": "2020-07-28T04:14:14.403Z",
+        "bugsnag-api-key": "c6fb2ec09c86c86fc2cf8eab520cc389",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+        "content-type": "application/json",
+        "accept": "*/*",
+        "origin": "https://www.calibreapp.com",
+        "sec-fetch-site": "cross-site",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-dest": "empty",
+        "referer": "https://www.calibreapp.com/",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8"
+      }
+    }
+  },
+  {
+    "method": "Network.requestWillBeSentExtraInfo",
+    "params": {
+      "requestId": "9836.20",
+      "associatedCookies": [],
+      "headers": {
+        ":method": "GET",
+        ":authority": "js.intercomcdn.com",
+        ":scheme": "https",
+        ":path": "/shim.latest.js",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+        "accept": "*/*",
+        "sec-fetch-site": "cross-site",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "script",
+        "referer": "https://www.calibreapp.com/",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8"
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceivedExtraInfo",
+    "params": {
+      "requestId": "9836.20",
+      "blockedCookies": [],
+      "headers": {
+        "status": "200",
+        "content-type": "application/javascript; charset=UTF-8",
+        "content-length": "2908",
+        "last-modified": "Thu, 23 Jul 2020 08:33:52 GMT",
+        "x-amz-server-side-encryption": "AES256",
+        "content-encoding": "gzip",
+        "accept-ranges": "bytes",
+        "server": "AmazonS3",
+        "date": "Tue, 28 Jul 2020 04:13:11 GMT",
+        "etag": "\"f5fc9ca2c621d782230d1af185fd7b1a\"",
+        "cache-control": "max-age=300, s-maxage=300, public",
+        "x-cache": "Hit from cloudfront",
+        "via": "1.1 6aa566da4fde43dfaa62af1eee8e24e9.cloudfront.net (CloudFront)",
+        "x-amz-cf-pop": "SYD4-C1",
+        "x-amz-cf-id": "NDnvGaqgpjoip_98No_I6IypxJUafYv4c-7XvyoOOPAVACT03pWrSQ==",
+        "age": "64"
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "9836.20",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "timestamp": 73987.190363,
+      "type": "Script",
+      "response": {
+        "url": "https://js.intercomcdn.com/shim.latest.js",
+        "status": 200,
+        "statusText": "",
+        "headers": {
+          "date": "Tue, 28 Jul 2020 04:13:11 GMT",
+          "content-encoding": "gzip",
+          "age": "64",
+          "x-amz-server-side-encryption": "AES256",
+          "x-cache": "Hit from cloudfront",
+          "status": "200",
+          "content-length": "2908",
+          "last-modified": "Thu, 23 Jul 2020 08:33:52 GMT",
+          "server": "AmazonS3",
+          "etag": "\"f5fc9ca2c621d782230d1af185fd7b1a\"",
+          "content-type": "application/javascript; charset=UTF-8",
+          "via": "1.1 6aa566da4fde43dfaa62af1eee8e24e9.cloudfront.net (CloudFront)",
+          "cache-control": "max-age=300, s-maxage=300, public",
+          "x-amz-cf-pop": "SYD4-C1",
+          "accept-ranges": "bytes",
+          "x-amz-cf-id": "NDnvGaqgpjoip_98No_I6IypxJUafYv4c-7XvyoOOPAVACT03pWrSQ=="
+        },
+        "mimeType": "application/javascript",
+        "connectionReused": false,
+        "connectionId": 118,
+        "remoteIPAddress": "99.86.212.57",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 405,
+        "timing": {
+          "requestTime": 73987.125659,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": 0.13,
+          "dnsEnd": 20.688,
+          "connectStart": 20.688,
+          "connectEnd": 50.796,
+          "sslStart": 32.609,
+          "sslEnd": 50.791,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 50.967,
+          "sendEnd": 51.043,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 63.163
+        },
+        "protocol": "h2",
+        "securityState": "secure",
+        "securityDetails": {
+          "protocol": "TLS 1.2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "cipher": "AES_128_GCM",
+          "certificateId": 0,
+          "subjectName": "*.intercomcdn.com",
+          "sanList": ["*.intercomcdn.com"],
+          "issuer": "Amazon",
+          "validFrom": 1585440000,
+          "validTo": 1619697600,
+          "signedCertificateTimestampList": [
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "Google 'Argon2021' log",
+              "logId": "F65C942FD1773022145418083094568EE34D131933BFDF0C2F200BCC4EF164E3",
+              "timestamp": 1585449692977,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304502204FFB1F509EFBCF26D672D52576D03FBE62CE9B8C913F843EE12740FDB7D0AFA2022100861B92D9EC9182B36DABB8A5586520EF9E526FCDF4787B5D8C8EB04B63FCC56B"
+            },
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "DigiCert Yeti2021 Log",
+              "logId": "5CDC4392FEE6AB4544B15E9AD456E61037FBD5FA47DCA17394B25EE6F6C70ECA",
+              "timestamp": 1585449693060,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3045022100D378A099A13B3E9AD2C78B71E4D887F983F8F9734D3C3600FB957C26B295497302200C19DC1737AA6EBBCB2BF06771C10761DD817E69B2FC60B4862A507602CBDB23"
+            }
+          ],
+          "certificateTransparencyCompliance": "compliant"
+        }
+      },
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.20",
+      "timestamp": 73987.190476,
+      "dataLength": 7483,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "9836.20",
+      "timestamp": 73987.189274,
+      "encodedDataLength": 3322,
+      "shouldReportCorbBlocking": false
+    }
+  },
+  {
+    "method": "Page.frameAttached",
+    "params": {
+      "frameId": "39F0C427EB9AB69251CD913A11701846",
+      "parentFrameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "stack": {
+        "callFrames": [
+          {
+            "functionName": "h",
+            "scriptId": "17",
+            "url": "https://widget.intercom.io/widget/pxfscr83",
+            "lineNumber": 0,
+            "columnNumber": 6217
+          },
+          {
+            "functionName": "g",
+            "scriptId": "17",
+            "url": "https://widget.intercom.io/widget/pxfscr83",
+            "lineNumber": 0,
+            "columnNumber": 6824
+          },
+          {
+            "functionName": "945",
+            "scriptId": "17",
+            "url": "https://widget.intercom.io/widget/pxfscr83",
+            "lineNumber": 0,
+            "columnNumber": 7206
+          },
+          {
+            "functionName": "n",
+            "scriptId": "17",
+            "url": "https://widget.intercom.io/widget/pxfscr83",
+            "lineNumber": 0,
+            "columnNumber": 109
+          },
+          {
+            "functionName": "920",
+            "scriptId": "17",
+            "url": "https://widget.intercom.io/widget/pxfscr83",
+            "lineNumber": 0,
+            "columnNumber": 5060
+          },
+          {
+            "functionName": "n",
+            "scriptId": "17",
+            "url": "https://widget.intercom.io/widget/pxfscr83",
+            "lineNumber": 0,
+            "columnNumber": 109
+          },
+          {
+            "functionName": "",
+            "scriptId": "17",
+            "url": "https://widget.intercom.io/widget/pxfscr83",
+            "lineNumber": 0,
+            "columnNumber": 928
+          },
+          {
+            "functionName": "",
+            "scriptId": "17",
+            "url": "https://widget.intercom.io/widget/pxfscr83",
+            "lineNumber": 0,
+            "columnNumber": 939
+          }
+        ]
+      }
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "39F0C427EB9AB69251CD913A11701846",
+      "loaderId": "ECB270659C5E34DDA85E52827B7E3A9A",
+      "name": "init",
+      "timestamp": 73987.193153
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "39F0C427EB9AB69251CD913A11701846",
+      "loaderId": "ECB270659C5E34DDA85E52827B7E3A9A",
+      "name": "DOMContentLoaded",
+      "timestamp": 73987.193588
+    }
+  },
+  {
+    "method": "Page.frameStartedLoading",
+    "params": { "frameId": "39F0C427EB9AB69251CD913A11701846" }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "39F0C427EB9AB69251CD913A11701846",
+      "loaderId": "557CE884022B6FE686E45ABB1038FDF3",
+      "name": "init",
+      "timestamp": 73987.194136
+    }
+  },
+  {
+    "method": "Page.frameNavigated",
+    "params": {
+      "frame": {
+        "id": "39F0C427EB9AB69251CD913A11701846",
+        "parentId": "5356556406F4EF152D876F82DF1B8FFA",
+        "loaderId": "557CE884022B6FE686E45ABB1038FDF3",
+        "name": "intercom-frame",
+        "url": "about:blank",
+        "securityOrigin": "://",
+        "mimeType": "text/html"
+      }
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "39F0C427EB9AB69251CD913A11701846",
+      "loaderId": "557CE884022B6FE686E45ABB1038FDF3",
+      "name": "load",
+      "timestamp": 73987.197521
+    }
+  },
+  {
+    "method": "Page.frameStoppedLoading",
+    "params": { "frameId": "39F0C427EB9AB69251CD913A11701846" }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "39F0C427EB9AB69251CD913A11701846",
+      "loaderId": "557CE884022B6FE686E45ABB1038FDF3",
+      "name": "DOMContentLoaded",
+      "timestamp": 73987.197765
+    }
+  },
+  {
+    "method": "Network.requestWillBeSentExtraInfo",
+    "params": {
+      "requestId": "9836.22",
+      "associatedCookies": [],
+      "headers": {
+        ":method": "GET",
+        ":authority": "js.intercomcdn.com",
+        ":scheme": "https",
+        ":path": "/frame-modern.7ede733e.js",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+        "accept": "*/*",
+        "sec-fetch-site": "cross-site",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "script",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8"
+      }
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "9836.22",
+      "loaderId": "557CE884022B6FE686E45ABB1038FDF3",
+      "documentURL": "about:blank",
+      "request": {
+        "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+        "method": "GET",
+        "headers": {
+          "Referer": "",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+        },
+        "mixedContentType": "none",
+        "initialPriority": "Low",
+        "referrerPolicy": "no-referrer-when-downgrade"
+      },
+      "timestamp": 73987.198538,
+      "wallTime": 1595909654.68443,
+      "initiator": {
+        "type": "script",
+        "stack": {
+          "callFrames": [
+            {
+              "functionName": "h",
+              "scriptId": "17",
+              "url": "https://widget.intercom.io/widget/pxfscr83",
+              "lineNumber": 0,
+              "columnNumber": 6473
+            },
+            {
+              "functionName": "g",
+              "scriptId": "17",
+              "url": "https://widget.intercom.io/widget/pxfscr83",
+              "lineNumber": 0,
+              "columnNumber": 6824
+            },
+            {
+              "functionName": "945",
+              "scriptId": "17",
+              "url": "https://widget.intercom.io/widget/pxfscr83",
+              "lineNumber": 0,
+              "columnNumber": 7206
+            },
+            {
+              "functionName": "n",
+              "scriptId": "17",
+              "url": "https://widget.intercom.io/widget/pxfscr83",
+              "lineNumber": 0,
+              "columnNumber": 109
+            },
+            {
+              "functionName": "920",
+              "scriptId": "17",
+              "url": "https://widget.intercom.io/widget/pxfscr83",
+              "lineNumber": 0,
+              "columnNumber": 5060
+            },
+            {
+              "functionName": "n",
+              "scriptId": "17",
+              "url": "https://widget.intercom.io/widget/pxfscr83",
+              "lineNumber": 0,
+              "columnNumber": 109
+            },
+            {
+              "functionName": "",
+              "scriptId": "17",
+              "url": "https://widget.intercom.io/widget/pxfscr83",
+              "lineNumber": 0,
+              "columnNumber": 928
+            },
+            {
+              "functionName": "",
+              "scriptId": "17",
+              "url": "https://widget.intercom.io/widget/pxfscr83",
+              "lineNumber": 0,
+              "columnNumber": 939
+            }
+          ]
+        }
+      },
+      "type": "Script",
+      "frameId": "39F0C427EB9AB69251CD913A11701846",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "9836.23",
+      "loaderId": "557CE884022B6FE686E45ABB1038FDF3",
+      "documentURL": "about:blank",
+      "request": {
+        "url": "https://js.intercomcdn.com/vendor-modern.6f14031b.js",
+        "method": "GET",
+        "headers": {
+          "Referer": "",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+        },
+        "mixedContentType": "none",
+        "initialPriority": "Low",
+        "referrerPolicy": "no-referrer-when-downgrade"
+      },
+      "timestamp": 73987.198929,
+      "wallTime": 1595909654.684821,
+      "initiator": {
+        "type": "script",
+        "stack": {
+          "callFrames": [
+            {
+              "functionName": "h",
+              "scriptId": "17",
+              "url": "https://widget.intercom.io/widget/pxfscr83",
+              "lineNumber": 0,
+              "columnNumber": 6511
+            },
+            {
+              "functionName": "g",
+              "scriptId": "17",
+              "url": "https://widget.intercom.io/widget/pxfscr83",
+              "lineNumber": 0,
+              "columnNumber": 6824
+            },
+            {
+              "functionName": "945",
+              "scriptId": "17",
+              "url": "https://widget.intercom.io/widget/pxfscr83",
+              "lineNumber": 0,
+              "columnNumber": 7206
+            },
+            {
+              "functionName": "n",
+              "scriptId": "17",
+              "url": "https://widget.intercom.io/widget/pxfscr83",
+              "lineNumber": 0,
+              "columnNumber": 109
+            },
+            {
+              "functionName": "920",
+              "scriptId": "17",
+              "url": "https://widget.intercom.io/widget/pxfscr83",
+              "lineNumber": 0,
+              "columnNumber": 5060
+            },
+            {
+              "functionName": "n",
+              "scriptId": "17",
+              "url": "https://widget.intercom.io/widget/pxfscr83",
+              "lineNumber": 0,
+              "columnNumber": 109
+            },
+            {
+              "functionName": "",
+              "scriptId": "17",
+              "url": "https://widget.intercom.io/widget/pxfscr83",
+              "lineNumber": 0,
+              "columnNumber": 928
+            },
+            {
+              "functionName": "",
+              "scriptId": "17",
+              "url": "https://widget.intercom.io/widget/pxfscr83",
+              "lineNumber": 0,
+              "columnNumber": 939
+            }
+          ]
+        }
+      },
+      "type": "Script",
+      "frameId": "39F0C427EB9AB69251CD913A11701846",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSentExtraInfo",
+    "params": {
+      "requestId": "9836.23",
+      "associatedCookies": [],
+      "headers": {
+        ":method": "GET",
+        ":authority": "js.intercomcdn.com",
+        ":scheme": "https",
+        ":path": "/vendor-modern.6f14031b.js",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+        "accept": "*/*",
+        "sec-fetch-site": "cross-site",
+        "sec-fetch-mode": "no-cors",
+        "sec-fetch-dest": "script",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8"
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceivedExtraInfo",
+    "params": {
+      "requestId": "9836.22",
+      "blockedCookies": [],
+      "headers": {
+        "status": "200",
+        "content-type": "application/javascript; charset=UTF-8",
+        "content-length": "63306",
+        "last-modified": "Thu, 23 Jul 2020 08:25:47 GMT",
+        "x-amz-server-side-encryption": "AES256",
+        "content-encoding": "gzip",
+        "accept-ranges": "bytes",
+        "server": "AmazonS3",
+        "date": "Tue, 28 Jul 2020 03:23:09 GMT",
+        "etag": "\"f15380fc49fcb67d91b0bfc5e94efc00\"",
+        "cache-control": "max-age=31536000, s-maxage=7200, public",
+        "x-cache": "Hit from cloudfront",
+        "via": "1.1 6aa566da4fde43dfaa62af1eee8e24e9.cloudfront.net (CloudFront)",
+        "x-amz-cf-pop": "SYD4-C1",
+        "x-amz-cf-id": "jW0A4XHbgtxUCKrk8wI_nnDL01nLf-pncN_T_nwQP1w42Q2FrENmjA==",
+        "age": "3065"
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceivedExtraInfo",
+    "params": {
+      "requestId": "9836.23",
+      "blockedCookies": [],
+      "headers": {
+        "status": "200",
+        "content-type": "application/javascript; charset=UTF-8",
+        "content-length": "52304",
+        "last-modified": "Fri, 17 Jul 2020 15:55:43 GMT",
+        "x-amz-server-side-encryption": "AES256",
+        "content-encoding": "gzip",
+        "accept-ranges": "bytes",
+        "server": "AmazonS3",
+        "date": "Tue, 28 Jul 2020 03:23:12 GMT",
+        "etag": "\"36d04e3742dbd5e4735693d6d89bc469\"",
+        "cache-control": "max-age=31536000, s-maxage=7200, public",
+        "x-cache": "Hit from cloudfront",
+        "via": "1.1 6aa566da4fde43dfaa62af1eee8e24e9.cloudfront.net (CloudFront)",
+        "x-amz-cf-pop": "SYD4-C1",
+        "x-amz-cf-id": "E2xbWfhPFapZdqnfqC9IAcvvC4KUtR1bWtXyBXSpSX9WRrQVREtypQ==",
+        "age": "3063"
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "9836.22",
+      "loaderId": "557CE884022B6FE686E45ABB1038FDF3",
+      "timestamp": 73987.216271,
+      "type": "Script",
+      "response": {
+        "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+        "status": 200,
+        "statusText": "",
+        "headers": {
+          "date": "Tue, 28 Jul 2020 03:23:09 GMT",
+          "content-encoding": "gzip",
+          "age": "3065",
+          "x-amz-server-side-encryption": "AES256",
+          "x-cache": "Hit from cloudfront",
+          "status": "200",
+          "content-length": "63306",
+          "last-modified": "Thu, 23 Jul 2020 08:25:47 GMT",
+          "server": "AmazonS3",
+          "etag": "\"f15380fc49fcb67d91b0bfc5e94efc00\"",
+          "content-type": "application/javascript; charset=UTF-8",
+          "via": "1.1 6aa566da4fde43dfaa62af1eee8e24e9.cloudfront.net (CloudFront)",
+          "cache-control": "max-age=31536000, s-maxage=7200, public",
+          "x-amz-cf-pop": "SYD4-C1",
+          "accept-ranges": "bytes",
+          "x-amz-cf-id": "jW0A4XHbgtxUCKrk8wI_nnDL01nLf-pncN_T_nwQP1w42Q2FrENmjA=="
+        },
+        "mimeType": "application/javascript",
+        "connectionReused": true,
+        "connectionId": 118,
+        "remoteIPAddress": "99.86.212.57",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 411,
+        "timing": {
+          "requestTime": 73987.198903,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": -1,
+          "dnsEnd": -1,
+          "connectStart": -1,
+          "connectEnd": -1,
+          "sslStart": -1,
+          "sslEnd": -1,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 0.143,
+          "sendEnd": 0.479,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 13.751
+        },
+        "protocol": "h2",
+        "securityState": "secure",
+        "securityDetails": {
+          "protocol": "TLS 1.2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "cipher": "AES_128_GCM",
+          "certificateId": 0,
+          "subjectName": "*.intercomcdn.com",
+          "sanList": ["*.intercomcdn.com"],
+          "issuer": "Amazon",
+          "validFrom": 1585440000,
+          "validTo": 1619697600,
+          "signedCertificateTimestampList": [
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "Google 'Argon2021' log",
+              "logId": "F65C942FD1773022145418083094568EE34D131933BFDF0C2F200BCC4EF164E3",
+              "timestamp": 1585449692977,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304502204FFB1F509EFBCF26D672D52576D03FBE62CE9B8C913F843EE12740FDB7D0AFA2022100861B92D9EC9182B36DABB8A5586520EF9E526FCDF4787B5D8C8EB04B63FCC56B"
+            },
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "DigiCert Yeti2021 Log",
+              "logId": "5CDC4392FEE6AB4544B15E9AD456E61037FBD5FA47DCA17394B25EE6F6C70ECA",
+              "timestamp": 1585449693060,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3045022100D378A099A13B3E9AD2C78B71E4D887F983F8F9734D3C3600FB957C26B295497302200C19DC1737AA6EBBCB2BF06771C10761DD817E69B2FC60B4862A507602CBDB23"
+            }
+          ],
+          "certificateTransparencyCompliance": "compliant"
+        }
+      },
+      "frameId": "39F0C427EB9AB69251CD913A11701846"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.22",
+      "timestamp": 73987.216482,
+      "dataLength": 47631,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.22",
+      "timestamp": 73987.220049,
+      "dataLength": 62939,
+      "encodedDataLength": 31944
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.22",
+      "timestamp": 73987.223862,
+      "dataLength": 68857,
+      "encodedDataLength": 16384
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.22",
+      "timestamp": 73987.226454,
+      "dataLength": 49892,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.22",
+      "timestamp": 73987.227687,
+      "dataLength": 0,
+      "encodedDataLength": 15050
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "9836.22",
+      "timestamp": 73987.226159,
+      "encodedDataLength": 63789,
+      "shouldReportCorbBlocking": false
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "9836.23",
+      "loaderId": "557CE884022B6FE686E45ABB1038FDF3",
+      "timestamp": 73987.23237,
+      "type": "Script",
+      "response": {
+        "url": "https://js.intercomcdn.com/vendor-modern.6f14031b.js",
+        "status": 200,
+        "statusText": "",
+        "headers": {
+          "date": "Tue, 28 Jul 2020 03:23:12 GMT",
+          "content-encoding": "gzip",
+          "age": "3063",
+          "x-amz-server-side-encryption": "AES256",
+          "x-cache": "Hit from cloudfront",
+          "status": "200",
+          "content-length": "52304",
+          "last-modified": "Fri, 17 Jul 2020 15:55:43 GMT",
+          "server": "AmazonS3",
+          "etag": "\"36d04e3742dbd5e4735693d6d89bc469\"",
+          "content-type": "application/javascript; charset=UTF-8",
+          "via": "1.1 6aa566da4fde43dfaa62af1eee8e24e9.cloudfront.net (CloudFront)",
+          "cache-control": "max-age=31536000, s-maxage=7200, public",
+          "x-amz-cf-pop": "SYD4-C1",
+          "accept-ranges": "bytes",
+          "x-amz-cf-id": "E2xbWfhPFapZdqnfqC9IAcvvC4KUtR1bWtXyBXSpSX9WRrQVREtypQ=="
+        },
+        "mimeType": "application/javascript",
+        "connectionReused": true,
+        "connectionId": 118,
+        "remoteIPAddress": "99.86.212.57",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 413,
+        "timing": {
+          "requestTime": 73987.199189,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": -1,
+          "dnsEnd": -1,
+          "connectStart": -1,
+          "connectEnd": -1,
+          "sslStart": -1,
+          "sslEnd": -1,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 0.217,
+          "sendEnd": 0.289,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 13.911
+        },
+        "protocol": "h2",
+        "securityState": "secure",
+        "securityDetails": {
+          "protocol": "TLS 1.2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "cipher": "AES_128_GCM",
+          "certificateId": 0,
+          "subjectName": "*.intercomcdn.com",
+          "sanList": ["*.intercomcdn.com"],
+          "issuer": "Amazon",
+          "validFrom": 1585440000,
+          "validTo": 1619697600,
+          "signedCertificateTimestampList": [
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "Google 'Argon2021' log",
+              "logId": "F65C942FD1773022145418083094568EE34D131933BFDF0C2F200BCC4EF164E3",
+              "timestamp": 1585449692977,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304502204FFB1F509EFBCF26D672D52576D03FBE62CE9B8C913F843EE12740FDB7D0AFA2022100861B92D9EC9182B36DABB8A5586520EF9E526FCDF4787B5D8C8EB04B63FCC56B"
+            },
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "DigiCert Yeti2021 Log",
+              "logId": "5CDC4392FEE6AB4544B15E9AD456E61037FBD5FA47DCA17394B25EE6F6C70ECA",
+              "timestamp": 1585449693060,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3045022100D378A099A13B3E9AD2C78B71E4D887F983F8F9734D3C3600FB957C26B295497302200C19DC1737AA6EBBCB2BF06771C10761DD817E69B2FC60B4862A507602CBDB23"
+            }
+          ],
+          "certificateTransparencyCompliance": "compliant"
+        }
+      },
+      "frameId": "39F0C427EB9AB69251CD913A11701846"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.23",
+      "timestamp": 73987.232455,
+      "dataLength": 50179,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.23",
+      "timestamp": 73987.235024,
+      "dataLength": 65536,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.23",
+      "timestamp": 73987.235885,
+      "dataLength": 60010,
+      "encodedDataLength": 52367
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "9836.23",
+      "timestamp": 73987.235216,
+      "encodedDataLength": 52780,
+      "shouldReportCorbBlocking": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "9836.24",
+      "loaderId": "557CE884022B6FE686E45ABB1038FDF3",
+      "documentURL": "about:blank",
+      "request": {
+        "url": "https://api-iam.intercom.io/messenger/web/ping",
+        "method": "POST",
+        "headers": {
+          "Referer": "",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "postData": "app_id=pxfscr83&v=3&g=14416b9accf5780b2a57ccb90108ee6a051fc063&s=ba24a464-fb41-40ec-a6e0-28138424313f&i=&r=&platform=web&Idempotency-Key=4574f21ab2ec7abd&user_data=%7B%7D&internal=%7B%7D&page_title=Calibre%20%E2%80%94%20Login%20to%20Calibre&user_active_company_id=undefined&source=apiBoot&sampling=false&h=false&referer=https%3A%2F%2Fwww.calibreapp.com%2Fsign-in",
+        "hasPostData": true,
+        "mixedContentType": "none",
+        "initialPriority": "High",
+        "referrerPolicy": "no-referrer-when-downgrade"
+      },
+      "timestamp": 73987.275447,
+      "wallTime": 1595909654.761335,
+      "initiator": {
+        "type": "script",
+        "stack": {
+          "callFrames": [
+            {
+              "functionName": "i",
+              "scriptId": "21",
+              "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+              "lineNumber": 0,
+              "columnNumber": 73619
+            },
+            {
+              "functionName": "",
+              "scriptId": "21",
+              "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+              "lineNumber": 0,
+              "columnNumber": 73758
+            },
+            {
+              "functionName": "o",
+              "scriptId": "21",
+              "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+              "lineNumber": 0,
+              "columnNumber": 73672
+            },
+            {
+              "functionName": "post",
+              "scriptId": "21",
+              "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+              "lineNumber": 0,
+              "columnNumber": 75722
+            },
+            {
+              "functionName": "createOrUpdateUser",
+              "scriptId": "21",
+              "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+              "lineNumber": 0,
+              "columnNumber": 47256
+            },
+            {
+              "functionName": "",
+              "scriptId": "21",
+              "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+              "lineNumber": 0,
+              "columnNumber": 206614
+            },
+            {
+              "functionName": "",
+              "scriptId": "21",
+              "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+              "lineNumber": 0,
+              "columnNumber": 201955
+            },
+            {
+              "functionName": "r",
+              "scriptId": "21",
+              "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+              "lineNumber": 0,
+              "columnNumber": 201812
+            }
+          ],
+          "parent": {
+            "description": "Promise.then",
+            "callFrames": [
+              {
+                "functionName": "",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 201848
+              },
+              {
+                "functionName": "",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 203956
+              },
+              {
+                "functionName": "",
+                "scriptId": "22",
+                "url": "https://js.intercomcdn.com/vendor-modern.6f14031b.js",
+                "lineNumber": 0,
+                "columnNumber": 64612
+              },
+              {
+                "functionName": "createOrUpdateUser",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 163749
+              },
+              {
+                "functionName": "createOrUpdateUser",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 178275
+              },
+              {
+                "functionName": "boot",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 180245
+              },
+              {
+                "functionName": "",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 181347
+              },
+              {
+                "functionName": "393",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 182518
+              },
+              {
+                "functionName": "o",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 560
+              },
+              {
+                "functionName": "230",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 64316
+              },
+              {
+                "functionName": "o",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 560
+              },
+              {
+                "functionName": "229",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 64090
+              },
+              {
+                "functionName": "o",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 560
+              },
+              {
+                "functionName": "n",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 429
+              },
+              {
+                "functionName": "t",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 292
+              },
+              {
+                "functionName": "",
+                "scriptId": "22",
+                "url": "https://js.intercomcdn.com/vendor-modern.6f14031b.js",
+                "lineNumber": 0,
+                "columnNumber": 46
+              }
+            ]
+          }
+        }
+      },
+      "type": "XHR",
+      "frameId": "39F0C427EB9AB69251CD913A11701846",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Network.responseReceivedExtraInfo",
+    "params": {
+      "requestId": "9836.10",
+      "blockedCookies": [],
+      "headers": {
+        "status": "202",
+        "access-control-allow-origin": "*",
+        "content-type": "application/json",
+        "date": "Tue, 28 Jul 2020 04:14:14 GMT",
+        "content-length": "21",
+        "via": "1.1 google",
+        "alt-svc": "clear"
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "9836.10",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "timestamp": 73987.326804,
+      "type": "XHR",
+      "response": {
+        "url": "https://sessions.bugsnag.com/",
+        "status": 202,
+        "statusText": "",
+        "headers": {
+          "status": "202",
+          "date": "Tue, 28 Jul 2020 04:14:14 GMT",
+          "via": "1.1 google",
+          "access-control-allow-origin": "*",
+          "alt-svc": "clear",
+          "content-length": "21",
+          "content-type": "application/json"
+        },
+        "mimeType": "application/json",
+        "connectionReused": true,
+        "connectionId": 82,
+        "remoteIPAddress": "35.190.88.7",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 58,
+        "timing": {
+          "requestTime": 73987.145869,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": -1,
+          "dnsEnd": -1,
+          "connectStart": -1,
+          "connectEnd": -1,
+          "sslStart": -1,
+          "sslEnd": -1,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 0.206,
+          "sendEnd": 0.661,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 180.125
+        },
+        "protocol": "h2",
+        "securityState": "secure",
+        "securityDetails": {
+          "protocol": "TLS 1.3",
+          "keyExchange": "",
+          "keyExchangeGroup": "X25519",
+          "cipher": "AES_128_GCM",
+          "certificateId": 0,
+          "subjectName": "*.bugsnag.com",
+          "sanList": ["*.bugsnag.com", "bugsnag.com"],
+          "issuer": "Sectigo RSA Domain Validation Secure Server CA",
+          "validFrom": 1589760000,
+          "validTo": 1621382399,
+          "signedCertificateTimestampList": [
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "Google 'Xenon2021' log",
+              "logId": "7D3EF2F88FFF88556824C2C0CA9E5289792BC50E78097F2E6A9768997E22F0D7",
+              "timestamp": 1589800285346,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3046022100A88FAD37FB3596C2D7366BC26664D32AFF1C82014C8ED876C20871EFEBF57867022100DEDC597BDE94B4E7E6FD45E97DE781137C8EBB5D3C24AF9FD3F74F913834941E"
+            },
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "Let's Encrypt 'Oak2021' log",
+              "logId": "9420BC1E8ED58D6C88731F828B222C0DD1DA4D5E6C4F943D61DB4E2F584DA2C2",
+              "timestamp": 1589800285385,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "30450220307B1EA11711911A0942EB379FE9B489BD3F073CFBAAD562425436D0A7C2FE53022100AA52AFF92057A42B9F456B6BCD03C8B90D510A02C67AF2E242538B9579CBA7B6"
+            }
+          ],
+          "certificateTransparencyCompliance": "compliant"
+        }
+      },
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.10",
+      "timestamp": 73987.326899,
+      "dataLength": 21,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.10",
+      "timestamp": 73987.327479,
+      "dataLength": 0,
+      "encodedDataLength": 39
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "9836.10",
+      "timestamp": 73987.326187,
+      "encodedDataLength": 97,
+      "shouldReportCorbBlocking": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSentExtraInfo",
+    "params": {
+      "requestId": "9836.24",
+      "associatedCookies": [],
+      "headers": {
+        ":method": "POST",
+        ":authority": "api-iam.intercom.io",
+        ":scheme": "https",
+        ":path": "/messenger/web/ping",
+        "content-length": "362",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+        "content-type": "application/x-www-form-urlencoded",
+        "accept": "*/*",
+        "origin": "https://www.calibreapp.com",
+        "sec-fetch-site": "cross-site",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-dest": "empty",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8"
+      }
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "name": "networkAlmostIdle",
+      "timestamp": 73987.190876
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "name": "firstMeaningfulPaint",
+      "timestamp": 73987.144202
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "39F0C427EB9AB69251CD913A11701846",
+      "loaderId": "557CE884022B6FE686E45ABB1038FDF3",
+      "name": "networkAlmostIdle",
+      "timestamp": 73987.197781
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "5356556406F4EF152D876F82DF1B8FFA",
+      "loaderId": "CBEDEFD2D9890CDD58E15A76BD689645",
+      "name": "networkIdle",
+      "timestamp": 73987.327481
+    }
+  },
+  {
+    "method": "Network.responseReceivedExtraInfo",
+    "params": {
+      "requestId": "9836.24",
+      "blockedCookies": [],
+      "headers": {
+        "status": "200\n200 OK",
+        "date": "Tue, 28 Jul 2020 04:14:15 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "x-ratelimit-limit": "20000",
+        "x-ratelimit-reset": "1595909700",
+        "strict-transport-security": "max-age=31556952; includeSubDomains; preload",
+        "x-ratelimit-remaining": "19999",
+        "access-control-allow-origin": "https://www.calibreapp.com",
+        "x-intercom-version": "7667054cd780ad51e0687f24cb6da89c47543f03",
+        "x-xss-protection": "1; mode=block",
+        "vary": "Accept-Encoding",
+        "content-encoding": "gzip",
+        "x-request-id": "000dcplfdn3k0ti7cf8g",
+        "access-control-allow-headers": "Content-Type",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-methods": "POST, GET, OPTIONS",
+        "etag": "W/\"dac0d52fbb99cf8d0996b30f81a7a5bc\"",
+        "x-runtime": "0.280061",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "x-ami-version": "ami-08df2120d7b03a72f",
+        "server": "nginx"
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "9836.24",
+      "loaderId": "557CE884022B6FE686E45ABB1038FDF3",
+      "timestamp": 73988.214946,
+      "type": "XHR",
+      "response": {
+        "url": "https://api-iam.intercom.io/messenger/web/ping",
+        "status": 200,
+        "statusText": "",
+        "headers": {
+          "date": "Tue, 28 Jul 2020 04:14:15 GMT",
+          "content-encoding": "gzip",
+          "x-ami-version": "ami-08df2120d7b03a72f",
+          "status": "200, 200 OK",
+          "strict-transport-security": "max-age=31556952; includeSubDomains; preload",
+          "vary": "Accept-Encoding",
+          "x-xss-protection": "1; mode=block",
+          "x-request-id": "000dcplfdn3k0ti7cf8g",
+          "x-runtime": "0.280061",
+          "server": "nginx",
+          "x-frame-options": "SAMEORIGIN",
+          "etag": "W/\"dac0d52fbb99cf8d0996b30f81a7a5bc\"",
+          "x-ratelimit-remaining": "19999",
+          "access-control-allow-methods": "POST, GET, OPTIONS",
+          "content-type": "application/json; charset=utf-8",
+          "access-control-allow-origin": "https://www.calibreapp.com",
+          "x-intercom-version": "7667054cd780ad51e0687f24cb6da89c47543f03",
+          "cache-control": "max-age=0, private, must-revalidate",
+          "access-control-allow-credentials": "true",
+          "x-ratelimit-reset": "1595909700",
+          "x-ratelimit-limit": "20000",
+          "access-control-allow-headers": "Content-Type",
+          "x-content-type-options": "nosniff"
+        },
+        "mimeType": "application/json",
+        "connectionReused": false,
+        "connectionId": 139,
+        "remoteIPAddress": "99.83.219.81",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 631,
+        "timing": {
+          "requestTime": 73987.275787,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": 0.081,
+          "dnsEnd": 18.907,
+          "connectStart": 18.907,
+          "connectEnd": 432.675,
+          "sslStart": 31.563,
+          "sslEnd": 432.671,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 432.775,
+          "sendEnd": 432.877,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 937.557
+        },
+        "protocol": "h2",
+        "securityState": "secure",
+        "securityDetails": {
+          "protocol": "TLS 1.2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "cipher": "AES_128_GCM",
+          "certificateId": 0,
+          "subjectName": "*.intercom.com",
+          "sanList": [
+            "*.intercom.com",
+            "intercom.io",
+            "intercom.com",
+            "*.intercom.io"
+          ],
+          "issuer": "Amazon",
+          "validFrom": 1589328000,
+          "validTo": 1623585600,
+          "signedCertificateTimestampList": [
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "Google 'Argon2021' log",
+              "logId": "F65C942FD1773022145418083094568EE34D131933BFDF0C2F200BCC4EF164E3",
+              "timestamp": 1589336958723,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "3046022100A8C88BFEAB35BEA916C11D94394084A4460897C15966AF750396D38CFBC3A9DC0221009D07DE694AD9510723E09ACD6120CA89CFBE6BFF0AEF2CE4C6026B11CBDADACB"
+            },
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "DigiCert Yeti2021 Log",
+              "logId": "5CDC4392FEE6AB4544B15E9AD456E61037FBD5FA47DCA17394B25EE6F6C70ECA",
+              "timestamp": 1589336958753,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData": "304402207BDDD83FBC10CFEF5790A75E2640DC1EF0464779DEF61F28D8832ABE8C559C40022068ACE99088175BE65D2EF63BC08A69909334468B923152893C38425E2910168D"
+            }
+          ],
+          "certificateTransparencyCompliance": "compliant"
+        }
+      },
+      "frameId": "39F0C427EB9AB69251CD913A11701846"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.24",
+      "timestamp": 73988.215139,
+      "dataLength": 4931,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.webSocketCreated",
+    "params": {
+      "requestId": "9836.25",
+      "url": "wss://nexus-websocket-a.intercom.io/pubsub/5-cqXAzocp6giN32njR5BEOEe1VMUzFlw9Pm8ucR9_kG1t_NEzmNrkmYFiEO_qiPdQ-GJvq1yeLRAIk3UvH7oeJhoE_wNAMWKUEEFA?X-Nexus-New-Client=true&X-Nexus-Version=0.5.2&user_role=undefined",
+      "initiator": {
+        "type": "script",
+        "stack": {
+          "callFrames": [
+            {
+              "functionName": "e._initWebSocket",
+              "scriptId": "22",
+              "url": "https://js.intercomcdn.com/vendor-modern.6f14031b.js",
+              "lineNumber": 0,
+              "columnNumber": 133186
+            },
+            {
+              "functionName": "e",
+              "scriptId": "22",
+              "url": "https://js.intercomcdn.com/vendor-modern.6f14031b.js",
+              "lineNumber": 0,
+              "columnNumber": 129470
+            },
+            {
+              "functionName": "",
+              "scriptId": "22",
+              "url": "https://js.intercomcdn.com/vendor-modern.6f14031b.js",
+              "lineNumber": 0,
+              "columnNumber": 68914
+            },
+            {
+              "functionName": "e._createConnections",
+              "scriptId": "22",
+              "url": "https://js.intercomcdn.com/vendor-modern.6f14031b.js",
+              "lineNumber": 0,
+              "columnNumber": 68756
+            },
+            {
+              "functionName": "e",
+              "scriptId": "22",
+              "url": "https://js.intercomcdn.com/vendor-modern.6f14031b.js",
+              "lineNumber": 0,
+              "columnNumber": 66143
+            },
+            {
+              "functionName": "wn",
+              "scriptId": "21",
+              "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+              "lineNumber": 0,
+              "columnNumber": 141467
+            },
+            {
+              "functionName": "Rn",
+              "scriptId": "21",
+              "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+              "lineNumber": 0,
+              "columnNumber": 141720
+            },
+            {
+              "functionName": "",
+              "scriptId": "21",
+              "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+              "lineNumber": 0,
+              "columnNumber": 145586
+            },
+            {
+              "functionName": "",
+              "scriptId": "21",
+              "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+              "lineNumber": 0,
+              "columnNumber": 138161
+            },
+            {
+              "functionName": "",
+              "scriptId": "21",
+              "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+              "lineNumber": 0,
+              "columnNumber": 147973
+            },
+            {
+              "functionName": "",
+              "scriptId": "21",
+              "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+              "lineNumber": 0,
+              "columnNumber": 151404
+            },
+            {
+              "functionName": "",
+              "scriptId": "22",
+              "url": "https://js.intercomcdn.com/vendor-modern.6f14031b.js",
+              "lineNumber": 0,
+              "columnNumber": 64621
+            },
+            {
+              "functionName": "dispatch",
+              "scriptId": "22",
+              "url": "https://js.intercomcdn.com/vendor-modern.6f14031b.js",
+              "lineNumber": 0,
+              "columnNumber": 9802
+            },
+            {
+              "functionName": "",
+              "scriptId": "21",
+              "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+              "lineNumber": 0,
+              "columnNumber": 204936
+            }
+          ],
+          "parent": {
+            "description": "async function",
+            "callFrames": [
+              {
+                "functionName": "",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 203956
+              },
+              {
+                "functionName": "",
+                "scriptId": "22",
+                "url": "https://js.intercomcdn.com/vendor-modern.6f14031b.js",
+                "lineNumber": 0,
+                "columnNumber": 64612
+              },
+              {
+                "functionName": "createOrUpdateUser",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 163749
+              },
+              {
+                "functionName": "createOrUpdateUser",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 178275
+              },
+              {
+                "functionName": "boot",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 180245
+              },
+              {
+                "functionName": "",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 181347
+              },
+              {
+                "functionName": "393",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 182518
+              },
+              {
+                "functionName": "o",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 560
+              },
+              {
+                "functionName": "230",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 64316
+              },
+              {
+                "functionName": "o",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 560
+              },
+              {
+                "functionName": "229",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 64090
+              },
+              {
+                "functionName": "o",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 560
+              },
+              {
+                "functionName": "n",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 429
+              },
+              {
+                "functionName": "t",
+                "scriptId": "21",
+                "url": "https://js.intercomcdn.com/frame-modern.7ede733e.js",
+                "lineNumber": 0,
+                "columnNumber": 292
+              },
+              {
+                "functionName": "",
+                "scriptId": "22",
+                "url": "https://js.intercomcdn.com/vendor-modern.6f14031b.js",
+                "lineNumber": 0,
+                "columnNumber": 46
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "9836.24",
+      "timestamp": 73988.226841,
+      "dataLength": 0,
+      "encodedDataLength": 1788
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "9836.24",
+      "timestamp": 73988.21391,
+      "encodedDataLength": 2419,
+      "shouldReportCorbBlocking": false
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "39F0C427EB9AB69251CD913A11701846",
+      "loaderId": "557CE884022B6FE686E45ABB1038FDF3",
+      "name": "networkIdle",
+      "timestamp": 73988.226848
+    }
+  },
+  {
+    "method": "Network.webSocketWillSendHandshakeRequest",
+    "params": {
+      "requestId": "9836.25",
+      "timestamp": 73988.961977,
+      "wallTime": 1595909656.447792,
+      "request": {
+        "headers": {
+          "Pragma": "no-cache",
+          "Origin": "https://www.calibreapp.com",
+          "Accept-Encoding": "gzip, deflate, br",
+          "Host": "nexus-websocket-a.intercom.io",
+          "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+          "Sec-WebSocket-Key": "qD2HitMNQQfllOImY+m3Uw==",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+          "Upgrade": "websocket",
+          "Sec-WebSocket-Extensions": "permessage-deflate; client_max_window_bits",
+          "Cache-Control": "no-cache",
+          "Connection": "Upgrade",
+          "Sec-WebSocket-Version": "13"
+        }
+      }
+    }
+  },
+  {
+    "method": "Network.webSocketHandshakeResponseReceived",
+    "params": {
+      "requestId": "9836.25",
+      "timestamp": 73990.117375,
+      "response": {
+        "status": 101,
+        "statusText": "Switching Protocols",
+        "headers": {
+          "Date": "Tue, 28 Jul 2020 04:14:17 GMT",
+          "Sec-WebSocket-Accept": "Gv8AQqJsLCJnK0V1wGIggj+o4v8=",
+          "Server": "nginx",
+          "Connection": "upgrade",
+          "Upgrade": "websocket"
+        },
+        "headersText": "HTTP/1.1 101 Switching Protocols\r\nServer: nginx\r\nDate: Tue, 28 Jul 2020 04:14:17 GMT\r\nConnection: upgrade\r\nUpgrade: websocket\r\nSec-WebSocket-Accept: Gv8AQqJsLCJnK0V1wGIggj+o4v8=\r\n\r\n",
+        "requestHeaders": {
+          "Pragma": "no-cache",
+          "Origin": "https://www.calibreapp.com",
+          "Accept-Encoding": "gzip, deflate, br",
+          "Host": "nexus-websocket-a.intercom.io",
+          "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+          "Sec-WebSocket-Key": "qD2HitMNQQfllOImY+m3Uw==",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+          "Upgrade": "websocket",
+          "Sec-WebSocket-Extensions": "permessage-deflate; client_max_window_bits",
+          "Cache-Control": "no-cache",
+          "Connection": "Upgrade",
+          "Sec-WebSocket-Version": "13"
+        },
+        "requestHeadersText": "GET wss://nexus-websocket-a.intercom.io/pubsub/5-cqXAzocp6giN32njR5BEOEe1VMUzFlw9Pm8ucR9_kG1t_NEzmNrkmYFiEO_qiPdQ-GJvq1yeLRAIk3UvH7oeJhoE_wNAMWKUEEFA?X-Nexus-New-Client=true&X-Nexus-Version=0.5.2&user_role=undefined HTTP/1.1\r\nHost: nexus-websocket-a.intercom.io\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36\r\nUpgrade: websocket\r\nOrigin: https://www.calibreapp.com\r\nSec-WebSocket-Version: 13\r\nAccept-Encoding: gzip, deflate, br\r\nAccept-Language: en-GB,en-US;q=0.9,en;q=0.8\r\nSec-WebSocket-Key: qD2HitMNQQfllOImY+m3Uw==\r\nSec-WebSocket-Extensions: permessage-deflate; client_max_window_bits\r\n\r\n"
+      }
+    }
+  },
+  {
+    "method": "Network.webSocketFrameSent",
+    "params": {
+      "requestId": "9836.25",
+      "timestamp": 73990.118744,
+      "response": {
+        "opcode": 1,
+        "mask": true,
+        "payloadData": "{\"eventName\":\"nx.UserPresence\",\"eventData\":{\"current_page\":\"https://www.calibreapp.com/sign-in\"}}"
+      }
+    }
+  },
+  {
+    "method": "Network.webSocketFrameSent",
+    "params": {
+      "requestId": "9836.25",
+      "timestamp": 73990.11898,
+      "response": {
+        "opcode": 1,
+        "mask": true,
+        "payloadData": "{\"eventName\":\"nx.Subscribe\",\"nx.Topics\":[\"*\"]}"
+      }
+    }
+  },
+  {
+    "method": "Network.webSocketFrameReceived",
+    "params": {
+      "requestId": "9836.25",
+      "timestamp": 73990.119275,
+      "response": { "opcode": 1, "mask": false, "payloadData": "" }
+    }
+  },
+  {
+    "method": "Network.webSocketFrameReceived",
+    "params": {
+      "requestId": "9836.25",
+      "timestamp": 73990.1198,
+      "response": {
+        "opcode": 1,
+        "mask": false,
+        "payloadData": "0xc2f45d1680 |0| |"
+      }
+    }
+  }
+]
