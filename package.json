@@ -41,7 +41,7 @@
     "prettier": "~1.11.1"
   },
   "dependencies": {
-    "dayjs": "1.8.27",
+    "dayjs": "1.8.31",
     "debug": "4.1.1",
     "tough-cookie": "4.0.0",
     "uuid": "8.0.0"
