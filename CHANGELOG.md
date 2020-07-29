@@ -1,5 +1,11 @@
 # CHANGELOG
 
+version 0.11.10 2020-07-29
+-------------------------
+* Parse extra info events (parse extra request data from the Network.requestWillBeSentExtraInfo event and parse extra response data from the Network.responseReceivedExtraInfo event), thank you [Michael Dijkstra](https://github.com/mikedijkstra) for the PR [#71](https://github.com/sitespeedio/chrome-har/pull/71).
+
+* Update to day-js 1.8.31.
+
 version 0.11.9 2020-05-26
 -------------------------
 * Updated dependencies: dayjs - 1.8.27, debug: 4.1.1, tough-cookie - 4.0.0, uuid - 8.0.0
