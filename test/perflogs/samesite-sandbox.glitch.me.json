@@ -1,0 +1,1304 @@
+[
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "447C526AAC595F429B694068BE35F750",
+      "loaderId": "E1917A4F73995EFBE1511FFB294BF42C",
+      "name": "commit",
+      "timestamp": 101502.464606
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "447C526AAC595F429B694068BE35F750",
+      "loaderId": "E1917A4F73995EFBE1511FFB294BF42C",
+      "name": "DOMContentLoaded",
+      "timestamp": 101502.464778
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "447C526AAC595F429B694068BE35F750",
+      "loaderId": "E1917A4F73995EFBE1511FFB294BF42C",
+      "name": "load",
+      "timestamp": 101502.465212
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "447C526AAC595F429B694068BE35F750",
+      "loaderId": "E1917A4F73995EFBE1511FFB294BF42C",
+      "name": "networkAlmostIdle",
+      "timestamp": 101502.466024
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "447C526AAC595F429B694068BE35F750",
+      "loaderId": "E1917A4F73995EFBE1511FFB294BF42C",
+      "name": "networkIdle",
+      "timestamp": 101502.466024
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "8370893B3D16ACE10B5AA20C4E9069A4",
+      "loaderId": "8370893B3D16ACE10B5AA20C4E9069A4",
+      "documentURL": "https://samesite-sandbox.glitch.me/",
+      "request": {
+        "url": "https://samesite-sandbox.glitch.me/",
+        "method": "GET",
+        "headers": {
+          "Upgrade-Insecure-Requests": "1",
+          "User-Agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+        },
+        "mixedContentType": "none",
+        "initialPriority": "VeryHigh",
+        "referrerPolicy": "no-referrer-when-downgrade"
+      },
+      "timestamp": 101502.530226,
+      "wallTime": 1595994540.608392,
+      "initiator": { "type": "other" },
+      "type": "Document",
+      "frameId": "447C526AAC595F429B694068BE35F750",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSentExtraInfo",
+    "params": {
+      "requestId": "8370893B3D16ACE10B5AA20C4E9069A4",
+      "associatedCookies": [],
+      "headers": {
+        ":method": "GET",
+        ":authority": "samesite-sandbox.glitch.me",
+        ":scheme": "https",
+        ":path": "/",
+        "upgrade-insecure-requests": "1",
+        "user-agent":
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+        "accept":
+          "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+        "sec-fetch-site": "none",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-user": "?1",
+        "sec-fetch-dest": "document",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8"
+      }
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "447C526AAC595F429B694068BE35F750",
+      "loaderId": "E1917A4F73995EFBE1511FFB294BF42C",
+      "name": "networkAlmostIdle",
+      "timestamp": 101502.466024
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "447C526AAC595F429B694068BE35F750",
+      "loaderId": "E1917A4F73995EFBE1511FFB294BF42C",
+      "name": "networkIdle",
+      "timestamp": 101502.466024
+    }
+  },
+  {
+    "method": "Network.responseReceivedExtraInfo",
+    "params": {
+      "requestId": "8370893B3D16ACE10B5AA20C4E9069A4",
+      "blockedCookies": [],
+      "headers": {
+        "status": "200",
+        "date": "Wed, 29 Jul 2020 03:49:01 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "10494",
+        "x-powered-by": "Express",
+        "strict-transport-security":
+          "max-age=63072000; inlcudeSubdomains; preload",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "set-cookie":
+          "ck03=vl03; SameSite=InvalidValue\nck00=vl00; Path=/\nck01=vl01; Path=/; Secure; SameSite=None\nck02=vl02; Path=/; SameSite=None\nck04=vl04; Path=/; SameSite=Lax\nck05=vl05; Path=/; SameSite=Strict",
+        "accept-ranges": "bytes",
+        "cache-control": "public, max-age=0",
+        "last-modified": "Thu, 26 Mar 2020 12:31:57 GMT",
+        "etag": "W/\"28fe-17116d3e248\""
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "8370893B3D16ACE10B5AA20C4E9069A4",
+      "loaderId": "8370893B3D16ACE10B5AA20C4E9069A4",
+      "timestamp": 101503.419814,
+      "type": "Document",
+      "response": {
+        "url": "https://samesite-sandbox.glitch.me/",
+        "status": 200,
+        "statusText": "",
+        "headers": {
+          "status": "200",
+          "date": "Wed, 29 Jul 2020 03:49:01 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "content-length": "10494",
+          "x-powered-by": "Express",
+          "strict-transport-security":
+            "max-age=63072000; inlcudeSubdomains; preload",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "set-cookie":
+            "ck03=vl03; SameSite=InvalidValue\nck00=vl00; Path=/\nck01=vl01; Path=/; Secure; SameSite=None\nck02=vl02; Path=/; SameSite=None\nck04=vl04; Path=/; SameSite=Lax\nck05=vl05; Path=/; SameSite=Strict",
+          "accept-ranges": "bytes",
+          "cache-control": "public, max-age=0",
+          "last-modified": "Thu, 26 Mar 2020 12:31:57 GMT",
+          "etag": "W/\"28fe-17116d3e248\""
+        },
+        "mimeType": "text/html",
+        "requestHeaders": {
+          ":method": "GET",
+          ":authority": "samesite-sandbox.glitch.me",
+          ":scheme": "https",
+          ":path": "/",
+          "upgrade-insecure-requests": "1",
+          "user-agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+          "accept":
+            "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+          "sec-fetch-site": "none",
+          "sec-fetch-mode": "navigate",
+          "sec-fetch-user": "?1",
+          "sec-fetch-dest": "document",
+          "accept-encoding": "gzip, deflate, br",
+          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8"
+        },
+        "connectionReused": false,
+        "connectionId": 27,
+        "remoteIPAddress": "54.164.246.13",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 464,
+        "timing": {
+          "requestTime": 101502.530878,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": 0.219,
+          "dnsEnd": 16.358,
+          "connectStart": 16.358,
+          "connectEnd": 453.89,
+          "sslStart": 229.023,
+          "sslEnd": 453.884,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 454.664,
+          "sendEnd": 454.751,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 887.04
+        },
+        "protocol": "h2",
+        "securityState": "secure",
+        "securityDetails": {
+          "protocol": "TLS 1.2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "cipher": "AES_128_GCM",
+          "certificateId": 0,
+          "subjectName": "glitch.com",
+          "sanList": [
+            "glitch.com",
+            "glitch.me",
+            "gomix.com",
+            "*.glitch.com",
+            "gomix.me",
+            "*.gomix.me",
+            "*.glitch.me",
+            "hyperdev.com",
+            "*.hyperdev.com",
+            "*.gomix.com"
+          ],
+          "issuer": "Amazon",
+          "validFrom": 1581984000,
+          "validTo": 1616068800,
+          "signedCertificateTimestampList": [
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "Google 'Skydiver' log",
+              "logId":
+                "BBD9DFBC1F8A71B593942397AA927B473857950AAB52E81A909664368E1ED185",
+              "timestamp": 1582065086753,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData":
+                "30460221008F85EB81321626E05DFC2D21CD76F747F633F1BB2DDD08EC1B9247F09705CADD022100C40B8B3618B01225F8F1B091FC699C7986178429FF95A475066CF4567575B2CA"
+            },
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "DigiCert Log Server 2",
+              "logId":
+                "8775BFE7597CF88C43995FBDF36EFF568D475636FF4AB560C1B4EAFF5EA0830F",
+              "timestamp": 1582065086835,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData":
+                "30450221009BD96A9E4B69EAB9CD766C423B14902F48BA85026C8055DFD4166528DDC6C22C02205B4520A3AF7654586FC7718787A8081A3C939D757DEB0FDD32AAE80300B7ABB5"
+            }
+          ],
+          "certificateTransparencyCompliance": "compliant"
+        }
+      },
+      "frameId": "447C526AAC595F429B694068BE35F750"
+    }
+  },
+  {
+    "method": "Page.frameStartedLoading",
+    "params": { "frameId": "447C526AAC595F429B694068BE35F750" }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "447C526AAC595F429B694068BE35F750",
+      "loaderId": "8370893B3D16ACE10B5AA20C4E9069A4",
+      "name": "init",
+      "timestamp": 101503.42367
+    }
+  },
+  {
+    "method": "Page.frameNavigated",
+    "params": {
+      "frame": {
+        "id": "447C526AAC595F429B694068BE35F750",
+        "loaderId": "8370893B3D16ACE10B5AA20C4E9069A4",
+        "url": "https://samesite-sandbox.glitch.me/",
+        "securityOrigin": "https://samesite-sandbox.glitch.me",
+        "mimeType": "text/html"
+      }
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "8370893B3D16ACE10B5AA20C4E9069A4",
+      "timestamp": 101503.431291,
+      "dataLength": 10494,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "8370893B3D16ACE10B5AA20C4E9069A4",
+      "timestamp": 101503.418486,
+      "encodedDataLength": 10985,
+      "shouldReportCorbBlocking": false
+    }
+  },
+  {
+    "method": "Page.frameAttached",
+    "params": {
+      "frameId": "1CF39B1FEA7835B89AD7BC3742E338C4",
+      "parentFrameId": "447C526AAC595F429B694068BE35F750",
+      "stack": {
+        "callFrames": [
+          {
+            "functionName": "",
+            "scriptId": "13",
+            "url": "https://samesite-sandbox.glitch.me/",
+            "lineNumber": 372,
+            "columnNumber": 18
+          }
+        ]
+      }
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "1CF39B1FEA7835B89AD7BC3742E338C4",
+      "loaderId": "EBF6C7225F44E8D5DE95283F7A2A45E8",
+      "name": "init",
+      "timestamp": 101503.563853
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "1CF39B1FEA7835B89AD7BC3742E338C4",
+      "loaderId": "EBF6C7225F44E8D5DE95283F7A2A45E8",
+      "name": "DOMContentLoaded",
+      "timestamp": 101503.565014
+    }
+  },
+  {
+    "method": "Page.frameStartedLoading",
+    "params": { "frameId": "1CF39B1FEA7835B89AD7BC3742E338C4" }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "6FD5005E76F02FF80B1A28761D02BA11",
+      "loaderId": "6FD5005E76F02FF80B1A28761D02BA11",
+      "documentURL":
+        "https://googlechromelabs.github.io/samesite-examples/crosssite-embed.html",
+      "request": {
+        "url":
+          "https://googlechromelabs.github.io/samesite-examples/crosssite-embed.html",
+        "method": "GET",
+        "headers": {
+          "Upgrade-Insecure-Requests": "1",
+          "User-Agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+          "Referer": "https://samesite-sandbox.glitch.me/"
+        },
+        "mixedContentType": "none",
+        "initialPriority": "VeryHigh",
+        "referrerPolicy": "strict-origin-when-cross-origin"
+      },
+      "timestamp": 101503.566432,
+      "wallTime": 1595994541.644641,
+      "initiator": {
+        "type": "script",
+        "stack": {
+          "callFrames": [
+            {
+              "functionName": "",
+              "scriptId": "13",
+              "url": "https://samesite-sandbox.glitch.me/",
+              "lineNumber": 372,
+              "columnNumber": 18
+            }
+          ]
+        }
+      },
+      "type": "Document",
+      "frameId": "1CF39B1FEA7835B89AD7BC3742E338C4",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Page.domContentEventFired",
+    "params": { "timestamp": 101503.566471 }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "447C526AAC595F429B694068BE35F750",
+      "loaderId": "8370893B3D16ACE10B5AA20C4E9069A4",
+      "name": "DOMContentLoaded",
+      "timestamp": 101503.566471
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "447C526AAC595F429B694068BE35F750",
+      "loaderId": "8370893B3D16ACE10B5AA20C4E9069A4",
+      "name": "firstPaint",
+      "timestamp": 101503.59997
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "447C526AAC595F429B694068BE35F750",
+      "loaderId": "8370893B3D16ACE10B5AA20C4E9069A4",
+      "name": "firstContentfulPaint",
+      "timestamp": 101503.59997
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "447C526AAC595F429B694068BE35F750",
+      "loaderId": "8370893B3D16ACE10B5AA20C4E9069A4",
+      "name": "firstMeaningfulPaintCandidate",
+      "timestamp": 101503.59997
+    }
+  },
+  {
+    "method": "Network.requestWillBeSentExtraInfo",
+    "params": {
+      "requestId": "6FD5005E76F02FF80B1A28761D02BA11",
+      "associatedCookies": [],
+      "headers": {
+        ":method": "GET",
+        ":authority": "googlechromelabs.github.io",
+        ":scheme": "https",
+        ":path": "/samesite-examples/crosssite-embed.html",
+        "upgrade-insecure-requests": "1",
+        "user-agent":
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+        "accept":
+          "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+        "sec-fetch-site": "cross-site",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-dest": "iframe",
+        "referer": "https://samesite-sandbox.glitch.me/",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8"
+      }
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "1CF39B1FEA7835B89AD7BC3742E338C4",
+      "loaderId": "EBF6C7225F44E8D5DE95283F7A2A45E8",
+      "name": "networkAlmostIdle",
+      "timestamp": 101503.565101
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "1CF39B1FEA7835B89AD7BC3742E338C4",
+      "loaderId": "EBF6C7225F44E8D5DE95283F7A2A45E8",
+      "name": "networkIdle",
+      "timestamp": 101503.565101
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "447C526AAC595F429B694068BE35F750",
+      "loaderId": "8370893B3D16ACE10B5AA20C4E9069A4",
+      "name": "networkAlmostIdle",
+      "timestamp": 101503.566552
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "447C526AAC595F429B694068BE35F750",
+      "loaderId": "8370893B3D16ACE10B5AA20C4E9069A4",
+      "name": "firstMeaningfulPaint",
+      "timestamp": 101503.59997
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "447C526AAC595F429B694068BE35F750",
+      "loaderId": "8370893B3D16ACE10B5AA20C4E9069A4",
+      "name": "networkIdle",
+      "timestamp": 101503.566552
+    }
+  },
+  {
+    "method": "Network.responseReceivedExtraInfo",
+    "params": {
+      "requestId": "6FD5005E76F02FF80B1A28761D02BA11",
+      "blockedCookies": [],
+      "headers": {
+        "status": "200",
+        "content-type": "text/html; charset=utf-8",
+        "server": "GitHub.com",
+        "strict-transport-security": "max-age=31556952",
+        "last-modified": "Thu, 02 Apr 2020 11:29:48 GMT",
+        "etag": "W/\"5e85ccac-2b9\"",
+        "access-control-allow-origin": "*",
+        "expires": "Wed, 29 Jul 2020 03:48:56 GMT",
+        "cache-control": "max-age=600",
+        "content-encoding": "gzip",
+        "x-proxy-cache": "MISS",
+        "x-github-request-id": "16B8:5823:26B58:32FB9:5F20EF50",
+        "accept-ranges": "bytes",
+        "date": "Wed, 29 Jul 2020 03:49:02 GMT",
+        "via": "1.1 varnish",
+        "age": "0",
+        "x-served-by": "cache-syd10121-SYD",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-timer": "S1595994542.820717,VS0,VE804",
+        "vary": "Accept-Encoding",
+        "x-fastly-request-id": "2a80e9628aaf66d0eac077a1eb53e623008b2cae",
+        "content-length": "409"
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "6FD5005E76F02FF80B1A28761D02BA11",
+      "loaderId": "6FD5005E76F02FF80B1A28761D02BA11",
+      "timestamp": 101504.443759,
+      "type": "Document",
+      "response": {
+        "url":
+          "https://googlechromelabs.github.io/samesite-examples/crosssite-embed.html",
+        "status": 200,
+        "statusText": "",
+        "headers": {
+          "status": "200",
+          "content-type": "text/html; charset=utf-8",
+          "server": "GitHub.com",
+          "strict-transport-security": "max-age=31556952",
+          "last-modified": "Thu, 02 Apr 2020 11:29:48 GMT",
+          "etag": "W/\"5e85ccac-2b9\"",
+          "access-control-allow-origin": "*",
+          "expires": "Wed, 29 Jul 2020 03:48:56 GMT",
+          "cache-control": "max-age=600",
+          "content-encoding": "gzip",
+          "x-proxy-cache": "MISS",
+          "x-github-request-id": "16B8:5823:26B58:32FB9:5F20EF50",
+          "accept-ranges": "bytes",
+          "date": "Wed, 29 Jul 2020 03:49:02 GMT",
+          "via": "1.1 varnish",
+          "age": "0",
+          "x-served-by": "cache-syd10121-SYD",
+          "x-cache": "HIT",
+          "x-cache-hits": "1",
+          "x-timer": "S1595994542.820717,VS0,VE804",
+          "vary": "Accept-Encoding",
+          "x-fastly-request-id": "2a80e9628aaf66d0eac077a1eb53e623008b2cae",
+          "content-length": "409"
+        },
+        "mimeType": "text/html",
+        "requestHeaders": {
+          ":method": "GET",
+          ":authority": "googlechromelabs.github.io",
+          ":scheme": "https",
+          ":path": "/samesite-examples/crosssite-embed.html",
+          "upgrade-insecure-requests": "1",
+          "user-agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+          "accept":
+            "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+          "sec-fetch-site": "cross-site",
+          "sec-fetch-mode": "navigate",
+          "sec-fetch-dest": "iframe",
+          "referer": "https://samesite-sandbox.glitch.me/",
+          "accept-encoding": "gzip, deflate, br",
+          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8"
+        },
+        "connectionReused": false,
+        "connectionId": 42,
+        "remoteIPAddress": "185.199.108.153",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 378,
+        "timing": {
+          "requestTime": 101503.568005,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": 0.576,
+          "dnsEnd": 26.098,
+          "connectStart": 26.098,
+          "connectEnd": 58.323,
+          "sslStart": 37.65,
+          "sslEnd": 58.317,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 58.553,
+          "sendEnd": 58.649,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 874.356
+        },
+        "protocol": "h2",
+        "securityState": "secure",
+        "securityDetails": {
+          "protocol": "TLS 1.2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "X25519",
+          "cipher": "AES_128_GCM",
+          "certificateId": 0,
+          "subjectName": "www.github.com",
+          "sanList": [
+            "www.github.com",
+            "*.github.com",
+            "github.com",
+            "*.github.io",
+            "github.io",
+            "*.githubusercontent.com",
+            "githubusercontent.com"
+          ],
+          "issuer": "DigiCert SHA2 High Assurance Server CA",
+          "validFrom": 1588723200,
+          "validTo": 1649937600,
+          "signedCertificateTimestampList": [
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "Google 'Xenon2022' log",
+              "logId":
+                "46A555EB75FA912030B5A28969F4F37D112C4174BEFD49B885ABF2FC70FE6D47",
+              "timestamp": 1588788666134,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData":
+                "3045022100E7DCBAC3DA1AA00A0CD9FBC5ABA2A87D8591874C519B854411A30706DB016148022016712618C0ED2196525A39ED8B251BCBBA7251E780336FA13355C351D0B53AF7"
+            },
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "DigiCert Yeti2022 Log",
+              "logId":
+                "2245450759552456963FA12FF1F76D86E0232663ADC04B7F5DC6835C6EE20F02",
+              "timestamp": 1588788666047,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData":
+                "30440220661238A2A136DCD7FFE10889D8217E8EF21A61E682D1546093C6B4C17D2453DB0220673EF1DD93482909163CA38569A5B7031701D03CE116C0FA8318646E5D69D008"
+            },
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "DigiCert Nessie2022 Log",
+              "logId":
+                "51A3B0F5FD01799C566DB837788F0CA47ACC1B27CBF79E88429A0DFED48B05E5",
+              "timestamp": 1588788666121,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData":
+                "30450220143FE8497E4C20AD5AEA29EC875EACDD3E6F29F9B03ADE4EEF97CF71A263C70B022100ED2F371F1145750850AA98E36D66C854103CF0D9FFAE269FE496FC877A0957C7"
+            }
+          ],
+          "certificateTransparencyCompliance": "compliant"
+        }
+      },
+      "frameId": "1CF39B1FEA7835B89AD7BC3742E338C4"
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "1CF39B1FEA7835B89AD7BC3742E338C4",
+      "loaderId": "6FD5005E76F02FF80B1A28761D02BA11",
+      "name": "init",
+      "timestamp": 101504.445684
+    }
+  },
+  {
+    "method": "Page.frameNavigated",
+    "params": {
+      "frame": {
+        "id": "1CF39B1FEA7835B89AD7BC3742E338C4",
+        "parentId": "447C526AAC595F429B694068BE35F750",
+        "loaderId": "6FD5005E76F02FF80B1A28761D02BA11",
+        "name": "",
+        "url":
+          "https://googlechromelabs.github.io/samesite-examples/crosssite-embed.html",
+        "securityOrigin": "https://googlechromelabs.github.io",
+        "mimeType": "text/html"
+      }
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "6FD5005E76F02FF80B1A28761D02BA11",
+      "timestamp": 101504.449234,
+      "dataLength": 697,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "6FD5005E76F02FF80B1A28761D02BA11",
+      "timestamp": 101504.442635,
+      "encodedDataLength": 796,
+      "shouldReportCorbBlocking": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "13720.3",
+      "loaderId": "6FD5005E76F02FF80B1A28761D02BA11",
+      "documentURL":
+        "https://googlechromelabs.github.io/samesite-examples/crosssite-embed.html",
+      "request": {
+        "url": "https://samesite-sandbox.glitch.me/cookies.json",
+        "method": "GET",
+        "headers": {
+          "Referer":
+            "https://googlechromelabs.github.io/samesite-examples/crosssite-embed.html",
+          "User-Agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+        },
+        "mixedContentType": "none",
+        "initialPriority": "High",
+        "referrerPolicy": "no-referrer-when-downgrade"
+      },
+      "timestamp": 101504.450409,
+      "wallTime": 1595994542.528458,
+      "initiator": {
+        "type": "script",
+        "stack": {
+          "callFrames": [
+            {
+              "functionName": "fetchCookies",
+              "scriptId": "17",
+              "url":
+                "https://googlechromelabs.github.io/samesite-examples/crosssite-embed.html",
+              "lineNumber": 16,
+              "columnNumber": 8
+            },
+            {
+              "functionName": "",
+              "scriptId": "17",
+              "url":
+                "https://googlechromelabs.github.io/samesite-examples/crosssite-embed.html",
+              "lineNumber": 19,
+              "columnNumber": 2
+            }
+          ]
+        }
+      },
+      "type": "XHR",
+      "frameId": "1CF39B1FEA7835B89AD7BC3742E338C4",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSentExtraInfo",
+    "params": {
+      "requestId": "13720.3",
+      "associatedCookies": [
+        {
+          "blockedReasons": ["SameSiteLax"],
+          "cookie": {
+            "name": "ck04",
+            "value": "vl04",
+            "domain": "samesite-sandbox.glitch.me",
+            "path": "/",
+            "expires": -1,
+            "size": 8,
+            "httpOnly": false,
+            "secure": false,
+            "session": true,
+            "sameSite": "Lax",
+            "priority": "Medium"
+          }
+        },
+        {
+          "blockedReasons": ["SameSiteStrict"],
+          "cookie": {
+            "name": "ck05",
+            "value": "vl05",
+            "domain": "samesite-sandbox.glitch.me",
+            "path": "/",
+            "expires": -1,
+            "size": 8,
+            "httpOnly": false,
+            "secure": false,
+            "session": true,
+            "sameSite": "Strict",
+            "priority": "Medium"
+          }
+        },
+        {
+          "blockedReasons": [],
+          "cookie": {
+            "name": "ck03",
+            "value": "vl03",
+            "domain": "samesite-sandbox.glitch.me",
+            "path": "/",
+            "expires": -1,
+            "size": 8,
+            "httpOnly": false,
+            "secure": false,
+            "session": true,
+            "priority": "Medium"
+          }
+        },
+        {
+          "blockedReasons": [],
+          "cookie": {
+            "name": "ck00",
+            "value": "vl00",
+            "domain": "samesite-sandbox.glitch.me",
+            "path": "/",
+            "expires": -1,
+            "size": 8,
+            "httpOnly": false,
+            "secure": false,
+            "session": true,
+            "priority": "Medium"
+          }
+        },
+        {
+          "blockedReasons": [],
+          "cookie": {
+            "name": "ck01",
+            "value": "vl01",
+            "domain": "samesite-sandbox.glitch.me",
+            "path": "/",
+            "expires": -1,
+            "size": 8,
+            "httpOnly": false,
+            "secure": true,
+            "session": true,
+            "sameSite": "None",
+            "priority": "Medium"
+          }
+        },
+        {
+          "blockedReasons": [],
+          "cookie": {
+            "name": "ck02",
+            "value": "vl02",
+            "domain": "samesite-sandbox.glitch.me",
+            "path": "/",
+            "expires": -1,
+            "size": 8,
+            "httpOnly": false,
+            "secure": false,
+            "session": true,
+            "sameSite": "None",
+            "priority": "Medium"
+          }
+        }
+      ],
+      "headers": {
+        ":method": "GET",
+        ":authority": "samesite-sandbox.glitch.me",
+        ":scheme": "https",
+        ":path": "/cookies.json",
+        "user-agent":
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+        "accept": "*/*",
+        "origin": "https://googlechromelabs.github.io",
+        "sec-fetch-site": "cross-site",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-dest": "empty",
+        "referer":
+          "https://googlechromelabs.github.io/samesite-examples/crosssite-embed.html",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+        "cookie": "ck03=vl03; ck00=vl00; ck01=vl01; ck02=vl02"
+      }
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "1CF39B1FEA7835B89AD7BC3742E338C4",
+      "loaderId": "6FD5005E76F02FF80B1A28761D02BA11",
+      "name": "load",
+      "timestamp": 101504.451249
+    }
+  },
+  {
+    "method": "Page.frameStoppedLoading",
+    "params": { "frameId": "1CF39B1FEA7835B89AD7BC3742E338C4" }
+  },
+  { "method": "Page.loadEventFired", "params": { "timestamp": 101504.451833 } },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "447C526AAC595F429B694068BE35F750",
+      "loaderId": "8370893B3D16ACE10B5AA20C4E9069A4",
+      "name": "load",
+      "timestamp": 101504.451833
+    }
+  },
+  {
+    "method": "Page.frameStoppedLoading",
+    "params": { "frameId": "447C526AAC595F429B694068BE35F750" }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "1CF39B1FEA7835B89AD7BC3742E338C4",
+      "loaderId": "6FD5005E76F02FF80B1A28761D02BA11",
+      "name": "DOMContentLoaded",
+      "timestamp": 101504.452001
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "13720.4",
+      "loaderId": "8370893B3D16ACE10B5AA20C4E9069A4",
+      "documentURL": "https://samesite-sandbox.glitch.me/",
+      "request": {
+        "url":
+          "https://cdn.glitch.com/e304e580-9956-4cb6-9f62-9e89ad6cd85f%2Fcookie.png?v=1572981153632",
+        "method": "GET",
+        "headers": {
+          "Referer": "https://samesite-sandbox.glitch.me/",
+          "User-Agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+        },
+        "mixedContentType": "none",
+        "initialPriority": "High",
+        "referrerPolicy": "strict-origin-when-cross-origin"
+      },
+      "timestamp": 101504.453159,
+      "wallTime": 1595994542.531207,
+      "initiator": { "type": "other" },
+      "type": "Other",
+      "frameId": "447C526AAC595F429B694068BE35F750",
+      "hasUserGesture": false
+    }
+  },
+  {
+    "method": "Network.responseReceivedExtraInfo",
+    "params": {
+      "requestId": "13720.3",
+      "blockedCookies": [],
+      "headers": {
+        "status": "200",
+        "date": "Wed, 29 Jul 2020 03:49:02 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "57",
+        "x-powered-by": "Express",
+        "strict-transport-security":
+          "max-age=63072000; inlcudeSubdomains; preload",
+        "access-control-allow-origin": "https://googlechromelabs.github.io",
+        "access-control-allow-credentials": "true",
+        "etag": "W/\"39-P/NBn2GNcAA8yGJ1I79HEa1fh8I\""
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "13720.3",
+      "loaderId": "6FD5005E76F02FF80B1A28761D02BA11",
+      "timestamp": 101504.681331,
+      "type": "XHR",
+      "response": {
+        "url": "https://samesite-sandbox.glitch.me/cookies.json",
+        "status": 200,
+        "statusText": "",
+        "headers": {
+          "date": "Wed, 29 Jul 2020 03:49:02 GMT",
+          "status": "200",
+          "x-powered-by": "Express",
+          "etag": "W/\"39-P/NBn2GNcAA8yGJ1I79HEa1fh8I\"",
+          "strict-transport-security":
+            "max-age=63072000; inlcudeSubdomains; preload",
+          "content-type": "application/json; charset=utf-8",
+          "access-control-allow-origin": "https://googlechromelabs.github.io",
+          "access-control-allow-credentials": "true",
+          "content-length": "57"
+        },
+        "mimeType": "application/json",
+        "connectionReused": true,
+        "connectionId": 27,
+        "remoteIPAddress": "54.164.246.13",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 240,
+        "timing": {
+          "requestTime": 101504.450842,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": -1,
+          "dnsEnd": -1,
+          "connectStart": -1,
+          "connectEnd": -1,
+          "sslStart": -1,
+          "sslEnd": -1,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 0.247,
+          "sendEnd": 0.375,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 228.095
+        },
+        "protocol": "h2",
+        "securityState": "secure",
+        "securityDetails": {
+          "protocol": "TLS 1.2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "cipher": "AES_128_GCM",
+          "certificateId": 0,
+          "subjectName": "glitch.com",
+          "sanList": [
+            "glitch.com",
+            "glitch.me",
+            "gomix.com",
+            "*.glitch.com",
+            "gomix.me",
+            "*.gomix.me",
+            "*.glitch.me",
+            "hyperdev.com",
+            "*.hyperdev.com",
+            "*.gomix.com"
+          ],
+          "issuer": "Amazon",
+          "validFrom": 1581984000,
+          "validTo": 1616068800,
+          "signedCertificateTimestampList": [
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "Google 'Skydiver' log",
+              "logId":
+                "BBD9DFBC1F8A71B593942397AA927B473857950AAB52E81A909664368E1ED185",
+              "timestamp": 1582065086753,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData":
+                "30460221008F85EB81321626E05DFC2D21CD76F747F633F1BB2DDD08EC1B9247F09705CADD022100C40B8B3618B01225F8F1B091FC699C7986178429FF95A475066CF4567575B2CA"
+            },
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "DigiCert Log Server 2",
+              "logId":
+                "8775BFE7597CF88C43995FBDF36EFF568D475636FF4AB560C1B4EAFF5EA0830F",
+              "timestamp": 1582065086835,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData":
+                "30450221009BD96A9E4B69EAB9CD766C423B14902F48BA85026C8055DFD4166528DDC6C22C02205B4520A3AF7654586FC7718787A8081A3C939D757DEB0FDD32AAE80300B7ABB5"
+            }
+          ],
+          "certificateTransparencyCompliance": "compliant"
+        }
+      },
+      "frameId": "1CF39B1FEA7835B89AD7BC3742E338C4"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "13720.3",
+      "timestamp": 101504.68148,
+      "dataLength": 57,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "13720.3",
+      "timestamp": 101504.679942,
+      "encodedDataLength": 315,
+      "shouldReportCorbBlocking": false
+    }
+  },
+  {
+    "method": "Network.requestWillBeSentExtraInfo",
+    "params": {
+      "requestId": "13720.4",
+      "associatedCookies": [],
+      "headers": {
+        "Host": "cdn.glitch.com",
+        "Connection": "keep-alive",
+        "User-Agent":
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+        "Accept": "image/webp,image/apng,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "cross-site",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "https://samesite-sandbox.glitch.me/",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8"
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceivedExtraInfo",
+    "params": {
+      "requestId": "13720.4",
+      "blockedCookies": [],
+      "headers": {
+        "Content-Type": "image/png",
+        "Content-Length": "10010",
+        "Connection": "keep-alive",
+        "Date": "Mon, 22 Jun 2020 10:05:03 GMT",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, HEAD, POST",
+        "Access-Control-Max-Age": "86400",
+        "Cache-Control": "max-age=31536000",
+        "Last-Modified": "Tue, 05 Nov 2019 19:12:33 GMT",
+        "ETag": "\"4fc7568972cffeaa3b02ff05668179d4\"",
+        "Server": "AmazonS3",
+        "X-Cache": "Hit from cloudfront",
+        "Via":
+          "1.1 0cd88f29d8c6e29a267867c45efda9a9.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Pop": "SIN52-C2",
+        "X-Amz-Cf-Id":
+          "POKa3J20B_ZaSB17GG2WukHAyh4lRGmfUCfk-PtMyGfmGK6f7VbSYg==",
+        "Age": "3174242"
+      },
+      "headersText":
+        "HTTP/1.1 200 OK\r\nContent-Type: image/png\r\nContent-Length: 10010\r\nConnection: keep-alive\r\nDate: Mon, 22 Jun 2020 10:05:03 GMT\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Methods: GET, HEAD, POST\r\nAccess-Control-Max-Age: 86400\r\nCache-Control: max-age=31536000\r\nLast-Modified: Tue, 05 Nov 2019 19:12:33 GMT\r\nETag: \"4fc7568972cffeaa3b02ff05668179d4\"\r\nServer: AmazonS3\r\nX-Cache: Hit from cloudfront\r\nVia: 1.1 0cd88f29d8c6e29a267867c45efda9a9.cloudfront.net (CloudFront)\r\nX-Amz-Cf-Pop: SIN52-C2\r\nX-Amz-Cf-Id: POKa3J20B_ZaSB17GG2WukHAyh4lRGmfUCfk-PtMyGfmGK6f7VbSYg==\r\nAge: 3174242\r\n\r\n"
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "13720.4",
+      "loaderId": "8370893B3D16ACE10B5AA20C4E9069A4",
+      "timestamp": 101504.913027,
+      "type": "Other",
+      "response": {
+        "url":
+          "https://cdn.glitch.com/e304e580-9956-4cb6-9f62-9e89ad6cd85f%2Fcookie.png?v=1572981153632",
+        "status": 200,
+        "statusText": "OK",
+        "headers": {
+          "Date": "Mon, 22 Jun 2020 10:05:03 GMT",
+          "Via":
+            "1.1 0cd88f29d8c6e29a267867c45efda9a9.cloudfront.net (CloudFront)",
+          "Age": "3174242",
+          "X-Cache": "Hit from cloudfront",
+          "Connection": "keep-alive",
+          "Content-Length": "10010",
+          "Last-Modified": "Tue, 05 Nov 2019 19:12:33 GMT",
+          "Server": "AmazonS3",
+          "ETag": "\"4fc7568972cffeaa3b02ff05668179d4\"",
+          "Access-Control-Max-Age": "86400",
+          "Access-Control-Allow-Methods": "GET, HEAD, POST",
+          "Content-Type": "image/png",
+          "Access-Control-Allow-Origin": "*",
+          "Cache-Control": "max-age=31536000",
+          "X-Amz-Cf-Pop": "SIN52-C2",
+          "X-Amz-Cf-Id":
+            "POKa3J20B_ZaSB17GG2WukHAyh4lRGmfUCfk-PtMyGfmGK6f7VbSYg=="
+        },
+        "mimeType": "image/png",
+        "connectionReused": false,
+        "connectionId": 57,
+        "remoteIPAddress": "13.225.5.120",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false,
+        "encodedDataLength": 587,
+        "timing": {
+          "requestTime": 101504.453423,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": 0.141,
+          "dnsEnd": 19.811,
+          "connectStart": 19.811,
+          "connectEnd": 348.28,
+          "sslStart": 122.99,
+          "sslEnd": 348.267,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 348.382,
+          "sendEnd": 348.576,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 458.679
+        },
+        "protocol": "http/1.1",
+        "securityState": "secure",
+        "securityDetails": {
+          "protocol": "TLS 1.2",
+          "keyExchange": "ECDHE_RSA",
+          "keyExchangeGroup": "P-256",
+          "cipher": "AES_128_GCM",
+          "certificateId": 0,
+          "subjectName": "glitch.com",
+          "sanList": [
+            "glitch.com",
+            "glitch.me",
+            "gomix.com",
+            "*.glitch.com",
+            "gomix.me",
+            "*.gomix.me",
+            "*.glitch.me",
+            "hyperdev.com",
+            "*.hyperdev.com",
+            "*.gomix.com"
+          ],
+          "issuer": "Amazon",
+          "validFrom": 1581984000,
+          "validTo": 1616068800,
+          "signedCertificateTimestampList": [
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "Google 'Skydiver' log",
+              "logId":
+                "BBD9DFBC1F8A71B593942397AA927B473857950AAB52E81A909664368E1ED185",
+              "timestamp": 1582065086753,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData":
+                "30460221008F85EB81321626E05DFC2D21CD76F747F633F1BB2DDD08EC1B9247F09705CADD022100C40B8B3618B01225F8F1B091FC699C7986178429FF95A475066CF4567575B2CA"
+            },
+            {
+              "status": "Verified",
+              "origin": "Embedded in certificate",
+              "logDescription": "DigiCert Log Server 2",
+              "logId":
+                "8775BFE7597CF88C43995FBDF36EFF568D475636FF4AB560C1B4EAFF5EA0830F",
+              "timestamp": 1582065086835,
+              "hashAlgorithm": "SHA-256",
+              "signatureAlgorithm": "ECDSA",
+              "signatureData":
+                "30450221009BD96A9E4B69EAB9CD766C423B14902F48BA85026C8055DFD4166528DDC6C22C02205B4520A3AF7654586FC7718787A8081A3C939D757DEB0FDD32AAE80300B7ABB5"
+            }
+          ],
+          "certificateTransparencyCompliance": "compliant"
+        }
+      },
+      "frameId": "447C526AAC595F429B694068BE35F750"
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "13720.4",
+      "timestamp": 101504.91318,
+      "dataLength": 10010,
+      "encodedDataLength": 0
+    }
+  },
+  {
+    "method": "Network.dataReceived",
+    "params": {
+      "requestId": "13720.4",
+      "timestamp": 101504.91422,
+      "dataLength": 0,
+      "encodedDataLength": 10010
+    }
+  },
+  {
+    "method": "Network.loadingFinished",
+    "params": {
+      "requestId": "13720.4",
+      "timestamp": 101504.913024,
+      "encodedDataLength": 10597,
+      "shouldReportCorbBlocking": false
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "1CF39B1FEA7835B89AD7BC3742E338C4",
+      "loaderId": "6FD5005E76F02FF80B1A28761D02BA11",
+      "name": "networkAlmostIdle",
+      "timestamp": 101504.452019
+    }
+  },
+  {
+    "method": "Page.lifecycleEvent",
+    "params": {
+      "frameId": "1CF39B1FEA7835B89AD7BC3742E338C4",
+      "loaderId": "6FD5005E76F02FF80B1A28761D02BA11",
+      "name": "networkIdle",
+      "timestamp": 101504.682521
+    }
+  }
+]

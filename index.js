@@ -7,7 +7,7 @@ const { v1 } = require('uuid');
 const dayjs = require('dayjs');
 const debug = require('debug')(name);
 const ignoredEvents = require('./lib/ignoredEvents');
-const { parseRequestCookies } = require('./lib/cookies');
+const { parseRequestCookies, formatCookie } = require('./lib/cookies');
 const { getHeaderValue, parseHeaders } = require('./lib/headers');
 const {
   formatMillis,
@@ -262,6 +262,87 @@ module.exports = {
           }
           break;
 
+        case 'Network.requestWillBeSentExtraInfo':
+          {
+            if (ignoredRequests.has(params.requestId)) {
+              continue;
+            }
+
+            const entry = entries.find(
+              entry => entry._requestId === params.requestId
+            );
+            if (!entry) {
+              debug(
+                `Extra info sent for requestId ${
+                  params.requestId
+                } with no matching request.`
+              );
+              continue;
+            }
+
+            if (params.headers) {
+              entry.request.headers = entry.request.headers.concat(
+                parseHeaders(params.headers)
+              );
+            }
+
+            if (params.associatedCookies) {
+              entry.request.cookies = (entry.request.cookies || []).concat(
+                params.associatedCookies
+                  .filter(({ blockedReasons }) => !blockedReasons.length)
+                  .map(({ cookie }) => formatCookie(cookie))
+              );
+            }
+          }
+          break;
+
+        case 'Network.responseReceivedExtraInfo':
+          {
+            if (pages.length < 1) {
+              //we haven't loaded any pages yet.
+              continue;
+            }
+
+            if (ignoredRequests.has(params.requestId)) {
+              continue;
+            }
+
+            let entry = entries.find(
+              entry => entry._requestId === params.requestId
+            );
+
+            if (!entry) {
+              entry = entriesWithoutPage.find(
+                entry => entry._requestId === params.requestId
+              );
+            }
+
+            if (!entry) {
+              debug(
+                `Received response extra info for requestId ${
+                  params.requestId
+                } with no matching request.`
+              );
+              continue;
+            }
+
+            if (!entry.response) {
+              // Extra info received before response
+              entry.extraResponseInfo = {
+                headers: parseHeaders(params.headers),
+                blockedCookies: params.blockedCookies
+              };
+              continue;
+            }
+
+            if (params.headers) {
+              entry.response.headers = entry.response.headers.concat(
+                parseHeaders(params.headers)
+              );
+            }
+          }
+          break;
+
         case 'Network.responseReceived':
           {
             if (pages.length < 1) {
@@ -283,6 +364,7 @@ module.exports = {
                 entry => entry._requestId === params.requestId
               );
             }
+
             if (!entry) {
               debug(
                 `Received network response for requestId ${
