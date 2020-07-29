@@ -195,3 +195,41 @@ test("Includes extra info in request", t => {
       t.is(cssAsset.request.headers.length, 15);
     });
 });
+
+test("Includes extra info in response", t => {
+  const perflogPath = perflog("www.calibreapp.com.signin.json");
+  return parsePerflog(perflogPath)
+    .then(har => har.log)
+    .tap(log => {
+      const cssAsset = log.entries.find(e =>
+        e.request.url.endsWith(
+          "sign_up_in-8b32538e54b23b40f8fd45c28abdcee2e2d023bd7e01ddf2033d5f781afae9dc.css"
+        )
+      );
+      t.is(cssAsset.response.headers.length, 14);
+    });
+});
+
+test("Excludes request blocked cookies", t => {
+  const perflogPath = perflog("samesite-sandbox.glitch.me.json");
+  return parsePerflog(perflogPath)
+    .then(har => har.log)
+    .tap(log => {
+      const cookiesAsset = log.entries.find(e =>
+        e.request.url.endsWith("cookies.json")
+      );
+      t.is(cookiesAsset.request.cookies.length, 4);
+    });
+});
+
+test("Excludes response blocked cookies", t => {
+  const perflogPath = perflog("response-blocked-cookies.json");
+  return parsePerflog(perflogPath)
+    .then(har => har.log)
+    .tap(log => {
+      const request = log.entries.find(
+        e => e.request.url === "https://ow5u1.sse.codesandbox.io/"
+      );
+      t.is(request.response.cookies.length, 1);
+    });
+});
