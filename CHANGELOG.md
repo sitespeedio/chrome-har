@@ -1,5 +1,9 @@
 # CHANGELOG
 
+version 0.11.11 2020-08-06
+-------------------------
+* Fix: Optional cookie object, see PR [73](https://github.com/sitespeedio/chrome-har/pull/73). Thank you [Michael Dijkstra](https://github.com/mikedijkstra).
+
 version 0.11.10 2020-07-29
 -------------------------
 * Parse extra info events (parse extra request data from the Network.requestWillBeSentExtraInfo event and parse extra response data from the Network.responseReceivedExtraInfo event), thank you [Michael Dijkstra](https://github.com/mikedijkstra) for the PR [#71](https://github.com/sitespeedio/chrome-har/pull/71).
