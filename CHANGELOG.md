@@ -1,5 +1,10 @@
 # CHANGELOG
 
+version 0.12.0 UNRELEASED
+-------------------------
+## Added
+* Addend encoding field to tyhe response, thank you [Miroslav Balaz](https://github.com/miro-balaz) for the PR [#79](https://github.com/sitespeedio/chrome-har/pull/79).
+
 version 0.11.12 2020-09-09
 -------------------------
 * Fix: Removed test directory from the release, thank you [Yury Michurin](https://github.com/yurynix) for the PR [#75](https://github.com/sitespeedio/chrome-har/pull/75).
