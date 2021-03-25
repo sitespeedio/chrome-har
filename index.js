@@ -156,7 +156,9 @@ module.exports = {
               request: req,
               time: 0,
               _initiator_detail: JSON.stringify(params.initiator),
-              _initiator_type: params.initiator.type
+              _initiator_type: params.initiator.type,
+              // Chrome's DevTools Frontend returns this field in lower case
+              _resourceType: params.type ? params.type.toLowerCase() : null
             };
 
             // The object initiator change according to its type
