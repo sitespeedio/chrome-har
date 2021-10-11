@@ -433,12 +433,12 @@ module.exports = {
 
             const page = pages.find(page => page.id === entry.pageref);
 
-            if (entry._chunks) {
+            if (entry._chunks && page) {
               entry._chunks.push({
                 ts: formatMillis((params.timestamp - page.__timestamp) * 1000),
                 bytes: params.dataLength
               });
-            } else {
+            } else if (page) {
               entry._chunks = [
                 {
                   ts: formatMillis(
