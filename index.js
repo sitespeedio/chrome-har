@@ -34,6 +34,27 @@ function addFromFirstRequest(page, params) {
   }
 }
 
+function populateRedirectResponse(page, params, entries, options) {
+  const previousEntry = entries.find(
+    entry => entry._requestId === params.requestId
+  );
+  if (previousEntry) {
+    previousEntry._requestId += 'r';
+    populateEntryFromResponse(
+      previousEntry,
+      params.redirectResponse,
+      page,
+      options
+    );
+  } else {
+    debug(
+      `Couldn't find original request for redirect response: ${
+        params.requestId
+      }`
+    );
+  }
+}
+
 module.exports = {
   harFromMessages(messages, options) {
     options = Object.assign({}, defaultOptions, options);
@@ -86,7 +107,15 @@ module.exports = {
               }
               entries = entries.concat(entriesWithoutPage);
               addFromFirstRequest(page, paramsWithoutPage[0]);
+
+              // Add unmapped redirects
+              for (let params of paramsWithoutPage) {
+                if (params.redirectResponse) {
+                  populateRedirectResponse(page, params, entries, options);
+                }
+              }
             }
+
             if (responsesWithoutPage.length > 0) {
               for (let params of responsesWithoutPage) {
                 let entry = entries.find(
@@ -186,24 +215,7 @@ module.exports = {
             }
 
             if (params.redirectResponse) {
-              const previousEntry = entries.find(
-                entry => entry._requestId === params.requestId
-              );
-              if (previousEntry) {
-                previousEntry._requestId += 'r';
-                populateEntryFromResponse(
-                  previousEntry,
-                  params.redirectResponse,
-                  page,
-                  options
-                );
-              } else {
-                debug(
-                  `Couldn't find original request for redirect response: ${
-                    params.requestId
-                  }`
-                );
-              }
+              populateRedirectResponse(page, params, entries, options);
             }
 
             if (!page) {
