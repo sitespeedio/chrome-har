@@ -234,7 +234,6 @@ test('Excludes response blocked cookies', t => {
     });
 });
 
-
 test('Includes initial redirect', t => {
   const perflogPath = perflog('google.com.json');
   return parsePerflog(perflogPath)
