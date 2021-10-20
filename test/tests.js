@@ -235,10 +235,10 @@ test('Excludes response blocked cookies', t => {
 });
 
 test('Includes initial redirect', t => {
-  const perflogPath = perflog('google.com.json');
+  const perflogPath = perflog('www.vercel.com.json');
   return parsePerflog(perflogPath)
     .then(har => har.log)
     .tap(log => t.is(log.pages.length, 1))
-    .tap(log => t.is(log.entries.length, 20))
-    .tap(log => t.is(log.entries[0].response.status, 301));
+    .tap(log => t.is(log.entries.length, 99))
+    .tap(log => t.is(log.entries[0].response.status, 308));
 });
