@@ -407,20 +407,7 @@
         {
           "blockedReasons": ["SameSiteLax"],
           "cookieLine":
-            "__cfduid=d4ce688e8643102b51bf01817fcbfaf431595998349; expires=Fri, 28-Aug-20 04:52:29 GMT; path=/; domain=.codesandbox.io; HttpOnly; SameSite=Lax; Secure",
-          "cookie": {
-            "name": "__cfduid",
-            "value": "d4ce688e8643102b51bf01817fcbfaf431595998349",
-            "domain": ".codesandbox.io",
-            "path": "/",
-            "expires": 1598590349.143488,
-            "size": 51,
-            "httpOnly": true,
-            "secure": true,
-            "session": false,
-            "sameSite": "Lax",
-            "priority": "Medium"
-          }
+            "__cfduid=d4ce688e8643102b51bf01817fcbfaf431595998349; expires=Fri, 28-Aug-20 04:52:29 GMT; path=/; domain=.codesandbox.io; HttpOnly; SameSite=Lax; Secure"
         }
       ],
       "headers": {
@@ -718,20 +705,7 @@
         {
           "blockedReasons": ["SameSiteLax"],
           "cookieLine":
-            "__cfduid=d1a3eeb06208778c719235145dfee08521595998350; expires=Fri, 28-Aug-20 04:52:30 GMT; path=/; domain=.codesandbox.io; HttpOnly; SameSite=Lax; Secure",
-          "cookie": {
-            "name": "__cfduid",
-            "value": "d1a3eeb06208778c719235145dfee08521595998350",
-            "domain": ".codesandbox.io",
-            "path": "/",
-            "expires": 1598590350.519569,
-            "size": 51,
-            "httpOnly": true,
-            "secure": true,
-            "session": false,
-            "sameSite": "Lax",
-            "priority": "Medium"
-          }
+            "__cfduid=d1a3eeb06208778c719235145dfee08521595998350; expires=Fri, 28-Aug-20 04:52:30 GMT; path=/; domain=.codesandbox.io; HttpOnly; SameSite=Lax; Secure"
         }
       ],
       "headers": {

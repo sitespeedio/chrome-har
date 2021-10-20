@@ -442,6 +442,24 @@ module.exports = {
             if (entry.response) {
               entry.response.content.size += params.dataLength;
             }
+
+            const page = pages.find(page => page.id === entry.pageref);
+
+            if (entry._chunks && page) {
+              entry._chunks.push({
+                ts: formatMillis((params.timestamp - page.__timestamp) * 1000),
+                bytes: params.dataLength
+              });
+            } else if (page) {
+              entry._chunks = [
+                {
+                  ts: formatMillis(
+                    (params.timestamp - page.__timestamp) * 1000
+                  ),
+                  bytes: params.dataLength
+                }
+              ];
+            }
           }
           break;
 
