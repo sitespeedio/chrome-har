@@ -111,6 +111,25 @@ test('Parses IPv6 address', t => {
   );
 });
 
+test('Forwards the resource type value', t => {
+  const perflogPath = perflog('www.google.ru.json');
+  const expected = {
+    document: 1,
+    image: 27,
+    other: 4,
+    script: 8,
+    xhr: 1
+  };
+  return parsePerflog(perflogPath).then(har => {
+    const collected = har.log.entries.map(x => x._resourceType);
+    t.true(
+      Object.entries(expected).every(
+        ([key, value]) => collected.filter(x => x == key).length == value
+      )
+    );
+  });
+});
+
 test('navigatedWithinDocument', t => {
   const perflogPath = perflog('navigatedWithinDocument.json');
   return parsePerflog(perflogPath)
