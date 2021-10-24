@@ -3,6 +3,10 @@
 ## 0.12.0 UNRELEASED
 ## Added
 * Addend encoding field to tyhe response, thank you [Miroslav Balaz](https://github.com/miro-balaz) for the PR [#79](https://github.com/sitespeedio/chrome-har/pull/79).
+* Include chunk information in the response see [#88](https://github.com/sitespeedio/chrome-har/pull/88).
+* Add custom field _resourceType thank you [Peng-Yu Chen](https://github.com/starrify) for PR [#83](https://github.com/sitespeedio/chrome-har/pull/83)
+### Fixed
+* Use Page.frameRequestedNavigation see [#90](https://github.com/sitespeedio/chrome-har/pull/90).
 
 ## 0.11.12 2020-09-09
 ### Fixed
