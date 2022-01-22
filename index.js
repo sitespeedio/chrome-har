@@ -172,6 +172,10 @@ module.exports = {
               headers: parseHeaders(request.headers)
             };
 
+            if (request.isLinkPreload) {
+              req._isLinkPreload = true;
+            }
+
             const entry = {
               cache: {},
               startedDateTime: '',
