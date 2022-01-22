@@ -1,6 +1,11 @@
 # CHANGELOG
 
-## 0.12.0 2020-10-29
+## 0.13.0 - UNRELEASED
+
+### Added
+* Add _isLinkPreload on the request object if it is isLinkPreload [#94](https://github.com/sitespeedio/chrome-har/pull/94).
+
+## 0.12.0 - 2020-10-29
 ## Added
 * Addend encoding field to type response, thank you [Miroslav Balaz](https://github.com/miro-balaz) for the PR [#79](https://github.com/sitespeedio/chrome-har/pull/79).
 * Include chunk information in the response see [#88](https://github.com/sitespeedio/chrome-har/pull/88).
