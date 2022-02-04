@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.13.0 - UNRELEASED
+## 0.13.0 - 2022-02-04
 
 ### Added
 * Add _isLinkPreload on the request object if it is isLinkPreload [#94](https://github.com/sitespeedio/chrome-har/pull/94).
