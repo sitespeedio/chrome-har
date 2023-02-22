@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.13.1 - 2023-02-22
+### Fixed
+* Updated dependencies to latest versions [#105](https://github.com/sitespeedio/chrome-har/pull/105).
+* Remove adding headers from extra parameters. Using the CDP Fetch API manipulating responses, the extra response info holds the old un-manipulated headers, so when copying the ones that do not exist, this breaks. Fixed in [#100](https://github.com/sitespeedio/chrome-har/pull/100).
+
 ## 0.13.0 - 2022-02-04
 
 ### Added
