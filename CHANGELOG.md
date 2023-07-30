@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.13.2 - 2023-07-30
+### Fixed
+* Updated tough-cookie, thank you [lallenlowe](https://github.com/lallenlowe) for PR [#107](https://github.com/sitespeedio/chrome-har/pull/107).
+
 ## 0.13.1 - 2023-02-22
 ### Fixed
 * Updated dependencies to latest versions [#105](https://github.com/sitespeedio/chrome-har/pull/105).
