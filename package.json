@@ -30,6 +30,9 @@
     "type": "git",
     "url": "https://github.com/sitespeedio/chrome-har.git"
   },
+  "engines": {
+    "node": ">=14.19.1"
+  },
   "license": "MIT",
   "devDependencies": {
     "ava": "~0.25.0",
