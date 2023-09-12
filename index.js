@@ -286,9 +286,15 @@ module.exports = {
               continue;
             }
 
-            const entry = entries.find(
+            let entry = entries.find(
               entry => entry._requestId === params.requestId
             );
+
+            if (!entry) {
+              entry = entriesWithoutPage.find(
+                entry => entry._requestId === params.requestId
+              );
+            }
             if (!entry) {
               debug(
                 `Extra info sent for requestId ${
@@ -316,11 +322,6 @@ module.exports = {
 
         case 'Network.responseReceivedExtraInfo':
           {
-            if (pages.length < 1) {
-              //we haven't loaded any pages yet.
-              continue;
-            }
-
             if (ignoredRequests.has(params.requestId)) {
               continue;
             }

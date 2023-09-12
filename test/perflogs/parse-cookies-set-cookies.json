@@ -1,0 +1,219 @@
+[
+    {
+        "method": "Network.requestWillBeSent",
+        "params": {
+            "requestId": "1803F03934F9C36D47C5B58E49C99BC7",
+            "loaderId": "1803F03934F9C36D47C5B58E49C99BC7",
+            "documentURL": "https://sfbay.craigslist.org/",
+            "request": {
+                "url": "https://sfbay.craigslist.org/",
+                "method": "GET",
+                "headers": {
+                    "Upgrade-Insecure-Requests": "1",
+                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/116.0.5845.96 Safari/537.36",
+                    "sec-ch-ua": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"HeadlessChrome\";v=\"116\"",
+                    "sec-ch-ua-mobile": "?0",
+                    "sec-ch-ua-platform": "\"macOS\""
+                },
+                "mixedContentType": "none",
+                "initialPriority": "VeryHigh",
+                "referrerPolicy": "strict-origin-when-cross-origin",
+                "isSameSite": true
+            },
+            "timestamp": 582126.799807,
+            "wallTime": 1692941334.595684,
+            "initiator": {
+                "type": "other"
+            },
+            "redirectHasExtraInfo": false,
+            "type": "Document",
+            "frameId": "16E942851554F8949EFBCE17D1B8FE9E",
+            "hasUserGesture": false
+        }
+    },
+    {
+        "method": "Network.requestWillBeSentExtraInfo",
+        "params": {
+            "requestId": "1803F03934F9C36D47C5B58E49C99BC7",
+            "associatedCookies": [
+                {
+                    "blockedReasons": [],
+                    "cookie": {
+                        "name": "cl_def_hp",
+                        "value": "sfbay",
+                        "domain": ".craigslist.org",
+                        "path": "/",
+                        "expires": 1724477335.007591,
+                        "size": 14,
+                        "httpOnly": false,
+                        "secure": true,
+                        "session": false,
+                        "priority": "Medium",
+                        "sameParty": false,
+                        "sourceScheme": "Secure",
+                        "sourcePort": 443
+                    }
+                },
+                {
+                    "blockedReasons": [],
+                    "cookie": {
+                        "name": "cl_b",
+                        "value": "XXXXXXXX",
+                        "domain": ".craigslist.org",
+                        "path": "/",
+                        "expires": 1727501335.008006,
+                        "size": 62,
+                        "httpOnly": false,
+                        "secure": true,
+                        "session": false,
+                        "priority": "Medium",
+                        "sameParty": false,
+                        "sourceScheme": "Secure",
+                        "sourcePort": 443
+                    }
+                }
+            ],
+            "headers": {
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+                "Accept-Encoding": "gzip, deflate, br",
+                "Connection": "keep-alive",
+                "Host": "sfbay.craigslist.org",
+                "Sec-Fetch-Dest": "document",
+                "Sec-Fetch-Mode": "navigate",
+                "Sec-Fetch-Site": "none",
+                "Sec-Fetch-User": "?1",
+                "Upgrade-Insecure-Requests": "1",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/116.0.5845.96 Safari/537.36",
+                "sec-ch-ua": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"HeadlessChrome\";v=\"116\"",
+                "sec-ch-ua-mobile": "?0",
+                "sec-ch-ua-platform": "\"macOS\""
+            },
+            "connectTiming": {
+                "requestTime": 582126.801796
+            },
+            "siteHasCookieInOtherPartition": false
+        }
+    },
+    {
+        "method": "Network.responseReceivedExtraInfo",
+        "params": {
+            "requestId": "1803F03934F9C36D47C5B58E49C99BC7",
+            "blockedCookies": [],
+            "headers": {
+                "Cache-Control": "max-age=3600, public",
+                "Content-Encoding": "gzip",
+                "Content-Length": "11396",
+                "Content-Security-Policy": "base-uri 'self' https://hcaptcha.com https://*.hcaptcha.com; child-src https://*.craigslist.org; connect-src https://*.craigslist.org https://hcaptcha.com https://*.hcaptcha.com; font-src data:; form-action https://*.craigslist.org; frame-ancestors 'self'; frame-src https://*.craigslist.org https://hcaptcha.com https://*.hcaptcha.com; media-src data:; object-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' https://*.craigslist.org https://hcaptcha.com https://*.hcaptcha.com; style-src 'unsafe-inline' https://*.craigslist.org https://hcaptcha.com https://*.hcaptcha.com",
+                "Content-Type": "text/html; charset=UTF-8",
+                "Date": "Fri, 25 Aug 2023 05:16:04 GMT",
+                "Expires": "Fri, 25 Aug 2023 06:16:04 GMT",
+                "Last-Modified": "Fri, 25 Aug 2023 05:16:04 GMT",
+                "Set-Cookie": "XXXXXX",
+                "Strict-Transport-Security": "max-age=63072000",
+                "Vary": "Accept-Encoding",
+                "X-Frame-Options": "SAMEORIGIN"
+            },
+            "resourceIPAddressSpace": "Public",
+            "statusCode": 200,
+            "headersText": "XXXXX",
+            "cookiePartitionKey": "https://craigslist.org",
+            "cookiePartitionKeyOpaque": false
+        }
+    },
+    {
+        "method": "Network.responseReceived",
+        "params": {
+            "requestId": "1803F03934F9C36D47C5B58E49C99BC7",
+            "loaderId": "1803F03934F9C36D47C5B58E49C99BC7",
+            "timestamp": 582127.216792,
+            "type": "Document",
+            "response": {
+                "url": "https://sfbay.craigslist.org/",
+                "status": 200,
+                "statusText": "OK",
+                "headers": {
+                    "Cache-Control": "max-age=3600, public",
+                    "Content-Encoding": "gzip",
+                    "Content-Length": "11396",
+                    "Content-Security-Policy": "base-uri 'self' https://hcaptcha.com https://*.hcaptcha.com; child-src https://*.craigslist.org; connect-src https://*.craigslist.org https://hcaptcha.com https://*.hcaptcha.com; font-src data:; form-action https://*.craigslist.org; frame-ancestors 'self'; frame-src https://*.craigslist.org https://hcaptcha.com https://*.hcaptcha.com; media-src data:; object-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' https://*.craigslist.org https://hcaptcha.com https://*.hcaptcha.com; style-src 'unsafe-inline' https://*.craigslist.org https://hcaptcha.com https://*.hcaptcha.com",
+                    "Content-Type": "text/html; charset=UTF-8",
+                    "Date": "Fri, 25 Aug 2023 05:16:04 GMT",
+                    "Expires": "Fri, 25 Aug 2023 06:16:04 GMT",
+                    "Last-Modified": "Fri, 25 Aug 2023 05:16:04 GMT",
+                    "Strict-Transport-Security": "max-age=63072000",
+                    "Vary": "Accept-Encoding",
+                    "X-Frame-Options": "SAMEORIGIN"
+                },
+                "mimeType": "text/html",
+                "connectionReused": false,
+                "connectionId": 13,
+                "remoteIPAddress": "208.82.238.130",
+                "remotePort": 443,
+                "fromDiskCache": false,
+                "fromServiceWorker": false,
+                "fromPrefetchCache": false,
+                "encodedDataLength": 1228,
+                "timing": {
+                    "requestTime": 582126.801796,
+                    "proxyStart": -1,
+                    "proxyEnd": -1,
+                    "dnsStart": 11.062,
+                    "dnsEnd": 40.836,
+                    "connectStart": 40.836,
+                    "connectEnd": 380.711,
+                    "sslStart": 55.638,
+                    "sslEnd": 380.695,
+                    "workerStart": -1,
+                    "workerReady": -1,
+                    "workerFetchStart": -1,
+                    "workerRespondWithSettled": -1,
+                    "sendStart": 381.25,
+                    "sendEnd": 381.804,
+                    "pushStart": 0,
+                    "pushEnd": 0,
+                    "receiveHeadersStart": 399.327,
+                    "receiveHeadersEnd": 410.652
+                },
+                "responseTime": 1692941334996.253,
+                "protocol": "http/1.1",
+                "alternateProtocolUsage": "unspecifiedReason",
+                "securityState": "secure",
+                "securityDetails": {
+                    "protocol": "TLS 1.2",
+                    "keyExchange": "ECDHE_ECDSA",
+                    "keyExchangeGroup": "P-256",
+                    "cipher": "AES_128_GCM",
+                    "certificateId": 0,
+                    "subjectName": "craigslist.org",
+                    "sanList": [
+                        "craigslist.org",
+                        "cl.com",
+                        "craigslist.ca",
+                        "craigslist.com",
+                        "craigslist.net",
+                        "*.cl.com",
+                        "*.craigslist.ca",
+                        "*.craigslist.com",
+                        "*.craigslist.net",
+                        "*.craigslist.org"
+                    ],
+                    "issuer": "DigiCert TLS Hybrid ECC SHA384 2020 CA1",
+                    "validFrom": 1675728000,
+                    "validTo": 1709078399,
+                    "signedCertificateTimestampList": [],
+                    "certificateTransparencyCompliance": "unknown",
+                    "serverSignatureAlgorithm": 1027,
+                    "encryptedClientHello": false
+                }
+            },
+            "hasExtraInfo": true,
+            "frameId": "16E942851554F8949EFBCE17D1B8FE9E"
+        }
+    },
+    {
+        "method": "Page.frameStartedLoading",
+        "params": {
+            "frameId": "16E942851554F8949EFBCE17D1B8FE9E"
+        }
+    }
+]
