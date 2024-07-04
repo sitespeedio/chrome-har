@@ -11,7 +11,7 @@ const PERFLOGSPATH = path.resolve(__dirname, 'perflogs');
  */
 function validateConnectionOverlap(t, entries) {
   const entriesByConnection = entries
-    .filter(entry => !['h2', 'spdy/3.1'].includes(entry.response.httpVersion))
+    .filter(entry => !['h3', 'h2', 'spdy/3.1'].includes(entry.response.httpVersion))
     .filter(entry => !(entry.cache || {}).beforeRequest)
     .reduce((entries, entry) => {
       const e = entries.get(entry.connection) || [];
@@ -195,6 +195,17 @@ test('Includes pushed assets', t => {
       return har;
     });
 });
+
+test('Includes early hints requests', t => {
+  const perflogPath = perflog('early-hints.json');
+  return parsePerflog(perflogPath)
+    .then(har => {
+      const earlyHints = har.log.entries.filter(e => e.response.fromEarlyHints);
+      t.is(earlyHints.length, 11);
+
+      return har;
+    });
+})
 
 test('Includes response bodies', t => {
   const perflogPath = perflog('www.sitepeed.io.chrome66.json');
