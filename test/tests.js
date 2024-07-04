@@ -11,7 +11,9 @@ const PERFLOGSPATH = path.resolve(__dirname, 'perflogs');
  */
 function validateConnectionOverlap(t, entries) {
   const entriesByConnection = entries
-    .filter(entry => !['h3', 'h2', 'spdy/3.1'].includes(entry.response.httpVersion))
+    .filter(
+      entry => !['h3', 'h2', 'spdy/3.1'].includes(entry.response.httpVersion)
+    )
     .filter(entry => !(entry.cache || {}).beforeRequest)
     .reduce((entries, entry) => {
       const e = entries.get(entry.connection) || [];
@@ -36,20 +38,22 @@ function validateConnectionOverlap(t, entries) {
 
 function perflog(filename) {
   return path.resolve(PERFLOGSPATH, filename);
-};
+}
 function perflogs() {
-  return fs.readdir(PERFLOGSPATH)
-    .then(dirListing => dirListing.filter(filename => path.extname(filename) === '.json'));
+  return fs
+    .readdir(PERFLOGSPATH)
+    .then(dirListing =>
+      dirListing.filter(filename => path.extname(filename) === '.json')
+    );
 }
 
 function parsePerflog(perflogPath, options) {
-  return fs.readFile(perflogPath, { encoding: 'utf8' })
-    .then(data => {
-      const log = JSON.parse(data);
-      const har = parser.harFromMessages(log, options);
-      validator.har(har);
-      return har;
-    });
+  return fs.readFile(perflogPath, { encoding: 'utf8' }).then(data => {
+    const log = JSON.parse(data);
+    const har = parser.harFromMessages(log, options);
+    validator.har(har);
+    return har;
+  });
 }
 
 function sortedByRequestTime(entries) {
@@ -57,29 +61,28 @@ function sortedByRequestTime(entries) {
 }
 
 function testAllHARs(t, options) {
-  return perflogs()
-    .then(filenames => {
-      const promises = filenames.map(filename => {
-        return parsePerflog(perflog(filename), options)
-          .then(har => {
-            t.deepEqual(sortedByRequestTime(har.log.entries), har.log.entries);
-            validateConnectionOverlap(t, har.log.entries);
-          })
-          .catch(e => {
-            t.log(`Failed to generate valid HAR from ${filename}`);
-            throw e;
-          });
-      });
-      return Promise.all(promises);
+  return perflogs().then(filenames => {
+    const promises = filenames.map(filename => {
+      return parsePerflog(perflog(filename), options)
+        .then(har => {
+          t.deepEqual(sortedByRequestTime(har.log.entries), har.log.entries);
+          validateConnectionOverlap(t, har.log.entries);
+        })
+        .catch(e => {
+          t.log(`Failed to generate valid HAR from ${filename}`);
+          throw e;
+        });
     });
+    return Promise.all(promises);
+  });
 }
 
-test('Generates valid HARs', async t => {
-  return await testAllHARs(t);
+test('Generates valid HARs', t => {
+  return testAllHARs(t);
 });
 
-test('Generates valid HARs including cached entries', async t => {
-  return await testAllHARs(t, { includeResourcesFromDiskCache: true });
+test('Generates valid HARs including cached entries', t => {
+  return testAllHARs(t, { includeResourcesFromDiskCache: true });
 });
 
 test('zdnet', t => {
@@ -112,7 +115,7 @@ test('chrome66', t => {
     .then(har => har.log)
     .then(log => {
       t.is(log.entries.length, 9);
-      return log
+      return log;
     });
 });
 
@@ -147,7 +150,7 @@ test('navigatedWithinDocument', t => {
   return parsePerflog(perflogPath)
     .then(har => har.log)
     .then(log => {
-      t.is(log.entries.length, 1)
+      t.is(log.entries.length, 1);
       return log;
     });
 });
@@ -156,7 +159,7 @@ test('Generates multiple pages', t => {
   const perflogPath = perflog('www.wikipedia.org.json');
   return parsePerflog(perflogPath).then(har => {
     t.is(har.log.pages.length, 2);
-    return har
+    return har;
   });
 });
 
@@ -164,7 +167,7 @@ test('Skips empty pages', t => {
   const perflogPath = perflog('www.wikipedia.org-empty.json');
   return parsePerflog(perflogPath).then(har => {
     t.is(har.log.pages.length, 1);
-    return har
+    return har;
   });
 });
 
@@ -198,14 +201,13 @@ test('Includes pushed assets', t => {
 
 test('Includes early hints requests', t => {
   const perflogPath = perflog('early-hints.json');
-  return parsePerflog(perflogPath)
-    .then(har => {
-      const earlyHints = har.log.entries.filter(e => e.response.fromEarlyHints);
-      t.is(earlyHints.length, 11);
+  return parsePerflog(perflogPath).then(har => {
+    const earlyHints = har.log.entries.filter(e => e.response.fromEarlyHints);
+    t.is(earlyHints.length, 11);
 
-      return har;
-    });
-})
+    return har;
+  });
+});
 
 test('Includes response bodies', t => {
   const perflogPath = perflog('www.sitepeed.io.chrome66.json');
