@@ -1,11 +1,8 @@
 import test from 'ava';
 import * as validator from 'har-validator';
-import * as Promise from 'bluebird';
-import * as fs from 'fs';
+import * as fs from 'fs/promises';
 import * as path from 'path';
 import parser from '../';
-
-Promise.promisifyAll(fs);
 
 const PERFLOGSPATH = path.resolve(__dirname, 'perflogs');
 
@@ -22,7 +19,6 @@ function validateConnectionOverlap(t, entries) {
       entries.set(entry.connection, e);
       return entries;
     }, new Map());
-
   entriesByConnection.forEach((entries, connection) => {
     let previousEntry = entries.shift();
     for (let entry of entries) {
@@ -40,20 +36,20 @@ function validateConnectionOverlap(t, entries) {
 
 function perflog(filename) {
   return path.resolve(PERFLOGSPATH, filename);
-}
-
+};
 function perflogs() {
-  return fs
-    .readdirAsync(PERFLOGSPATH)
-    .filter(filename => path.extname(filename) === '.json');
+  return fs.readdir(PERFLOGSPATH)
+    .then(dirListing => dirListing.filter(filename => path.extname(filename) === '.json'));
 }
 
 function parsePerflog(perflogPath, options) {
-  return fs
-    .readFileAsync(perflogPath)
-    .then(JSON.parse)
-    .then(messages => parser.harFromMessages(messages, options))
-    .tap(har => validator.har(har));
+  return fs.readFile(perflogPath, { encoding: 'utf8' })
+    .then(data => {
+      const log = JSON.parse(data);
+      const har = parser.harFromMessages(log, options);
+      validator.har(har);
+      return har;
+    });
 }
 
 function sortedByRequestTime(entries) {
@@ -61,47 +57,63 @@ function sortedByRequestTime(entries) {
 }
 
 function testAllHARs(t, options) {
-  return perflogs().each(filename => {
-    return parsePerflog(perflog(filename), options)
-      .tap(har =>
-        t.deepEqual(sortedByRequestTime(har.log.entries), har.log.entries)
-      )
-      .tap(har => validateConnectionOverlap(t, har.log.entries))
-      .catch(e => {
-        t.log(`Failed to generate valid HAR from ${filename}`);
-        throw e;
+  return perflogs()
+    .then(filenames => {
+      const promises = filenames.map(filename => {
+        return parsePerflog(perflog(filename), options)
+          .then(har => {
+            t.deepEqual(sortedByRequestTime(har.log.entries), har.log.entries);
+            validateConnectionOverlap(t, har.log.entries);
+          })
+          .catch(e => {
+            t.log(`Failed to generate valid HAR from ${filename}`);
+            throw e;
+          });
       });
-  });
+      return Promise.all(promises);
+    });
 }
 
-test('Generates valid HARs', t => {
-  return testAllHARs(t);
+test('Generates valid HARs', async t => {
+  return await testAllHARs(t);
 });
 
-test('Generates valid HARs including cached entries', t => {
-  return testAllHARs(t, { includeResourcesFromDiskCache: true });
+test('Generates valid HARs including cached entries', async t => {
+  return await testAllHARs(t, { includeResourcesFromDiskCache: true });
 });
 
 test('zdnet', t => {
   const perflogPath = perflog('www.zdnet.com.json');
   return parsePerflog(perflogPath)
     .then(har => har.log)
-    .tap(log => t.is(log.pages.length, 1))
-    .tap(log => t.is(log.entries.length, 343));
+    .then(log => {
+      t.is(log.pages.length, 1);
+      return log;
+    })
+    .then(log => {
+      t.is(log.entries.length, 343);
+      return log;
+    });
 });
 
 test('ryan', t => {
   const perflogPath = perflog('ryan.json');
   return parsePerflog(perflogPath)
     .then(har => har.log)
-    .tap(log => t.is(log.pages.length, 1));
+    .then(log => {
+      t.is(log.pages.length, 1);
+      return log;
+    });
 });
 
 test('chrome66', t => {
   const perflogPath = perflog('www.sitepeed.io.chrome66.json');
   return parsePerflog(perflogPath)
     .then(har => har.log)
-    .tap(log => t.is(log.entries.length, 9));
+    .then(log => {
+      t.is(log.entries.length, 9);
+      return log
+    });
 });
 
 test('Parses IPv6 address', t => {
@@ -134,29 +146,44 @@ test('navigatedWithinDocument', t => {
   const perflogPath = perflog('navigatedWithinDocument.json');
   return parsePerflog(perflogPath)
     .then(har => har.log)
-    .tap(log => t.is(log.entries.length, 1));
+    .then(log => {
+      t.is(log.entries.length, 1)
+      return log;
+    });
 });
 
 test('Generates multiple pages', t => {
   const perflogPath = perflog('www.wikipedia.org.json');
-  return parsePerflog(perflogPath).tap(har => t.is(har.log.pages.length, 2));
+  return parsePerflog(perflogPath).then(har => {
+    t.is(har.log.pages.length, 2);
+    return har
+  });
 });
 
 test('Skips empty pages', t => {
   const perflogPath = perflog('www.wikipedia.org-empty.json');
-  return parsePerflog(perflogPath).tap(har => t.is(har.log.pages.length, 1));
+  return parsePerflog(perflogPath).then(har => {
+    t.is(har.log.pages.length, 1);
+    return har
+  });
 });
 
 test('Click on link in Chrome should create new page', t => {
   const perflogPath = perflog('linkClickChrome.json');
-  return parsePerflog(perflogPath).tap(har => t.is(har.log.pages.length, 1));
+  return parsePerflog(perflogPath).then(har => {
+    t.is(har.log.pages.length, 1);
+    return har;
+  });
 });
 
 test('Includes pushed assets', t => {
   const perflogPath = perflog('akamai-h2push.json');
   return parsePerflog(perflogPath)
-    .tap(har => t.is(har.log.pages.length, 1))
-    .tap(har => {
+    .then(har => {
+      t.is(har.log.pages.length, 1);
+      return har;
+    })
+    .then(har => {
       const images = har.log.entries.filter(e =>
         e.request.url.startsWith('https://http2.akamai.com/demo/tile-')
       );
@@ -164,6 +191,8 @@ test('Includes pushed assets', t => {
 
       const pushedImages = images.filter(i => i._was_pushed === 1);
       t.is(pushedImages.length, 3);
+
+      return har;
     });
 });
 
@@ -171,21 +200,24 @@ test('Includes response bodies', t => {
   const perflogPath = perflog('www.sitepeed.io.chrome66.json');
   return parsePerflog(perflogPath, { includeTextFromResponseBody: true })
     .then(har => har.log)
-    .tap(log =>
-      t.is(log.entries.filter(e => e.response.content.text != null).length, 1)
-    );
+    .then(log => {
+      t.is(log.entries.filter(e => e.response.content.text != null).length, 1);
+      return log;
+    });
 });
 
 test('Includes canceled response', t => {
   const perflogPath = perflog('canceled-video.json');
   return parsePerflog(perflogPath)
     .then(har => har.log)
-    .tap(log => {
+    .then(log => {
       const videoAsset = log.entries.find(
         e => e.request.url === 'https://www.w3schools.com/tags/movie.mp4'
       );
       t.is(videoAsset.timings.receive, 316.563);
       t.is(videoAsset.time, 343.33099999999996);
+
+      return log;
     });
 });
 
@@ -193,11 +225,13 @@ test('Includes iframe request when frame is not attached', t => {
   const perflogPath = perflog('iframe-not-attached.json');
   return parsePerflog(perflogPath)
     .then(har => har.log)
-    .tap(log => {
+    .then(log => {
       const imageAsset = log.entries.filter(
         e => e.request.url === 'https://www.w3schools.com/html/img_girl.jpg'
       );
       t.is(imageAsset.length, 1);
+
+      return log;
     });
 });
 
@@ -205,13 +239,15 @@ test('Includes extra info in request', t => {
   const perflogPath = perflog('www.calibreapp.com.signin.json');
   return parsePerflog(perflogPath)
     .then(har => har.log)
-    .tap(log => {
+    .then(log => {
       const cssAsset = log.entries.find(e =>
         e.request.url.endsWith(
           'sign_up_in-8b32538e54b23b40f8fd45c28abdcee2e2d023bd7e01ddf2033d5f781afae9dc.css'
         )
       );
       t.is(cssAsset.request.headers.length, 15);
+
+      return log;
     });
 });
 
@@ -219,13 +255,15 @@ test('Includes extra info in response', t => {
   const perflogPath = perflog('www.calibreapp.com.signin.json');
   return parsePerflog(perflogPath)
     .then(har => har.log)
-    .tap(log => {
+    .then(log => {
       const cssAsset = log.entries.find(e =>
         e.request.url.endsWith(
           'sign_up_in-8b32538e54b23b40f8fd45c28abdcee2e2d023bd7e01ddf2033d5f781afae9dc.css'
         )
       );
       t.is(cssAsset.response.headers.length, 14);
+
+      return log;
     });
 });
 
@@ -233,11 +271,13 @@ test('Excludes request blocked cookies', t => {
   const perflogPath = perflog('samesite-sandbox.glitch.me.json');
   return parsePerflog(perflogPath)
     .then(har => har.log)
-    .tap(log => {
+    .then(log => {
       const cookiesAsset = log.entries.find(e =>
         e.request.url.endsWith('cookies.json')
       );
       t.is(cookiesAsset.request.cookies.length, 4);
+
+      return log;
     });
 });
 
@@ -245,11 +285,13 @@ test('Excludes response blocked cookies', t => {
   const perflogPath = perflog('response-blocked-cookies.json');
   return parsePerflog(perflogPath)
     .then(har => har.log)
-    .tap(log => {
+    .then(log => {
       const request = log.entries.find(
         e => e.request.url === 'https://ow5u1.sse.codesandbox.io/'
       );
       t.is(request.response.cookies.length, 1);
+
+      return log;
     });
 });
 
@@ -257,7 +299,16 @@ test('Includes initial redirect', t => {
   const perflogPath = perflog('www.vercel.com.json');
   return parsePerflog(perflogPath)
     .then(har => har.log)
-    .tap(log => t.is(log.pages.length, 1))
-    .tap(log => t.is(log.entries.length, 99))
-    .tap(log => t.is(log.entries[0].response.status, 308));
+    .then(log => {
+      t.is(log.pages.length, 1);
+      return log;
+    })
+    .then(log => {
+      t.is(log.entries.length, 99);
+      return log;
+    })
+    .then(log => {
+      t.is(log.entries[0].response.status, 308);
+      return log;
+    });
 });
