@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.13.2 - 2024-07-05
+### Fixed
+*  Include early hints requests, thank you [Ben Schwarz](https://github.com/benschwarz) for PR [#118](https://github.com/sitespeedio/chrome-har/pull/118).
+
+
 ## 0.13.2 - 2023-07-30
 ### Fixed
 * Updated tough-cookie, thank you [lallenlowe](https://github.com/lallenlowe) for PR [#107](https://github.com/sitespeedio/chrome-har/pull/107).
