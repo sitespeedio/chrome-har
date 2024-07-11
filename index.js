@@ -67,6 +67,7 @@ module.exports = {
       entriesWithoutPage = [],
       responsesWithoutPage = [],
       paramsWithoutPage = [],
+      responseReceivedExtraInfos = [],
       currentPageId;
 
     for (const message of messages) {
@@ -336,11 +337,7 @@ module.exports = {
             }
 
             if (!entry) {
-              debug(
-                `Received response extra info for requestId ${
-                  params.requestId
-                } with no matching request.`
-              );
+              responseReceivedExtraInfos.push(params);
               continue;
             }
 
@@ -350,13 +347,12 @@ module.exports = {
                 headers: parseHeaders(params.headers),
                 blockedCookies: params.blockedCookies
               };
+              responseReceivedExtraInfos.push(params);
               continue;
             }
 
             if (params.headers) {
-              entry.response.headers = entry.response.headers.concat(
-                parseHeaders(params.headers)
-              );
+              entry.response.headers = parseHeaders(params.headers);
             }
           }
           break;
@@ -417,6 +413,11 @@ module.exports = {
                 )}`
               );
               throw e;
+            }
+
+            const responseReceivedExtraInfo = responseReceivedExtraInfos.find(responseReceivedExtraInfo => responseReceivedExtraInfo.requestId == params.requestId);
+            if (responseReceivedExtraInfo && responseReceivedExtraInfo.headers) {
+              entry.response.headers = parseHeaders(responseReceivedExtraInfo.headers);
             }
           }
           break;
