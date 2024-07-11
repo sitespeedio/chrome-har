@@ -415,9 +415,17 @@ module.exports = {
               throw e;
             }
 
-            const responseReceivedExtraInfo = responseReceivedExtraInfos.find(responseReceivedExtraInfo => responseReceivedExtraInfo.requestId == params.requestId);
-            if (responseReceivedExtraInfo && responseReceivedExtraInfo.headers) {
-              entry.response.headers = parseHeaders(responseReceivedExtraInfo.headers);
+            const responseReceivedExtraInfo = responseReceivedExtraInfos.find(
+              responseReceivedExtraInfo =>
+                responseReceivedExtraInfo.requestId == params.requestId
+            );
+            if (
+              responseReceivedExtraInfo &&
+              responseReceivedExtraInfo.headers
+            ) {
+              entry.response.headers = parseHeaders(
+                responseReceivedExtraInfo.headers
+              );
             }
           }
           break;
