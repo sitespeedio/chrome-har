@@ -1,8 +1,10 @@
 # CHANGELOG
 
-## 0.13.4 - 2024-07-12
+## 0.13.5 - 2024-07-12
 ### Fixed
 * Always take care of Network.responseReceivedExtraInfo even if its fired early, thank you [ifduyue](https://github.com/ifduyue) for PR [#120](https://github.com/sitespeedio/chrome-har/pull/120).
+
+(0.13.4 was never released)
 
 ## 0.13.3 - 2024-07-05
 ### Fixed
