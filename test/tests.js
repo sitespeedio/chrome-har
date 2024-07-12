@@ -342,3 +342,17 @@ test('Network.responseReceivedExtraInfo may be fired before or after responseRec
       );
     });
 });
+
+test('parses cookies and set-cookies', t => {
+  const perflogPath = perflog('parse-cookies-set-cookies.json');
+  return parsePerflog(perflogPath)
+    .then(har => har.log)
+    .tap(log => {
+      const request = log.entries.find(
+        e => e.request.url === 'https://sfbay.craigslist.org/'
+      );
+      t.is(request.request.cookies.length, 2);
+      t.is(request.response.headers.length, 12);
+      t.is(request.response.headers.some(h => h.name === 'Set-Cookie'), true);
+    });
+});
