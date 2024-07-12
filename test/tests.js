@@ -325,3 +325,20 @@ test('Includes initial redirect', t => {
       return log;
     });
 });
+
+test('Network.responseReceivedExtraInfo may be fired before or after responseReceived', t => {
+  const perflogPath = perflog('bing.com.json');
+  return parsePerflog(perflogPath)
+    .then(har => har.log)
+    .then(log => log.entries)
+    .then(entries => {
+      const checkingEntries = entries.filter(x => x._requestId == '98243.71');
+      t.is(checkingEntries.length, 1);
+      const entry = checkingEntries[0];
+      // set-cookie header only exists in Network.responseReceivedExtraInfo event
+      t.is(
+        entry.response.headers.filter(x => x.name == 'set-cookie').length,
+        1
+      );
+    });
+});
