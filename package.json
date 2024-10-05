@@ -43,7 +43,6 @@
     "prettier": "~1.11.1"
   },
   "dependencies": {
-    "dayjs": "1.11.7",
     "debug": "4.3.4",
     "tough-cookie": "5.0.0"
   }
