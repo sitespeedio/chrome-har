@@ -3,7 +3,7 @@
 const { name, version, homepage } = require('./package');
 
 const urlParser = require('url');
-const { v1 } = require('uuid');
+const crypto = require('crypto');
 const dayjs = require('dayjs');
 const debug = require('debug')(name);
 const ignoredEvents = require('./lib/ignoredEvents');
@@ -89,7 +89,7 @@ module.exports = {
             if (pages.some(page => page.__frameId === rootFrame)) {
               continue;
             }
-            currentPageId = v1();
+            currentPageId = crypto.randomUUID();
             const title =
               method === 'Page.navigatedWithinDocument' ? params.url : '';
             const page = {

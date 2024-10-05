@@ -45,7 +45,6 @@
   "dependencies": {
     "dayjs": "1.11.7",
     "debug": "4.3.4",
-    "tough-cookie": "5.0.0",
-    "uuid": "9.0.0"
+    "tough-cookie": "5.0.0"
   }
 }
