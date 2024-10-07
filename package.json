@@ -7,7 +7,6 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "test": "ava",
     "test:watch": "ava --watch"
   },

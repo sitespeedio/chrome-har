@@ -23,7 +23,5 @@ jobs:
         npm ci
     - name: Verify lint
       run: npm run lint
-    - name: Eslint-check
-      run: npm run eslint-check
     - name: Run unit tests
       run: npm run test
