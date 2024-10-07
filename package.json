@@ -1,8 +1,9 @@
 {
   "name": "chrome-har",
+  "type": "module",
   "version": "0.13.5",
   "description": "Create HAR files from Chrome Debugging Protocol data.",
-  "main": "index.js",
+  "exports": "./index.js",
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -31,19 +32,20 @@
     "url": "https://github.com/sitespeedio/chrome-har.git"
   },
   "engines": {
-    "node": ">=14.19.1"
+   "node": ">=18.0.0"
   },
   "license": "MIT",
   "devDependencies": {
-    "ava": "~0.25.0",
-    "eslint": "~4.18.2",
-    "eslint-config-prettier": "~2.9.0",
-    "eslint-plugin-prettier": "~2.6.0",
+    "ava": "6.1.3",
+    "eslint": "9.12.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-prettier": "5.2.1",
+    "eslint-plugin-unicorn": "56.0.0",
     "har-validator": "~5.1.0",
-    "prettier": "~1.11.1"
+    "prettier": "3.3.3"
   },
   "dependencies": {
-    "debug": "4.3.4",
+    "debug": "4.3.7",
     "tough-cookie": "5.0.0"
   }
 }
