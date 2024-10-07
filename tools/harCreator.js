@@ -2,9 +2,9 @@
 
 'use strict';
 
-const fs = require('fs/promises');
-const path = require('path');
-const parser = require('..');
+import { readFile, writeFile } from 'fs/promises';
+import { resolve, basename } from 'path';
+import { harFromMessages } from '../index.js';
 
 if (process.argv.length !== 3) {
   console.error('Specify a path to a messages file');
@@ -13,11 +13,10 @@ if (process.argv.length !== 3) {
 
 const perflogPath = process.argv[2];
 
-fs
-  .readFile(path.resolve(perflogPath), 'utf8')
+readFile(resolve(perflogPath), 'utf8')
   .then(JSON.parse)
-  .then(messages => parser.harFromMessages(messages))
-  .then(har => JSON.stringify(har, null, 2))
-  .then(har =>
-    fs.writeFileAsync(path.basename(perflogPath, '.json') + '.har', har, 'utf8')
+  .then((messages) => harFromMessages(messages))
+  .then((har) => JSON.stringify(har, null, 2))
+  .then((har) =>
+    writeFile(basename(perflogPath, '.json') + '.har', har, 'utf8'),
   );
