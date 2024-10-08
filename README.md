@@ -4,6 +4,9 @@
 
 Create [HAR](http://www.softwareishard.com/blog/har-12-spec/) files based on [Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/) data.
 
+We got tired of waiting for the +30K engineers at Google implementing a way to automate to get a HAR file [https://issues.chromium.org/issues/40809195](https://issues.chromium.org/issues/40809195) so we implemented our own solution in the mean time.
+
+
 Code originally extracted from [Browsertime](https://github.com/sitespeedio/browsertime), initial implementation inspired by [Chromedriver_har](https://github.com/woodsaj/chromedriver_har).
 
 ## Create a new bug report

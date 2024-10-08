@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 1.0.0 - UNRELEASED
+## 1.0.0 - 2024-10-08
 ### Breaking
 The project was transitioned to a [pure ESM package](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c). This follows along with the changed done in sitespeed.io and Browwsertim. This will make the project easier to maintain [#129](https://github.com/sitespeedio/chrome-har/pull/129).
 
