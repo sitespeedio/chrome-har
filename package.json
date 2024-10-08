@@ -1,7 +1,7 @@
 {
   "name": "chrome-har",
   "type": "module",
-  "version": "0.13.5",
+  "version": "1.0.0",
   "description": "Create HAR files from Chrome Debugging Protocol data.",
   "exports": "./index.js",
   "scripts": {
@@ -31,7 +31,7 @@
     "url": "https://github.com/sitespeedio/chrome-har.git"
   },
   "engines": {
-   "node": ">=18.0.0"
+    "node": ">=18.0.0"
   },
   "license": "MIT",
   "devDependencies": {
