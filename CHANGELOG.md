@@ -1,15 +1,17 @@
 # CHANGELOG
 
+## 1.0.1 - 2024-10-11
+### Fixed
+* Try/catch broken dates [#130](https://github.com/sitespeedio/chrome-har/pull/130).
+
 ## 1.0.0 - 2024-10-08
 ### Breaking
-The project was transitioned to a [pure ESM package](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c). This follows along with the changed done in sitespeed.io and Browwsertim. This will make the project easier to maintain [#129](https://github.com/sitespeedio/chrome-har/pull/129).
+The project was transitioned to a [pure ESM package](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c). This follows along with the changed done in sitespeed.io and Browwsertime. This will make the project easier to maintain [#129](https://github.com/sitespeedio/chrome-har/pull/129).
 
 ### Fixed
 * Removed dayjs dependency [#128](https://github.com/sitespeedio/chrome-har/pull/128).
 * Removed uuid dependency [#127](https://github.com/sitespeedio/chrome-har/pull/127).
 * Updated to tough cookie 5.0.0 [#126](https://github.com/sitespeedio/chrome-har/pull/126).
-
-
 
 ## 0.13.5 - 2024-07-12
 ### Fixed
