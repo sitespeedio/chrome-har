@@ -55,7 +55,7 @@ function populateRedirectResponse(page, params, entries, options) {
   }
 }
 
-export function harFromMessages(messages, options) {
+export async function harFromMessages(messages, options) {
   options = Object.assign({}, defaultOptions, options);
 
   const ignoredRequests = new Set(),
@@ -69,13 +69,12 @@ export function harFromMessages(messages, options) {
     responseReceivedExtraInfos = [],
     currentPageId;
 
-  for (const message of messages) {
+  const processMessage = (message) => {
     const params = message.params;
-
     const method = message.method;
 
     if (!/^(Page|Network)\..+/.test(method)) {
-      continue;
+      return;
     }
 
     switch (method) {
@@ -86,7 +85,7 @@ export function harFromMessages(messages, options) {
           const frameId = params.frameId;
           const rootFrame = rootFrameMappings.get(frameId) || frameId;
           if (pages.some((page) => page.__frameId === rootFrame)) {
-            continue;
+            return;
           }
           currentPageId = randomUUID();
           const title =
@@ -141,7 +140,7 @@ export function harFromMessages(messages, options) {
           const request = params.request;
           if (!isSupportedProtocol(request.url)) {
             ignoredRequests.add(params.requestId);
-            continue;
+            return;
           }
           const page = pages[pages.length - 1];
           const cookieHeader = getHeaderValue(request.headers, 'Cookie');
@@ -231,7 +230,7 @@ export function harFromMessages(messages, options) {
             // ignoredRequests.add(params.requestId);
             entriesWithoutPage.push(entry);
             paramsWithoutPage.push(params);
-            continue;
+            return;
           }
 
           entries.push(entry);
@@ -250,11 +249,11 @@ export function harFromMessages(messages, options) {
         {
           if (pages.length < 1) {
             //we haven't loaded any pages yet.
-            continue;
+            return;
           }
 
           if (ignoredRequests.has(params.requestId)) {
-            continue;
+            return;
           }
 
           const entry = entries.find(
@@ -264,7 +263,7 @@ export function harFromMessages(messages, options) {
             log(
               `Received requestServedFromCache for requestId ${params.requestId} with no matching request.`,
             );
-            continue;
+            return;
           }
 
           entry.__servedFromCache = true;
@@ -279,7 +278,7 @@ export function harFromMessages(messages, options) {
       case 'Network.requestWillBeSentExtraInfo':
         {
           if (ignoredRequests.has(params.requestId)) {
-            continue;
+            return;
           }
 
           const entry = entries.find(
@@ -289,7 +288,7 @@ export function harFromMessages(messages, options) {
             log(
               `Extra info sent for requestId ${params.requestId} with no matching request.`,
             );
-            continue;
+            return;
           }
 
           if (params.headers) {
@@ -312,11 +311,11 @@ export function harFromMessages(messages, options) {
         {
           if (pages.length < 1) {
             //we haven't loaded any pages yet.
-            continue;
+            return;
           }
 
           if (ignoredRequests.has(params.requestId)) {
-            continue;
+            return;
           }
 
           let entry = entries.find(
@@ -331,7 +330,7 @@ export function harFromMessages(messages, options) {
 
           if (!entry) {
             responseReceivedExtraInfos.push(params);
-            continue;
+            return;
           }
 
           if (!entry.response) {
@@ -341,7 +340,7 @@ export function harFromMessages(messages, options) {
               blockedCookies: params.blockedCookies,
             };
             responseReceivedExtraInfos.push(params);
-            continue;
+            return;
           }
 
           if (params.headers) {
@@ -355,11 +354,11 @@ export function harFromMessages(messages, options) {
           if (pages.length < 1) {
             //we haven't loaded any pages yet.
             responsesWithoutPage.push(params);
-            continue;
+            return;
           }
 
           if (ignoredRequests.has(params.requestId)) {
-            continue;
+            return;
           }
 
           let entry = entries.find(
@@ -376,7 +375,7 @@ export function harFromMessages(messages, options) {
             log(
               `Received network response for requestId ${params.requestId} with no matching request.`,
             );
-            continue;
+            return;
           }
 
           const frameId =
@@ -388,7 +387,7 @@ export function harFromMessages(messages, options) {
             log(
               `Received network response for requestId ${params.requestId} that can't be mapped to any page.`,
             );
-            continue;
+            return;
           }
 
           try {
@@ -416,10 +415,10 @@ export function harFromMessages(messages, options) {
         {
           if (pages.length < 1) {
             //we haven't loaded any pages yet.
-            continue;
+            return;
           }
           if (ignoredRequests.has(params.requestId)) {
-            continue;
+            return;
           }
 
           const entry = entries.find(
@@ -429,7 +428,7 @@ export function harFromMessages(messages, options) {
             log(
               `Received network data for requestId ${params.requestId} with no matching request.`,
             );
-            continue;
+            return;
           }
           // It seems that people sometimes have an entry without a response,
           // I wonder how that works
@@ -460,11 +459,11 @@ export function harFromMessages(messages, options) {
         {
           if (pages.length < 1) {
             //we haven't loaded any pages yet.
-            continue;
+            return;
           }
           if (ignoredRequests.has(params.requestId)) {
             ignoredRequests.delete(params.requestId);
-            continue;
+            return;
           }
 
           const entry = entries.find(
@@ -474,7 +473,7 @@ export function harFromMessages(messages, options) {
             log(
               `Network loading finished for requestId ${params.requestId} with no matching request.`,
             );
-            continue;
+            return;
           }
 
           finalizeEntry(entry, params);
@@ -485,7 +484,7 @@ export function harFromMessages(messages, options) {
         {
           if (pages.length < 1) {
             //we haven't loaded any pages yet.
-            continue;
+            return;
           }
 
           const page = pages[pages.length - 1];
@@ -502,7 +501,7 @@ export function harFromMessages(messages, options) {
         {
           if (pages.length < 1) {
             //we haven't loaded any pages yet.
-            continue;
+            return;
           }
 
           const page = pages[pages.length - 1];
@@ -534,7 +533,7 @@ export function harFromMessages(messages, options) {
         {
           if (ignoredRequests.has(params.requestId)) {
             ignoredRequests.delete(params.requestId);
-            continue;
+            return;
           }
 
           const entry = entries.find(
@@ -544,7 +543,7 @@ export function harFromMessages(messages, options) {
             log(
               `Network loading failed for requestId ${params.requestId} with no matching request.`,
             );
-            continue;
+            return;
           }
 
           if (params.errorText === 'net::ERR_ABORTED') {
@@ -552,7 +551,7 @@ export function harFromMessages(messages, options) {
             log(
               `Loading was canceled due to Chrome or a user action for requestId ${params.requestId}.`,
             );
-            continue;
+            return;
           }
 
           // This could be due to incorrect domain name etc. Sad, but unfortunately not something that a HAR file can
@@ -576,7 +575,7 @@ export function harFromMessages(messages, options) {
             log(
               `Received resourceChangedPriority for requestId ${params.requestId} with no matching request.`,
             );
-            continue;
+            return;
           }
 
           entry._priority = message.params.newPriority;
@@ -588,6 +587,10 @@ export function harFromMessages(messages, options) {
         ignoredEvents(method);
         break;
     }
+  };
+
+  for await (const message of messages) {
+    processMessage(message);
   }
 
   if (!options.includeResourcesFromDiskCache) {
