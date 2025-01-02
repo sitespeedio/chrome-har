@@ -55,7 +55,7 @@ function populateRedirectResponse(page, params, entries, options) {
   }
 }
 
-export async function harFromMessages(messages, options) {
+export function harFromMessages(messages, options) {
   options = Object.assign({}, defaultOptions, options);
 
   const ignoredRequests = new Set(),
@@ -589,69 +589,82 @@ export async function harFromMessages(messages, options) {
     }
   };
 
-  for await (const message of messages) {
-    processMessage(message);
-  }
-
-  if (!options.includeResourcesFromDiskCache) {
-    entries = entries.filter(
-      (entry) => entry.cache.beforeRequest === undefined,
-    );
-  }
-
-  const deleteInternalProperties = (o) => {
-    // __ properties are only for internal use, _ properties are custom properties for the HAR
-    for (const prop in o) {
-      if (prop.startsWith('__')) {
-        delete o[prop];
-      }
+  const processEntriesAndPages = (entries, pages, options) => {
+    if (!options.includeResourcesFromDiskCache) {
+      entries = entries.filter((entry) => !entry.cache.beforeRequest);
     }
-    return o;
+
+    const deleteInternalProperties = (obj) => {
+      // __ properties are only for internal use, _ properties are custom properties for the HAR
+      for (const prop in obj) {
+        if (prop.startsWith('__')) {
+          delete obj[prop];
+        }
+      }
+      return obj;
+    };
+
+    entries = entries
+      .filter((entry) => {
+        if (!entry.response) {
+          log(`Dropping incomplete request: ${entry.request.url}`);
+          return false;
+        }
+        return true;
+      })
+      .map(deleteInternalProperties);
+
+    pages = pages.map(deleteInternalProperties).filter((page, index) => {
+      const hasEntry = entries.some((entry) => entry.pageref === page.id);
+      if (!hasEntry) {
+        log(`Skipping empty page: ${index + 1}`);
+      }
+      return hasEntry;
+    });
+
+    const pagerefMapping = pages.reduce((acc, page, index) => {
+      acc[page.id] = `page_${index + 1}`;
+      return acc;
+    }, {});
+
+    pages.forEach((page) => {
+      page.id = pagerefMapping[page.id];
+    });
+
+    entries.forEach((entry) => {
+      entry.pageref = pagerefMapping[entry.pageref];
+    });
+
+    return { pages, entries };
   };
 
-  entries = entries
-    .filter((entry) => {
-      if (!entry.response) {
-        log(`Dropping incomplete request: ${entry.request.url}`);
-      }
-      return entry.response;
-    })
-    .map(deleteInternalProperties);
-  pages = pages.map(deleteInternalProperties);
-  pages = pages.reduce((result, page, index) => {
-    const hasEntry = entries.some((entry) => entry.pageref === page.id);
-    if (hasEntry) {
-      result.push(page);
-    } else {
-      log(`Skipping empty page: ${index + 1}`);
-    }
-    return result;
-  }, []);
-  const pagerefMapping = pages.reduce((result, page, index) => {
-    result[page.id] = `page_${index + 1}`;
-    return result;
-  }, {});
-
-  pages = pages.map((page) => {
-    page.id = pagerefMapping[page.id];
-    return page;
-  });
-  entries = entries.map((entry) => {
-    entry.pageref = pagerefMapping[entry.pageref];
-    return entry;
-  });
-
-  // FIXME sanity check if there are any pages/entries created
-  return {
-    log: {
-      version: '1.2',
-      creator: {
-        name: 'chrome-har',
-        version,
-        comment: 'https://github.com/sitespeedio/chrome-har',
+  const processMessages = () => {
+    const result = processEntriesAndPages(entries, pages, options);
+    return {
+      log: {
+        version: '1.2',
+        creator: {
+          name: 'chrome-har',
+          version,
+          comment: 'https://github.com/sitespeedio/chrome-har',
+        },
+        pages: result.pages,
+        entries: result.entries,
       },
-      pages,
-      entries,
-    },
+    };
   };
+
+  if (typeof messages[Symbol.asyncIterator] === 'function') {
+    return (async () => {
+      for await (const message of messages) {
+        processMessage(message);
+      }
+      return processMessages();
+    })();
+  } else {
+    for (const message of messages) {
+      processMessage(message);
+    }
+    return processMessages();
+  }
 }

@@ -61,7 +61,7 @@ async function* asyncMessageGenerator(messages) {
 function parsePerflog(perflogPath, options) {
   return fs.readFile(perflogPath, { encoding: 'utf8' }).then(async (data) => {
     const log = JSON.parse(data);
-    const har = await harFromMessages(log, options);
+    const har = harFromMessages(log, options);
     validator.har(har);
     return har;
   });
