@@ -51,10 +51,27 @@ function perflogs() {
     );
 }
 
+async function* asyncMessageGenerator(messages) {
+  for (const message of messages) {
+    await Promise.resolve();
+    yield message;
+  }
+}
+
 function parsePerflog(perflogPath, options) {
-  return fs.readFile(perflogPath, { encoding: 'utf8' }).then((data) => {
+  return fs.readFile(perflogPath, { encoding: 'utf8' }).then(async (data) => {
     const log = JSON.parse(data);
     const har = harFromMessages(log, options);
+    validator.har(har);
+    return har;
+  });
+}
+
+function asyncParsePerflog(perflogPath, options) {
+  return fs.readFile(perflogPath, { encoding: 'utf8' }).then(async (data) => {
+    const log = JSON.parse(data);
+    const asyncIterator = asyncMessageGenerator(log);
+    const har = await harFromMessages(asyncIterator, options);
     validator.har(har);
     return har;
   });
@@ -106,6 +123,16 @@ test('zdnet', (t) => {
 test('ryan', (t) => {
   const perflogPath = perflog('ryan.json');
   return parsePerflog(perflogPath)
+    .then((har) => har.log)
+    .then((log) => {
+      t.is(log.pages.length, 1);
+      return log;
+    });
+});
+
+test('ryan asyncIterator', (t) => {
+  const perflogPath = perflog('ryan.json');
+  return asyncParsePerflog(perflogPath)
     .then((har) => har.log)
     .then((log) => {
       t.is(log.pages.length, 1);
