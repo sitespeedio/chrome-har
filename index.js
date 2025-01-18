@@ -1,5 +1,5 @@
-import { parse, format } from 'url';
-import { randomUUID } from 'crypto';
+import { parse, format } from 'node:url';
+import { randomUUID } from 'node:crypto';
 import { createRequire } from 'node:module';
 import debug from 'debug';
 import ignoredEvents from './lib/ignoredEvents.js';
@@ -9,7 +9,7 @@ import {
   formatMillis,
   parsePostData,
   isSupportedProtocol,
-  toNameValuePairs,
+  toNameValuePairs
 } from './lib/util.js';
 import populateEntryFromResponse from './lib/entryFromResponse.js';
 import finalizeEntry from './lib/finalizeEntry.js';
@@ -20,9 +20,19 @@ const log = debug('chrome-har');
 
 const defaultOptions = {
   includeResourcesFromDiskCache: false,
-  includeTextFromResponseBody: false,
+  includeTextFromResponseBody: false
 };
-const isEmpty = (o) => !o;
+const isEmpty = o => !o;
+
+const deleteInternalProperties = o => {
+  // __ properties are only for internal use, _ properties are custom properties for the HAR
+  for (const prop in o) {
+    if (prop.startsWith('__')) {
+      delete o[prop];
+    }
+  }
+  return o;
+};
 
 function addFromFirstRequest(page, params) {
   if (!page.__timestamp) {
@@ -36,7 +46,7 @@ function addFromFirstRequest(page, params) {
 
 function populateRedirectResponse(page, params, entries, options) {
   const previousEntry = entries.find(
-    (entry) => entry._requestId === params.requestId,
+    entry => entry._requestId === params.requestId
   );
   if (previousEntry) {
     previousEntry._requestId += 'r';
@@ -44,13 +54,13 @@ function populateRedirectResponse(page, params, entries, options) {
       previousEntry,
       params.redirectResponse,
       page,
-      options,
+      options
     );
   } else {
     log(
       `Couldn't find original request for redirect response: ${
         params.requestId
-      }`,
+      }`
     );
   }
 }
@@ -81,11 +91,11 @@ export function harFromMessages(messages, options) {
     switch (method) {
       case 'Page.frameStartedLoading':
       case 'Page.frameRequestedNavigation':
-      case 'Page.navigatedWithinDocument':
+      case 'Page.navigatedWithinDocument': {
         {
           const frameId = params.frameId;
           const rootFrame = rootFrameMappings.get(frameId) || frameId;
-          if (pages.some((page) => page.__frameId === rootFrame)) {
+          if (pages.some(page => page.__frameId === rootFrame)) {
             continue;
           }
           currentPageId = randomUUID();
@@ -96,7 +106,7 @@ export function harFromMessages(messages, options) {
             startedDateTime: '',
             title: title,
             pageTimings: {},
-            __frameId: rootFrame,
+            __frameId: rootFrame
           };
           pages.push(page);
           // do we have any unmmapped requests, add them
@@ -119,14 +129,14 @@ export function harFromMessages(messages, options) {
           if (responsesWithoutPage.length > 0) {
             for (let params of responsesWithoutPage) {
               let entry = entries.find(
-                (entry) => entry._requestId === params.requestId,
+                entry => entry._requestId === params.requestId
               );
               if (entry) {
                 populateEntryFromResponse(
                   entry,
                   params.response,
                   page,
-                  options,
+                  options
                 );
               } else {
                 log(`Couln't find matching request for response`);
@@ -135,15 +145,16 @@ export function harFromMessages(messages, options) {
           }
         }
         break;
+      }
 
-      case 'Network.requestWillBeSent':
+      case 'Network.requestWillBeSent': {
         {
           const request = params.request;
           if (!isSupportedProtocol(request.url)) {
             ignoredRequests.add(params.requestId);
             continue;
           }
-          const page = pages[pages.length - 1];
+          const page = pages.at(-1);
           const cookieHeader = getHeaderValue(request.headers, 'Cookie');
 
           //Before we used to remove the hash framgment because of Chrome do that but:
@@ -151,14 +162,11 @@ export function harFromMessages(messages, options) {
           // 2. If we remove it, the HAR will not have the same URL as we tested
           // and that makes PageXray generate the wromng URL and we end up with two pages
           // in sitespeed.io if we run in SPA mode
-          const url = parse(
-            request.url + (request.urlFragment ? request.urlFragment : ''),
-            true,
-          );
+          const url = parse(request.url + (request.urlFragment ?? ''), true);
 
           const postData = parsePostData(
             getHeaderValue(request.headers, 'Content-Type'),
-            request.postData,
+            request.postData
           );
 
           const req = {
@@ -169,7 +177,7 @@ export function harFromMessages(messages, options) {
             headersSize: -1,
             bodySize: isEmpty(request.postData) ? 0 : request.postData.length,
             cookies: parseRequestCookies(cookieHeader),
-            headers: parseHeaders(request.headers),
+            headers: parseHeaders(request.headers)
           };
 
           if (request.isLinkPreload) {
@@ -191,19 +199,20 @@ export function harFromMessages(messages, options) {
             _initiator_detail: JSON.stringify(params.initiator),
             _initiator_type: params.initiator.type,
             // Chrome's DevTools Frontend returns this field in lower case
-            _resourceType: params.type ? params.type.toLowerCase() : null,
+            _resourceType: params.type ? params.type.toLowerCase() : undefined
           };
 
           // The object initiator change according to its type
           switch (params.initiator.type) {
-            case 'parser':
+            case 'parser': {
               {
                 entry._initiator = params.initiator.url;
                 entry._initiator_line = params.initiator.lineNumber + 1; // Because lineNumber is 0 based
               }
               break;
+            }
 
-            case 'script':
+            case 'script': {
               {
                 if (
                   params.initiator.stack &&
@@ -218,6 +227,7 @@ export function harFromMessages(messages, options) {
                 }
               }
               break;
+            }
           }
 
           if (params.redirectResponse) {
@@ -226,7 +236,7 @@ export function harFromMessages(messages, options) {
 
           if (!page) {
             log(
-              `Request will be sent with requestId ${params.requestId} that can't be mapped to any page at the moment.`,
+              `Request will be sent with requestId ${params.requestId} that can't be mapped to any page at the moment.`
             );
             // ignoredRequests.add(params.requestId);
             entriesWithoutPage.push(entry);
@@ -245,10 +255,11 @@ export function harFromMessages(messages, options) {
           entry.startedDateTime = new Date(entrySecs * 1000).toISOString();
         }
         break;
+      }
 
-      case 'Network.requestServedFromCache':
+      case 'Network.requestServedFromCache': {
         {
-          if (pages.length < 1) {
+          if (pages.length === 0) {
             //we haven't loaded any pages yet.
             continue;
           }
@@ -258,11 +269,11 @@ export function harFromMessages(messages, options) {
           }
 
           const entry = entries.find(
-            (entry) => entry._requestId === params.requestId,
+            entry => entry._requestId === params.requestId
           );
           if (!entry) {
             log(
-              `Received requestServedFromCache for requestId ${params.requestId} with no matching request.`,
+              `Received requestServedFromCache for requestId ${params.requestId} with no matching request.`
             );
             continue;
           }
@@ -271,46 +282,48 @@ export function harFromMessages(messages, options) {
           entry.cache.beforeRequest = {
             lastAccess: '',
             eTag: '',
-            hitCount: 0,
+            hitCount: 0
           };
         }
         break;
+      }
 
-      case 'Network.requestWillBeSentExtraInfo':
+      case 'Network.requestWillBeSentExtraInfo': {
         {
           if (ignoredRequests.has(params.requestId)) {
             continue;
           }
 
           const entry = entries.find(
-            (entry) => entry._requestId === params.requestId,
+            entry => entry._requestId === params.requestId
           );
           if (!entry) {
             log(
-              `Extra info sent for requestId ${params.requestId} with no matching request.`,
+              `Extra info sent for requestId ${params.requestId} with no matching request.`
             );
             continue;
           }
 
           if (params.headers) {
             entry.request.headers = entry.request.headers.concat(
-              parseHeaders(params.headers),
+              parseHeaders(params.headers)
             );
           }
 
           if (params.associatedCookies) {
             entry.request.cookies = (entry.request.cookies || []).concat(
               params.associatedCookies
-                .filter(({ blockedReasons }) => !blockedReasons.length)
-                .map(({ cookie }) => formatCookie(cookie)),
+                .filter(({ blockedReasons }) => blockedReasons.length === 0)
+                .map(({ cookie }) => formatCookie(cookie))
             );
           }
         }
         break;
+      }
 
-      case 'Network.responseReceivedExtraInfo':
+      case 'Network.responseReceivedExtraInfo': {
         {
-          if (pages.length < 1) {
+          if (pages.length === 0) {
             //we haven't loaded any pages yet.
             continue;
           }
@@ -320,12 +333,12 @@ export function harFromMessages(messages, options) {
           }
 
           let entry = entries.find(
-            (entry) => entry._requestId === params.requestId,
+            entry => entry._requestId === params.requestId
           );
 
           if (!entry) {
             entry = entriesWithoutPage.find(
-              (entry) => entry._requestId === params.requestId,
+              entry => entry._requestId === params.requestId
             );
           }
 
@@ -338,7 +351,7 @@ export function harFromMessages(messages, options) {
             // Extra info received before response
             entry.extraResponseInfo = {
               headers: parseHeaders(params.headers),
-              blockedCookies: params.blockedCookies,
+              blockedCookies: params.blockedCookies
             };
             responseReceivedExtraInfos.push(params);
             continue;
@@ -349,10 +362,11 @@ export function harFromMessages(messages, options) {
           }
         }
         break;
+      }
 
-      case 'Network.responseReceived':
+      case 'Network.responseReceived': {
         {
-          if (pages.length < 1) {
+          if (pages.length === 0) {
             //we haven't loaded any pages yet.
             responsesWithoutPage.push(params);
             continue;
@@ -363,18 +377,18 @@ export function harFromMessages(messages, options) {
           }
 
           let entry = entries.find(
-            (entry) => entry._requestId === params.requestId,
+            entry => entry._requestId === params.requestId
           );
 
           if (!entry) {
             entry = entriesWithoutPage.find(
-              (entry) => entry._requestId === params.requestId,
+              entry => entry._requestId === params.requestId
             );
           }
 
           if (!entry) {
             log(
-              `Received network response for requestId ${params.requestId} with no matching request.`,
+              `Received network response for requestId ${params.requestId} with no matching request.`
             );
             continue;
           }
@@ -382,39 +396,39 @@ export function harFromMessages(messages, options) {
           const frameId =
             rootFrameMappings.get(params.frameId) || params.frameId;
           const page =
-            pages.find((page) => page.__frameId === frameId) ||
-            pages[pages.length - 1];
+            pages.find(page => page.__frameId === frameId) || pages.at(-1);
           if (!page) {
             log(
-              `Received network response for requestId ${params.requestId} that can't be mapped to any page.`,
+              `Received network response for requestId ${params.requestId} that can't be mapped to any page.`
             );
             continue;
           }
 
           try {
             populateEntryFromResponse(entry, params.response, page, options);
-          } catch (e) {
+          } catch (error) {
             log(
-              `Error parsing response: ${JSON.stringify(params, undefined, 2)}`,
+              `Error parsing response: ${JSON.stringify(params, undefined, 2)}`
             );
-            throw e;
+            throw error;
           }
 
           const responseReceivedExtraInfo = responseReceivedExtraInfos.find(
-            (responseReceivedExtraInfo) =>
-              responseReceivedExtraInfo.requestId == params.requestId,
+            responseReceivedExtraInfo =>
+              responseReceivedExtraInfo.requestId == params.requestId
           );
           if (responseReceivedExtraInfo && responseReceivedExtraInfo.headers) {
             entry.response.headers = parseHeaders(
-              responseReceivedExtraInfo.headers,
+              responseReceivedExtraInfo.headers
             );
           }
         }
         break;
+      }
 
-      case 'Network.dataReceived':
+      case 'Network.dataReceived': {
         {
-          if (pages.length < 1) {
+          if (pages.length === 0) {
             //we haven't loaded any pages yet.
             continue;
           }
@@ -423,11 +437,11 @@ export function harFromMessages(messages, options) {
           }
 
           const entry = entries.find(
-            (entry) => entry._requestId === params.requestId,
+            entry => entry._requestId === params.requestId
           );
           if (!entry) {
             log(
-              `Received network data for requestId ${params.requestId} with no matching request.`,
+              `Received network data for requestId ${params.requestId} with no matching request.`
             );
             continue;
           }
@@ -438,27 +452,28 @@ export function harFromMessages(messages, options) {
             entry.response.content.size += params.dataLength;
           }
 
-          const page = pages.find((page) => page.id === entry.pageref);
+          const page = pages.find(page => page.id === entry.pageref);
 
           if (entry._chunks && page) {
             entry._chunks.push({
               ts: formatMillis((params.timestamp - page.__timestamp) * 1000),
-              bytes: params.dataLength,
+              bytes: params.dataLength
             });
           } else if (page) {
             entry._chunks = [
               {
                 ts: formatMillis((params.timestamp - page.__timestamp) * 1000),
-                bytes: params.dataLength,
-              },
+                bytes: params.dataLength
+              }
             ];
           }
         }
         break;
+      }
 
-      case 'Network.loadingFinished':
+      case 'Network.loadingFinished': {
         {
-          if (pages.length < 1) {
+          if (pages.length === 0) {
             //we haven't loaded any pages yet.
             continue;
           }
@@ -468,11 +483,11 @@ export function harFromMessages(messages, options) {
           }
 
           const entry = entries.find(
-            (entry) => entry._requestId === params.requestId,
+            entry => entry._requestId === params.requestId
           );
           if (!entry) {
             log(
-              `Network loading finished for requestId ${params.requestId} with no matching request.`,
+              `Network loading finished for requestId ${params.requestId} with no matching request.`
             );
             continue;
           }
@@ -480,42 +495,45 @@ export function harFromMessages(messages, options) {
           finalizeEntry(entry, params);
         }
         break;
+      }
 
-      case 'Page.loadEventFired':
+      case 'Page.loadEventFired': {
         {
-          if (pages.length < 1) {
+          if (pages.length === 0) {
             //we haven't loaded any pages yet.
             continue;
           }
 
-          const page = pages[pages.length - 1];
+          const page = pages.at(-1);
 
           if (params.timestamp && page.__timestamp) {
             page.pageTimings.onLoad = formatMillis(
-              (params.timestamp - page.__timestamp) * 1000,
+              (params.timestamp - page.__timestamp) * 1000
             );
           }
         }
         break;
+      }
 
-      case 'Page.domContentEventFired':
+      case 'Page.domContentEventFired': {
         {
-          if (pages.length < 1) {
+          if (pages.length === 0) {
             //we haven't loaded any pages yet.
             continue;
           }
 
-          const page = pages[pages.length - 1];
+          const page = pages.at(-1);
 
           if (params.timestamp && page.__timestamp) {
             page.pageTimings.onContentLoad = formatMillis(
-              (params.timestamp - page.__timestamp) * 1000,
+              (params.timestamp - page.__timestamp) * 1000
             );
           }
         }
         break;
+      }
 
-      case 'Page.frameAttached':
+      case 'Page.frameAttached': {
         {
           const frameId = params.frameId,
             parentId = params.parentFrameId;
@@ -529,8 +547,9 @@ export function harFromMessages(messages, options) {
           }
         }
         break;
+      }
 
-      case 'Network.loadingFailed':
+      case 'Network.loadingFailed': {
         {
           if (ignoredRequests.has(params.requestId)) {
             ignoredRequests.delete(params.requestId);
@@ -538,11 +557,11 @@ export function harFromMessages(messages, options) {
           }
 
           const entry = entries.find(
-            (entry) => entry._requestId === params.requestId,
+            entry => entry._requestId === params.requestId
           );
           if (!entry) {
             log(
-              `Network loading failed for requestId ${params.requestId} with no matching request.`,
+              `Network loading failed for requestId ${params.requestId} with no matching request.`
             );
             continue;
           }
@@ -550,7 +569,7 @@ export function harFromMessages(messages, options) {
           if (params.errorText === 'net::ERR_ABORTED') {
             finalizeEntry(entry, params);
             log(
-              `Loading was canceled due to Chrome or a user action for requestId ${params.requestId}.`,
+              `Loading was canceled due to Chrome or a user action for requestId ${params.requestId}.`
             );
             continue;
           }
@@ -558,23 +577,24 @@ export function harFromMessages(messages, options) {
           // This could be due to incorrect domain name etc. Sad, but unfortunately not something that a HAR file can
           // represent.
           log(
-            `Failed to load url '${entry.request.url}' (canceled: ${params.canceled})`,
+            `Failed to load url '${entry.request.url}' (canceled: ${params.canceled})`
           );
           entries = entries.filter(
-            (entry) => entry._requestId !== params.requestId,
+            entry => entry._requestId !== params.requestId
           );
         }
         break;
+      }
 
-      case 'Network.resourceChangedPriority':
+      case 'Network.resourceChangedPriority': {
         {
           const entry = entries.find(
-            (entry) => entry._requestId === params.requestId,
+            entry => entry._requestId === params.requestId
           );
 
           if (!entry) {
             log(
-              `Received resourceChangedPriority for requestId ${params.requestId} with no matching request.`,
+              `Received resourceChangedPriority for requestId ${params.requestId} with no matching request.`
             );
             continue;
           }
@@ -582,41 +602,31 @@ export function harFromMessages(messages, options) {
           entry._priority = message.params.newPriority;
         }
         break;
+      }
 
-      default:
+      default: {
         // Keep the old functionallity and log unknown events
         ignoredEvents(method);
         break;
+      }
     }
   }
 
   if (!options.includeResourcesFromDiskCache) {
-    entries = entries.filter(
-      (entry) => entry.cache.beforeRequest === undefined,
-    );
+    entries = entries.filter(entry => entry.cache.beforeRequest === undefined);
   }
 
-  const deleteInternalProperties = (o) => {
-    // __ properties are only for internal use, _ properties are custom properties for the HAR
-    for (const prop in o) {
-      if (prop.startsWith('__')) {
-        delete o[prop];
-      }
-    }
-    return o;
-  };
-
   entries = entries
-    .filter((entry) => {
+    .filter(entry => {
       if (!entry.response) {
         log(`Dropping incomplete request: ${entry.request.url}`);
       }
       return entry.response;
     })
-    .map(deleteInternalProperties);
-  pages = pages.map(deleteInternalProperties);
+    .map(element => deleteInternalProperties(element));
+  pages = pages.map(element => deleteInternalProperties(element));
   pages = pages.reduce((result, page, index) => {
-    const hasEntry = entries.some((entry) => entry.pageref === page.id);
+    const hasEntry = entries.some(entry => entry.pageref === page.id);
     if (hasEntry) {
       result.push(page);
     } else {
@@ -629,11 +639,11 @@ export function harFromMessages(messages, options) {
     return result;
   }, {});
 
-  pages = pages.map((page) => {
+  pages = pages.map(page => {
     page.id = pagerefMapping[page.id];
     return page;
   });
-  entries = entries.map((entry) => {
+  entries = entries.map(entry => {
     entry.pageref = pagerefMapping[entry.pageref];
     return entry;
   });
@@ -645,10 +655,10 @@ export function harFromMessages(messages, options) {
       creator: {
         name: 'chrome-har',
         version,
-        comment: 'https://github.com/sitespeedio/chrome-har',
+        comment: 'https://github.com/sitespeedio/chrome-har'
       },
       pages,
-      entries,
-    },
+      entries
+    }
   };
 }
