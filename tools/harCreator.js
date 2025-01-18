@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 
-'use strict';
-
-import { readFile, writeFile } from 'fs/promises';
-import { resolve, basename } from 'path';
+import { readFile, writeFile } from 'node:fs/promises';
+import path from 'node:path';
 import { harFromMessages } from '../index.js';
 
 if (process.argv.length !== 3) {
@@ -13,10 +11,15 @@ if (process.argv.length !== 3) {
 
 const perflogPath = process.argv[2];
 
-readFile(resolve(perflogPath), 'utf8')
-  .then(JSON.parse)
-  .then((messages) => harFromMessages(messages))
-  .then((har) => JSON.stringify(har, null, 2))
-  .then((har) =>
-    writeFile(basename(perflogPath, '.json') + '.har', har, 'utf8'),
-  );
+try {
+  const perflogContent = await readFile(path.resolve(perflogPath), 'utf8');
+  const messages = JSON.parse(perflogContent);
+  const har = await harFromMessages(messages);
+  const harJson = JSON.stringify(har, undefined, 2);
+  const harFilePath = path.basename(perflogPath, '.json') + '.har';
+
+  await writeFile(harFilePath, harJson, 'utf8');
+} catch (error) {
+  console.error('An error occurred:', error.message);
+  process.exit(1);
+}

@@ -1,4 +1,5 @@
 import prettier from 'eslint-plugin-prettier';
+import unicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -10,23 +11,26 @@ const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
   baseDirectory: __dirname,
   recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
+  allConfig: js.configs.all
 });
 
 export default [
   {
-    ignores: [],
+    ignores: []
   },
-  ...compat.extends('eslint:recommended'),
+  ...compat.extends('eslint:recommended', 'plugin:unicorn/recommended'),
   {
     plugins: {
       prettier,
+      unicorn
     },
 
     languageOptions: {
       globals: {
-        ...globals.node,
+        ...globals.node
       },
+      ecmaVersion: 'latest',
+      sourceType: 'module'
     },
 
     rules: {
@@ -34,11 +38,19 @@ export default [
         'error',
         {
           singleQuote: true,
-        },
+          trailingComma: 'none',
+          arrowParens: 'avoid',
+          embeddedLanguageFormatting: 'off'
+        }
       ],
 
+      'require-atomic-updates': 0,
       'no-extra-semi': 0,
       'no-mixed-spaces-and-tabs': 0,
-    },
-  },
+      'unicorn/filename-case': 0,
+      'unicorn/prevent-abbreviations': 0,
+      'unicorn/no-array-reduce': 0,
+      'unicorn/prefer-spread': 0
+    }
+  }
 ];
