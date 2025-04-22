@@ -81,16 +81,16 @@ export function harFromMessages(messages, options) {
     currentPageId;
 
   for (const message of messages) {
-
     const params = message.params;
     const method = message.method;
 
-    if (method === 'Network.requestWillBeSent' && params.type === 'Document') {
-      if (!mainFrameId) {
-        mainFrameId = params.frameId;
-      }
+    if (
+      method === 'Network.requestWillBeSent' &&
+      params.type === 'Document' &&
+      !mainFrameId
+    ) {
+      mainFrameId = params.frameId;
     }
-
 
     if (!/^(Page|Network)\..+/.test(method)) {
       continue;
@@ -103,12 +103,12 @@ export function harFromMessages(messages, options) {
         {
           const frameId = params.frameId;
           const rootFrame = rootFrameMappings.get(frameId) ?? frameId;
-  
+
           // Skip any iframe
           if (mainFrameId && rootFrame !== mainFrameId) {
             break;
           }
-         
+
           if (pages.some(page => page.__frameId === rootFrame)) {
             continue;
           }
