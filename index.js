@@ -77,12 +77,20 @@ export function harFromMessages(messages, options) {
     responsesWithoutPage = [],
     paramsWithoutPage = [],
     responseReceivedExtraInfos = [],
+    mainFrameId,
     currentPageId;
 
   for (const message of messages) {
-    const params = message.params;
 
+    const params = message.params;
     const method = message.method;
+
+    if (method === 'Network.requestWillBeSent' && params.type === 'Document') {
+      if (!mainFrameId) {
+        mainFrameId = params.frameId;
+      }
+    }
+
 
     if (!/^(Page|Network)\..+/.test(method)) {
       continue;
@@ -94,7 +102,13 @@ export function harFromMessages(messages, options) {
       case 'Page.navigatedWithinDocument': {
         {
           const frameId = params.frameId;
-          const rootFrame = rootFrameMappings.get(frameId) || frameId;
+          const rootFrame = rootFrameMappings.get(frameId) ?? frameId;
+  
+          // Skip any iframe
+          if (mainFrameId && rootFrame !== mainFrameId) {
+            break;
+          }
+         
           if (pages.some(page => page.__frameId === rootFrame)) {
             continue;
           }
