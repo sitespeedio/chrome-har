@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.0 - 2025-10-16
+### Added
+* Add option to clean header values [#141](https://github.com/sitespeedio/chrome-har/pull/141).
+
 ## 1.0.1 - 2024-10-11
 ### Fixed
 * Try/catch broken dates [#130](https://github.com/sitespeedio/chrome-har/pull/130).
