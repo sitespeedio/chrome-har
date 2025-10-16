@@ -24,6 +24,10 @@ const defaultOptions = {
 };
 const isEmpty = o => !o;
 
+let getValue = function (name, value) {
+  return value;
+};
+
 const deleteInternalProperties = o => {
   // __ properties are only for internal use, _ properties are custom properties for the HAR
   for (const prop in o) {
@@ -68,6 +72,7 @@ function populateRedirectResponse(page, params, entries, options) {
 export function harFromMessages(messages, options) {
   options = Object.assign({}, defaultOptions, options);
 
+  const cleanValue = options.cleanHeaderValue || getValue;
   const ignoredRequests = new Set(),
     rootFrameMappings = new Map();
 
@@ -177,7 +182,7 @@ export function harFromMessages(messages, options) {
             headersSize: -1,
             bodySize: isEmpty(request.postData) ? 0 : request.postData.length,
             cookies: parseRequestCookies(cookieHeader),
-            headers: parseHeaders(request.headers)
+            headers: parseHeaders(request.headers, cleanValue)
           };
 
           if (request.isLinkPreload) {
@@ -350,7 +355,7 @@ export function harFromMessages(messages, options) {
           if (!entry.response) {
             // Extra info received before response
             entry.extraResponseInfo = {
-              headers: parseHeaders(params.headers),
+              headers: parseHeaders(params.headers, cleanValue),
               blockedCookies: params.blockedCookies
             };
             responseReceivedExtraInfos.push(params);
@@ -358,7 +363,7 @@ export function harFromMessages(messages, options) {
           }
 
           if (params.headers) {
-            entry.response.headers = parseHeaders(params.headers);
+            entry.response.headers = parseHeaders(params.headers, cleanValue);
           }
         }
         break;
