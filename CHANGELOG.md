@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.1 - 2025-10-17
+### Fixed
+* The option to clean header values was broken, this has been reverted for now.
+
 ## 1.1.0 - 2025-10-16
 ### Added
 * Add option to clean header values [#141](https://github.com/sitespeedio/chrome-har/pull/141).
