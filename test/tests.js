@@ -333,6 +333,20 @@ test('Includes initial redirect', t => {
     });
 });
 
+test('Includes charset in response content', t => {
+  const perflogPath = perflog('bing.com.json');
+  return parsePerflog(perflogPath)
+    .then(har => har.log)
+    .then(log => {
+      const entry = log.entries.find(
+        e => e.response.content.charset !== undefined
+      );
+      t.truthy(entry, 'Should have at least one entry with charset');
+      t.is(typeof entry.response.content.charset, 'string');
+      return log;
+    });
+});
+
 test('Network.responseReceivedExtraInfo may be fired before or after responseReceived', t => {
   const perflogPath = perflog('bing.com.json');
   return parsePerflog(perflogPath)
