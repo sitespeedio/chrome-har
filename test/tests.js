@@ -364,20 +364,73 @@ test('Network.responseReceivedExtraInfo may be fired before or after responseRec
     });
 });
 
-test('Soft navigation creates a new page', t => {
+test('Soft navigation updates the current page', t => {
   const perflogPath = perflog('soft-navigation-github.json');
   return parsePerflog(perflogPath)
     .then(har => har.log)
     .then(log => {
-      // Should have 2 pages: the initial page + the soft navigation
-      t.is(log.pages.length, 2);
-      t.is(log.pages[1]._softNavigation, true);
+      // Soft navigation should update the page, not create a new one
+      t.is(log.pages.length, 1);
+      t.is(log.pages[0]._softNavigation, true);
       t.is(
-        log.pages[1].title,
+        log.pages[0].title,
         'https://github.com/sitespeedio/browsertime/pulls'
       );
-      // Network requests after the soft navigation should belong to page_2
-      const softNavEntries = log.entries.filter(e => e.pageref === 'page_2');
-      t.true(softNavEntries.length > 0);
+      // All entries should belong to the single page
+      const allOnPage = log.entries.every(e => e.pageref === 'page_1');
+      t.true(allOnPage);
     });
+});
+
+test('Multiple GitHub soft navigations each update their page', async t => {
+  const perflogs = [
+    [
+      'soft-navigation-github-pulls.json',
+      'https://github.com/sitespeedio/browsertime/pulls'
+    ],
+    [
+      'soft-navigation-github-code.json',
+      'https://github.com/sitespeedio/browsertime'
+    ],
+    [
+      'soft-navigation-github-issues.json',
+      'https://github.com/sitespeedio/browsertime/issues'
+    ]
+  ];
+
+  for (const [file, expectedUrl] of perflogs) {
+    const messages = JSON.parse(await fs.readFile(perflog(file), 'utf8'));
+    const har = harFromMessages(messages);
+    t.is(har.log.pages.length, 1);
+    t.is(har.log.pages[0]._softNavigation, true);
+    t.is(har.log.pages[0].title, expectedUrl);
+    t.true(har.log.entries.length > 0);
+  }
+});
+
+test('Multiple React soft navigations each update their page', async t => {
+  const perflogs = [
+    [
+      'soft-navigation-react-describing-ui.json',
+      'https://react.dev/learn/describing-the-ui'
+    ],
+    [
+      'soft-navigation-react-first-component.json',
+      'https://react.dev/learn/your-first-component'
+    ],
+    [
+      'soft-navigation-react-importing-exporting.json',
+      'https://react.dev/learn/importing-and-exporting-components'
+    ],
+    ['soft-navigation-react-back-to-learn.json', 'https://react.dev/learn']
+  ];
+
+  for (const [file, expectedUrl] of perflogs) {
+    const messages = JSON.parse(await fs.readFile(perflog(file), 'utf8'));
+    const har = harFromMessages(messages);
+    t.is(har.log.pages.length, 1);
+    t.is(har.log.pages[0]._softNavigation, true);
+    t.is(har.log.pages[0].title, expectedUrl);
+    t.true(har.log.entries.length > 0);
+  }
 });
