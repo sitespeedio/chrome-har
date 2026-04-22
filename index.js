@@ -84,7 +84,7 @@ export function harFromMessages(messages, options) {
 
     const method = message.method;
 
-    if (!/^(Page|Network)\..+/.test(method)) {
+    if (!/^(Page|Network|SoftNavigation)\..+/.test(method)) {
       continue;
     }
 
@@ -143,6 +143,23 @@ export function harFromMessages(messages, options) {
               }
             }
           }
+        }
+        break;
+      }
+
+      // Soft navigation events are injected by the caller (e.g. Browsertime)
+      // when Chrome detects a soft navigation via the PerformanceObserver API.
+      case 'SoftNavigation.detected': {
+        {
+          currentPageId = randomUUID();
+          const page = {
+            id: currentPageId,
+            startedDateTime: '',
+            title: params.url || '',
+            pageTimings: {},
+            _softNavigation: true
+          };
+          pages.push(page);
         }
         break;
       }
