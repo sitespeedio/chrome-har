@@ -363,3 +363,21 @@ test('Network.responseReceivedExtraInfo may be fired before or after responseRec
       );
     });
 });
+
+test('Soft navigation creates a new page', t => {
+  const perflogPath = perflog('soft-navigation-github.json');
+  return parsePerflog(perflogPath)
+    .then(har => har.log)
+    .then(log => {
+      // Should have 2 pages: the initial page + the soft navigation
+      t.is(log.pages.length, 2);
+      t.is(log.pages[1]._softNavigation, true);
+      t.is(
+        log.pages[1].title,
+        'https://github.com/sitespeedio/browsertime/pulls'
+      );
+      // Network requests after the soft navigation should belong to page_2
+      const softNavEntries = log.entries.filter(e => e.pageref === 'page_2');
+      t.true(softNavEntries.length > 0);
+    });
+});
