@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.2.1 - 2026-04-22
+### Fixed
+* Make sure not multiple pages are created for a soft nav [#154](https://github.com/sitespeedio/chrome-har/pull/154)
+
 ## 1.2.0 - 2026-04-22
 ### Added
 * Support for soft navigation coming from Browsertime [#153](https://github.com/sitespeedio/chrome-har/pull/153)
