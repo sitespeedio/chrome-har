@@ -149,17 +149,24 @@ export function harFromMessages(messages, options) {
 
       // Soft navigation events are injected by the caller (e.g. Browsertime)
       // when Chrome detects a soft navigation via the PerformanceObserver API.
+      // Update the current page with the soft navigation URL instead of
+      // creating a new page, so one measurement = one HAR page.
       case 'SoftNavigation.detected': {
         {
-          currentPageId = randomUUID();
-          const page = {
-            id: currentPageId,
-            startedDateTime: '',
-            title: params.url || '',
-            pageTimings: {},
-            _softNavigation: true
-          };
-          pages.push(page);
+          const page = pages.at(-1);
+          if (page) {
+            page.title = params.url || '';
+            page._softNavigation = true;
+          } else {
+            currentPageId = randomUUID();
+            pages.push({
+              id: currentPageId,
+              startedDateTime: '',
+              title: params.url || '',
+              pageTimings: {},
+              _softNavigation: true
+            });
+          }
         }
         break;
       }
