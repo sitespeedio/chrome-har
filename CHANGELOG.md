@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 1.2.0 - 2026-04-22
+### Added
+* Support for soft navigation coming from Browsertime [#153](https://github.com/sitespeedio/chrome-har/pull/153)
+### Fixed
+* Get Charset from response [#152](https://github.com/sitespeedio/chrome-har/pull/152)
+* Fix to parse postData [#150](https://github.com/sitespeedio/chrome-har/pull/150)
+
 ## 1.1.1 - 2025-10-17
 ### Fixed
 * The option to clean header values was broken, this has been reverted for now.
