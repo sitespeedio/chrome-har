@@ -130,6 +130,146 @@ test('Parses IPv6 address', t => {
   );
 });
 
+test('Lifts CDP renderBlockingStatus onto entries as `_renderBlocking`', t => {
+  // Minimal synthetic CDP stream: one render-blocking document + one
+  // non-blocking subresource. The renderer in waterfall-tools matches
+  // `_renderBlocking === 'blocking'` (lowercase) to draw the orange ⊗
+  // marker, so we assert the casing here too.
+  const frameId = 'F1';
+  const baseMessages = (requestId, url, renderBlockingStatus) => [
+    {
+      method: 'Network.requestWillBeSent',
+      params: {
+        requestId,
+        frameId,
+        loaderId: 'L1',
+        documentURL: 'https://example.com/',
+        request: {
+          url,
+          method: 'GET',
+          headers: {},
+          initialPriority: 'High'
+        },
+        timestamp: 1,
+        wallTime: 1_700_000_000,
+        initiator: { type: 'other' },
+        type: requestId === '1' ? 'Document' : 'Script',
+        ...(renderBlockingStatus ? { renderBlockingStatus } : {})
+      }
+    },
+    {
+      method: 'Network.responseReceived',
+      params: {
+        requestId,
+        frameId,
+        loaderId: 'L1',
+        timestamp: 2,
+        type: requestId === '1' ? 'Document' : 'Script',
+        response: {
+          url,
+          status: 200,
+          statusText: 'OK',
+          headers: { 'content-type': 'text/html' },
+          mimeType: 'text/html',
+          fromDiskCache: false,
+          fromServiceWorker: false,
+          encodedDataLength: 100,
+          protocol: 'http/1.1',
+          connectionId: 1,
+          remoteIPAddress: '127.0.0.1',
+          timing: {
+            requestTime: 1,
+            sendStart: 0,
+            sendEnd: 1,
+            receiveHeadersEnd: 2
+          }
+        }
+      }
+    },
+    {
+      method: 'Network.loadingFinished',
+      params: { requestId, timestamp: 3, encodedDataLength: 100 }
+    }
+  ];
+  const messages = [
+    {
+      method: 'Page.frameStartedLoading',
+      params: { frameId }
+    },
+    ...baseMessages('1', 'https://example.com/', 'Blocking'),
+    ...baseMessages('2', 'https://example.com/app.js', 'NonBlocking')
+  ];
+  const har = harFromMessages(messages);
+  const byUrl = Object.fromEntries(
+    har.log.entries.map(e => [e.request.url, e])
+  );
+  t.is(byUrl['https://example.com/']._renderBlocking, 'blocking');
+  t.is(byUrl['https://example.com/app.js']._renderBlocking, 'nonblocking');
+});
+
+test('Omits `_renderBlocking` when CDP did not report it', t => {
+  // Older Chrome builds don't emit renderBlockingStatus at all — make sure
+  // we don't materialise the field as `undefined` or an empty string in
+  // that case. Absent input → absent output.
+  const messages = [
+    { method: 'Page.frameStartedLoading', params: { frameId: 'F1' } },
+    {
+      method: 'Network.requestWillBeSent',
+      params: {
+        requestId: '1',
+        frameId: 'F1',
+        loaderId: 'L1',
+        documentURL: 'https://example.com/',
+        request: {
+          url: 'https://example.com/',
+          method: 'GET',
+          headers: {},
+          initialPriority: 'High'
+        },
+        timestamp: 1,
+        wallTime: 1_700_000_000,
+        initiator: { type: 'other' },
+        type: 'Document'
+      }
+    },
+    {
+      method: 'Network.responseReceived',
+      params: {
+        requestId: '1',
+        frameId: 'F1',
+        loaderId: 'L1',
+        timestamp: 2,
+        type: 'Document',
+        response: {
+          url: 'https://example.com/',
+          status: 200,
+          statusText: 'OK',
+          headers: { 'content-type': 'text/html' },
+          mimeType: 'text/html',
+          fromDiskCache: false,
+          fromServiceWorker: false,
+          encodedDataLength: 100,
+          protocol: 'http/1.1',
+          connectionId: 1,
+          remoteIPAddress: '127.0.0.1',
+          timing: {
+            requestTime: 1,
+            sendStart: 0,
+            sendEnd: 1,
+            receiveHeadersEnd: 2
+          }
+        }
+      }
+    },
+    {
+      method: 'Network.loadingFinished',
+      params: { requestId: '1', timestamp: 3, encodedDataLength: 100 }
+    }
+  ];
+  const har = harFromMessages(messages);
+  t.false('_renderBlocking' in har.log.entries[0]);
+});
+
 test('Forwards the resource type value', t => {
   const perflogPath = perflog('www.google.ru.json');
   const expected = {
