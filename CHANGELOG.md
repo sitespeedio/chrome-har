@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 1.3.0 - 2026-05-06
+### Added
+* Lift CDP `renderBlockingStatus` onto entries as `_renderBlocking` (Chrome 108+) so downstream HAR consumers (waterfall-tools'
+WPT-style renderer in particular) can draw the orange ⊗ render-blocking marker. The field is lowercased (`'blocking'` /
+`'nonblocking'` / `'inbodyparserblocking'` / `'potentiallyblocking'`); older Chrome builds that don't emit it leave the field
+unset, distinguishing "not blocking" from "browser couldn't tell us". [#155](https://github.com/sitespeedio/chrome-har/pull/155).
+
 ## 1.2.1 - 2026-04-22
 ### Fixed
 * Make sure not multiple pages are created for a soft nav [#154](https://github.com/sitespeedio/chrome-har/pull/154)
