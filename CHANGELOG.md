@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Unreleased
+### Added
+* Add opt-in `allowMultiPage` support for main-frame scheduled/requested navigations so a second committed document request can create a new HAR page.
+
 ## 1.3.0 - 2026-05-06
 ### Added
 * Lift CDP `renderBlockingStatus` onto entries as `_renderBlocking` (Chrome 108+) so downstream HAR consumers (waterfall-tools'

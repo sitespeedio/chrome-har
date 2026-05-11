@@ -20,7 +20,8 @@ const log = debug('chrome-har');
 
 const defaultOptions = {
   includeResourcesFromDiskCache: false,
-  includeTextFromResponseBody: false
+  includeTextFromResponseBody: false,
+  allowMultiPage: false
 };
 const isEmpty = o => !o;
 
@@ -69,7 +70,8 @@ export function harFromMessages(messages, options) {
   options = Object.assign({}, defaultOptions, options);
 
   const ignoredRequests = new Set(),
-    rootFrameMappings = new Map();
+    rootFrameMappings = new Map(),
+    pendingMainFrameNavigations = new Map();
 
   let pages = [],
     entries = [],
@@ -90,11 +92,27 @@ export function harFromMessages(messages, options) {
 
     switch (method) {
       case 'Page.frameStartedLoading':
+      case 'Page.frameScheduledNavigation':
       case 'Page.frameRequestedNavigation':
       case 'Page.navigatedWithinDocument': {
         {
           const frameId = params.frameId;
           const rootFrame = rootFrameMappings.get(frameId) || frameId;
+          const isMainFrame = rootFrame === frameId;
+          const isPendingNavigationEvent =
+            method === 'Page.frameScheduledNavigation' ||
+            method === 'Page.frameRequestedNavigation';
+          if (
+            options.allowMultiPage &&
+            isMainFrame &&
+            isPendingNavigationEvent &&
+            pages.some(page => page.__frameId === rootFrame)
+          ) {
+            pendingMainFrameNavigations.set(rootFrame, {
+              url: params.url || ''
+            });
+            continue;
+          }
           if (pages.some(page => page.__frameId === rootFrame)) {
             continue;
           }
@@ -178,7 +196,30 @@ export function harFromMessages(messages, options) {
             ignoredRequests.add(params.requestId);
             continue;
           }
-          const page = pages.at(-1);
+          const rootFrame =
+            rootFrameMappings.get(params.frameId) || params.frameId;
+          const isMainFrame = rootFrame === params.frameId;
+          let page = pages.at(-1);
+          if (
+            options.allowMultiPage &&
+            page &&
+            isMainFrame &&
+            params.type === 'Document' &&
+            pendingMainFrameNavigations.has(rootFrame)
+          ) {
+            const pendingNavigation =
+              pendingMainFrameNavigations.get(rootFrame);
+            currentPageId = randomUUID();
+            page = {
+              id: currentPageId,
+              startedDateTime: '',
+              title: pendingNavigation.url || request.url,
+              pageTimings: {},
+              __frameId: rootFrame
+            };
+            pages.push(page);
+            pendingMainFrameNavigations.delete(rootFrame);
+          }
           const cookieHeader = getHeaderValue(request.headers, 'Cookie');
 
           //Before we used to remove the hash framgment because of Chrome do that but:
@@ -427,10 +468,8 @@ export function harFromMessages(messages, options) {
             continue;
           }
 
-          const frameId =
-            rootFrameMappings.get(params.frameId) || params.frameId;
           const page =
-            pages.find(page => page.__frameId === frameId) || pages.at(-1);
+            pages.find(page => page.id === entry.pageref) || pages.at(-1);
           if (!page) {
             log(
               `Received network response for requestId ${params.requestId} that can't be mapped to any page.`
@@ -579,6 +618,15 @@ export function harFromMessages(messages, options) {
             rootFrameMappings.set(frameId, grandParentId);
             grandParentId = rootFrameMappings.get(grandParentId);
           }
+        }
+        break;
+      }
+
+      case 'Page.frameClearedScheduledNavigation': {
+        {
+          const frameId = params.frameId;
+          const rootFrame = rootFrameMappings.get(frameId) || frameId;
+          pendingMainFrameNavigations.delete(rootFrame);
         }
         break;
       }
