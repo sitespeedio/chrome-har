@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Unreleased
+### Added
+* Add opt-in `allowMultiPage` support for main-frame scheduled or requested navigations.
+
 ## 1.3.1 - 2026-05-19
 * Fix for render blocking stats [#158](https://github.com/sitespeedio/chrome-har/pull/158).
 

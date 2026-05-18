@@ -316,6 +316,129 @@ test('navigatedWithinDocument', t => {
     });
 });
 
+test('Root frame navigation can create a new page when enabled', t => {
+  const frameId = 'F1';
+  const request = (requestId, url, timestamp, wallTime, type = 'Document') => [
+    {
+      method: 'Network.requestWillBeSent',
+      params: {
+        requestId,
+        frameId,
+        loaderId: `L${requestId}`,
+        documentURL: url,
+        request: {
+          url,
+          method: 'GET',
+          headers: {},
+          initialPriority: 'High'
+        },
+        timestamp,
+        wallTime,
+        initiator: { type: 'other' },
+        type
+      }
+    },
+    {
+      method: 'Network.responseReceived',
+      params: {
+        requestId,
+        frameId,
+        loaderId: `L${requestId}`,
+        timestamp: timestamp + 0.1,
+        type,
+        response: {
+          url,
+          status: 200,
+          statusText: 'OK',
+          headers: { 'content-type': 'text/html' },
+          mimeType: 'text/html',
+          fromDiskCache: false,
+          fromServiceWorker: false,
+          encodedDataLength: 100,
+          protocol: 'http/1.1',
+          connectionId: Number(requestId),
+          remoteIPAddress: '127.0.0.1',
+          timing: {
+            requestTime: timestamp,
+            dnsStart: -1,
+            dnsEnd: -1,
+            connectStart: -1,
+            connectEnd: -1,
+            sslStart: -1,
+            sslEnd: -1,
+            sendStart: 0,
+            sendEnd: 1,
+            receiveHeadersEnd: 2
+          }
+        }
+      }
+    },
+    {
+      method: 'Network.loadingFinished',
+      params: {
+        requestId,
+        timestamp: timestamp + 0.2,
+        encodedDataLength: 100
+      }
+    }
+  ];
+  const page1Url = 'https://example.com/page1.html';
+  const page2Url = 'https://example.com/page2.html';
+  const page2WallTime = 1_800_000_000;
+  const messages = [
+    { method: 'Page.frameStartedLoading', params: { frameId } },
+    ...request('1', page1Url, 1, 1_700_000_000),
+    ...request(
+      '2',
+      'https://example.com/page1.png',
+      1.5,
+      1_700_000_000.5,
+      'Image'
+    ),
+    {
+      method: 'Page.frameScheduledNavigation',
+      params: {
+        delay: 0,
+        frameId,
+        reason: 'scriptInitiated',
+        url: page2Url
+      }
+    },
+    { method: 'Page.frameStartedLoading', params: { frameId } },
+    ...request('3', page2Url, 3, page2WallTime),
+    ...request(
+      '4',
+      'https://example.com/page2.png',
+      3.5,
+      page2WallTime + 0.5,
+      'Image'
+    )
+  ];
+
+  const flatHar = harFromMessages(messages);
+  t.is(flatHar.log.pages.length, 1);
+  t.true(flatHar.log.entries.every(entry => entry.pageref === 'page_1'));
+
+  const multiPageHar = harFromMessages(messages, { allowMultiPage: true });
+  t.is(multiPageHar.log.pages.length, 2);
+  t.deepEqual(
+    multiPageHar.log.pages.map(page => page.title),
+    [page1Url, page2Url]
+  );
+
+  const entriesByUrl = Object.fromEntries(
+    multiPageHar.log.entries.map(entry => [entry.request.url, entry])
+  );
+  t.is(entriesByUrl[page1Url].pageref, 'page_1');
+  t.is(entriesByUrl['https://example.com/page1.png'].pageref, 'page_1');
+  t.is(entriesByUrl[page2Url].pageref, 'page_2');
+  t.is(entriesByUrl['https://example.com/page2.png'].pageref, 'page_2');
+  t.is(
+    entriesByUrl[page2Url].startedDateTime,
+    new Date(page2WallTime * 1000).toISOString()
+  );
+});
+
 test('Generates multiple pages', t => {
   const perflogPath = perflog('www.wikipedia.org.json');
   return parsePerflog(perflogPath).then(har => {

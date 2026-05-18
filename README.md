@@ -58,3 +58,13 @@ client.on('Network.requestIntercepted', async (params: any) => {
 
 const har = harFromMessages(harEvents, {includeTextFromResponseBody: true});
 ```
+
+## Multi-page main frame navigations
+
+By default, main-document redirects and scripted navigations stay on the current HAR page. This keeps the historical one-page-per-run behavior.
+
+Set `allowMultiPage` to `true` to create a new HAR page when Chrome reports a main-frame scheduled or requested navigation and the next main-document request starts:
+
+```javascript
+const har = harFromMessages(harEvents, {allowMultiPage: true});
+```
