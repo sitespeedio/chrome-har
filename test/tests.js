@@ -130,13 +130,13 @@ test('Parses IPv6 address', t => {
   );
 });
 
-test('Lifts CDP renderBlockingStatus onto entries as `_renderBlocking`', t => {
+test('Lifts CDP renderBlockingBehavior onto entries as `_renderBlocking`', t => {
   // Minimal synthetic CDP stream: one render-blocking document + one
   // non-blocking subresource. The renderer in waterfall-tools matches
   // `_renderBlocking === 'blocking'` (lowercase) to draw the orange ⊗
   // marker, so we assert the casing here too.
   const frameId = 'F1';
-  const baseMessages = (requestId, url, renderBlockingStatus) => [
+  const baseMessages = (requestId, url, renderBlockingBehavior) => [
     {
       method: 'Network.requestWillBeSent',
       params: {
@@ -154,7 +154,7 @@ test('Lifts CDP renderBlockingStatus onto entries as `_renderBlocking`', t => {
         wallTime: 1_700_000_000,
         initiator: { type: 'other' },
         type: requestId === '1' ? 'Document' : 'Script',
-        ...(renderBlockingStatus ? { renderBlockingStatus } : {})
+        ...(renderBlockingBehavior ? { renderBlockingBehavior } : {})
       }
     },
     {
@@ -208,7 +208,7 @@ test('Lifts CDP renderBlockingStatus onto entries as `_renderBlocking`', t => {
 });
 
 test('Omits `_renderBlocking` when CDP did not report it', t => {
-  // Older Chrome builds don't emit renderBlockingStatus at all — make sure
+  // Older Chrome builds don't emit renderBlockingBehavior at all — make sure
   // we don't materialise the field as `undefined` or an empty string in
   // that case. Absent input → absent output.
   const messages = [
@@ -268,6 +268,23 @@ test('Omits `_renderBlocking` when CDP did not report it', t => {
   ];
   const har = harFromMessages(messages);
   t.false('_renderBlocking' in har.log.entries[0]);
+});
+
+test('Lifts `_renderBlocking` from a real Chrome perflog', t => {
+  // Regression guard against the field-name typo this test file was first
+  // shipped with (`renderBlockingStatus` vs. the real CDP field
+  // `renderBlockingBehavior`). The synthetic tests above can't catch that
+  // class of mistake — they'd silently pass against either spelling
+  // because they author the input alongside the assertion. A real Chrome
+  // perflog can.
+  const perflogPath = perflog('soft-navigation-github-issues.json');
+  return parsePerflog(perflogPath).then(har => {
+    const values = new Set(
+      har.log.entries.map(e => e._renderBlocking).filter(v => v !== undefined)
+    );
+    t.true(values.has('nonblocking'));
+    t.true(values.has('nonblockingdynamic'));
+  });
 });
 
 test('Forwards the resource type value', t => {

@@ -226,14 +226,15 @@ export function harFromMessages(messages, options) {
             _resourceType: params.type ? params.type.toLowerCase() : undefined
           };
 
-          // CDP `renderBlockingStatus` (Chrome 108+) — values are PascalCase
-          // (`Blocking`, `NonBlocking`, `InBodyParserBlocking`, `Potentially…`).
-          // waterfall-tools' WPT-style renderer matches `_renderBlocking ===
-          // 'blocking'` to draw the orange ⊗ marker, so lowercase the value
-          // here. Other variants ride along verbatim-lowercased for any
-          // consumer that wants to inspect them.
-          if (params.renderBlockingStatus) {
-            entry._renderBlocking = params.renderBlockingStatus.toLowerCase();
+          // CDP per-request render-blocking classification (Chrome 108+).
+          // The field lives at `Network.requestWillBeSent.params.renderBlockingBehavior`
+          // and its values are PascalCase (`Blocking`, `NonBlocking`,
+          // `NonBlockingDynamic`, …). waterfall-tools' WPT-style renderer
+          // matches `_renderBlocking === 'blocking'` to draw the orange ⊗
+          // marker, so lowercase the value here; other variants ride along
+          // verbatim-lowercased for any consumer that wants to inspect them.
+          if (params.renderBlockingBehavior) {
+            entry._renderBlocking = params.renderBlockingBehavior.toLowerCase();
           }
 
           // The object initiator change according to its type
