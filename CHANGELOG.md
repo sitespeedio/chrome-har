@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.3.1 - 2026-05-19
+* Fix for render blocking stats [#158](https://github.com/sitespeedio/chrome-har/pull/158).
+
 ## 1.3.0 - 2026-05-06
 ### Added
 * Lift CDP `renderBlockingStatus` onto entries as `_renderBlocking` (Chrome 108+) so downstream HAR consumers (waterfall-tools'
