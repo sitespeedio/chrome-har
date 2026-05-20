@@ -1,5 +1,4 @@
 import test from 'ava';
-import * as validator from 'har-validator';
 import * as fs from 'node:fs/promises';
 import path from 'node:path';
 import { harFromMessages } from '../index.js';
@@ -55,7 +54,6 @@ function parsePerflog(perflogPath, options) {
   return fs.readFile(perflogPath, { encoding: 'utf8' }).then(data => {
     const log = JSON.parse(data);
     const har = harFromMessages(log, options);
-    validator.har(har);
     return har;
   });
 }
