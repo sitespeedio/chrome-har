@@ -40,11 +40,9 @@
     "eslint-config-prettier": "9.1.2",
     "eslint-plugin-prettier": "5.5.4",
     "eslint-plugin-unicorn": "56.0.1",
-    "har-validator": "~5.1.5",
     "prettier": "3.6.2"
   },
   "dependencies": {
-    "debug": "4.4.3",
-    "tough-cookie": "5.1.2"
+    "debug": "4.4.3"
   }
 }
