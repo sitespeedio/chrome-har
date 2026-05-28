@@ -20,7 +20,8 @@ const log = debug('chrome-har');
 
 const defaultOptions = {
   includeResourcesFromDiskCache: false,
-  includeTextFromResponseBody: false
+  includeTextFromResponseBody: false,
+  allowMultiPage: false
 };
 const isEmpty = o => !o;
 
@@ -42,6 +43,10 @@ function addFromFirstRequest(page, params) {
     // URL is better than blank, and it's what devtools uses.
     page.title = page.title === '' ? params.request.url : page.title;
   }
+}
+
+function hasEntries(page, entries) {
+  return entries.some(entry => entry.pageref === page.id);
 }
 
 function populateRedirectResponse(page, params, entries, options) {
@@ -79,6 +84,20 @@ export function harFromMessages(messages, options) {
     responseReceivedExtraInfos = [],
     currentPageId;
 
+  function addPage(frameId, title = '', extra = {}) {
+    currentPageId = randomUUID();
+    const page = {
+      id: currentPageId,
+      startedDateTime: '',
+      title,
+      pageTimings: {},
+      __frameId: frameId,
+      ...extra
+    };
+    pages.push(page);
+    return page;
+  }
+
   for (const message of messages) {
     const params = message.params;
 
@@ -90,25 +109,36 @@ export function harFromMessages(messages, options) {
 
     switch (method) {
       case 'Page.frameStartedLoading':
+      case 'Page.frameScheduledNavigation':
       case 'Page.frameRequestedNavigation':
       case 'Page.navigatedWithinDocument': {
         {
           const frameId = params.frameId;
           const rootFrame = rootFrameMappings.get(frameId) || frameId;
-          if (pages.some(page => page.__frameId === rootFrame)) {
+          const pageExists = pages.some(page => page.__frameId === rootFrame);
+          const lastPage = pages.at(-1);
+          if (!options.allowMultiPage && pageExists) {
             continue;
           }
-          currentPageId = randomUUID();
+          if (
+            options.allowMultiPage &&
+            method === 'Page.frameStartedLoading' &&
+            lastPage?.__frameId === rootFrame &&
+            (lastPage.__pendingNavigation ||
+              lastPage.__createdFromDocumentRequest)
+          ) {
+            continue;
+          }
           const title =
-            method === 'Page.navigatedWithinDocument' ? params.url : '';
-          const page = {
-            id: currentPageId,
-            startedDateTime: '',
-            title: title,
-            pageTimings: {},
-            __frameId: rootFrame
-          };
-          pages.push(page);
+            method === 'Page.navigatedWithinDocument' ||
+            method === 'Page.frameScheduledNavigation'
+              ? params.url
+              : '';
+          const page = addPage(rootFrame, title, {
+            __pendingNavigation:
+              method === 'Page.frameScheduledNavigation' ||
+              method === 'Page.frameRequestedNavigation'
+          });
           // do we have any unmmapped requests, add them
           if (entriesWithoutPage.length > 0) {
             // update page
@@ -153,7 +183,7 @@ export function harFromMessages(messages, options) {
       // creating a new page, so one measurement = one HAR page.
       case 'SoftNavigation.detected': {
         {
-          const page = pages.at(-1);
+          let page = pages.at(-1);
           if (page) {
             page.title = params.url || '';
             page._softNavigation = true;
@@ -178,7 +208,7 @@ export function harFromMessages(messages, options) {
             ignoredRequests.add(params.requestId);
             continue;
           }
-          const page = pages.at(-1);
+          let page = pages.at(-1);
           const cookieHeader = getHeaderValue(request.headers, 'Cookie');
 
           //Before we used to remove the hash framgment because of Chrome do that but:
@@ -269,6 +299,20 @@ export function harFromMessages(messages, options) {
             populateRedirectResponse(page, params, entries, options);
           }
 
+          if (
+            options.allowMultiPage &&
+            params.type === 'Document' &&
+            page &&
+            page.__frameId ===
+              (rootFrameMappings.get(params.frameId) || params.frameId) &&
+            hasEntries(page, entries) &&
+            !params.redirectResponse
+          ) {
+            page = addPage(params.frameId, request.url, {
+              __createdFromDocumentRequest: true
+            });
+          }
+
           if (!page) {
             log(
               `Request will be sent with requestId ${params.requestId} that can't be mapped to any page at the moment.`
@@ -279,6 +323,7 @@ export function harFromMessages(messages, options) {
             continue;
           }
 
+          entry.pageref = page.id;
           entries.push(entry);
 
           // this is the first request for this page, so set timestamp of page.
@@ -431,7 +476,9 @@ export function harFromMessages(messages, options) {
           const frameId =
             rootFrameMappings.get(params.frameId) || params.frameId;
           const page =
-            pages.find(page => page.__frameId === frameId) || pages.at(-1);
+            pages.find(page => page.id === entry.pageref) ||
+            pages.find(page => page.__frameId === frameId) ||
+            pages.at(-1);
           if (!page) {
             log(
               `Received network response for requestId ${params.requestId} that can't be mapped to any page.`
