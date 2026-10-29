@@ -589,3 +589,17 @@ test('Multiple React soft navigations each update their page', async t => {
     t.true(har.log.entries.length > 0);
   }
 });
+
+test('Request cookies from CDP get the right expiry date', t => {
+  const perflogPath = perflog('bing.com.json');
+  return parsePerflog(perflogPath)
+    .then(har => har.log)
+    .then(log => {
+      const cookies = log.entries.flatMap(e => e.request.cookies);
+      const muid = cookies.find(c => c.name === 'MUID');
+      const session = cookies.find(c => c.name === '_EDGE_S');
+      t.is(muid.expires, new Date(1_754_366_452_244.094).toISOString());
+      t.is(session.expires, undefined);
+      return log;
+    });
+});
