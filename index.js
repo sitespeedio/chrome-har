@@ -19,6 +19,7 @@ const version = require('./package.json').version;
 const log = debug('chrome-har');
 
 const defaultOptions = {
+  allowMultiPage: false,
   includeResourcesFromDiskCache: false,
   includeTextFromResponseBody: false
 };
@@ -79,6 +80,53 @@ export function harFromMessages(messages, options) {
     responseReceivedExtraInfos = [],
     currentPageId;
 
+  function createPage({ frameId, loaderId, title = '' }) {
+    currentPageId = randomUUID();
+    const page = {
+      id: currentPageId,
+      startedDateTime: '',
+      title,
+      pageTimings: {},
+      __frameId: frameId
+    };
+    if (loaderId) {
+      page.__loaderId = loaderId;
+    }
+    pages.push(page);
+    return page;
+  }
+
+  function pageForRootDocument(params, request) {
+    const rootFrame = rootFrameMappings.get(params.frameId) || params.frameId;
+    let page = pages.find(
+      candidate =>
+        candidate.__frameId === rootFrame &&
+        candidate.__loaderId === params.loaderId
+    );
+    if (page) {
+      currentPageId = page.id;
+      return page;
+    }
+
+    // A Page.frameRequestedNavigation event may have created the page before
+    // the document request arrived. Reuse it and bind it to this loader.
+    page = pages.find(
+      candidate => candidate.__frameId === rootFrame && !candidate.__loaderId
+    );
+    if (page) {
+      page.__loaderId = params.loaderId;
+      if (!page.title) page.title = request.url;
+      currentPageId = page.id;
+      return page;
+    }
+
+    return createPage({
+      frameId: rootFrame,
+      loaderId: params.loaderId,
+      title: request.url
+    });
+  }
+
   for (const message of messages) {
     const params = message.params;
 
@@ -98,17 +146,9 @@ export function harFromMessages(messages, options) {
           if (pages.some(page => page.__frameId === rootFrame)) {
             continue;
           }
-          currentPageId = randomUUID();
           const title =
             method === 'Page.navigatedWithinDocument' ? params.url : '';
-          const page = {
-            id: currentPageId,
-            startedDateTime: '',
-            title: title,
-            pageTimings: {},
-            __frameId: rootFrame
-          };
-          pages.push(page);
+          const page = createPage({ frameId: rootFrame, title });
           // do we have any unmmapped requests, add them
           if (entriesWithoutPage.length > 0) {
             // update page
@@ -178,7 +218,25 @@ export function harFromMessages(messages, options) {
             ignoredRequests.add(params.requestId);
             continue;
           }
-          const page = pages.at(-1);
+          const rootFrame =
+            rootFrameMappings.get(params.frameId) || params.frameId;
+          const isRootDocumentRequest =
+            options.allowMultiPage &&
+            params.type === 'Document' &&
+            params.loaderId &&
+            rootFrame === params.frameId;
+          let page;
+          if (isRootDocumentRequest) {
+            page = pageForRootDocument(params, request);
+          } else {
+            page = pages.at(-1);
+            if (options.allowMultiPage && params.loaderId) {
+              page =
+                pages.findLast(
+                  candidate => candidate.__loaderId === params.loaderId
+                ) || page;
+            }
+          }
           const cookieHeader = getHeaderValue(request.headers, 'Cookie');
 
           //Before we used to remove the hash framgment because of Chrome do that but:
@@ -428,10 +486,8 @@ export function harFromMessages(messages, options) {
             continue;
           }
 
-          const frameId =
-            rootFrameMappings.get(params.frameId) || params.frameId;
           const page =
-            pages.find(page => page.__frameId === frameId) || pages.at(-1);
+            pages.find(page => page.id === entry.pageref) || pages.at(-1);
           if (!page) {
             log(
               `Received network response for requestId ${params.requestId} that can't be mapped to any page.`

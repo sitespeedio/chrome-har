@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Unreleased
+* Add `allowMultiPage` for separate HAR pages on root document navigations.
+
 ## 1.3.1 - 2026-05-19
 * Fix for render blocking stats [#158](https://github.com/sitespeedio/chrome-har/pull/158).
 
