@@ -62,6 +62,70 @@ function sortedByRequestTime(entries) {
   return entries.sort((e1, e2) => e1._requestTime - e2._requestTime);
 }
 
+function resourceMessages({
+  requestId,
+  frameId,
+  url,
+  timestamp,
+  wallTime,
+  type = 'Document'
+}) {
+  return [
+    {
+      method: 'Network.requestWillBeSent',
+      params: {
+        requestId,
+        frameId,
+        loaderId: 'L1',
+        documentURL: url,
+        request: {
+          url,
+          method: 'GET',
+          headers: {},
+          initialPriority: type === 'Document' ? 'High' : 'Low'
+        },
+        timestamp,
+        wallTime,
+        initiator: { type: 'other' },
+        type
+      }
+    },
+    {
+      method: 'Network.responseReceived',
+      params: {
+        requestId,
+        frameId,
+        loaderId: 'L1',
+        timestamp: timestamp + 0.1,
+        type,
+        response: {
+          url,
+          status: 200,
+          statusText: 'OK',
+          headers: { 'content-type': 'text/html' },
+          mimeType: 'text/html',
+          fromDiskCache: false,
+          fromServiceWorker: false,
+          encodedDataLength: 100,
+          protocol: 'http/1.1',
+          connectionId: 1,
+          remoteIPAddress: '127.0.0.1',
+          timing: {
+            requestTime: timestamp,
+            sendStart: 0,
+            sendEnd: 1,
+            receiveHeadersEnd: 2
+          }
+        }
+      }
+    },
+    {
+      method: 'Network.loadingFinished',
+      params: { requestId, timestamp: timestamp + 0.2, encodedDataLength: 100 }
+    }
+  ];
+}
+
 function testAllHARs(t, options) {
   return perflogs().then(filenames => {
     const promises = filenames.map(filename => {
@@ -336,6 +400,65 @@ test('Click on link in Chrome should create new page', t => {
     t.is(har.log.pages.length, 1);
     return har;
   });
+});
+
+test('Optionally creates pages for root frame navigations', t => {
+  const frameId = 'F1';
+  const messages = [
+    { method: 'Page.frameStartedLoading', params: { frameId } },
+    ...resourceMessages({
+      requestId: '1',
+      frameId,
+      url: 'https://example.com/page1.html',
+      timestamp: 1,
+      wallTime: 1_700_000_000
+    }),
+    ...resourceMessages({
+      requestId: '2',
+      frameId,
+      url: 'https://example.com/page1.js',
+      timestamp: 1.3,
+      wallTime: 1_700_000_000.3,
+      type: 'Script'
+    }),
+    {
+      method: 'Page.frameScheduledNavigation',
+      params: { frameId, url: 'https://example.com/page2.html' }
+    },
+    ...resourceMessages({
+      requestId: '3',
+      frameId,
+      url: 'https://example.com/page2.html',
+      timestamp: 2,
+      wallTime: 1_700_000_001
+    }),
+    { method: 'Page.frameStartedLoading', params: { frameId } },
+    ...resourceMessages({
+      requestId: '4',
+      frameId,
+      url: 'https://example.com/page2.js',
+      timestamp: 2.3,
+      wallTime: 1_700_000_001.3,
+      type: 'Script'
+    })
+  ];
+
+  const defaultHar = harFromMessages(messages);
+  t.is(defaultHar.log.pages.length, 1);
+
+  const multiPageHar = harFromMessages(messages, { allowMultiPage: true });
+  t.deepEqual(
+    multiPageHar.log.pages.map(page => page.title),
+    ['https://example.com/page1.html', 'https://example.com/page2.html']
+  );
+
+  const pagerefByUrl = Object.fromEntries(
+    multiPageHar.log.entries.map(entry => [entry.request.url, entry.pageref])
+  );
+  t.is(pagerefByUrl['https://example.com/page1.html'], 'page_1');
+  t.is(pagerefByUrl['https://example.com/page1.js'], 'page_1');
+  t.is(pagerefByUrl['https://example.com/page2.html'], 'page_2');
+  t.is(pagerefByUrl['https://example.com/page2.js'], 'page_2');
 });
 
 test('Includes pushed assets', t => {
