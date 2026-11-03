@@ -6,6 +6,7 @@
 
 ### Fixed
 * Use the extra info from Chrome for request and response headers and cookies, also when it comes before the first page (as with Puppeteer). Headers are no longer duplicated with different case, response cookies are parsed from `Set-Cookie` in the extra info, and a 304 from the server no longer removes the headers of the cached response. Thank you [jtung23](https://github.com/jtung23) for the first implementation and the test case in [#111](https://github.com/sitespeedio/chrome-har/pull/111).
+* Stop using the deprecated `url.parse()`, so Node.js 24 and later no longer print a deprecation warning. The URL in the HAR is now exactly the URL that Chrome sent, before some characters like `|` and `{` were escaped [#114](https://github.com/sitespeedio/chrome-har/issues/114).
 
 ## 1.3.1 - 2026-05-19
 * Fix for render blocking stats [#158](https://github.com/sitespeedio/chrome-har/pull/158).
