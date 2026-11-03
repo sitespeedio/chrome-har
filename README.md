@@ -58,3 +58,13 @@ client.on('Network.requestIntercepted', async (params: any) => {
 
 const har = harFromMessages(harEvents, {includeTextFromResponseBody: true});
 ```
+
+## Multiple pages
+
+By default, chrome-har keeps the first root document navigation in one HAR page. Set
+`allowMultiPage: true` to create a separate HAR page for each new root document
+navigation, such as a script redirect that loads a new document:
+
+```javascript
+const har = harFromMessages(harEvents, { allowMultiPage: true });
+```

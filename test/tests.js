@@ -322,6 +322,42 @@ test('Generates multiple pages', t => {
   });
 });
 
+test('Creates multiple pages for root document navigations with allowMultiPage', async t => {
+  const perflogPath = perflog('multiPageNavigation.json');
+  const defaultHar = await parsePerflog(perflogPath);
+  t.is(defaultHar.log.pages.length, 1);
+
+  const har = await parsePerflog(perflogPath, { allowMultiPage: true });
+  t.is(har.log.pages.length, 2);
+  t.deepEqual(
+    har.log.pages.map(page => page.title),
+    ['https://www.sitespeed.io/', 'https://www.sitespeed.io/documentation/']
+  );
+
+  const documentEntries = har.log.entries.filter(
+    entry => entry._resourceType === 'document'
+  );
+  t.is(documentEntries.length, 2);
+  t.not(documentEntries[0].pageref, documentEntries[1].pageref);
+});
+
+test('Splits request-first root document navigations with allowMultiPage', async t => {
+  const perflogPath = perflog('missing-response.json');
+  const defaultHar = await parsePerflog(perflogPath);
+  t.is(defaultHar.log.pages.length, 1);
+
+  const har = await parsePerflog(perflogPath, { allowMultiPage: true });
+  t.is(har.log.pages.length, 2);
+
+  const documentEntries = har.log.entries.filter(
+    entry => entry._resourceType === 'document'
+  );
+  t.deepEqual(
+    documentEntries.map(entry => entry.pageref),
+    ['page_1', 'page_2']
+  );
+});
+
 test('Skips empty pages', t => {
   const perflogPath = perflog('www.wikipedia.org-empty.json');
   return parsePerflog(perflogPath).then(har => {
