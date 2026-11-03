@@ -124,6 +124,8 @@ export function harFromMessages(messages, options) {
                 populateRedirectResponse(page, params, entries, options);
               }
             }
+            entriesWithoutPage = [];
+            paramsWithoutPage = [];
           }
 
           if (responsesWithoutPage.length > 0) {
@@ -142,6 +144,7 @@ export function harFromMessages(messages, options) {
                 log(`Couln't find matching request for response`);
               }
             }
+            responsesWithoutPage = [];
           }
         }
         break;
@@ -267,6 +270,10 @@ export function harFromMessages(messages, options) {
 
           if (params.redirectResponse) {
             populateRedirectResponse(page, params, entries, options);
+            // Extra info received up to now is for the redirect response
+            responseReceivedExtraInfos = responseReceivedExtraInfos.filter(
+              info => info.requestId !== params.requestId
+            );
           }
 
           if (!page) {
