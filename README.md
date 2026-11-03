@@ -24,6 +24,16 @@ If you use sitespeed.io:
 $ sitespeed.io --browsertime.chrome.collectPerfLog -n 1 https://www.sitespeed.io
 ```
 
+## Stream messages
+
+`harFromMessages` takes an array (or any iterable) of messages. If the messages come from a stream, use `harFromMessagesAsync`. It takes an async iterable, handles each message when it arrives and returns a promise for the HAR. You do not need to keep all messages in memory.
+
+```javascript
+import { harFromMessagesAsync } from 'chrome-har';
+
+const har = await harFromMessagesAsync(messageStream);
+```
+
 ## Support for Response Bodies
 
 If you use Chrome-har standalone (without Browsertime/sitespeed.io) you can use get the response bodies in HARs if they are set on the [response object](https://chromedevtools.github.io/devtools-protocol/tot/Network#type-Response) by the caller and if the `includeTextFromResponseBody` option is set to `true`.

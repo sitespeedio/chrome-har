@@ -1,7 +1,7 @@
 import test from 'ava';
 import * as fs from 'node:fs/promises';
 import path from 'node:path';
-import { harFromMessages } from '../index.js';
+import { harFromMessages, harFromMessagesAsync } from '../index.js';
 import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -715,4 +715,25 @@ test('Response without timing gets a valid receive time', t => {
   const entry = har.log.entries[0];
   t.is(entry.timings.receive, 0);
   t.is(entry.time, 0);
+});
+
+async function* toAsyncIterable(messages) {
+  for (const message of messages) {
+    yield message;
+  }
+}
+
+test('harFromMessagesAsync gives the same HAR as harFromMessages', async t => {
+  for (const file of await perflogs()) {
+    const messages = JSON.parse(await fs.readFile(perflog(file), 'utf8'));
+    const har = await harFromMessagesAsync(toAsyncIterable(messages));
+    t.deepEqual(har, harFromMessages(messages), file);
+  }
+});
+
+test('harFromMessagesAsync accepts a sync iterable', async t => {
+  const messages = JSON.parse(
+    await fs.readFile(perflog('www.google.com.json'), 'utf8')
+  );
+  t.deepEqual(await harFromMessagesAsync(messages), harFromMessages(messages));
 });
