@@ -1,4 +1,3 @@
-import { parse, format } from 'node:url';
 import { randomUUID } from 'node:crypto';
 import { createRequire } from 'node:module';
 import debug from 'debug';
@@ -9,7 +8,7 @@ import {
   formatMillis,
   parsePostData,
   isSupportedProtocol,
-  toNameValuePairs
+  parseQueryString
 } from './lib/util.js';
 import populateEntryFromResponse, {
   addExtraResponseInfo
@@ -211,7 +210,7 @@ function createHarBuilder(options) {
           // 2. If we remove it, the HAR will not have the same URL as we tested
           // and that makes PageXray generate the wromng URL and we end up with two pages
           // in sitespeed.io if we run in SPA mode
-          const url = parse(request.url + (request.urlFragment ?? ''), true);
+          const url = request.url + (request.urlFragment ?? '');
 
           const postData = parsePostData(
             getHeaderValue(request.headers, 'Content-Type'),
@@ -220,8 +219,8 @@ function createHarBuilder(options) {
 
           const req = {
             method: request.method,
-            url: format(url),
-            queryString: toNameValuePairs(url.query),
+            url,
+            queryString: parseQueryString(url),
             postData,
             headersSize: -1,
             bodySize: isEmpty(request.postData) ? 0 : request.postData.length,
