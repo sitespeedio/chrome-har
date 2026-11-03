@@ -6,6 +6,7 @@
 
 ### Fixed
 * Use the extra info from Chrome for request and response headers and cookies, also when it comes before the first page (as with Puppeteer). Headers are no longer duplicated with different case, response cookies are parsed from `Set-Cookie` in the extra info, and a 304 from the server no longer removes the headers of the cached response. Thank you [jtung23](https://github.com/jtung23) for the first implementation and the test case in [#111](https://github.com/sitespeedio/chrome-har/pull/111).
+* An iframe that Chrome did not report as attached could create an extra page in the HAR, and the requests after it ended up on that page. A frame that we do not know now gets a page only when it loads a document. See [sitespeed.io #4124](https://github.com/sitespeedio/sitespeed.io/issues/4124).
 
 ## 1.3.1 - 2026-05-19
 * Fix for render blocking stats [#158](https://github.com/sitespeedio/chrome-har/pull/158).

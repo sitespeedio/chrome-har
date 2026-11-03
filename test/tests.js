@@ -788,3 +788,29 @@ test('Has no duplicate header names', async t => {
     }
   }
 });
+
+test('An iframe that is not attached does not create a page', t => {
+  const har = harFromMessages([
+    { method: 'Page.frameStartedLoading', params: { frameId: 'F1' } },
+    requestWillBeSent('1', 'https://example.com/', 1),
+    responseReceived('1', cdpResponse(200, {}, 1)),
+    // The same order as the trace in sitespeed.io issue 4124
+    { method: 'Page.frameStartedLoading', params: { frameId: 'F2' } },
+    {
+      method: 'Page.navigatedWithinDocument',
+      params: { frameId: 'F2', url: 'https://example.com/#app' }
+    },
+    requestWillBeSent('2', 'https://example.com/api', 2, {
+      frameId: 'F2',
+      type: 'Fetch'
+    }),
+    responseReceived('2', cdpResponse(200, {}, 2), 'F2'),
+    requestWillBeSent('3', 'https://example.com/xhr', 3, { type: 'XHR' }),
+    responseReceived('3', cdpResponse(200, {}, 3))
+  ]);
+  t.is(har.log.pages.length, 1);
+  t.deepEqual(
+    har.log.entries.map(e => e.pageref),
+    ['page_1', 'page_1', 'page_1']
+  );
+});
