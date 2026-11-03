@@ -1,13 +1,19 @@
 # CHANGELOG
 
-## UNRELEASED
+## 2.0.0 - 2026-11-03
+### Breaking
+* Node.js 22 or later is required. Node.js 18 and 20 are end of life [#167](https://github.com/sitespeedio/chrome-har/pull/167).
+
 ### Added
-* Add `harFromMessagesAsync` that takes an async iterable of messages, so you do not need to keep all messages in memory. Thank you [Modeeeeeee](https://github.com/Modeeeeeee) for the idea and first implementation in [#133](https://github.com/sitespeedio/chrome-har/pull/133).
+* Add `harFromMessagesAsync` that takes an async iterable of messages, so you do not need to keep all messages in memory. Thank you [Modeeeeeee](https://github.com/Modeeeeeee) for the idea and first implementation in [#133](https://github.com/sitespeedio/chrome-har/pull/133) [#165](https://github.com/sitespeedio/chrome-har/pull/165).
 
 ### Fixed
-* Use the extra info from Chrome for request and response headers and cookies, also when it comes before the first page (as with Puppeteer). Headers are no longer duplicated with different case, response cookies are parsed from `Set-Cookie` in the extra info, and a 304 from the server no longer removes the headers of the cached response. Thank you [jtung23](https://github.com/jtung23) for the first implementation and the test case in [#111](https://github.com/sitespeedio/chrome-har/pull/111).
-* Stop using the deprecated `url.parse()`, so Node.js 24 and later no longer print a deprecation warning. The URL in the HAR is now exactly the URL that Chrome sent, before some characters like `|` and `{` were escaped [#114](https://github.com/sitespeedio/chrome-har/issues/114).
-* An iframe that Chrome did not report as attached could create an extra page in the HAR, and the requests after it ended up on that page. A frame that we do not know now gets a page only when it loads a document. See [sitespeed.io #4124](https://github.com/sitespeedio/sitespeed.io/issues/4124).
+* Removed the tough-cookie and har-validator dependencies [#159](https://github.com/sitespeedio/chrome-har/pull/159).
+* Use the right expiry date for cookies from Chrome. Chrome gives the expiry date in seconds, so cookies were shown to expire in 1970 and session cookies got an expiry date. An expiry date that was not valid also stopped the HAR from being created [#162](https://github.com/sitespeedio/chrome-har/pull/162).
+* After a redirect, the final response no longer gets the headers of the redirect response. Requests sent before the first page are no longer added twice, and responses without timing data no longer get a null receive time [#164](https://github.com/sitespeedio/chrome-har/pull/164).
+* Use the extra info from Chrome for request and response headers and cookies, also when it comes before the first page (as with Puppeteer). Headers are no longer duplicated with different case, response cookies are parsed from `Set-Cookie` in the extra info, and a 304 from the server no longer removes the headers of the cached response. Thank you [jtung23](https://github.com/jtung23) for the first implementation and the test case in [#111](https://github.com/sitespeedio/chrome-har/pull/111) [#166](https://github.com/sitespeedio/chrome-har/pull/166).
+* Stop using the deprecated `url.parse()`, so Node.js 24 and later no longer print a deprecation warning. The URL in the HAR is now exactly the URL that Chrome sent, before some characters like `|` and `{` were escaped [#114](https://github.com/sitespeedio/chrome-har/issues/114) [#168](https://github.com/sitespeedio/chrome-har/pull/168).
+* An iframe that Chrome did not report as attached could create an extra page in the HAR, and the requests after it ended up on that page. A frame that we do not know now gets a page only when it loads a document. See [sitespeed.io #4124](https://github.com/sitespeedio/sitespeed.io/issues/4124) [#173](https://github.com/sitespeedio/chrome-har/pull/173).
 
 ## 1.3.1 - 2026-05-19
 * Fix for render blocking stats [#158](https://github.com/sitespeedio/chrome-har/pull/158).
