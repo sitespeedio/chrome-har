@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## UNRELEASED
+### Added
+* Add `harFromMessagesAsync` that takes an async iterable of messages, so you do not need to keep all messages in memory. Thank you [Modeeeeeee](https://github.com/Modeeeeeee) for the idea and first implementation in [#133](https://github.com/sitespeedio/chrome-har/pull/133).
+
 ## 1.3.1 - 2026-05-19
 * Fix for render blocking stats [#158](https://github.com/sitespeedio/chrome-har/pull/158).
 
