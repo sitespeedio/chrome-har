@@ -420,7 +420,7 @@ test('Includes extra info in request', t => {
           'sign_up_in-8b32538e54b23b40f8fd45c28abdcee2e2d023bd7e01ddf2033d5f781afae9dc.css'
         )
       );
-      t.is(cssAsset.request.headers.length, 15);
+      t.is(cssAsset.request.headers.length, 13);
 
       return log;
     });
@@ -736,4 +736,55 @@ test('harFromMessagesAsync accepts a sync iterable', async t => {
     await fs.readFile(perflog('www.google.com.json'), 'utf8')
   );
   t.deepEqual(await harFromMessagesAsync(messages), harFromMessages(messages));
+});
+
+test('Includes extra info that comes before the first page', async t => {
+  const har = await parsePerflog(perflog('parse-cookies-set-cookies.json'));
+  const entry = har.log.entries.find(
+    e => e.request.url === 'https://sfbay.craigslist.org/'
+  );
+  t.is(entry.request.cookies.length, 2);
+  t.is(entry.response.headers.length, 12);
+  t.true(entry.response.headers.some(h => h.name === 'Set-Cookie'));
+});
+
+test('Parses response cookies from extra info', async t => {
+  const har = await parsePerflog(perflog('bing.com.json'));
+  const entry = har.log.entries.find(e => e._requestId === '98243.71');
+  t.deepEqual(
+    entry.response.cookies.map(c => c.name),
+    ['MUIDB', 'SRCHHPGUSR', 'ULC', '_HPVN']
+  );
+});
+
+test('Keeps response headers when extra info is for a 304', async t => {
+  const har = await parsePerflog(
+    perflog('soft-navigation-react-describing-ui.json')
+  );
+  const entries = har.log.entries.filter(
+    e =>
+      e.request.url.startsWith('https://react.dev/_next/data/') &&
+      e.response.headers.length > 0
+  );
+  t.true(entries.length > 0);
+  for (const entry of entries) {
+    t.true(
+      entry.response.headers.some(
+        h => h.name.toLowerCase() === 'content-encoding'
+      ),
+      entry.request.url
+    );
+  }
+});
+
+test('Has no duplicate header names', async t => {
+  for (const file of await perflogs()) {
+    const har = await parsePerflog(perflog(file));
+    for (const entry of har.log.entries) {
+      for (const headers of [entry.request.headers, entry.response.headers]) {
+        const names = headers.map(h => h.name.toLowerCase());
+        t.is(new Set(names).size, names.length, `${file} ${entry.request.url}`);
+      }
+    }
+  }
 });
