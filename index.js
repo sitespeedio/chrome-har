@@ -4,14 +4,16 @@ import { createRequire } from 'node:module';
 import debug from 'debug';
 import ignoredEvents from './lib/ignoredEvents.js';
 import { parseRequestCookies, formatCookie } from './lib/cookies.js';
-import { getHeaderValue, parseHeaders } from './lib/headers.js';
+import { getHeaderValue, mergeHeaders, parseHeaders } from './lib/headers.js';
 import {
   formatMillis,
   parsePostData,
   isSupportedProtocol,
   toNameValuePairs
 } from './lib/util.js';
-import populateEntryFromResponse from './lib/entryFromResponse.js';
+import populateEntryFromResponse, {
+  addExtraResponseInfo
+} from './lib/entryFromResponse.js';
 import finalizeEntry from './lib/finalizeEntry.js';
 
 const require = createRequire(import.meta.url);
@@ -336,9 +338,14 @@ function createHarBuilder(options) {
             return;
           }
 
-          const entry = entries.find(
+          let entry = entries.find(
             entry => entry._requestId === params.requestId
           );
+          if (!entry) {
+            entry = entriesWithoutPage.find(
+              entry => entry._requestId === params.requestId
+            );
+          }
           if (!entry) {
             log(
               `Extra info sent for requestId ${params.requestId} with no matching request.`
@@ -347,17 +354,17 @@ function createHarBuilder(options) {
           }
 
           if (params.headers) {
-            entry.request.headers = entry.request.headers.concat(
-              parseHeaders(params.headers)
+            entry.request.headers = mergeHeaders(
+              entry.request.headers,
+              params.headers
             );
           }
 
+          // These are the cookies Chrome sent, so they replace the cookies from the Cookie header
           if (params.associatedCookies) {
-            entry.request.cookies = (entry.request.cookies || []).concat(
-              params.associatedCookies
-                .filter(({ blockedReasons }) => blockedReasons.length === 0)
-                .map(({ cookie }) => formatCookie(cookie))
-            );
+            entry.request.cookies = params.associatedCookies
+              .filter(({ blockedReasons }) => blockedReasons.length === 0)
+              .map(({ cookie }) => formatCookie(cookie));
           }
         }
         break;
@@ -365,11 +372,6 @@ function createHarBuilder(options) {
 
       case 'Network.responseReceivedExtraInfo': {
         {
-          if (pages.length === 0) {
-            //we haven't loaded any pages yet.
-            return;
-          }
-
           if (ignoredRequests.has(params.requestId)) {
             return;
           }
@@ -391,17 +393,12 @@ function createHarBuilder(options) {
 
           if (!entry.response) {
             // Extra info received before response
-            entry.extraResponseInfo = {
-              headers: parseHeaders(params.headers),
-              blockedCookies: params.blockedCookies
-            };
+            entry.extraResponseInfo = params;
             responseReceivedExtraInfos.push(params);
             return;
           }
 
-          if (params.headers) {
-            entry.response.headers = parseHeaders(params.headers);
-          }
+          addExtraResponseInfo(entry, params);
         }
         break;
       }
@@ -459,10 +456,8 @@ function createHarBuilder(options) {
             responseReceivedExtraInfo =>
               responseReceivedExtraInfo.requestId == params.requestId
           );
-          if (responseReceivedExtraInfo && responseReceivedExtraInfo.headers) {
-            entry.response.headers = parseHeaders(
-              responseReceivedExtraInfo.headers
-            );
+          if (responseReceivedExtraInfo) {
+            addExtraResponseInfo(entry, responseReceivedExtraInfo);
           }
         }
         break;

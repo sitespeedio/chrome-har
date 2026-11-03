@@ -4,6 +4,9 @@
 ### Added
 * Add `harFromMessagesAsync` that takes an async iterable of messages, so you do not need to keep all messages in memory. Thank you [Modeeeeeee](https://github.com/Modeeeeeee) for the idea and first implementation in [#133](https://github.com/sitespeedio/chrome-har/pull/133).
 
+### Fixed
+* Use the extra info from Chrome for request and response headers and cookies, also when it comes before the first page (as with Puppeteer). Headers are no longer duplicated with different case, response cookies are parsed from `Set-Cookie` in the extra info, and a 304 from the server no longer removes the headers of the cached response. Thank you [jtung23](https://github.com/jtung23) for the first implementation and the test case in [#111](https://github.com/sitespeedio/chrome-har/pull/111).
+
 ## 1.3.1 - 2026-05-19
 * Fix for render blocking stats [#158](https://github.com/sitespeedio/chrome-har/pull/158).
 
