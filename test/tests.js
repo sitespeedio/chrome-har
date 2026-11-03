@@ -603,3 +603,116 @@ test('Request cookies from CDP get the right expiry date', t => {
       return log;
     });
 });
+
+function requestWillBeSent(requestId, url, timestamp, extra = {}) {
+  return {
+    method: 'Network.requestWillBeSent',
+    params: {
+      requestId,
+      frameId: 'F1',
+      loaderId: 'L1',
+      type: 'Document',
+      timestamp,
+      wallTime: 1_700_000_000 + timestamp,
+      initiator: { type: 'other' },
+      request: { url, method: 'GET', headers: {}, initialPriority: 'High' },
+      ...extra
+    }
+  };
+}
+
+function cdpResponse(status, headers, requestTime) {
+  return {
+    url: 'https://example.com/',
+    status,
+    statusText: '',
+    headers,
+    mimeType: 'text/html',
+    connectionId: 1,
+    encodedDataLength: 100,
+    protocol: 'h2',
+    timing: {
+      requestTime,
+      dnsStart: -1,
+      connectStart: -1,
+      sslStart: -1,
+      sendStart: 1,
+      sendEnd: 2,
+      receiveHeadersEnd: 10
+    }
+  };
+}
+
+function responseReceived(requestId, response, frameId = 'F1') {
+  return {
+    method: 'Network.responseReceived',
+    params: { requestId, frameId, timestamp: 2, response }
+  };
+}
+
+test('Redirect target does not get the extra info headers of the redirect', t => {
+  const har = harFromMessages([
+    { method: 'Page.frameStartedLoading', params: { frameId: 'F1' } },
+    requestWillBeSent('1', 'http://example.com/', 1),
+    {
+      method: 'Network.responseReceivedExtraInfo',
+      params: {
+        requestId: '1',
+        headers: { location: 'https://example.com/' },
+        blockedCookies: []
+      }
+    },
+    requestWillBeSent('1', 'https://example.com/', 1.1, {
+      redirectResponse: cdpResponse(301, {}, 1)
+    }),
+    {
+      method: 'Network.responseReceivedExtraInfo',
+      params: {
+        requestId: '1',
+        headers: { 'content-type': 'text/html' },
+        blockedCookies: []
+      }
+    },
+    responseReceived('1', cdpResponse(200, {}, 1.1))
+  ]);
+  const entry = har.log.entries.find(e => e.response.status === 200);
+  t.deepEqual(entry.response.headers, [
+    { name: 'content-type', value: 'text/html' }
+  ]);
+});
+
+test('Requests sent before the first page are added only once', t => {
+  const har = harFromMessages([
+    requestWillBeSent('1', 'https://example.com/', 1),
+    responseReceived('1', cdpResponse(200, {}, 1)),
+    { method: 'Page.frameStartedLoading', params: { frameId: 'F1' } },
+    { method: 'Page.frameStartedLoading', params: { frameId: 'F2' } },
+    requestWillBeSent('2', 'https://example.org/', 5, { frameId: 'F2' }),
+    responseReceived('2', cdpResponse(200, {}, 5), 'F2')
+  ]);
+  t.is(har.log.pages.length, 2);
+  t.deepEqual(
+    har.log.entries.map(e => [e.request.url, e.pageref]),
+    [
+      ['https://example.com/', 'page_1'],
+      ['https://example.org/', 'page_2']
+    ]
+  );
+});
+
+test('Response without timing gets a valid receive time', t => {
+  const response = cdpResponse(200, {}, 1);
+  delete response.timing;
+  const har = harFromMessages([
+    { method: 'Page.frameStartedLoading', params: { frameId: 'F1' } },
+    requestWillBeSent('1', 'https://example.com/', 1),
+    responseReceived('1', response),
+    {
+      method: 'Network.loadingFinished',
+      params: { requestId: '1', timestamp: 3, encodedDataLength: 100 }
+    }
+  ]);
+  const entry = har.log.entries[0];
+  t.is(entry.timings.receive, 0);
+  t.is(entry.time, 0);
+});
