@@ -31,7 +31,7 @@
     "url": "https://github.com/sitespeedio/chrome-har.git"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22.0.0"
   },
   "license": "MIT",
   "devDependencies": {
