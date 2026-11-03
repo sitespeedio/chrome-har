@@ -1,6 +1,7 @@
 import test from 'ava';
 import * as fs from 'node:fs/promises';
 import path from 'node:path';
+import { spawnSync } from 'node:child_process';
 import { harFromMessages, harFromMessagesAsync } from '../index.js';
 import { fileURLToPath } from 'node:url';
 
@@ -787,4 +788,30 @@ test('Has no duplicate header names', async t => {
       }
     }
   }
+});
+
+test('Keeps the URL as Chrome sent it', async t => {
+  const har = await parsePerflog(perflog('ryan.json'));
+  const entry = har.log.entries.find(e =>
+    e.request.url.startsWith('https://cdn.polyfill.io/v2/polyfill.min.js')
+  );
+  t.true(entry.request.url.includes('IntersectionObserver|always'));
+  t.deepEqual(
+    entry.request.queryString.find(q => q.name === 'features').value,
+    new URL(entry.request.url).searchParams.get('features')
+  );
+});
+
+test('Does not use deprecated Node.js APIs', t => {
+  const script = `
+    import fs from 'node:fs';
+    import { harFromMessages } from ${JSON.stringify(path.resolve(__dirname, '../index.js'))};
+    harFromMessages(JSON.parse(fs.readFileSync(${JSON.stringify(perflog('ryan.json'))}, 'utf8')));
+  `;
+  const result = spawnSync(
+    process.execPath,
+    ['--throw-deprecation', '--input-type=module', '--eval', script],
+    { encoding: 'utf8' }
+  );
+  t.is(result.status, 0, result.stderr);
 });
