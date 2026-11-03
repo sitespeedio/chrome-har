@@ -70,7 +70,8 @@ function createHarBuilder(options) {
   options = Object.assign({}, defaultOptions, options);
 
   const ignoredRequests = new Set(),
-    rootFrameMappings = new Map();
+    rootFrameMappings = new Map(),
+    framesWaitingForDocument = new Set();
 
   let pages = [],
     entries = [],
@@ -79,6 +80,19 @@ function createHarBuilder(options) {
     paramsWithoutPage = [],
     responseReceivedExtraInfos = [],
     currentPageId;
+
+  function createPage(frameId, title) {
+    currentPageId = randomUUID();
+    const page = {
+      id: currentPageId,
+      startedDateTime: '',
+      title,
+      pageTimings: {},
+      __frameId: frameId
+    };
+    pages.push(page);
+    return page;
+  }
 
   function addMessage(message) {
     const params = message.params;
@@ -99,17 +113,15 @@ function createHarBuilder(options) {
           if (pages.some(page => page.__frameId === rootFrame)) {
             return;
           }
-          currentPageId = randomUUID();
+          // An unknown frame can be an iframe that Chrome did not report as
+          // attached. It gets a page only when it loads a document.
+          if (pages.length > 0) {
+            framesWaitingForDocument.add(rootFrame);
+            return;
+          }
           const title =
             method === 'Page.navigatedWithinDocument' ? params.url : '';
-          const page = {
-            id: currentPageId,
-            startedDateTime: '',
-            title: title,
-            pageTimings: {},
-            __frameId: rootFrame
-          };
-          pages.push(page);
+          const page = createPage(rootFrame, title);
           // do we have any unmmapped requests, add them
           if (entriesWithoutPage.length > 0) {
             // update page
@@ -181,6 +193,14 @@ function createHarBuilder(options) {
           if (!isSupportedProtocol(request.url)) {
             ignoredRequests.add(params.requestId);
             return;
+          }
+          const rootFrame =
+            rootFrameMappings.get(params.frameId) || params.frameId;
+          if (
+            params.type === 'Document' &&
+            framesWaitingForDocument.delete(rootFrame)
+          ) {
+            createPage(rootFrame, '');
           }
           const page = pages.at(-1);
           const cookieHeader = getHeaderValue(request.headers, 'Cookie');
