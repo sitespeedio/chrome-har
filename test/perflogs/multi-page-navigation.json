@@ -1,0 +1,345 @@
+[
+  {
+    "method": "Page.frameStartedLoading",
+    "params": {
+      "frameId": "AABBCCDD00112233445566778899AABB",
+      "timestamp": 1000.0
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "1000.1",
+      "loaderId": "LOADER1",
+      "frameId": "AABBCCDD00112233445566778899AABB",
+      "documentURL": "https://example.com/page1.html",
+      "type": "Document",
+      "initiator": {
+        "type": "other"
+      },
+      "timestamp": 1000.01,
+      "wallTime": 1700000000.01,
+      "request": {
+        "url": "https://example.com/page1.html",
+        "method": "GET",
+        "headers": {},
+        "initialPriority": "VeryHigh"
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "1000.1",
+      "loaderId": "LOADER1",
+      "frameId": "AABBCCDD00112233445566778899AABB",
+      "timestamp": 1000.06,
+      "type": "Document",
+      "response": {
+        "url": "https://example.com/page1.html",
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "mimeType": "text/html",
+        "connectionReused": true,
+        "connectionId": 1,
+        "encodedDataLength": 100,
+        "timing": {
+          "requestTime": 0.5,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": -1,
+          "dnsEnd": -1,
+          "connectStart": -1,
+          "connectEnd": -1,
+          "sslStart": -1,
+          "sslEnd": -1,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 450.0,
+          "sendEnd": 451.0,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 460.0
+        },
+        "protocol": "http/1.1",
+        "remoteIPAddress": "1.2.3.4",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false
+      }
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "1000.2",
+      "loaderId": "LOADER1",
+      "frameId": "AABBCCDD00112233445566778899AABB",
+      "documentURL": "https://example.com/page1.html",
+      "type": "Image",
+      "initiator": {
+        "type": "parser",
+        "url": "https://example.com/page1.html",
+        "lineNumber": 4
+      },
+      "timestamp": 1000.2,
+      "wallTime": 1700000000.2,
+      "request": {
+        "url": "https://example.com/image1.png",
+        "method": "GET",
+        "headers": {},
+        "initialPriority": "Low"
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "1000.2",
+      "loaderId": "LOADER1",
+      "frameId": "AABBCCDD00112233445566778899AABB",
+      "timestamp": 1000.25,
+      "type": "Image",
+      "response": {
+        "url": "https://example.com/image1.png",
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "mimeType": "image/png",
+        "connectionReused": true,
+        "connectionId": 2,
+        "encodedDataLength": 100,
+        "timing": {
+          "requestTime": 1.0,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": -1,
+          "dnsEnd": -1,
+          "connectStart": -1,
+          "connectEnd": -1,
+          "sslStart": -1,
+          "sslEnd": -1,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 950.0,
+          "sendEnd": 951.0,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 960.0
+        },
+        "protocol": "http/1.1",
+        "remoteIPAddress": "1.2.3.4",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false
+      }
+    }
+  },
+  {
+    "method": "Page.frameStartedLoading",
+    "params": {
+      "frameId": "AABBCCDD00112233445566778899AABB",
+      "timestamp": 1000.5
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "1000.3",
+      "loaderId": "LOADER2",
+      "frameId": "AABBCCDD00112233445566778899AABB",
+      "documentURL": "https://example.com/page2.html",
+      "type": "Document",
+      "initiator": {
+        "type": "script"
+      },
+      "timestamp": 1000.51,
+      "wallTime": 1700000000.51,
+      "request": {
+        "url": "https://example.com/page2.html",
+        "method": "GET",
+        "headers": {},
+        "initialPriority": "VeryHigh"
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "1000.3",
+      "loaderId": "LOADER2",
+      "frameId": "AABBCCDD00112233445566778899AABB",
+      "timestamp": 1000.56,
+      "type": "Document",
+      "response": {
+        "url": "https://example.com/page2.html",
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "mimeType": "text/html",
+        "connectionReused": true,
+        "connectionId": 3,
+        "encodedDataLength": 100,
+        "timing": {
+          "requestTime": 1.5,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": -1,
+          "dnsEnd": -1,
+          "connectStart": -1,
+          "connectEnd": -1,
+          "sslStart": -1,
+          "sslEnd": -1,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 1450.0,
+          "sendEnd": 1451.0,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 1460.0
+        },
+        "protocol": "http/1.1",
+        "remoteIPAddress": "1.2.3.4",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false
+      }
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "1000.4",
+      "loaderId": "LOADER2",
+      "frameId": "AABBCCDD00112233445566778899AABB",
+      "documentURL": "https://example.com/page2.html",
+      "type": "Image",
+      "initiator": {
+        "type": "parser",
+        "url": "https://example.com/page2.html",
+        "lineNumber": 2
+      },
+      "timestamp": 1000.7,
+      "wallTime": 1700000000.7,
+      "request": {
+        "url": "https://example.com/image2.png",
+        "method": "GET",
+        "headers": {},
+        "initialPriority": "Low"
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "1000.4",
+      "loaderId": "LOADER2",
+      "frameId": "AABBCCDD00112233445566778899AABB",
+      "timestamp": 1000.75,
+      "type": "Image",
+      "response": {
+        "url": "https://example.com/image2.png",
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "mimeType": "image/png",
+        "connectionReused": true,
+        "connectionId": 4,
+        "encodedDataLength": 100,
+        "timing": {
+          "requestTime": 2.0,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": -1,
+          "dnsEnd": -1,
+          "connectStart": -1,
+          "connectEnd": -1,
+          "sslStart": -1,
+          "sslEnd": -1,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 1950.0,
+          "sendEnd": 1951.0,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 1960.0
+        },
+        "protocol": "http/1.1",
+        "remoteIPAddress": "1.2.3.4",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false
+      }
+    }
+  },
+  {
+    "method": "Network.requestWillBeSent",
+    "params": {
+      "requestId": "1000.5",
+      "loaderId": "LOADER1",
+      "frameId": "AABBCCDD00112233445566778899AABB",
+      "documentURL": "https://example.com/page1.html",
+      "type": "Image",
+      "initiator": {
+        "type": "script"
+      },
+      "timestamp": 1000.8,
+      "wallTime": 1700000000.8,
+      "request": {
+        "url": "https://example.com/late-image1.png",
+        "method": "GET",
+        "headers": {},
+        "initialPriority": "Low"
+      }
+    }
+  },
+  {
+    "method": "Network.responseReceived",
+    "params": {
+      "requestId": "1000.5",
+      "loaderId": "LOADER1",
+      "frameId": "AABBCCDD00112233445566778899AABB",
+      "timestamp": 1000.8499999999999,
+      "type": "Image",
+      "response": {
+        "url": "https://example.com/late-image1.png",
+        "status": 200,
+        "statusText": "OK",
+        "headers": {},
+        "mimeType": "image/png",
+        "connectionReused": true,
+        "connectionId": 5,
+        "encodedDataLength": 100,
+        "timing": {
+          "requestTime": 2.5,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": -1,
+          "dnsEnd": -1,
+          "connectStart": -1,
+          "connectEnd": -1,
+          "sslStart": -1,
+          "sslEnd": -1,
+          "workerStart": -1,
+          "workerReady": -1,
+          "sendStart": 2450.0,
+          "sendEnd": 2451.0,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersEnd": 2460.0
+        },
+        "protocol": "http/1.1",
+        "remoteIPAddress": "1.2.3.4",
+        "remotePort": 443,
+        "fromDiskCache": false,
+        "fromServiceWorker": false,
+        "fromPrefetchCache": false
+      }
+    }
+  }
+]

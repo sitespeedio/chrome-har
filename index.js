@@ -21,7 +21,12 @@ const log = debug('chrome-har');
 
 const defaultOptions = {
   includeResourcesFromDiskCache: false,
-  includeTextFromResponseBody: false
+  includeTextFromResponseBody: false,
+  // When true, a new main document load in the root frame starts a new
+  // HAR page, like Chrome DevTools does. Requests carry the loaderId of
+  // the document that spawned them, so late resources from the previous
+  // document stay attached to their own page.
+  allowMultiPage: false
 };
 const isEmpty = o => !o;
 
@@ -202,7 +207,37 @@ function createHarBuilder(options) {
           ) {
             createPage(rootFrame, '');
           }
-          const page = pages.at(-1);
+          const page = (() => {
+            if (!options.allowMultiPage) {
+              return pages.at(-1);
+            }
+            // Route the request to the page of the document that issued
+            // it, so resources from an older document do not leak into
+            // the page of a newer one.
+            if (params.loaderId) {
+              const loaderPage = pages.findLast(
+                page => page.__loaderId === params.loaderId
+              );
+              if (loaderPage) {
+                return loaderPage;
+              }
+              if (params.type === 'Document') {
+                const framePage = pages.findLast(
+                  page => page.__frameId === rootFrame
+                );
+                if (framePage && !framePage.__loaderId) {
+                  // A page created by a navigation event gets bound to
+                  // the loader that actually fetched the document.
+                  framePage.__loaderId = params.loaderId;
+                  return framePage;
+                }
+                const newPage = createPage(rootFrame, '');
+                newPage.__loaderId = params.loaderId;
+                return newPage;
+              }
+            }
+            return pages.at(-1);
+          })();
           const cookieHeader = getHeaderValue(request.headers, 'Cookie');
 
           //Before we used to remove the hash framgment because of Chrome do that but:
@@ -307,6 +342,7 @@ function createHarBuilder(options) {
             return;
           }
 
+          entry.pageref = page.id;
           entries.push(entry);
 
           // this is the first request for this page, so set timestamp of page.
@@ -451,10 +487,8 @@ function createHarBuilder(options) {
             return;
           }
 
-          const frameId =
-            rootFrameMappings.get(params.frameId) || params.frameId;
           const page =
-            pages.find(page => page.__frameId === frameId) || pages.at(-1);
+            pages.find(page => page.id === entry.pageref) || pages.at(-1);
           if (!page) {
             log(
               `Received network response for requestId ${params.requestId} that can't be mapped to any page.`
