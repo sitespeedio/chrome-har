@@ -841,3 +841,30 @@ test('An iframe that is not attached does not create a page', t => {
     ['page_1', 'page_1', 'page_1']
   );
 });
+
+test('Allow multi page: a new main document in the root frame starts a new page', t => {
+  const perflogPath = perflog('multi-page-navigation.json');
+  return parsePerflog(perflogPath, { allowMultiPage: true }).then(har => {
+    t.is(har.log.pages.length, 2);
+    t.is(har.log.pages[0].title, 'https://example.com/page1.html');
+    t.is(har.log.pages[1].title, 'https://example.com/page2.html');
+    const entriesByUrl = Object.fromEntries(
+      har.log.entries.map(e => [e.request.url, e.pageref])
+    );
+    // Late resources of the first document stay on the first page.
+    t.deepEqual(entriesByUrl, {
+      'https://example.com/page1.html': har.log.pages[0].id,
+      'https://example.com/image1.png': har.log.pages[0].id,
+      'https://example.com/late-image1.png': har.log.pages[0].id,
+      'https://example.com/page2.html': har.log.pages[1].id,
+      'https://example.com/image2.png': har.log.pages[1].id
+    });
+  });
+});
+
+test('Without allowMultiPage a new main document stays on the same page', t => {
+  const perflogPath = perflog('multi-page-navigation.json');
+  return parsePerflog(perflogPath).then(har => {
+    t.is(har.log.pages.length, 1);
+  });
+});
